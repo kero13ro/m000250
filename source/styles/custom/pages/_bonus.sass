@@ -1,0 +1,82 @@
+
+#bonus
+
+  .foreword
+    padding-top: 20px
+    +f(space-between)
+    width: 100%
+    position: relative
+    > img
+      max-width: 50%
+      // width: 100%
+      flex-shrink: 0
+      margin-top: -50px
+
+  .wrap
+    +f(flex-start, flex-start, column)
+    width: 100%
+
+  .circle
+    width: 100%
+    +margin(null null 75px null )
+    +padding(null null null 25px )
+    text-indent: -25px
+    li
+      +circle(10px, 15px, #F7B551)
+
+  .status
+    width: 100%
+    +padding(null null 25px null)
+    +f
+    +position(absolute, null null 0 0 )
+
+    span 
+      font-size: 24px
+      color: #B47832
+      font-family: 'Open Sans', sans-serif
+      font-style: italic
+      letter-spacing: 1px
+    .usable
+      color: #E24001
+
+  .plain
+    th, td
+      text-align: left
+      +padding(null null null 60px)
+
+      &:nth-child(1),
+      &:nth-child(2)
+        text-align: center
+
+      &:nth-child(3)
+        width: 16%
+      &:last-child
+        width: 26%
+
+
+  +max(990)
+    .foreword
+      flex-direction: column
+      >img
+        align-self: flex-end
+        max-width: 450px
+        width: 100%
+        margin-bottom: 20px
+        margin-top: 0
+    .circle
+      margin-bottom: 15px
+    .status
+      position: relative
+      padding-bottom: 10px
+    
+
+  +max(767)
+    .status
+      flex-wrap: wrap
+      li 
+        width: 50%
+
+  +max(450)
+    .status
+      li 
+        width: 100%

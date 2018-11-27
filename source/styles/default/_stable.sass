@@ -1,0 +1,95 @@
+=circle( $size, $mr: 10px, $color: #000, $display: inline-block )
+  &:before
+    content: ""
+    display: $display
+    width: $size
+    height: $size
+    margin-right: $mr
+    border-radius: 50%
+    background-color: $color
+    flex-shrink: 0
+
+
+.hidden
+  display: none
+
+
+.scrollbar
+  -webkit-overflow-scrolling: touch
+
+.scrollbarX
+  -webkit-overflow-scrolling: touch
+  overflow-x: auto
+
+.scrollbarY
+  -webkit-overflow-scrolling: touch
+  overflow-x: auto
+
+
+.sr-only
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  padding: 0
+  overflow: hidden
+  clip: rect(0, 0, 0, 0)
+  border: 0
+
+
+.clearfix:after
+  display: block
+  content: ''
+  clear: both
+
+.nostyle
+  margin: 0
+  padding: 0
+  > li
+    list-style: none
+
+
+
+=f($justify: flex-start, $align: flex-start, $direction: row, $wrap: nowrap)
+  display: flex
+  flex-direction: $direction
+  justify-content: $justify
+  align-items: $align
+  flex-wrap: $wrap
+  
+=fc
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+
+
+
+// $breakpoints: (xs: 480px,sm: 768px,md: 992px,lg: 1200px,xl: 1440px)
+
+=m($max, $min) 
+  @media only screen and (max-width: #{$max}px ) and (min-width: #{$min}px)
+    @content
+
+=max($value)
+  @media only screen and ( max-width: #{$value}px )
+    @content
+
+=min($value)
+  @media only screen and ( min-width: #{$value}px )
+    @content
+
+
+
+=ratio( $target, $max, $min , $top: 993 , $bottom: 480 )
+  @media only screen and ( min-width: #{$top}px )
+    #{$target}: #{$max}px
+  @media only screen and ( max-width: #{$top}px ) and ( min-width: #{$bottom}px )
+    #{$target}: get-vw2($max, $min  , $top , $bottom )
+  @media only screen and ( max-width: #{$bottom}px )
+    #{$target}: #{$min}px
+
+@function get-vw($max, $min  , $top , $bottom )
+  $change: $max - $min
+  $range: $top - $bottom
+  @return calc(#{$min}px + (((100vw - #{$bottom}px)/#{$range}))*#{$change}  )

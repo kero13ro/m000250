@@ -1,0 +1,186 @@
+
+
+
+=container
+  +margin(0 auto)
+  +padding(null 25px)
+  width: 100%
+  max-width: 1450px
+
+  +max(480)
+    padding: 0 18px
+
+.container
+  +margin(0 auto)
+  +padding(null 25px)
+  width: 100%
+  max-width: 1450px
+  +max(480)
+    padding: 0 18px
+
+
+// 測試使用 bootstrap grid
+// constainer-bs
+
+.tank
+  position: relative
+  display: block
+  width: 100%
+  padding: 0
+  overflow: hidden
+
+  &::before
+    display: block
+    content: ""
+    // padding-top: percentage(9 / 21)
+  
+  .fluid
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 100%
+    border: 0
+
+
+
+
+//多出的文字變成點點點
+
+
+.truncate
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+.form
+  display: block
+  .group
+    margin-bottom: 20px
+    &:after
+      content: ''
+      display: block
+      clear: both
+
+.table
+  width: 100%
+  border-collapse: collapse
+  margin-bottom: 1rem
+  // background-color: transparent
+  td,
+  th
+    vertical-align: top
+    padding: 0.75rem
+    // border-top: 1px solid #dee2e6
+
+.btn
+  display: inline-block
+  text-align: center
+  font-weight: 400
+  text-align: center
+  white-space: nowrap
+  vertical-align: middle
+  user-select: none
+  padding: 0.375rem 0.75rem
+  font-size: 1rem
+  line-height: 1.5
+  border-radius: 0.25rem
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out
+
+
+
+@for $i from 8 through 12 
+  .lh#{$i*2*1}            //1.6~2.4
+    line-height: $i*2*0.1
+      
+    +m(768, 481)
+      line-height: $i*2*0.095
+      
+    +max(480)
+      // line-height: $i*2*0.082
+      
+      @if $i*2*0.09 > 1.6
+        line-height: $i*2*0.09
+
+      @else if $i*2*0.85 > 1.6
+        line-height: $i*2*0.85
+
+      @else 
+        line-height: 1.6
+
+
+
+
+
+
+    
+@for $i from 1 through 4 //0.5~2
+  .wide#{$i*5}
+    letter-spacing: #{$i*0.5}px
+      
+    +m(768, 481)
+      letter-spacing: #{$i*0.5*0.5}px
+      
+    +max(480)
+      letter-spacing: #{$i*0.5*0.25}px
+
+
+.f12
+  font-size: 12px
+.f14
+  font-size: 14px
+.f15
+  font-size: 15px
+
+.f18
+  font-size: 18px
+  +max(480)
+    font-size: 15px
+
+@for $i from 4 through 15 //16, 20, 24 ~ 40px
+  .f#{$i*4}
+    font-size: #{$i*4/16}rem
+
+    +m(767, 481)
+      @if $i*4/16*0.8 > 1
+        font-size: #{$i*4/16*0.8}rem
+
+      @else if $i*4/16*0.9 > 1
+        font-size: #{$i*4/16*0.9}rem
+
+      @else
+        font-size: #{$i*4/16*0.95}rem
+
+    +max(480)
+      
+      @if $i*4/16*0.64 > 1
+        font-size: #{$i*4/16*0.64}rem
+
+      @else if $i*4/16*0.81 > 1
+        font-size: #{$i*4/16*0.81}rem
+
+      @else if $i*4/16*0.9 > 1
+        font-size: #{$i*4/16*0.9}rem
+
+      @else 
+        font-size: 15px
+    
+
+  
+
+
+
+$direction: (t: top, r: right, b: bottom, l: left)
+$space: (m: margin, p: padding)
+
+@each $key_dir,$val_dir in $direction
+  @each $key_spc,$val_spc in $space
+    @for $i from 1 through 12
+      .#{$key_spc}#{$key_dir}#{$i*8}
+
+        #{$val_spc}-#{$val_dir}: #{$i*8}px
+        +m(768, 481)
+          #{$val_spc}-#{$val_dir}: #{$i*8*0.8}px
+        +max(480)
+          #{$val_spc}-#{$val_dir}: #{$i*8*0.6}px

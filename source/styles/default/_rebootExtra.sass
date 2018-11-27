@@ -1,0 +1,151 @@
+
+/* ==========================================================================
+    reboot卻沒有的，在英創達特有的 default
+ ==========================================================================*/
+a
+  display: inline-block
+  white-space: nowrap
+  outline: none !important
+  cursor: pointer
+  text-decoration: none
+  // behavior: expression(this.onFocus=this.blur())
+  &:active
+    cursor: pointer
+    text-decoration: none
+    // behavior: expression(this.onFocus=this.blur())
+
+
+html, body
+  -webkit-overflow-scrolling: touch
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+.wp
+  min-width: 320px
+  overflow: hidden
+
+
+body
+  height: 100.1% !important
+  overflow-x: hidden
+  -webkit-backface-visibility: hidden
+
+
+@media all and (max-width: 320px)
+  body, html, header
+    width: 320px !important
+
+
+body:after
+  display: block
+  content: "We're sorry! this website does not support your browser, please upgrade your browser, thank you."
+  position: fixed
+  z-index: 100000000000000
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  width: auto
+  height: auto
+  padding: 50px
+  background-color: #fff
+  text-align: center
+  font-size: 20px
+  color: #3f3f3f
+
+\:root body:after
+  display: none
+  
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4
+  line-height: normal
+
+img
+  max-width: 100%
+  height: auto
+  border: none
+  -khtml-user-select: none
+  -o-user-select: none
+  -moz-user-select: none
+  -webkit-user-select: none
+  user-select: none
+
+textarea
+  resize: none
+
+\::-webkit-input-placeholder, ::-moz-placeholder, ::-o-placeholder, ::-ms-placeholder, ::-ms-input-placeholder
+  color: #888888
+
+select
+  -webkit-appearance: none
+  -moz-appearance: none
+  text-transform: none
+
+table
+  -webkit-backface-visibility: visible
+
+// button
+//   text-transform: none
+//   outline: none !important
+//   border: none
+//   background: none
+//   padding: 0
+//   margin: 0
+//   display: inline-block
+
+// button::-moz-focus-inner, input::-moz-focus-inner
+//   border: 0
+//   padding: 0
+
+// button, input
+//   line-height: normal
+
+// button, html input[type="button"]
+//   -webkit-appearance: button
+//   cursor: pointer
+
+// figure, address
+//   padding: 0
+//   margin: 0
+
+input
+  &[type="reset"], &[type="submit"]
+    -webkit-appearance: button
+    cursor: pointer
+
+input[type="search"]
+  -webkit-appearance: textfield
+  // -moz-box-sizing: content-box
+  nowhitespace: afterproperty
+  // -webkit-box-sizing: content-box
+  // box-sizing: content-box
+  &::-webkit-search-cancel-button, &::-webkit-search-decoration
+  
+button[disabled], html input[disabled]
+  cursor: default
+
+input
+  &[type=search]
+    &::-ms-clear, &::-ms-reveal
+      display: none
+      width: 0
+      height: 0
+  &[type="search"]
+    &::-webkit-search-decoration, &::-webkit-search-cancel-button, &::-webkit-search-results-button, &::-webkit-search-results-decoration
+      display: none
+
+
+//瀏覽器預設樣式，但不知為何以前沒有出現?，
+input,
+select,
+textarea
+  &:focus
+    outline-color: transparent
+
+
+// 不知為何只有mac有黑粗外框線
+input,
+select,
+textarea
+  &:focus
+    outline: none
