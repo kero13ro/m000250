@@ -1,31 +1,54 @@
 
 #nav
   .container
-    a(href="index.html").logo
-      h1.sr-only 紫金堂月子中心
-      //- img(src="./styles/images/00-icon.png", alt="紫金堂")
-    .nav__content
-      ul.nostyle.nav_office
-        li: a(href="http://html.m000227.youweb.tw", target="_blank") 紫金堂官網
 
-        a(href="member.html").login.icon-user 登入
-        a(href="cart.html").cart.icon-cart
-          .bedge 2
-          .circle
+    .landing
+      .container
+        a(href="index.html").logo
+          h1.sr-only 大樹會員購系統
+          img(src="./styles/images/p-title.png", alt="大樹藥局")
 
-      .nav__toggle
-        .one
-        .two
-        .three
+        a(href="cart.html").love
+          span.icon-love
+          .inner
+            .main 我的最愛
+            div 一年內購物紀錄查詢
+
+        a(href="cart.html").strict
+          span.icon-strict
+          .inner
+            .main 大樹嚴選
+            div 新品推薦、熱門好物
 
 
-      #nav_cover
-        ul.nostyle.nav_shop
-          li: a(href="index.html") 商品專區
-          li: a(href="member.html") 會員專區
-          li: a(href="qa.html") 常見問題
-          li: a(href="guest-login-order.html") 非會員查詢
+    .outside
+      a(href="#", title="大樹健康藥局官方網站")  大樹健康藥局官方網站
+      a(href="#", title="大樹健康購物網")  大樹健康購物網
+      a(href="#", title="facebook").icon-facebook
+      a(href="#", title="line").icon-line
 
-          
-      
+  
+    a(href="cart.html").scan
+      span.icon-scan
+      span 商品搜尋
 
+    a(href="cart.html").catogory
+      span.icon-catogory
+      span 商品品類
+
+    a(href="cart.html").user
+      span.icon-user
+      span 會員中心
+
+    a(href="cart.html").service
+      span.icon-service
+      span 服務中心
+
+    a(href="cart.html").cart
+      span.icon-cart
+      span 我的購物車(3)
+
+    .nav__toggle
+      .one
+      .two
+      .three

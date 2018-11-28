@@ -128,405 +128,121 @@
       font-weight: 400
 
 
-.epapper
-  .unsubscribe
+
+
+footer
+  background: center / cover no-repeat
+  padding-top: 60px
+  +fcl(flex-end)
+  &,a
+    color: #fff
+
+  li
+    margin-bottom: 4px
+
+  .wrapper
+    +container
+    +fcl
+
+  .copyright
+    border-top: 1px solid rgba(#fff,0.3)
+    width: 100%
+    +fcl
+
+    min-height: 60px
+    +padding(15px)
+    span 
+      text-align: center
+    .slash
+      display: none
+
+      
+  address
+    +fcl
+    padding-right: 20px
+
+  .address__logo
+    margin-bottom: 20px
+
+  .sitemap
     display: none
 
-  width: 100%
-  max-width: 530px
-  border: 1px solid #D1AF81
-  box-shadow: 3px 3px 15px rgba(black,0.2)
-  background-color: #fff
-  text-align: center
-  border-radius: 10px
-  overflow: hidden
-
-  .epapper__toggle
-    height: 50px
-    +fc
-    background: linear-gradient(to bottom, rgb(255,255,255), rgb(249,245,235))
-    border-bottom: 1px solid rgb(239,239,239)  
-
-    > div 
-      +size(120px, 100%)
-      +fc
-      cursor: pointer
-
-    > .current
-      font-weight: bold
-      color: rgb(142, 108, 80)
-      box-shadow: inset 0 -2px 0px rgb(222, 207, 186)
-
-
-  .epapper__main
-    +padding(36px 80px 64px)
-    text-align: center
-
-  .f24
-    margin-top: 5px
-
-  input
-    +size(100%, 40px)
-    border: 1px solid $brown
-    +padding(null 15px)
-    color: $brown
-    +trans
-    &::placeholder
-      color: #A57B4B
-    &:hover
-      background-color: $brown-light
-    &:focus
-      color: #A57B4B
-      border-color: #A57B4B
-
-  .verify
-    +f(flex-start, center)
-    img
-      cursor: pointer
-
-  .login_btn
-    +fc
-    > a
-      color: $white
-      +size(170px, 40px)
-      +fc
-      background-color: rgb(99, 99, 99)
-      border-radius: 3px
-      +hoverBgc(rgb(63, 63, 63))
-
-    .mr
-      margin-right: 22px
-      background-color: #A57B4B
-      +hoverBgc(#d37d1b)
-
-
-  .epapper__main
-    +max(767)
-      +padding(25px 40px 40px)
-
-    +max(374)
-      +padding(25px 30px 30px)
-      .login_btn .mr
-        margin-right: 8px
-
-
-
-
-.modal
-  width: 100%
-  max-width: 530px
-  border: 1px solid #D1AF81
-  background-color: #fff
-  text-align: center
-  border-radius: 6px
-  overflow: hidden
-
-  .modal__main
-    +padding(48px 60px 64px)
-    text-align: center
-
-  .f24
-    margin-top: 5px
-
-  .modal-bottom
-    height: 136px
-    width: 100%
-    +f(center,center)
-    border-top: 1px solid #D1AF81
-
-    > a
-      color: rgb(178, 138, 89)
-      +hoverText(#d37d1b)
-      +f(center,center, column)
-
-      [class*="icon"]
-        font-size: 1.8rem
-        margin-bottom: 10px
-
-      .icon-user 
-        font-size: 1.1rem
-        border: 2px solid rgb(178, 138, 89)
-        border-radius: 50%
-        +size(40px)
-        +fc
-      
-    > a:hover .icon-user 
-      border-color: #d37d1b
-
-    > a:not(:last-child)
-      margin-right: 70px
-        
-  .modal__main
-    +max(767)
-      +padding(25px 40px 40px)
-
-    +max(374)
-      +padding(25px 30px 30px)
-
-
-.modal.lg
-  max-width: 600px
-  .modal__main
-    +padding(48px 60px 40px)
-
-    +max(767)
-      +padding(25px 40px 40px)
-
-    +max(374)
-      +padding(null 20px 30px)
-
-
-.modal.dark
-  z-index: 2
-  .modal__main
-    +padding(48px 50px 40px)
-    background-color: rgb(244, 240, 239)
-
-
-
-
-
-
-
-.plain
-  width: 100%
-
-  table
-    text-align: center
-    white-space: nowrap
-    width: 100%
-
-  tr
-    border-bottom: 1px solid #E5E5E5
-    &:first-child
-      background-color: rgb(202, 153, 97)
-      color: white
-    &:last-child
-      border-bottom: 1px solid rgb(202, 153, 97)
-    &:nth-child(odd):not(:first-child)
-      background-color: #F6F6F6
-
-    a
-      color: #B47832
-      text-decoration: underline
-
-  +max(991)
-    font-size: 15px
-
-
-.control-row
-  +f
-  .f24
-    margin-right: auto
-  .group
+  .media
     +f
-
-  .select_unit select,
-  .search_unit input[type="search"] 
-    border: 1px solid #ddd
-    color: #777
-    &::placeholder 
-      color: #777
-
-
-  +max(990)
-    flex-wrap: wrap
-    justify-content: space-between
-
-    .search_unit
-      width: calc(40% - 15px)
-      order: 2
-
-    .select_unit.md
-      order: 3
-
-    .select_unit  
-      margin-bottom: 0.8rem
-      margin-right: 0
-      width: calc(60% - 15px)
-      span 
-        width: 100px
-        flex-shrink: 0
-      
-
-  +max(550)
-    .select_unit
-      order: 1 !important
-    .f24,
-    [class*="_unit"]
-      width: calc(100%)
-      +margin(null 0 1rem null)
-      span 
-        width: 90px
-    .search_unit
-      width: calc(100% - 90px)
-      margin-left: auto
-
-
-
-
-
-.container.sm
-  max-width: 740px
-  
-.box
-  border-radius: 5px
-  background-color: #fff
-  overflow: hidden
-  box-shadow: 0 2px 6px rgba(black,0.1)
-
-  .box__title
-    background-color: rgb(203, 154, 96)
-    color: rgba(white, 0.9)
-    +padding(0.75rem null )
-
-  .box__title,
-  .box__content
-    +padding(null 38px)
-
-  // .group
-    // +f(flex-start,center)
-    // position: relative
-    // padding-left: 96px
-
-    // > span:first-child
-    //   +position(absolute, 0 null null 0)
-    //   +size(66px, 38px)
-    //   width: 66px
-    //   line-height: 38px
-    //   flex-shrink: 0
-    //   margin-right: 30px
-  
-
-  .box__content.top
-    +padding(1.2rem null )
-    .brown
+    [class*="icon"]
+      +size(50px)
+      font-size: 1.6rem
+      background-color: #fff
+      border-radius: 50%
+      color: $main
       +fc
-      height: 40px
-    .change
-      a
-        margin-left: 15px
-        color: #B47832
-      span
-        transform: translateY(4px)
-        // display: inline-block
+      +margin(null 8px 16px)
+
+  .tel
+    font-family: 'Roboto', sans-serif
 
 
-
-  .box__content.bottom
-    +padding(2.2rem null )
-
-  .radio_unit
-    flex: 1 0 110px
-    label:before
-      margin-right: 10px
-
-    &.transX
-      transform: translateX(15px)
-
-
-  .addr
-    .select_unit
-      width: 120px
-      margin-right: 18px
+  +min(768)
+    padding-top: 80px
+    li
+      margin-bottom: 8px
       
-    input
-      width: 120px
+    .wrapper
+      +f(space-around, flex-start)
+      margin-bottom: 20px
       
+    address
+      align-items: flex-start
+
+    .copyright
+      flex-direction: row
+      .slash
+        display: block
+        +margin(null 10px)
+
+    .media
+      flex-direction: column
+      margin-left: 30px
+      [class*="icon"]
+        +size(60px)
+        font-size: 1.9rem
+
+  +min(1200)
+    padding-top: 120px
+    .sitemap
+      +fc
+      flex-shrink: 0
+      align-items: flex-start
+      .title
+        font-size: 20px
+        padding-bottom: 10px
+        margin-bottom: 12px
+        border-bottom: 1px solid rgba(#fff, 0.3)
+        font-weight: bold
+
+    .block:not(:last-child)
+      margin-right: 30px
 
 
-//profile 將group 改為line 有可能動到其他葉面，改到#profile下?
-.box
-  +max(580)
-    
-    .box__content
-      +padding(1.5rem)
+    .block.tri ul
+      max-width: 360px
+      +f(space-between,center, row, wrap)
+      li:nth-child(3n+1)
+        flex: 1 1 25%
+      li:nth-child(3n+2)
+        flex: 1 1 35%
+      li:nth-child(3n+3)
+        flex: 1 1 30%
 
-    .line
-      padding-left: 86px
-      > span:first-child
-        margin-right: 20px
+  +min(1600)
+    .block:not(:last-child)
+      margin-right: 50px
+    .block
+      ul
+        padding-right: 20px
+    .block.tri ul
+      max-width: 420px
+    .media
+      margin-left: 0px
 
-    .line.addr
-      flex-wrap: wrap
-      > *:not(:first-child)
-        width: 100%
-      > *:not(:first-child)
-        +margin(null 0 13px null)
-      > *:last-child
-        margin-bottom: 0px
-
-    .line.name
-      flex-wrap: wrap
-      input
-        width: 100%
-
-    .radio_unit
-      max-width: 80px
-      label
-        justify-content: flex-start
-
-      &.transX
-        transform: translateX(0px)
-
-  +max(350)
-    .container.sm > span.f16
-      display: block
-    .box__content
-      +padding(1rem)
-      font-size: 15px
-
-    .line
-      padding-left: 76px
-      > span:first-child
-        width: 60px
-        white-space: nowrap
-      input, select
-        +padding(null 8px)
-
-    .box__content.top .line
-      padding-left: 56px
-
-
-
-.submit
-  border-top: 1px solid $brown
-  +fc
-  .btn
-    +size(200px, 38px)
-    margin: 0 15px
-    padding: 0
-    line-height: 38px
-    color: white
-    border-radius: 3px
-
-  .btn:not(.cancel)
-    background-color: rgb(165, 123, 75)
-    +hoverBgc($brown-dark)
-
-  .cancel
-    background-color: rgb(100, 100, 100)
-    +hoverBgc(rgb(60, 60, 60))
-
-  +max(500)
-    +padding(null 10px)
-    .btn
-      margin: 0 10px
-
-      
-
-// input.std  //可以再把box 裡面的樣式簡化
-//   +size(100%, 38px)
-//   line-height: 38px
-//   +padding(null 15px)
-//   border: 1px solid $brown
-//   border-radius: 3px
-//   color: $brown-dark
-//   +trans
-//   &::placeholder
-//     color: $brown-dark
-//   &:hover
-//     background-color: $brown-light
-//   &:focus
-//     color: $brown-dark
-//     border-color: $brown-dark
+        

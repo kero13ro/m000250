@@ -1,0 +1,80 @@
+
+#index  //tmp
+  height: 600px
+
+
+
+#nav > .container
+  .outside
+    +fc
+    
+    a:not([class*="icon"])
+      +padding(null 12px )
+      color: #777
+
+    a:first-child  
+      line-height: 18px
+      border-right: 1px solid #ccc
+
+  +fc
+  height: 50px
+  >a
+    +fc
+    +padding(null 24px )
+    color: #777
+    position: relative
+
+    &:not(.cart):before
+      content: ""
+      display: block
+      +position(absolute, 6px 0 null null )
+      height: 20px
+      border-right: 1px solid #ccc
+
+  .scan
+    margin-left: auto
+
+  [class*="icon"]
+    color: $main
+
+
+  [class*="icon"]
+    font-size: 1.4rem
+    margin-right: 12px
+
+
+#nav .landing
+  +position(fixed, 50px 0 null 0)
+  background-color: #f0f0f0
+  height: 145px
+  +fc
+  box-shadow: 0 2px 6px rgba(black,0.1)
+  a
+    color: $main
+  
+  .container
+    +f(flex-start, center)
+
+  .love,
+  .strict
+    +size(300px, 90px)
+    background-color: #fff
+    border-radius: 45px
+    +fc
+    font-weight: bold
+    box-shadow: 0 5px 5px rgba(black,0.1)
+
+  [class*="icon"]
+    font-size: 2.8rem
+    margin-right: 16px
+
+  .logo
+    margin-right: auto
+
+  .love
+    margin-right: 50px
+
+  .main
+    font-size: 22px
+    & + div 
+      font-size: 16px
