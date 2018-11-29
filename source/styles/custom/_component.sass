@@ -1,28 +1,28 @@
 
 
 
-.pages
-  +f(center, center)
-  a
-    display: block
-    margin: 0 4px
-    +f(center, center)
-    +size(27px)
-    color: $brown-dark
-    border-radius: 50%
-    font-size: 14px
-    flex-shrink: 0
-    &:not([class^="icon"])
-      border: 1px solid $brown-dark
+// .pages
+//   +f(center, center)
+//   a
+//     display: block
+//     margin: 0 4px
+//     +f(center, center)
+//     +size(27px)
+//     color: $brown-dark
+//     border-radius: 50%
+//     font-size: 14px
+//     flex-shrink: 0
+//     &:not([class^="icon"])
+//       border: 1px solid $brown-dark
 
-    &:hover,
-    &.active
-      background-color: $brown-dark
-      color: white
+//     &:hover,
+//     &.active
+//       background-color: $brown-dark
+//       color: white
 
-  +max(330)
-    [class^="icon"]
-      margin: 0
+//   +max(330)
+//     [class^="icon"]
+//       margin: 0
 
 
 =afterline($height, $color: rgb(199,199,199))
@@ -51,89 +51,13 @@
       display: none
 
 
-.slcik-menu
-  border-top: 1px solid $brown-230
-  box-shadow: inset 0 -4px rgb(240, 231, 222)
-  =shorterLine
-    content: ""
-    +size(0px ,30px)
-    border-right: 1px solid $brown-230
-    +position(absolute, 50% 0 null null)
-    transform: translateY(-50%)
-  
-  ul
-    max-width: 1400px
-    +margin(null auto)
-    +padding(null 40px)
-    +f
-  li  
-
-    flex: 1 1 auto
-    line-height: 1.4
-    +min(990)
-      max-width: 175px  //會跟slcik有衝突
-
-  a
-    height: 58px
-    +fc
-    position: relative
-    font-weight: bold
-    // z-index: 1
-    // line-height: 1.5
-    text-align: center
-    &:after
-      +shorterLine
-        
-  li:first-child
-    a:before
-      +shorterLine
-      left: 0px
-
-  li.active
-    border-bottom: 4px solid $brown-dark
-    a
-      color: $brown-dark
-      font-weight: bold
-      letter-spacing: 1px
-
-  li:hover
-    a
-      color: $brown-dark
-      transition: color 0.3s
-
-  .slick-arrow
-    +size(40px , 100%)
-    +fc
-    height: 58px
-    position: absolute
-    
-  .slick-arrow
-    color: #F7B550
-    
-  .icon-prev
-    left: 0
-    &:after
-      +shorterLine
-  .icon-next
-    right: 0
-    &:after
-      +shorterLine
-      left: 0
-
-
-  +max(400)
-    ul
-      font-size: 15px
-    a
-      font-weight: 400
-
-
-
 
 footer
-  background: center / cover no-repeat
+  // margin-top: -60px
+  background: #f0f0f0 center / cover no-repeat
   padding-top: 60px
   +fcl(flex-end)
+  
   &,a
     color: #fff
 
@@ -174,7 +98,7 @@ footer
       font-size: 1.6rem
       background-color: #fff
       border-radius: 50%
-      color: $main
+      color: $green
       +fc
       +margin(null 8px 16px)
 

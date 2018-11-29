@@ -1,0 +1,181 @@
+
+#index
+  background-color: #f0f0f0
+
+.index_landing
+  height: 760px
+  +f(center, flex-end)
+
+  a
+    +size(380px, 185px)
+    +margin(null 270px 80px )
+    background-color: #fff
+    color: $green
+    border-radius: 90px
+    +fc
+    font-weight: bold
+    box-shadow: 0 5px 5px rgba(black,0.1)
+
+  [class*="icon"]
+    flex-shrink: 0
+    font-size: 4.5rem
+    margin-right: 20px
+    &:before
+      width: auto
+
+  .main
+    font-size: 40px
+    & + div 
+      font-size: 20px
+
+
+.index_search
+
+  .searchbar
+    +fc
+    +padding(65px null 40px)
+    position: relative
+
+  .dot
+    +size(20px)
+    background-color: $blue
+    border-radius: 50%
+    margin-right: 20px
+  
+  .dot ~ *
+    +padding(20px 28px)
+    font-size: 20px
+    height: 70px
+
+  input[type="search"] 
+    width: 560px
+    border: 1px solid $green
+    border-radius: 10px 0 0 10px
+    font-weight: bold
+    &, &::placeholder
+      color: $blue
+    
+    &:focus 
+      border-color: shade($green, 30%)
+    // &:hover 
+
+  .search,
+  .advanced
+    +fc
+    color: #fff
+    background-color: $green
+    +hoverBgc(tint($green, 20%))
+    
+    &:before
+      font-size: 25px
+      margin-right: 10px
+
+  .search
+    width: 140px
+    border-radius: 0 10px 10px 0
+    border-width: 0px
+    margin-right: 16px
+    cursor: pointer
+
+  .advanced
+    width: 180px
+    border-radius: 10px
+
+  .tips
+    padding-bottom: 50px
+    font-size: 20px
+    color: $green
+    +fcl
+    font-weight: bold
+
+  .multi
+    +fc
+    margin-bottom: 20px
+
+  .circle
+    +size(75px)
+    border-radius: 50%
+    +fc
+    color: #FFF
+    +margin(null 12px)
+    
+    &:first-child
+      background-color: $blue
+    &:last-child
+      background-color: $orange
+
+  
+.index_square
+  +f(flex-start, stretch, row, wrap)
+
+  .square
+    +margin(null null 24px null )
+    +padding(null 12px)
+    flex: 1 0 20%
+    font-size: 22px
+
+  .inner
+    +padding(30px 25px)
+    +fcl
+    font-weight: bold
+    +size(100%)
+    border-radius: 11%
+    background-color: #fff
+    cursor: pointer
+
+    > div
+      position: relative
+      padding-left: 15%
+
+    span
+      +position(absolute, 50% null null 0)
+      transform: translate(0%, -50%)
+      +size(18px)
+      display: inline-block
+      background-color: $orange
+      border-radius: 50%
+    
+
+    transition: box-shadow 0.3s
+    &:hover
+      box-shadow: 0 0 1px 1px $green
+      transition: box-shadow 0.3s
+
+
+  +max(1365)
+    .square
+      flex-basis: 25%
+      font-size: 18px
+
+      .inner
+        +padding(20px 15px)
+        span
+          +size(14px)
+
+  +max(991)
+    .square
+      font-size: 16px
+      +padding(null 8px)
+
+      .inner
+        +padding(16px null)
+        border-radius: 8%
+
+        span
+          +size(14px)
+
+  +max(700)
+    .square
+      flex-basis: 33%
+      font-size: 14px
+      +padding(null 4px)
+      margin-bottom: 8px
+
+      .inner
+        +padding(10px 6px)
+
+        > div
+          
+          +padding(null 3px)
+          span
+            display: none

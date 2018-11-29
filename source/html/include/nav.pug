@@ -1,8 +1,10 @@
 
+//- #nav.fixed-js
+.navPad
 #nav
   .container
 
-    .landing
+    .nav__shift
       .container
         a(href="index.html").logo
           h1.sr-only 大樹會員購系統
@@ -21,32 +23,32 @@
             div 新品推薦、熱門好物
 
 
-    .outside
+    .nav__external
       a(href="#", title="大樹健康藥局官方網站")  大樹健康藥局官方網站
       a(href="#", title="大樹健康購物網")  大樹健康購物網
-      a(href="#", title="facebook").icon-facebook
-      a(href="#", title="line").icon-line
+      a(href="https://www.facebook.com/www.greattree.com.tw", target="_blank").icon-facebook
+      a(href="https://line.me/R/ti/p/%40greattree?fbclid=IwAR2YBIcJE5aHFnmw1QM9kyZvfYQkTdEq1uZgTz98WxoCDq8e6_vvLDo8ZVA",  target="_blank").icon-line
 
-  
-    a(href="cart.html").scan
-      span.icon-scan
-      span 商品搜尋
+    .nav__content
+      a(href="cart.html").scan
+        span.icon-scan
+        span 商品搜尋
 
-    a(href="cart.html").catogory
-      span.icon-catogory
-      span 商品品類
+      a(href="cart.html").catogory
+        span.icon-catogory
+        span 商品品類
 
-    a(href="cart.html").user
-      span.icon-user
-      span 會員中心
+      a(href="cart.html").user
+        span.icon-user2
+        span 會員中心
 
-    a(href="cart.html").service
-      span.icon-service
-      span 服務中心
+      a(href="cart.html").service
+        span.icon-service
+        span 服務中心
 
-    a(href="cart.html").cart
-      span.icon-cart
-      span 我的購物車(3)
+      a(href="cart.html").cart
+        span.icon-cart
+        span 我的購物車(3)
 
     .nav__toggle
       .one

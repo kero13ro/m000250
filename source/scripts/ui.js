@@ -1,51 +1,42 @@
 
 
+var $window = $(window);
 var wW = $(window).width();
 var wH = $(window).height();
 var esc = $.Event("keydown", { keyCode: 27 });
 
 
+$("document").ready(function () {
 
-//nav 當前頁面的樣式
-var currentPage = sessionStorage.getItem("nav");
-var navPages = $("#nav .nav_shop a, \
-                  .login, \
-                  .logo");
 
-navPages.filter("[href='" + currentPage + "']").addClass("current");
+  //scroll fix navbar
+  var $nav = $("#nav");
+  var navH = $nav.height() + $nav.find(".nav__shift").height();
 
-navPages.click(function () {
-  var tmp = $(this).attr("href");  
-  sessionStorage.setItem("nav", tmp);
+  function check_nav_fix() {
+    var window_top_position = $window.scrollTop();
+    
+    if (window_top_position > navH) {
+      $nav.addClass("fixed-js");
+    } else {
+      $nav.removeClass("fixed-js");
+    }
+  }
+
+  $window.on("scroll resize", check_nav_fix);
+  check_nav_fix();
+
 });
 
 
 
+//loading動畫測試
+// $.when($.ready).then(function () {
+//   $("main").css("opacity","1");
+// });
 
-//qa 左右滑動目錄
-var left = $(".control .icon-left-thin");
-var right = $(".control .icon-right-thin");
-var qa__menu = $(".qa__menu .scrollbarX");
-
-left.click(function () {
-  var leftPos = qa__menu.scrollLeft();
-  qa__menu.stop(true, false, true).animate({ scrollLeft: leftPos - 200 }, 800);
-});
-right.click(function () {
-  var leftPos = qa__menu.scrollLeft();
-  qa__menu.stop(true, false, true).animate({ scrollLeft: leftPos + 200 }, 800);
-});
+// $.ready.then(function () {
+//   $("main").css("opacity","1");
+// });
 
 
-
-
-if (
-  document.querySelector("#confirm") !== null ||
-  document.querySelector("#complete") !== null
-) {
-  var childPos = $(".progress .current").position();
-  var parentPos = $(".current").position();
-
-  var scrollWidth = childPos.left - parentPos.left;
-  $(".scrollbarX").scrollLeft(scrollWidth);
-}

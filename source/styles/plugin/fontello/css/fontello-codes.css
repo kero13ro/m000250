@@ -1,12 +1,13 @@
 
+.icon-scan2:before { content: '\e800'; } /* '' */
 .icon-cart:before { content: '\e801'; } /* '' */
 .icon-line:before { content: '\e802'; } /* '' */
 .icon-down-thin:before { content: '\e803'; } /* '' */
 .icon-page-4:before { content: '\e804'; } /* '' */
+.icon-scan:before { content: '\e805'; } /* '' */
 .icon-mail:before { content: '\e806'; } /* '' */
 .icon-arr-left:before { content: '\e80a'; } /* '' */
 .icon-page-1:before { content: '\e80d'; } /* '' */
-.icon-scan:before { content: '\e80f'; } /* '' */
 .icon-catogory:before { content: '\e810'; } /* '' */
 .icon-strict:before { content: '\e816'; } /* '' */
 .icon-love:before { content: '\e818'; } /* '' */

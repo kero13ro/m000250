@@ -5,4 +5,109 @@ block content
   include ./include/nav.pug
   
   #index
-    .slider-show
+    .index_landing(style="background-image: url('./styles/images/0a-bgc.jpg')")
+
+      a(href="cart.html").love
+        span.icon-love
+        .inner
+          .main 我的最愛
+          div 一年內購物紀錄查詢
+
+      a(href="cart.html").strict
+        span.icon-strict
+        .inner
+          .main 大樹嚴選
+          div 新品推薦、熱門好物
+
+    form.index_search
+
+      .searchbar
+        .dot
+        input(type="search", placeholder="商品搜尋(請輸入關鍵字)")
+        button(type="submit").search.icon-scan
+          span 搜尋
+        a(href="advanced.html").advanced.icon-scan2 進階搜尋
+
+      .tips
+        .multi 使用
+          .circle 商品#[br]搜尋
+          | 搜尋商品，或點擊下方
+          .circle 商品#[br]品類
+          | 尋找適合您的商品。
+
+        div 更多的大樹優質商品任您選購!
+
+    .index_square.container.pb80
+      .square
+        .inner
+          img(src="./styles/images/0a-01.jpg", alt="大樹連鎖藥局")
+          div #[span] 口服OTC藥
+      .square
+        .inner
+          img(src="./styles/images/0a-02.jpg", alt="大樹連鎖藥局")
+          div #[span] 外用OTC藥
+      .square
+        .inner
+          img(src="./styles/images/0a-03.jpg", alt="大樹連鎖藥局")
+          div #[span] 醫材用品
+      .square
+        .inner
+          img(src="./styles/images/0a-04.jpg", alt="大樹連鎖藥局")
+          div #[span] 保健食品
+      .square
+        .inner
+          img(src="./styles/images/0a-05.jpg", alt="大樹連鎖藥局")
+          div #[span] 奶粉
+      .square
+        .inner
+          img(src="./styles/images/0a-06.jpg", alt="大樹連鎖藥局")
+          div #[span] 紙尿褲
+      .square
+        .inner
+          img(src="./styles/images/0a-07.jpg", alt="大樹連鎖藥局")
+          div #[span] 營養飲品&副食品
+      .square
+        .inner
+          img(src="./styles/images/0a-08.jpg", alt="大樹連鎖藥局")
+          div #[span] 嬰幼兒副食品
+      .square
+        .inner
+          img(src="./styles/images/0a-09.jpg", alt="大樹連鎖藥局")
+          div #[span] 健康照護
+      .square
+        .inner
+          img(src="./styles/images/0a-10.jpg", alt="大樹連鎖藥局")
+          div #[span] 婦嬰用品
+      .square
+        .inner
+          img(src="./styles/images/0a-11.jpg", alt="大樹連鎖藥局")
+          div #[span] 醫學美容保養品
+      .square
+        .inner
+          img(src="./styles/images/0a-12.jpg", alt="大樹連鎖藥局")
+          div #[span] 居家生活用品
+      .square
+        .inner
+          img(src="./styles/images/0a-13.jpg", alt="大樹連鎖藥局")
+          div #[span] 休閒食用品
+      .square
+      .square
+      .square
+      .square
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

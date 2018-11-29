@@ -3,28 +3,12 @@
 //   height: 100vh
 //   width: 100%
 
-$main: #09a30d
+$green: #09a30d
+$blue: #3b95f8
+$orange: #ff982a
 
 $defaultcolor: rgb(22, 24, 23) !default  
-$red: rgb(166, 42, 6)
-$red-btn: rgb(226, 64, 0)
-$purple: rgb(139, 29, 90)
-$purple-light: rgb(154, 38, 102)
-$orange: rgb(247,181,80)
-$brown-dark-f: rgb(165, 123, 75)
 
-$brown-dark: rgb(180, 120, 50)
-  
-$brown: rgb(188, 159, 119)  
-$brown-230: rgb(230, 210, 182)
-
-$brown-240: rgb(240, 234, 221)
-$brown-light: rgb(246, 242, 241) 
-
-$table-bgc: rgb(249, 245, 234)
-
-$white: rgb(254, 254, 254)  
-$blue: rgb(145,199,213)
 
 
 .bold
@@ -51,181 +35,181 @@ $blue: rgb(145,199,213)
 
 
 
-.line
-  width: 100%
-  +f(flex-start,center)
-  position: relative
-  padding-left: 96px
+// .line
+//   width: 100%
+//   +f(flex-start,center)
+//   position: relative
+//   padding-left: 96px
 
-  > span
-    +position(absolute, 0 null null 0)
-    line-height: 40px
-    width: 66px
+//   > span
+//     +position(absolute, 0 null null 0)
+//     line-height: 40px
+//     width: 66px
 
-  > span:nth-child(2)
-    +size(100%, 40px)
-    position: static
+//   > span:nth-child(2)
+//     +size(100%, 40px)
+//     position: static
 
-  input
-    +size(100%, 40px)
-    line-height: 40px
-    +padding(null 15px)
-    border: 1px solid $brown
-    border-radius: 3px
-    color: $brown-dark
-    +trans
-    &::placeholder
-      color: $brown-dark
-    &:hover
-      background-color: $brown-light
-    &:focus
-      color: $brown-dark
-      border-color: $brown-dark
-
-
-.radio_unit
-  height: 45px
-  white-space: nowrap
-
-  input
-    position: absolute
-    opacity: 0
-    pointer-events: none
-
-  label
-    cursor: pointer
-    +size(100%)
-    +fc
-    &:before
-      content: ""
-      display: block
-      +size(18px)
-      background: $white
-      border-radius: 50%
-      border: 1px solid rgb(211, 174, 130)
-      transition: background-color 0.3s ease, box-shadow 0.3s ease
-      flex-shrink: 0
-
-  input:checked + label:before
-    background-color: rgb(211, 174, 130)
-    box-shadow: inset 0 0 0 3px #f4f4f4
-
-  input:disabled + label:before
-    box-shadow: inset 0 0 0 4px #f4f4f4
-    border-color: #b4b4b4
-    background: #b4b4b4
+//   input
+//     +size(100%, 40px)
+//     line-height: 40px
+//     +padding(null 15px)
+//     border: 1px solid $brown
+//     border-radius: 3px
+//     color: $brown-dark
+//     +trans
+//     &::placeholder
+//       color: $brown-dark
+//     &:hover
+//       background-color: $brown-light
+//     &:focus
+//       color: $brown-dark
+//       border-color: $brown-dark
 
 
-.select_unit
-  +f(center, center)
-  width: 240px
-  position: relative
-  white-space: nowrap
+// .radio_unit
+//   height: 45px
+//   white-space: nowrap
 
-  &:after
-    content: ""
-    display: block
-    +position(absolute, 16px 16px null null )  //20-4
-    +triangle("down", 12px, 8px, $brown)
-    pointer-events: none
+//   input
+//     position: absolute
+//     opacity: 0
+//     pointer-events: none
 
-  select
-    +size(100%, 40px)
-    line-height: 40px
-    +padding(null 15px)
-    border: 1px solid $brown
-    border-radius: 3px
-    color: $brown-dark
-    +trans
+//   label
+//     cursor: pointer
+//     +size(100%)
+//     +fc
+//     &:before
+//       content: ""
+//       display: block
+//       +size(18px)
+//       background: $white
+//       border-radius: 50%
+//       border: 1px solid rgb(211, 174, 130)
+//       transition: background-color 0.3s ease, box-shadow 0.3s ease
+//       flex-shrink: 0
 
-    &::-ms-expand
-      display: none
-    &:hover
-      background-color: $brown-light
-    &:focus
-      border-color: $brown-dark
-    &::placeholder
-      color: $brown-dark
+//   input:checked + label:before
+//     background-color: rgb(211, 174, 130)
+//     box-shadow: inset 0 0 0 3px #f4f4f4
+
+//   input:disabled + label:before
+//     box-shadow: inset 0 0 0 4px #f4f4f4
+//     border-color: #b4b4b4
+//     background: #b4b4b4
+
+
+// .select_unit
+//   +f(center, center)
+//   width: 240px
+//   position: relative
+//   white-space: nowrap
+
+//   &:after
+//     content: ""
+//     display: block
+//     +position(absolute, 16px 16px null null )  //20-4
+//     +triangle("down", 12px, 8px, $brown)
+//     pointer-events: none
+
+//   select
+//     +size(100%, 40px)
+//     line-height: 40px
+//     +padding(null 15px)
+//     border: 1px solid $brown
+//     border-radius: 3px
+//     color: $brown-dark
+//     +trans
+
+//     &::-ms-expand
+//       display: none
+//     &:hover
+//       background-color: $brown-light
+//     &:focus
+//       border-color: $brown-dark
+//     &::placeholder
+//       color: $brown-dark
 
   
-.search_unit
-  +f
-  +size(260px, 40px)
-  position: relative
+// .search_unit
+//   +f
+//   +size(260px, 40px)
+//   position: relative
   
-  input[type="search"] 
-    +size(100%)
-    border: 1px solid $brown
-    +padding(null 15px)
+//   input[type="search"] 
+//     +size(100%)
+//     border: 1px solid $brown
+//     +padding(null 15px)
     
-    +trans
-    &::placeholder 
-      color: $brown-dark
-    &:focus 
-      border-color: $brown-dark
-    &:hover 
-      background-color: $brown-light
+//     +trans
+//     &::placeholder 
+//       color: $brown-dark
+//     &:focus 
+//       border-color: $brown-dark
+//     &:hover 
+//       background-color: $brown-light
 
-  input[type="submit"] 
-    +size(38px,100%)
-    opacity: 0
-    +position(absolute, null 0 null null )
-  &:before
-    +position(absolute, 12px 8px null null )
-    color: $brown
-    font-size: 1rem
+//   input[type="submit"] 
+//     +size(38px,100%)
+//     opacity: 0
+//     +position(absolute, null 0 null null )
+//   &:before
+//     +position(absolute, 12px 8px null null )
+//     color: $brown
+//     font-size: 1rem
 
 
-.check_unit
-  cursor: pointer
-  +f(null, center, row)
-  position: relative
+// .check_unit
+//   cursor: pointer
+//   +f(null, center, row)
+//   position: relative
 
-  input
-    display: none
+//   input
+//     display: none
 
-  .box 
-    display: inline-block
-    +size(18px)
-    background: $white
-    border: 1px solid $brown
-    margin-right: 15px
-    border-radius: 3px
-    flex-shrink: 0
-    box-shadow: none
+//   .box 
+//     display: inline-block
+//     +size(18px)
+//     background: $white
+//     border: 1px solid $brown
+//     margin-right: 15px
+//     border-radius: 3px
+//     flex-shrink: 0
+//     box-shadow: none
     
-    &:after 
-      content: ""
-      position: absolute
-      +size(0, 3px)
-      background: $brown-dark
-      transform: translate(6px, 11px) rotate(-50deg)
-      transform-origin: left
-      transition: all 50ms
-      transition-delay: 0ms
-      border-radius: 20% 60% 60% 20%
+//     &:after 
+//       content: ""
+//       position: absolute
+//       +size(0, 3px)
+//       background: $brown-dark
+//       transform: translate(6px, 11px) rotate(-50deg)
+//       transform-origin: left
+//       transition: all 50ms
+//       transition-delay: 0ms
+//       border-radius: 20% 60% 60% 20%
     
-    &:before 
-      content: ""
-      position: absolute
-      +size(0, 3px)
-      background: $brown-dark
+//     &:before 
+//       content: ""
+//       position: absolute
+//       +size(0, 3px)
+//       background: $brown-dark
         
-      transform: translate(4px, 4px) rotate(75deg)
-      transform-origin: left
-      transition: all 50ms
-      transition-delay: 50ms
-      border-radius: 60% 
+//       transform: translate(4px, 4px) rotate(75deg)
+//       transform-origin: left
+//       transition: all 50ms
+//       transition-delay: 50ms
+//       border-radius: 60% 
       
   
-  input:checked 
-    & + .box 
-      &:before 
-        width: 8px
-        transition-delay: 0ms
-      &:after 
-        width: 18px
-        transition-delay: 50ms
+//   input:checked 
+//     & + .box 
+//       &:before 
+//         width: 8px
+//         transition-delay: 0ms
+//       &:after 
+//         width: 18px
+//         transition-delay: 50ms
 
 
 
@@ -249,72 +233,72 @@ a
   transition: color .30s ease-in-out
 
   
-.star
-  position: relative
-  &::before
-    content: "*"
-    display: inline-block
-    color: $red
-    +position(absolute, -2px -10px null null )
+// .star
+//   position: relative
+//   &::before
+//     content: "*"
+//     display: inline-block
+//     color: $red
+//     +position(absolute, -2px -10px null null )
 
-.star.mid::before
-  right: -2px
+// .star.mid::before
+//   right: -2px
 
-.justify
-  text-align: justify
-  &:after
-    content: ""
-    display: inline-block
-    width: 100%
-  & + span
-    line-height: 38px
+// .justify
+//   text-align: justify
+//   &:after
+//     content: ""
+//     display: inline-block
+//     width: 100%
+//   & + span
+//     line-height: 38px
 
-.underline
-  text-decoration: underline
+// .underline
+//   text-decoration: underline
 
-// 電子報
-.container.fc
-  +fc
+// // 電子報
+// .container.fc
+//   +fc
   
-//干擾全域?
-.bgc
-  background-size: cover
-  background-position: right bottom
+// //干擾全域?
+// .bgc
+//   background-size: cover
+//   background-position: right bottom
 
-.noBorder
-  border-top: 0px solid #000 !important
-
-
-textarea
-  +size(100%, 120px)
-  +padding(10px 15px)
-  border: 1px solid $brown
-  border-radius: 3px
-  color: $brown-dark
-  +trans
-  &::placeholder
-    color: $brown-dark
-  &:hover
-    background-color: $brown-light
-  &:focus
-    color: $brown-dark
-    border-color: $brown-dark
+// .noBorder
+//   border-top: 0px solid #000 !important
 
 
-#profile
-  input[type=date]
-    border: none !important
-    &::-webkit-inner-spin-button 
-      display: none
+// textarea
+//   +size(100%, 120px)
+//   +padding(10px 15px)
+//   border: 1px solid $brown
+//   border-radius: 3px
+//   color: $brown-dark
+//   +trans
+//   &::placeholder
+//     color: $brown-dark
+//   &:hover
+//     background-color: $brown-light
+//   &:focus
+//     color: $brown-dark
+//     border-color: $brown-dark
+
+
+// #profile
+//   input[type=date]
+//     border: none !important
+//     &::-webkit-inner-spin-button 
+//       display: none
     
-    // &::-webkit-clear-button 
-    // &::-webkit-calendar-picker-indicator 
+//     // &::-webkit-clear-button 
+//     // &::-webkit-calendar-picker-indicator 
 
 
-// fix 
-.brown.f24
-  font-weight: normal
+// // fix 
+// .brown.f24
+//   font-weight: normal
 
 
-[class^="icon-"]:before, [class*=" icon-"]:before
-  margin: 0
+// [class^="icon-"]:before, [class*=" icon-"]:before
+//   margin: 0

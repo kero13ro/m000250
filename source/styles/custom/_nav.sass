@@ -1,56 +1,66 @@
 
-#index  //tmp
-  height: 600px
 
 
 
-#nav > .container
-  .outside
-    +fc
-    
-    a:not([class*="icon"])
-      +padding(null 12px )
-      color: #777
+#nav
+  +position(absolute, 0 null null null )
+  width: 100% 
+  background-color: #fff
+  z-index: 10
+  
+  > .container
+    +f(flex-end, cneter)
 
-    a:first-child  
-      line-height: 18px
-      border-right: 1px solid #ccc
+.nav__content [class*="icon"], .nav__external [class*="icon"]
+  color: $green
+  font-size: 1.5rem
+  margin-right: 12px
 
+.nav__external
   +fc
-  height: 50px
-  >a
-    +fc
-    +padding(null 24px )
+  margin-right: auto
+  
+  a:not([class*="icon"])
+    +padding(null 12px )
     color: #777
+
+  a:first-child  
+    line-height: 18px
+    border-right: 1px solid #ccc
+
+.nav__content
+  +fc
+
+  a
     position: relative
+    height: 50px
+    +padding(null 24px )
+    +fc
+    color: #777
 
     &:not(.cart):before
       content: ""
       display: block
-      +position(absolute, 6px 0 null null )
+      +position(absolute, 16px 0 null null )
       height: 20px
       border-right: 1px solid #ccc
 
-  .scan
-    margin-left: auto
+  .icon-user2
+    +size(24px)
+    +fc
+    background-color: $green
+    border-radius: 50%
+    &:before
+      color: white
 
-  [class*="icon"]
-    color: $main
-
-
-  [class*="icon"]
-    font-size: 1.4rem
-    margin-right: 12px
-
-
-#nav .landing
-  +position(fixed, 50px 0 null 0)
-  background-color: #f0f0f0
+.nav__shift
+  +position(absolute, 50px 0 null 0)
   height: 145px
   +fc
+  background-color: #f0f0f0
   box-shadow: 0 2px 6px rgba(black,0.1)
   a
-    color: $main
+    color: $green
   
   .container
     +f(flex-start, center)
@@ -78,3 +88,58 @@
     font-size: 22px
     & + div 
       font-size: 16px
+
+
+.navPad
+  height: 195px
+
+
+#nav.fixed-js
+  background-color: rgb(240, 240, 240)
+  box-shadow: 0 2px 6px rgba(black,0.1)
+  +position(fixed, 0 0 null null )
+  
+  .nav__external
+    display: none
+
+  .nav__content
+    a:not(.cart) span:last-child
+      display: none
+
+    a:not(.service):before
+      display: none
+
+    a:nth-child(-n+4)
+      +padding(null 12px null 0)
+
+  .nav__shift
+    width: 100%
+    background-color: transparent
+    top: 0
+    position: relative
+    height: 70px
+    box-shadow: none
+    .container
+      padding-left: 0
+      +padding(null 40px null 0)
+    .logo
+      width: 240px
+
+    .love,
+    .strict
+      +fc
+      +size(200px, 40px)
+      box-shadow: 0 3px 3px rgba(black,0.1)
+
+    .love
+      margin-right: 20px
+
+    .main
+      font-size: 18px
+      line-height: 40px
+      & + div 
+        display: none
+
+    [class*="icon"]
+      font-size: 1.3rem
+      margin-right: 12px
