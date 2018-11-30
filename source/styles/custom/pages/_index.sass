@@ -3,37 +3,125 @@
   background-color: #f0f0f0
 
 .index_landing
-  height: 760px
+  height: 40vw
+  min-height: 400px
+  background: center / cover
   +f(center, flex-end)
+  position: relative
 
   a
-    +size(380px, 185px)
-    +margin(null 270px 80px )
+    // +size(380px, 185px)
+    +padding(38px 54px)
+    +margin(null 15.6vw 4.2vw )
     background-color: #fff
     color: $green
-    border-radius: 90px
+    border-radius: 999px
     +fc
+    flex-shrink: 0
     font-weight: bold
     box-shadow: 0 5px 5px rgba(black,0.1)
 
   [class*="icon"]
     flex-shrink: 0
     font-size: 4.5rem
-    margin-right: 20px
     &:before
       width: auto
+      margin-right: 0.2em
 
   .main
     font-size: 40px
     & + div 
       font-size: 20px
 
+  [class^="man"]
+    position: absolute
+    bottom: 0
+
+  .man-m
+    left: 45%
+    transform: translateX(-50%)
+    width: 17.7vw
+  .man-f
+    width: 14.2vw
+    right: 45%
+    transform: translateX(50%)
+
+  [class^="plus"]
+    &:before,&:after
+      content: ""
+      display: block
+    &:after
+      transform: rotate(90deg)
+
+  .plus-1
+    &:before, &:after
+      +size(30px, 10px)
+      +position(absolute, null 49% 120px null )
+      background-color: rgb(56, 175, 59)
+    
+  .plus-2
+    &:before, &:after
+      +size(30px, 10px)
+      +position(absolute, null 38% 130px null )
+      background-color: #51c34d
+
+  .plus-3
+    &:before, &:after
+      +size(30px, 10px)
+      +position(absolute, null 65% 60px null )
+      background-color: #62b664
+
+  .plus-4
+    &:before, &:after
+      +size(30px, 10px)
+      +position(absolute, null 60% 190px null )
+      background-color: #62b664
+      background-color: 
+
+
+
+  +max(1440)
+    a
+      +padding(25px 40px)
+
+  +max(1366)
+    a
+      +padding(24px 30px)
+
+    [class*="icon"]
+      font-size: 3rem
+
+    .main
+      font-size: 30px
+      & + div 
+        font-size: 16px
+
+  +max(991)
+    [class^="man"]
+      display: none
+    a
+      +margin(null 3vw 40px)
+
+  +max(767)
+    +f(flex-end, center, column)
+    a
+      +padding(15px 25px)
+
+    [class*="icon"]
+      font-size: 2.5rem
+
+    .main
+      font-size: 18px
+      & + div 
+        font-size: 15px
+
+
+
 
 .index_search
 
   .searchbar
     +fc
-    +padding(65px null 40px)
     position: relative
 
   .dot
@@ -48,16 +136,18 @@
     height: 70px
 
   input[type="search"] 
-    width: 560px
+    width: 30vw
     border: 1px solid $green
     border-radius: 10px 0 0 10px
     font-weight: bold
+    +hoverBgc(tint($green, 95%))
+    
     &, &::placeholder
       color: $blue
     
     &:focus 
-      border-color: shade($green, 30%)
-    // &:hover 
+      border-width: 2px
+
 
   .search,
   .advanced
@@ -82,7 +172,7 @@
     border-radius: 10px
 
   .tips
-    padding-bottom: 50px
+    // padding-bottom: 50px
     font-size: 20px
     color: $green
     +fcl
@@ -105,6 +195,84 @@
       background-color: $orange
 
   
+
+  +max(1365)    
+    .dot ~ *
+      +padding(15px 20px)
+      font-size: 18px
+      height: 60px
+
+    input[type="search"] 
+      +padding(null 10px)
+      font-weight: normal
+    
+    .search,
+    .advanced
+      width: auto
+      &:before
+        font-size: 18px
+
+    .tips
+      font-size: 18px
+
+    .circle
+      +margin(null 6px)
+
+  +max(767)
+
+    +padding(null 20px)
+    .dot
+      display: none
+
+    .searchbar
+      flex-wrap: wrap
+      justify-content: flex-end
+      
+    .dot ~ *
+      +padding(0px 10px)
+      font-size: 16px
+      height: 45px
+      
+
+    input[type="search"] 
+      font-size: 15px
+      +padding(null 5px)
+      font-weight: normal
+      width: 60%
+    
+    .search, .advanced
+      width: 40%
+      margin-right: 0
+
+    .advanced
+      margin-top: 10px
+
+    .tips
+      font-size: 15px
+
+    .multi
+      flex-wrap: wrap
+      font-weight: normal
+
+    .circle
+      +size(auto)
+      +margin(null 3px)
+      
+      &:first-child
+        color: $blue
+        background-color: transparent
+      &:last-child
+        color: $orange
+        background-color: transparent
+      &:before
+        content: attr(data-inline)
+      span 
+        display: none
+
+
+
+      
+
 .index_square
   +f(flex-start, stretch, row, wrap)
 

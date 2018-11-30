@@ -6,6 +6,9 @@ block content
   
   #index
     .index_landing(style="background-image: url('./styles/images/0a-bgc.jpg')")
+      img(src="./styles/images/0a-15.png", alt="大樹連鎖藥局").man-f
+      img(src="./styles/images/0a-14.png", alt="大樹連鎖藥局").man-m
+
 
       a(href="cart.html").love
         span.icon-love
@@ -19,20 +22,27 @@ block content
           .main 大樹嚴選
           div 新品推薦、熱門好物
 
+      .plus-1
+      .plus-2
+      .plus-3
+      .plus-4
+
     form.index_search
 
-      .searchbar
+      .searchbar.pt64.pb40
         .dot
         input(type="search", placeholder="商品搜尋(請輸入關鍵字)")
         button(type="submit").search.icon-scan
           span 搜尋
         a(href="advanced.html").advanced.icon-scan2 進階搜尋
 
-      .tips
+      .tips.pb48
         .multi 使用
-          .circle 商品#[br]搜尋
+          .circle(data-inline="商品搜尋")
+            span 商品#[br]搜尋
           | 搜尋商品，或點擊下方
-          .circle 商品#[br]品類
+          .circle(data-inline="商品品類")
+            span 商品#[br]品類
           | 尋找適合您的商品。
 
         div 更多的大樹優質商品任您選購!
