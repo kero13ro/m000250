@@ -10,24 +10,50 @@ $orange: #ff982a
 $defaultcolor: rgb(22, 24, 23) !default  
 
 
+.g
+  color: $green
 
-.bold
-  font-weight: bold  
+.b
+  font-weight: bold
 
-.underline
-  text-decoration: underline
 
-.brown
-  color: #B47832
+.btn
+  background-color: $green
+  height: 50px
+  color: white
+  +fc
+  display: inline-flex
+  border-radius: 999px
+  font-size: 18px
 
-.red
-  color: #CC0000
+  +max(500)
+    font-size: 16px
+    height: 45px
 
-.gray
-  color: #7C7C7C
+.sq
+  border-radius: 10px
+  +max(500)
+    border-radius: 6px
 
-.vege
-  color: #59a467
+
+
+// .bold
+//   font-weight: bold  
+
+// .underline
+//   text-decoration: underline
+
+// .brown
+//   color: #B47832
+
+// .red
+//   color: #CC0000
+
+// .gray
+//   color: #7C7C7C
+
+// .vege
+//   color: #59a467
 
 .italicNum
   font-family: 'Open Sans', sans-serif
@@ -68,37 +94,37 @@ $defaultcolor: rgb(22, 24, 23) !default
 //       border-color: $brown-dark
 
 
-// .radio_unit
-//   height: 45px
-//   white-space: nowrap
+.radio_unit
+  // height: 45px
+  white-space: nowrap
 
-//   input
-//     position: absolute
-//     opacity: 0
-//     pointer-events: none
+  input
+    position: absolute
+    opacity: 0
+    pointer-events: none
 
-//   label
-//     cursor: pointer
-//     +size(100%)
-//     +fc
-//     &:before
-//       content: ""
-//       display: block
-//       +size(18px)
-//       background: $white
-//       border-radius: 50%
-//       border: 1px solid rgb(211, 174, 130)
-//       transition: background-color 0.3s ease, box-shadow 0.3s ease
-//       flex-shrink: 0
+  label
+    cursor: pointer
+    +size(100%)
+    +fc
+    &:before
+      content: ""
+      display: block
+      // +size(22px)
+      background: #fff
+      border-radius: 50%
+      border: 1px solid $green
+      transition: background-color 0.3s ease, box-shadow 0.3s ease
+      flex-shrink: 0
 
-//   input:checked + label:before
-//     background-color: rgb(211, 174, 130)
-//     box-shadow: inset 0 0 0 3px #f4f4f4
+  input:checked + label:before
+    background-color: $green
+    // box-shadow: inset 0 0 0 3px #f4f4f4
 
-//   input:disabled + label:before
-//     box-shadow: inset 0 0 0 4px #f4f4f4
-//     border-color: #b4b4b4
-//     background: #b4b4b4
+  input:disabled + label:before
+    box-shadow: inset 0 0 0 4px #f4f4f4
+    border-color: #b4b4b4
+    background: #b4b4b4
 
 
 // .select_unit

@@ -1,0 +1,29 @@
+doctype html
+html(lang='zh-TW')
+  head
+    include include/head.pug
+
+  body
+    main.wp
+    
+      #login(style="background-image: url('./styles/images/login-bgc.jpg')")
+        .modal.sm
+          .modal__head.pt48.pb40
+            img(src="./styles/images/p-title.png", alt="大樹連鎖藥局").pt4
+
+          .modal__content.lh18
+            .f20.mb4.g.b 首次登入，啟用會員帳號
+            .f16.mb20 親愛的客戶您好，歡迎光臨大樹會員購系統 #[br]系統將發送驗證碼至您的帳號，請選擇接收方式
+
+            .block
+              .radio_unit
+                input(type="radio", name="verify_type" id="cellphone")
+                label(for="cellphone") 手機簡訊
+              .radio_unit
+                input(type="radio", name="verify_type" id="email")
+                label(for="email") 電子郵件
+                
+            .block.b
+              a(href="verified.html").btn.sq 發送驗證碼
+
+    include include/defaultJs.pug  

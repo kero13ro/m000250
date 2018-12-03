@@ -45,3 +45,22 @@ $("document").ready(function () {
 // });
 
 
+
+var alert_tl = new TimelineMax();
+
+$(".js-password").click(function () {
+  alert_tl
+    .set(".alert", { "display": "none" })
+    .set("#alert-password", { "display": "flex" })
+    .from("#alert-password", 0.3, {autoAlpha: 0 });
+});
+
+
+
+$(".js-account").click(function () {
+
+  alert_tl
+    .set(".alert", { "display": "none" })
+    .set("#alert-account", { "display": "flex" })
+    .from("#alert-account", 0.3, {autoAlpha: 0 });
+});

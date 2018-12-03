@@ -6,6 +6,7 @@
 .icon-page-4:before { content: '\e804'; } /* '' */
 .icon-scan:before { content: '\e805'; } /* '' */
 .icon-mail:before { content: '\e806'; } /* '' */
+.icon-cup:before { content: '\e807'; } /* '' */
 .icon-arr-left:before { content: '\e80a'; } /* '' */
 .icon-page-1:before { content: '\e80d'; } /* '' */
 .icon-catogory:before { content: '\e810'; } /* '' */
@@ -20,6 +21,8 @@
 .icon-page-3:before { content: '\e821'; } /* '' */
 .icon-page-2:before { content: '\e822'; } /* '' */
 .icon-check:before { content: '\e823'; } /* '' */
+.icon-quest:before { content: '\e824'; } /* '' */
+.icon-alert:before { content: '\e825'; } /* '' */
 .icon-down:before { content: '\f004'; } /* '' */
 .icon-up:before { content: '\f005'; } /* '' */
 .icon-right:before { content: '\f006'; } /* '' */

@@ -204,9 +204,31 @@
 $direction: (t: top, r: right, b: bottom, l: left)
 $space: (m: margin, p: padding)
 
-@each $key_dir,$val_dir in $direction
+@each $key_dir,$val_dir in $direction  //4
   @each $key_spc,$val_spc in $space
-    @for $i from 1 through 12
+    @for $i from 1 through 1
+      .#{$key_spc}#{$key_dir}#{$i*4}
+
+        #{$val_spc}-#{$val_dir}: #{$i*4}px
+        +m(768, 481)
+          #{$val_spc}-#{$val_dir}: #{$i*4*0.8}px
+        +max(480)
+          #{$val_spc}-#{$val_dir}: #{$i*4*0.6}px
+
+@each $key_dir,$val_dir in $direction  //8 ~ 28
+  @each $key_spc,$val_spc in $space
+    @for $i from 2 through 7
+      .#{$key_spc}#{$key_dir}#{$i*4}
+
+        #{$val_spc}-#{$val_dir}: #{$i*4}px
+        +m(768, 481)
+          #{$val_spc}-#{$val_dir}: #{$i*4*0.8}px
+        +max(480)
+          #{$val_spc}-#{$val_dir}: #{$i*4*0.6}px
+
+@each $key_dir,$val_dir in $direction  //32 ~ 96
+  @each $key_spc,$val_spc in $space
+    @for $i from 4 through 12
       .#{$key_spc}#{$key_dir}#{$i*8}
 
         #{$val_spc}-#{$val_dir}: #{$i*8}px
@@ -282,12 +304,12 @@ $space: (m: margin, p: padding)
       clear: both
 
 .btn
-  text-align: center
   white-space: nowrap
   vertical-align: middle
-  padding: 0.375rem 0.75rem
   user-select: none
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out
+  // text-align: center
+  // padding: 0.375rem 0.75rem
   // display: inline-flex
   // display: inline-block
   // line-height: 1.5

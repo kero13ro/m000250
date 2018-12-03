@@ -72,23 +72,22 @@
     height: 100%
     +fc(flex-end)
   
-  .love,
-  .strict
-    color: $green
-    flex-shrink: 0
-    +size(300px, 90px)
-    background-color: #fff
-    border-radius: 999px
-    +fc
-    font-weight: bold
-    box-shadow: 0 5px 5px rgba(black,0.1)
+[class^="shift__"]
+  color: $green
+  flex-shrink: 0
+  +size(300px, 90px)
+  background-color: #fff
+  border-radius: 999px
+  +fc
+  font-weight: bold
+  box-shadow: 0 5px 5px rgba(black,0.1)
 
-    [class*="icon"]
-      font-size: 2.8rem
-      margin-right: 16px
-
-  .love
+  &.shift__love
     margin-right: 50px
+
+  [class*="icon"]
+    font-size: 2.8rem
+    margin-right: 16px
 
   .main
     font-size: 22px
@@ -110,8 +109,8 @@
 
 #nav.fixed-js
   box-shadow: 0 2px 6px rgba(black,0.1)
-  .nav__cover
 
+  .nav__cover
     +position(fixed, 0 0 null null )
     background-color: rgb(240, 240, 240)
     width: 100%
@@ -140,13 +139,12 @@
       +padding(null 40px null 0)
     
 
-    .love,
-    .strict
+    [class^="shift__"]
       +fc
       +size(200px, 40px)
       box-shadow: 0 3px 3px rgba(black,0.1)
 
-    .love
+    .shift__love
       margin-right: 20px
 
     .main
@@ -166,6 +164,33 @@
     width: 240px
     +fc
 
+
++max(1200)
+  .nav__external
+    display: none
+
+  #nav
+    height: 170px
+
+  .nav__gray,
+  .shift
+    height: 120px
+    
+  [class^="shift__"]
+    +size(260px, 70px)
+
+    &.shift__love
+      margin-right: 30px
+
+    [class*="icon"]
+      font-size: 2.4rem
+
+    .main
+      font-size: 20px
+      & + div 
+        font-size: 15px
+  .logo
+    max-width: 30vw
 
 // +max(1365)
 //   .container

@@ -1,0 +1,26 @@
+doctype html
+html(lang='zh-TW')
+  head
+    include include/head.pug
+
+  body
+    main.wp
+    
+      #login(style="background-image: url('./styles/images/login-bgc.jpg')")
+        .modal.sm.quest
+          .modal__head.pt48.pb40
+            img(src="./styles/images/p-title.png", alt="大樹連鎖藥局").pt4
+
+          .modal__content.lh18
+
+            .check.mb32.mt20
+              .line-l
+              .line-r
+
+            .f20.b.mb24 密碼已成功重置，請重新登入
+
+            .block.b
+              a(href="login.html").btn.sq 重新登入
+
+
+    include include/defaultJs.pug  
