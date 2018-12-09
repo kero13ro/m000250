@@ -1,155 +1,217 @@
++max(768)
 
-
-#nav .container
-  +m(1440, 480)
-    width: 100%
-
-
-#nav
-  background-color: rgb(240, 240, 240)
-  z-index: 10
-  width: 100% 
-  position: relative
-  height: 190px
-
-.nav__toggle
-  display: none
-
-
-.nav__cover 
-  background-color: #fff
-  +fc
-
-  [class*="icon"]
-    color: $green
-    font-size: 1.5rem
-    margin-right: 12px
-
-  > .container
-    +size(100%, 50px)
-    +fc(flex-end)
-
-  .shift ~ a
-    position: relative
+  #navPad
     height: 50px
-    +padding(null 24px )
-    +fc
-    color: #777
 
-    &:not(.cart):before
-      content: ""
-      display: block
-      +position(absolute, 16px 0 null null )
-      height: 20px
+  .nav
+    +position(fixed, 0 null null null )
+    width: 100% 
+    +fc(flex-start)
+    +padding(null 12px)
+    z-index: 10
+    background-color: rgb(240, 240, 240)
+
+    .one, .two, .three
+      +size(20px, 2px)
+      background: $green
+      margin: 4px auto
+      backface-visibility: hidden
+      transition: 0.3s transform
+      z-index: 12
+      position: relative
+      
+    .logo
+      width: 30vw
+      min-width: 130px
+      margin-right: auto
+
+    [class*="icon"]
+      color: $green
+      font-size: 1.4rem
+
+    .sm
+      position: relative
+      margin-right: 15px
+      height: 50px
+      +fc
+
+    .sm:hover
+      .inner
+        .main
+          display: block
+          z-index: 12
+
+    .inner
+      > div
+        display: none
+
+      .main
+        +position(absolute, 100% null null 50%)
+        transform: translateX(-50%)
+        width: 40px
+        +padding(10px 6px)
+        white-space: normal
+        line-height: 1.2
+        text-align: center
+        background-color: $green
+        border: 1px solid #ddd
+        color: #fff
+        
+    .cart    
+      .text
+        display: none
+
+      .cart__num
+        +size(16px)
+        background-color: $green
+        +fc
+        color: #fff
+        border-radius: 50%
+        font-size: 12px
+        margin-bottom: 15px
+        margin-left: 3px
+
+
+  .nav__cover
+    +fcl
+    background-color: rgba($green, 0.9)
+    +size(100%, 100vh )
+    +position(fixed, 50px 0 null null)
+    z-index: 11
+
+    a,
+    [class*="icon"]
+      color: #fff
+
+    > a
+      +padding(12px 20px)
+      +fc
+      border-bottom: 1px solid rgba(#fff, 0.5)
+
+      [class*="icon"]
+        margin-right: 14px
+        
+    .nav__external
+      +fc
+      flex-wrap: wrap
+      order: 1
+      margin-top: 30px
+      a:not([class*="icon"])
+        width: 100%
+        text-align: center
+        height: 30px
+      [class*="icon"]
+        +margin(null 10px)
+
++min(769)
+  #navPad
+    // position: relative
+    // box-shadow: 0 2px 6px rgba(black,0.1)
+    // z-index: 1
+
+  .nav__cover
+    +f(flex-start, center)
+
+    [class*="icon"]
+      color: $green
+      font-size: 1.4rem
+      margin-right: 12px
+
+    > a
+      position: relative
+      height: 50px
+      +padding(null 24px )
+      +fc
+      color: #777
+
+      &:not(.cart):before
+        content: ""
+        display: block
+        +position(absolute, 16px 0 null null )
+        height: 20px
+        border-right: 1px solid #ccc
+
+  .nav__external
+    +fc
+    margin-right: auto
+  
+    a:first-child,  
+    a:nth-child(2)  
+      +padding(null 12px )
+      color: #777
+
+    a:first-child
+      line-height: 18px
       border-right: 1px solid #ccc
 
-  // .icon-user2
-  //   +size(24px)
-  //   +fc
-  //   background-color: $green
-  //   border-radius: 50%
-  //   &:before
-  //     color: white
 
-.nav__external
-  +fc
-  margin-right: auto
-  
-  a:not([class*="icon"])
-    +padding(null 12px )
-    color: #777
+  .gray,
+  .fixedBar
+    background-color: #f0f0f0
+    +padding(20px)
+    +fc
+    box-shadow: 0 2px 6px rgba(black,0.1)
+    z-index: 1
+    .logo
+      margin-right: auto
 
-  a:first-child  
-    line-height: 18px
-    border-right: 1px solid #ccc
-
-
-.shift
-  +position(absolute, null 0 0 null )
-  +size(100%, 140px)
-  
-  .container
-    height: 100%
-    +fc(flex-end)
-  
-[class^="shift__"]
-  color: $green
-  flex-shrink: 0
-  +size(300px, 90px)
-  background-color: #fff
-  border-radius: 999px
-  +fc
-  font-weight: bold
-  box-shadow: 0 5px 5px rgba(black,0.1)
-
-  &.shift__love
-    margin-right: 50px
-
-  [class*="icon"]
-    font-size: 2.8rem
-    margin-right: 16px
-
-  .main
-    font-size: 22px
-    & + div 
-      font-size: 16px
-
-.nav__gray
-  height: 140px
-  background-color: #f0f0f0
-  box-shadow: 0 2px 6px rgba(black,0.1)
-  
-  .container
-    +f(flex-start, center)
-    height: 100%
-
-  .logo
-    margin-right: auto
-
-
-#nav.fixed-js
-  box-shadow: 0 2px 6px rgba(black,0.1)
-
-  .nav__cover
-    +position(fixed, 0 0 null null )
-    background-color: rgb(240, 240, 240)
-    width: 100%
-    height: 70px
-  
-  .nav__external
-    display: none
-
-  .nav__cover
-
-    a:nth-last-child(-n+5):not(.cart)
-      span:last-child
-        display: none
-      +padding(null 12px null 0)
-
-    a:not(.service):before
-      display: none
-
-
-  .shift
-    +size(100%, 70px)
-    +position(relative, 0 null null null )
-
-    .container
-      padding-left: 0
-      +padding(null 40px null 0)
-    
-
-    [class^="shift__"]
+    .favorite,
+    .strict 
+      +size(300px, 90px)
+      color: $green
+      background-color: #fff
+      border-radius: 999px
       +fc
-      +size(200px, 40px)
-      box-shadow: 0 3px 3px rgba(black,0.1)
+      font-weight: bold
+      box-shadow: 0 5px 5px rgba(black,0.1)
 
-    .shift__love
+      [class*="icon"]
+        font-size: 2.8rem
+        margin-right: 16px
+        color: $green
+
+    .favorite
       margin-right: 20px
 
     .main
+      font-size: 22px
+      & + div 
+        font-size: 16px
+
+
+.fixedBar
+  +position(fixed, -70px 0 null null )
+  +size(100%, 70px)
+
+  .strict ~ a
+    [class^="icon"] + span
+      display: none
+
+    position: relative
+    height: 50px
+    +fc
+    color: #777
+    +padding(null 12px null)
+
+    [class*="icon"]
+      color: $green
+      font-size: 1.4rem
+      margin-right: 12px
+
+  .cart:before
+    content: ""
+    display: block
+    +position(absolute, 16px null null 0 )
+    height: 20px
+    border-left: 1px solid #ccc
+
+  .strict,
+  .favorite
+    +size(200px, 40px)
+    box-shadow: 0 3px 3px rgba(black,0.1)
+
+    .main
       font-size: 18px
-      line-height: 40px
       & + div 
         display: none
 
@@ -157,150 +219,144 @@
       font-size: 1.3rem
       margin-right: 12px
 
-  .nav__gray .logo
-    position: fixed
-    top: 0
-    height: 70px
-    width: 240px
-    +fc
-
-
-+max(1200)
-  .nav__external
-    display: none
-
-  #nav
-    height: 170px
-
-  .nav__gray,
-  .shift
-    height: 120px
-    
-  [class^="shift__"]
-    +size(260px, 70px)
-
-    &.shift__love
-      margin-right: 30px
-
-    [class*="icon"]
-      font-size: 2.4rem
-
-    .main
-      font-size: 20px
-      & + div 
-        font-size: 15px
   .logo
-    max-width: 30vw
+    width: 240px
 
-// +max(1365)
-//   .container
-//     width: 100%
+  opacity: 0
+.fixedBar.show
+  opacity: 1
+  top: 0
+  transition: 0.3s
+
+// +max(1200)
 //   .nav__external
 //     display: none
 
-//   .nav__shift
-//     // +position(absolute, 50px 0 null 0)
-//     height: 105px
-//     .love,
-//     .strict
-//       +size(220px, 70px)
-//       // box-shadow: 0 5px 5px rgba(black,0.1)
+//   #nav
+//     height: 170px
+
+//   .nav__gray,
+//   .shift
+//     height: 120px
+    
+//   [class^="shift__"]
+//     +size(260px, 70px)
+
+//     &.shift__love
+//       margin-right: 30px
 
 //     [class*="icon"]
-//       font-size: 1.6rem
-//       margin-right: 8px
-
-//     .love
-//       margin-right: 20px
+//       font-size: 2.4rem
 
 //     .main
-//       font-size: 18px
+//       font-size: 20px
 //       & + div 
-//         font-size: 14px
+//         font-size: 15px
+
+
+// // +max(1365)
+// //   .container
+// //     width: 100%
+// //   .nav__external
+// //     display: none
+
+// //   .nav__shift
+// //     // +position(absolute, 50px 0 null 0)
+// //     height: 105px
+// //     .love,
+// //     .strict
+// //       +size(220px, 70px)
+// //       // box-shadow: 0 5px 5px rgba(black,0.1)
+
+// //     [class*="icon"]
+// //       font-size: 1.6rem
+// //       margin-right: 8px
+
+// //     .love
+// //       margin-right: 20px
+
+// //     .main
+// //       font-size: 18px
+// //       & + div 
+// //         font-size: 14px
 
 
 
-// +max(767)
-//   #nav
-//     height: 50px
+// // +max(767)
+// //   #nav
+// //     height: 50px
 
-//     .cover
-//       position: fixed
-//       top: 0px
-//       width: 100%
-//       height: 100%
-//       background-color: #eee
+// //     .cover
+// //       position: fixed
+// //       top: 0px
+// //       width: 100%
+// //       height: 100%
+// //       background-color: #eee
       
-//       flex-direction: column-reverse
-//       justify-content: center
+// //       flex-direction: column-reverse
+// //       justify-content: center
     
 
-//   .nav__content
-//     flex-direction: column
+// //   .nav__content
+// //     flex-direction: column
 
-//     a
-//       position: relative
-//       height: 50px
-//       +padding(null 24px )
-//       +fc
-//       color: #777
+// //     a
+// //       position: relative
+// //       height: 50px
+// //       +padding(null 24px )
+// //       +fc
+// //       color: #777
 
-//       &:not(.cart):before
-//         content: ""
-//         display: block
-//         +position(absolute, 16px 0 null null )
-//         height: 20px
-//         border-right: 1px solid #ccc
+// //       &:not(.cart):before
+// //         content: ""
+// //         display: block
+// //         +position(absolute, 16px 0 null null )
+// //         height: 20px
+// //         border-right: 1px solid #ccc
 
-//     .icon-user2
-//       +size(24px)
-//       +fc
-//       background-color: $green
-//       border-radius: 50%
-//       &:before
-//         color: white
-
-
-//   .nav__shift
-//     // +position(absolute, 50px 0 null 0)
-//     position: relative
-//     top: 0
-//     height: auto
-//     box-shadow: none
-//     .container
-//       +fcl
-
-//     .love,
-//     .strict
-//       +size(140px, 40px)
-//       box-shadow: 0 3px 3px rgba(black,0.1)
-
-//     [class*="icon"]
-//       font-size: 1rem
-
-//     .love
-//       margin-right: 0px
-//       margin-bottom: 10px
-
-//     .main
-//       font-size: 16px
-//       & + div 
-//         display: none
+// //     .icon-user2
+// //       +size(24px)
+// //       +fc
+// //       background-color: $green
+// //       border-radius: 50%
+// //       &:before
+// //         color: white
 
 
-//   .nav__toggle
-//     cursor: pointer
-//     z-index: 14
-//     +padding(20px)
-//     position: relative
-//     transition: 0.3s transform
-//     z-index: 31
+// //   .nav__shift
+// //     // +position(absolute, 50px 0 null 0)
+// //     position: relative
+// //     top: 0
+// //     height: auto
+// //     box-shadow: none
+// //     .container
+// //       +fcl
+
+// //     .love,
+// //     .strict
+// //       +size(140px, 40px)
+// //       box-shadow: 0 3px 3px rgba(black,0.1)
+
+// //     [class*="icon"]
+// //       font-size: 1rem
+
+// //     .love
+// //       margin-right: 0px
+// //       margin-bottom: 10px
+
+// //     .main
+// //       font-size: 16px
+// //       & + div 
+// //         display: none
 
 
-//     .one, .two, .three
-//       +size(20px, 2px)
-//       background: $green
-//       margin: 4px auto
-//       backface-visibility: hidden
-//       transition: 0.3s transform
+// //   .nav__toggle
+// //     cursor: pointer
+// //     z-index: 14
+// //     +padding(20px)
+// //     position: relative
+// //     transition: 0.3s transform
+// //     z-index: 31
+
+
 
