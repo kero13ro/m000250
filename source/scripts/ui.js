@@ -5,7 +5,7 @@ var wW = $(window).width();
 var wH = $(window).height();
 var esc = $.Event("keydown", { keyCode: 27 });
 
-
+var $cover = $("#fixed-cover");
 
 //loading動畫
 
@@ -46,41 +46,42 @@ $(".js-account").click(function () {
 });
 
 
-$(" .icon-strict, \
-    .icon-love").click(function (e) {
-  e.preventDefault();
-})
+// $(" .icon-strict, \
+//     .icon-love").click(function (e) {
+//   e.preventDefault();
+// })
 
 
 
 
 if (  wW > 768) {
-  $(".nav").append("<div class='gray'></div> \
-                    <div class='fixedBar'></div>")
+  $("#nav").append("<div class='grayBar'><div class='grayInner'></div></div> \
+                    <div class='fixedBar'><div class='fixedInner'></div></div>");
 
-  var cart = $(".cart")
+  var cart = $(".nav__cart");
   $(".nav__cover").append(cart);
 
-  var grayBlockItems = $("#navPad .logo, \
-                          #navPad .favorite, \
-                          #navPad .strict")
-  $(".gray").append(grayBlockItems);
+  var grayBlockItems = $("#nav .nav__logo, \
+                          #nav .nav__favorite, \
+                          #nav .nav__strict");
+  $(".grayInner").append(grayBlockItems);
 
 
-  var fixedBarItems1 = $(".gray > a").clone();
+  var fixedBarItems1 = $(".grayInner > a").clone();
   var fixedBarItems2 = $(".nav__cover > a").clone();
 
-  $(".fixedBar").append(fixedBarItems1).append(fixedBarItems2);
+  $(".fixedInner")
+    .append(fixedBarItems1)
+    .append(fixedBarItems2);
+  $(".fixedInner .nav__logo h1").remove();
 
-
-} else {
-  $(".cart__num").insertAfter(".nav .text");
 }
 
 
 
+
 //scroll show fixedBar
-var landingHeight = $("#navPad").height();
+var landingHeight = $(".navPad").height();
 var fixedBar = $(".fixedBar");
 
 $window.on("scroll", function () {
@@ -97,19 +98,55 @@ $window.resize(function () {
   } else {
     ($window.width() > 768) ? reload() : "" ;
   }  
-  beforeWidth = $window.width();
-  console.log("tri");
-  
-})
+});
 
-// function reload() {
-//   location.reload()
-// }
+
 function reload() {
-  $("main").css("opacity", "0");
+  // $("main").css("opacity", "0");
   location.reload()
 }
 
+
+
+
+
+if (wW <= 768) {
+  var menuTL = new TimelineMax({ paused: true, reversed: true, yoyo: true });
+  var menu__cover = $(".nav__cover");
+  // var cover_list = $(".nav__cover a");
+  // var toggle = $(".nav__toggle");
+  // var burger1 = toggle.find(".one");
+  // var burger2 = toggle.find(".two");
+  // var burger3 = toggle.find(".three");
+
+  menuTL
+    .to(menu__cover, 0.2, { "display": "flex", autoAlpha: 1 },0.2);
+    // .staggerFrom(cover_list, 0.4, { autoAlpha: 0, x: 30, ease: Power2.easeOut }, 0.1, 0.3)
+    
+
+  $(".nav__toggle").click(function () {
+    menuTL.reversed() ? menuTL.play() : menuTL.reverse();
+  });
+}
+
+
+
+
+// if (wW <= 500) {
+//   $(".nav__main").hover(function () {
+    
+//     var inner = $(this).find(".inner .main");
+
+//     var other = $(".inner .main").not(inner);
+
+//     // var tiptool = TimelineMax({pause: true});
+//     // tiptool.to(inner, 0.3, { "display": "block", autoAlpha: 1});
+
+//     TweenLite.to(other, 0.3, { "display": "none", autoAlpha: 0 });
+//     TweenLite.to(inner, 0.3, { "display": "block", autoAlpha: 1 });
+    
+//   });
+// }
 
 
 
@@ -125,4 +162,16 @@ function reload() {
 
 // }
       
+if (wW <= 1100) {
+  $(".icon-double-right").click(function () {
+
+    var dropdwon = $(this).next(".dropdwon");
+    dropdwon.fadeToggle();
+
+    $cover.show().click(function() {
+      dropdwon.fadeOut();
+      $cover.off().hide();
+    });
+  });
+}
 

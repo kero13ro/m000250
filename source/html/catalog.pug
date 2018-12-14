@@ -1,0 +1,92 @@
+
+extends ./include/layout.pug
+
+block content
+  include ./include/nav.pug
+  include ./include/component.pug
+
+  //- #catalog
+
+  .breadcrumb  
+    ul.container.nostyle
+      li.title
+        span.icon-catogory.f24.mr20
+        span.f28 商品品類
+      li 首頁
+      h2.icon-right 商品品類
+      h3.icon-right 保健食品
+      h4.icon-right 維他命
+
+  .catalog.mt56.pb56.container
+
+    .catalog__left
+      .title.f32.b
+        span.main 保健食品 / 
+        span.sub.g 維他命
+        
+      .catalog__menu.f16.b
+        a.icon-double-right 更多#[span.g 保健食品]相關商品...
+        .dropdwon
+          a(href="#") 嬰幼兒保健
+          a(href="#") 機能性食品
+          a(href="#") 調節血糖功能
+          a(href="#") 癌症輔療產品
+          a(href="#") 維他命
+
+          a(href="#") 免疫調節作用
+          a(href="#") 失眠類
+          a(href="#") 美容保養類
+          a(href="#") 孕婦保健
+          a(href="#") 眼睛保健類
+
+          a(href="#") 男性保健
+          a(href="#") 健髮用品
+          a(href="#") 骨骼關節類
+          a(href="#") 心血管保健
+          a(href="#") 麩醯胺酸
+
+          a(href="#") 女性保健
+          a(href="#") 輕盈窈窕系列
+          a(href="#") 更年期保健
+          a(href="#") 調整腸胃功能
+          a(href="#") 肝臟保健
+
+          a(href="#") 神經系統
+
+      .filter.mb64.b.mt48
+        a.active 最新上架
+          .tri
+        a 熱門推薦
+          .tri
+        a 價格：高 →低
+          .tri
+        a 價格：低 →高
+          .tri
+
+      .cards.minun
+        +card(1)
+        +card(2)
+        +card(3)
+        +card(4)
+        +card(2)
+        
+        +card(2)
+        +card(4)
+        +card(1)
+        +card(3)
+        +card(1)
+        
+        +card(1)
+        +card(3)
+        +card(4)
+        +card(2)
+        +card(4)
+        
+        +card(2)
+        +card(4)
+        +card(1)
+        +card(3)
+        +card(1)
+    
+
+

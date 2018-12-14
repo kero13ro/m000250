@@ -1,7 +1,4 @@
 
-#index
-  background-color: #f0f0f0
-
 .index_landing
   height: 40vw
   min-height: 400px
@@ -20,6 +17,7 @@
     flex-shrink: 0
     font-weight: bold
     box-shadow: 0 5px 5px rgba(black,0.1)
+    z-index: 1
 
   [class*="icon"]
     flex-shrink: 0
@@ -116,7 +114,8 @@
         font-size: 15px
 
 
-
+//=======================================================
+//=======================================================
 
 .index_search
 
@@ -194,7 +193,8 @@
     &:last-child
       background-color: $orange
 
-  
+  [class*="icon"]:before
+    color: #fff
 
   +max(1365)    
     .dot ~ *
@@ -269,81 +269,150 @@
       span 
         display: none
 
+//=======================================================
+//=======================================================
 
 
-      
+.division
+  +f
+  flex-wrap: wrap
+  align-items: stretch
 
-.index_square
-  +f(flex-start, stretch, row, wrap)
-
-  .square
-    +margin(null null 24px null )
-    +padding(null 12px)
-    flex: 1 0 20%
-    font-size: 22px
-
-  .inner
+  .block
+    +margin(null 12px 24px 12px )
+    width: calc(20% - 24px)
     +padding(30px 25px)
     +fcl
-    font-weight: bold
-    +size(100%)
-    border-radius: 11%
+    display: inline-flex
+    border-radius: 8%
     background-color: #fff
-    cursor: pointer
-
-    > div
-      position: relative
-      padding-left: 15%
-
-    span
-      +position(absolute, 50% null null 0)
-      transform: translate(0%, -50%)
-      +size(18px)
-      display: inline-block
-      background-color: $orange
-      border-radius: 50%
-    
-
     transition: box-shadow 0.3s
+    img
+      flex-shrink: 0
+    
     &:hover
       box-shadow: 0 0 1px 1px $green
       transition: box-shadow 0.3s
 
+  .title
+    margin-top: 8px
+    text-align: center
+
+    &::before
+      +size(18px)
+      content: ""
+      display: inline-block
+      background-color: $orange
+      margin-right: 15px
+      border-radius: 50%
+
+
 
   +max(1365)
-    .square
-      flex-basis: 25%
+    .block
       font-size: 18px
 
-      .inner
-        +padding(20px 15px)
-        span
-          +size(14px)
+    .title:before
+      +size(12px)
+      margin-right: 10px
+
+  +max(1100)
+    .block
+      +margin(null 8px 16px 8px )
+      width: calc(25% - 16px)
+      +padding(20px 20px)
+
 
   +max(991)
-    .square
-      font-size: 16px
-      +padding(null 8px)
+    .title:before
+      display: none
 
-      .inner
-        +padding(16px null)
-        border-radius: 8%
+  +max(767)
+    .block
+      width: calc(33% - 10px)
+      +margin(null 5px 10px 5px)
+    .title
+      margin-top: 0
+      span
+        display: block
 
-        span
-          +size(14px)
+  +max(500)
+    +padding(20px 12px)
+    .block
+      font-size: 14px
+      +padding(8px 15px)
+
+
+//=======================================================
+//=======================================================
+
+
+
+.subdivision
+  background-color: #fff
+
+.subdivision__land
+  +f
+  img
+    width: 260px
+  .text
+    max-width: 530px
+
+  +max(600)
+    flex-direction: column
+    align-items: center
+    img
+      max-width: 250px
+      width: 80%
+      margin-right: 0
+
+      
+    .text
+      max-width: 400px
+      .f24
+        margin-top: 20px
+
+.subdivision__list
+  border-top: 1px solid #ccc
+
+  a
+    width: calc(20% - 36px)
+    +margin(null 18px)
+    border-bottom: 1px dashed #ccc
+    +padding(20px null)
+
+    &:before
+      +size(14px)
+      content: ""
+      display: inline-block
+      background-color: $green
+      margin-right: 20px
+      border-radius: 50%
+
+    +hoverText($red)
+
+  +max(1024)
+    a
+      width: calc(25% - 36px)
+      +padding(15px null)
+      &:before
+        +size(12px)
+        margin-right: 15px
 
   +max(700)
-    .square
-      flex-basis: 33%
+    a
+      width: calc(33% - 36px)
+      +padding(12px null)
+      font-size: 15px
+      &:before
+        +size(8px)
+        margin-right: 6px
+
+  +max(420)
+    +margin(null -5px null -10px)
+    a
       font-size: 14px
-      +padding(null 4px)
-      margin-bottom: 8px
+      &:before
+        display: none
 
-      .inner
-        +padding(10px 6px)
 
-        > div
-          
-          +padding(null 3px)
-          span
-            display: none

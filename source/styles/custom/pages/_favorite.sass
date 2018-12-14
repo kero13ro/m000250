@@ -1,0 +1,243 @@
+
+  
+.row
+  +fc
+  width: 100%
+
+
+  
+.yearLog_select
+  margin-right: 20px
+  width: 250px
+  height: 50px
+  position: relative
+  white-space: nowrap
+
+  border-radius: 5px
+  overflow: hidden
+  border: 1px solid $green
+
+  +f(flex-start, center)
+  &:after
+    content: "\f004"
+    display: block
+    +position(absolute, 14px 14px null null )  //20-4
+    pointer-events: none
+    font-family: "fontello"
+    color: $green
+
+  > span 
+    background-color: $green
+    color: #fff
+    flex-shrink: 0
+    +size(100px, 100%)
+    +fc
+    +padding(null 15px)
+    
+
+
+  input[type="date"]
+    border: none
+    &::-webkit-inner-spin-button,
+    &::-webkit-clear-button 
+      display: none
+    &::-webkit-calendar-picker-indicator
+      opacity: 0
+
+    +size(100%)
+    font-size: 15px
+    background-color: #e6f5e7
+    +padding(null 10px)
+    +trans
+
+    &:hover
+      background-color: rgb(255, 255, 255)
+
+.yearLog__button
+  background-color: $green
+  color: #fff
+  +size(150px ,50px)
+  border-radius: 10px
+  border: none
+  cursor: pointer
+
+.yearLog__button,
+.yearLog_select span
+  +hoverBgc($greenL)
+      
+
+.yearLog 
+  +max(680)
+    .row
+      flex-wrap: wrap
+    .yearLog_select
+      width: 80%
+      +margin(null 0 20px)
+
+  +max(350)
+    .yearLog__button,
+    .yearLog_select
+      height: 45px
+      border-radius: 5px
+
+    .yearLog_select
+      width: 100%
+      +margin(null null 15px)
+
+
+
+
+// ========================================================
+.cards
+  // +container
+  +f
+  justify-content: center
+  flex-wrap: wrap
+  align-items: stretch
+
+  &.minun
+    +margin(null -12px)
+  
+  .card__pad
+    // max-width: 300px
+    flex: 1 1 250px
+    +padding(null 12px)
+    margin-bottom: 60px
+
+  .card
+    white-space: normal
+    
+    +fcl
+    align-items: stretch
+    height: 100%
+    border: 1px solid #ccc
+    text-align: center
+    border-radius: 8px
+    overflow: hidden
+
+
+  .card__text
+    +padding(15px 36px 15px)
+    margin-bottom: auto
+
+  .card__price
+    +padding(null null 20px)
+    font-family: "Roboto"
+
+    span:nth-child(2)
+      +margin(null 3px)
+      color: #ccc
+
+    .original
+      color: #aaa
+      text-decoration: line-through
+
+  .card__cart
+    +size(100%, 80px)
+    +fc
+    background-color: $grayBgc
+    cursor: pointer
+    +hoverBgc(#ddd)
+      
+  .card__pad.push
+    margin-bottom: 0
+
+.disabled,
+.replenish
+  position: relative
+  &:before
+    content: ""
+    display: block
+    +size(100%)
+    position: absolute
+    background-color: rgba(#eee, 0.4)
+
+  .card__cart
+
+    span,
+    .icon-cart
+      display: none
+
+    &:after
+      font-size: 20px
+      cursor: default
+      color: $red
+      display: block
+      z-index: 1
+      position: relative
+
+
+.disabled .card__cart:after
+  content: "已停售"
+.replenish .card__cart:after
+  content: "補貨中"
+  
+.card__img
+  flex-shrink: 0
+
+.cards
+  +max(1366)
+    .card__pad
+      // max-width: 270px
+      flex: 1 1 180px
+      margin-bottom: 40px
+      +padding(null 10px)
+
+    .card__img
+      width: 90%
+      +margin(null auto)
+
+    .card__text
+      +padding(15px 25px 15px)
+    .card__price
+      padding-bottom: 10px
+
+    .card__cart
+      height: 60px
+
+  +max(600)
+    +padding(null 10px)
+    .card__pad
+      // max-width: 200px
+      flex: 1 1 140px
+      margin-bottom: 30px
+      +padding(null 6px)
+
+    .card__img
+      width: 80%
+
+    .card__text
+      +padding(5px 12px 10px)
+      font-size: 14px
+
+
+    .card__cart
+      height: 55px
+
+    .disabled,
+    .replenish
+      .card__cart:after
+        font-size: 16px
+
+  
+  +max(350)
+    .card__pad
+      flex: 1 1 120px
+
+    .card__text
+      font-size: 13px
+
+    .card__price 
+      padding-bottom: 5px
+      .original
+        font-size: 13px
+      .sale
+        font-size: 16px
+
+    .card__cart span,
+    .icon-cart,
+    .disabled .card__cart:after,
+    .replenish .card__cart:after
+      font-size: 14px
+
+    

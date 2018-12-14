@@ -1,0 +1,163 @@
+
+.catalog
+  +f
+  position: relative
+
+.catalog__left
+  padding-right: 300px
+  width: 100%
+
+
+.filter
+  display: inline-block
+  +f
+  
+  a
+    flex: 0 1 210px
+    height: 60px
+    &:first-child
+      border-radius: 8px 0 0 8px
+    &:last-child
+      border-radius: 0 8px 8px 0
+
+    &:not(:last-child)
+      border-right: 1px solid #ccc
+
+    background-color: #efefef
+    +fc
+    display: inline-flex
+    position: relative
+    .tri
+      +position(absolute, null null -100% 40% )
+      +size(28px, 100%)
+      overflow: hidden
+      
+      &:after
+        +size(0)
+        border-style: solid
+        border-width: 27px 20px 0 8px
+        border-color: $green transparent transparent transparent
+        content: ""
+        +position(absolute, -28px null null null )
+        transition: 0.3s top
+
+    &.active
+      background-color: $green
+      color: #fff
+      .tri:after
+        transition: 0.3s top
+        top: 0
+
+
+    transition: 0.3s
+    &:hover
+      background-color: $green
+      color: #fff
+      .tri:after
+        transition: 0.3s top
+        top: 0
+
+  +max(600)
+    flex-wrap: wrap
+    justify-content: center
+    
+    a
+      width: 50%
+      flex: 0 0 auto
+      
+      &:first-child
+        border-radius: 0
+      &:last-child
+        border-radius: 0
+      .tri
+        display: none
+
+      &:nth-child(1)
+        border-bottom: 1px solid #ccc
+      &:nth-child(2)
+        border-right: 0px solid #ccc
+        border-bottom: 1px solid #ccc
+
+  +max(380)
+    a
+      height: 45px
+      font-size: 14px
+
+
+.catalog__menu
+  position: absolute
+  right: 25px
+  top: 0
+  width: 265px
+  
+  a
+    width: 100%
+    border-bottom: 1px dashed #ccc
+    +padding(17px null)
+    +hoverBgc(#e6f6e6)
+
+  .dropdwon a
+    +padding(null 10px)
+    &:before
+      +size(12px)
+      content: ""
+      display: inline-block
+      background-color: $green
+      margin-right: 15px
+      border-radius: 50%
+
+  .icon-double-right
+    +f
+    border-top: 1px dashed #ccc
+    align-items: center
+    span
+      +margin(null 2px)
+    &:before
+      font-size: 30px
+      margin-right: 3px
+
+
++max(1100)
+
+  .catalog__left
+    padding-right: 0
+
+  .catalog__menu
+    position: static
+    .icon-double-right
+      border-width: 0px
+      +hoverBgc(#fff)
+      // padding-bottom: 0
+
+    .dropdwon
+      display: none
+      +position(absolute, null null null 0)
+      box-shadow: 0 3px 6px rgba(#000,0.3)
+      background-color: #fff
+      z-index: 1
+      width: 100%
+      padding-bottom: 20px
+      z-index: 6
+
+      a
+        width: calc(20% - 36px)
+        +margin(null 18px)
+
+      +max(800)
+        a
+          width: calc(25% - 36px)
+      +max(650)
+        a
+          width: calc(33% - 36px)
+          +padding(12px null)
+          font-size: 15px
+          &:before
+            +size(8px)
+            margin-right: 6px
+
+      +max(420)
+        +padding(null 15px null null)
+        a
+          font-size: 14px
+          &:before
+            display: none

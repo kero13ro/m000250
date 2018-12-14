@@ -1,0 +1,73 @@
+
+extends ./include/layout.pug
+
+block content
+  include ./include/nav.pug
+  include ./include/component.pug
+
+  
+  //- #favorite
+  .breadcrumb
+    
+    ul.container.nostyle
+      li.title
+        span.icon-love.f24.mr20
+        span.f28 我的最愛
+      li 首頁
+      h2.icon-right 我的最愛
+
+
+  form(action="").pt64.pb64
+    .yearLog.pb64.container
+      h3.mb40.f36.tc 一年內購買紀錄查詢
+      .row
+        label.yearLog_select
+          span 開始日期
+          input(type="date" value="2018-07-05")
+        label.yearLog_select
+          span 結束日期
+          input(type="date" value="2018-10-05")
+
+        button(type="submit").yearLog__button 開始查詢
+
+    .cards.container
+      +card(1)
+      +card(2)
+      +card(3)
+      +card(4)
+      +card(2)
+      
+      +card(2)
+      +card(4)
+      +card(1)
+      +card(3)
+      +card(1)
+      
+      +card(1)
+      +card(3)
+      +card(4)
+      +card(2)
+      +card(4)
+      
+      +card(2)
+      +card(4)
+      +card(1).disabled
+      +card(3).replenish
+      +card(1)
+
+      .card__pad.push
+      .card__pad.push
+      .card__pad.push
+      .card__pad.push
+
+
+    .pages.pb32
+      a(href="#").icon-page-1
+      a(href="#").icon-page-2
+      a(href="#").active 1
+      a(href="#") 2
+      a(href="#") 3 
+      a(href="#") 4
+      a(href="#") 5
+      a(href="#").icon-page-3
+      a(href="#").icon-page-4

@@ -1,5 +1,13 @@
 
-  
+#fixed-cover
+  z-index: 5
+  +size(100%, 100vh)
+  // background-color: #fff
+  +position(fixed, 0 0 0 0)
+  display: none
+  opacity: 0
+
+
   
 main
   opacity: 0
@@ -8,6 +16,11 @@ main
 $green: #09a30d
 $blue: #3b95f8
 $orange: #ff982a
+$red: #c80000
+$grayBgc: #f0f0f0
+
+
+$greenL: #0dba0f
 
 $defaultcolor: rgb(22, 24, 23) !default  
 
@@ -17,7 +30,9 @@ $defaultcolor: rgb(22, 24, 23) !default
 
 .b
   font-weight: bold
-
+  
+.tc
+  text-align: center
 
 .btn
   background-color: $green
@@ -39,27 +54,13 @@ $defaultcolor: rgb(22, 24, 23) !default
 
 
 
-// .bold
-//   font-weight: bold  
-
-// .underline
-//   text-decoration: underline
-
-// .brown
-//   color: #B47832
-
-// .red
-//   color: #CC0000
-
-// .gray
-//   color: #7C7C7C
-
-// .vege
-//   color: #59a467
-
 .italicNum
   font-family: 'Open Sans', sans-serif
   color: #cc0000
+
+.robo
+  font-family: "Roboto"
+  
 
 [class^="icon-"]:before, [class*=" icon-"]:before
   margin: 0
@@ -246,7 +247,7 @@ body
   // font-size: 16px
   // color: $defaultcolor 
   // font-family: 'Lato',"Open Sans", Verdana, Heiti TC, "微軟正黑體" , Microsoft JhengHei
-  font-family: 'sans-serif', Verdana, Heiti TC, "微軟正黑體" , Microsoft JhengHei
+  font-family: 'Noto Sans TC', sans-serif, Verdana, Heiti TC, "微軟正黑體" , Microsoft JhengHei
   
 
 .en

@@ -1,28 +1,37 @@
 
 
 
-// .pages
-//   +f(center, center)
-//   a
-//     display: block
-//     margin: 0 4px
-//     +f(center, center)
-//     +size(27px)
-//     color: $brown-dark
-//     border-radius: 50%
-//     font-size: 14px
-//     flex-shrink: 0
-//     &:not([class^="icon"])
-//       border: 1px solid $brown-dark
+.pages
+  +f(center, center)
+  a
+    display: block
+    font-family: Roboto
+    margin: 0 5px
+    +f(center, center)
+    +size(35px)
+    color: #777
+    border-radius: 50%
+    
+    flex-shrink: 0
+    &:not([class^="icon"])
+      background-color: #eee
+      
 
-//     &:hover,
-//     &.active
-//       background-color: $brown-dark
-//       color: white
+    &:hover,
+    &.active
+      background-color: $green
+      color: #fff
+      &:before
+        color: #fff
 
-//   +max(330)
-//     [class^="icon"]
-//       margin: 0
+  +max(400)
+    a
+      margin: 0 3px
+      font-size: 14px
+      +size(30px)
+
+    [class^="icon"]
+      margin: 0
 
 
 =afterline($height, $color: rgb(199,199,199))
@@ -37,24 +46,82 @@
 
 
 .breadcrumb
-  +padding( 20px null)
+  background-color: $grayBgc
   white-space: nowrap
+
   ul
+    +padding(25px null)
+    border-top: 1px dashed #ccc
     +f(flex-start, center)
-    li:before
-      color: $orange
-      margin: 0 10px
-      font-weight: bolder
 
-  +max(330)
-    li:nth-child(3)
-      display: none
+  ul > *
+    +fc
+    color: #999
+    font-weight: bolder
+    margin-bottom: 0
+    font-size: 16px
 
+    &:last-child
+      color: #000
 
+  .title
+    position: relative
+    padding-right: 25px
+    margin-right: 25px
+    color: #000
 
+    &:after
+      content: ""
+      display: block
+      height: 60%
+      border-right: 1px solid #ccc
+      +position(absolute, 10px 0 null null )
+
+    [class^="icon-"]
+      background-color: $green
+      border-radius: 50%
+      +size(50px)
+      +fc
+      padding-top: 3px
+      &:before
+        color: #ffffff
+        width: auto
+
+    [class^="icon-"] + span 
+      font-weight: bold
+
+  .icon-right::before
+    margin: 0 12px
+    
+    
+    
+
+  +max(768)
+    ul
+      +padding(12px null)
+    .title [class^="icon-"]
+      +size(45px)
+  
+  +max(480)
+
+    .icon-love 
+      +size(38px)
+    .title
+      margin-right: 0
+      padding-right: 5px
+      &::after,
+      [class^="icon-"] + span
+        display: none
+
+.footGray
+  background-color: #f0f0f0
+
+.footGray + footer
+  background-color: #f0f0f0
+  
 footer
   // margin-top: -60px
-  background: #f0f0f0 center / cover no-repeat
+  background: center / cover no-repeat
   padding-top: 60px
   +fcl(flex-end)
   
@@ -169,4 +236,5 @@ footer
     .media
       margin-left: 0px
 
-        
+
+  

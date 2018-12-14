@@ -75,9 +75,6 @@
   flex-wrap: $wrap
 
 
-
-
-
 // $breakpoints: (xs: 480px,sm: 768px,md: 992px,lg: 1200px,xl: 1440px)
 
 =m($max, $min) 
@@ -174,7 +171,7 @@
   .f#{$i*4}
     font-size: #{$i*4/16}rem
 
-    +m(767, 481)
+    +m(768, 481)
       @if $i*4/16*0.8 > 1
         font-size: #{$i*4/16*0.8}rem
 
@@ -215,7 +212,7 @@ $space: (m: margin, p: padding)
         +max(480)
           #{$val_spc}-#{$val_dir}: #{$i*4*0.6}px
 
-@each $key_dir,$val_dir in $direction  //8 ~ 28
+@each $key_dir,$val_dir in $direction  //8,12 ~ 28
   @each $key_spc,$val_spc in $space
     @for $i from 2 through 7
       .#{$key_spc}#{$key_dir}#{$i*4}
@@ -226,7 +223,7 @@ $space: (m: margin, p: padding)
         +max(480)
           #{$val_spc}-#{$val_dir}: #{$i*4*0.6}px
 
-@each $key_dir,$val_dir in $direction  //32 ~ 96
+@each $key_dir,$val_dir in $direction  //32, 40 ~ 96
   @each $key_spc,$val_spc in $space
     @for $i from 4 through 12
       .#{$key_spc}#{$key_dir}#{$i*8}
@@ -244,23 +241,24 @@ $space: (m: margin, p: padding)
   width: 100%
   max-width: 1450px
 
-  +m(1440, 480)
-    width: 90%
+  // +m(1440, 992)
+  //   width: 95%
 
   +max(480)
-    padding: 0 18px
+    +padding(null 18px)
 
 .container
-  +margin(0 auto)
+  +margin(null auto)
   +padding(null 25px)
   width: 100%
   max-width: 1450px
   
-  +m(1440, 480)
-    width: 95%
+  // +m(1440, 992)
+  //   width: 95%
+  // 因為catalog 開闔的menu
 
   +max(480)
-    padding: 0 18px
+    +padding(null 18px)
 
 
 

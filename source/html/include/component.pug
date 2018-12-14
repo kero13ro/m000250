@@ -1,8 +1,59 @@
 
+mixin card(index)
+  //- .card__pad
+  a(href="product.html").card__pad
+    .card()&attributes(attributes)  
+      if index == 1
+        img(src="./styles/images/0b-01.jpg", alt="大樹藥局").card__img
+        .card__text 【永信 HAC】綜合維他命B群+鐵錠 (90錠/盒)
+        .card__price
+          span.f24.g.sale $570
+          span &nbsp;/&nbsp;
+          span.original.f20 $600
 
-//- mixin breadcrumb
-//-   .breadcrumb
-//-     ul.nostyle
-//-       li 首頁
-//-       li.icon-right-thin 月子餐組合選
+      else if index == 2
+        img(src="./styles/images/0b-02.jpg", alt="大樹藥局").card__img
+        .card__text 美國原裝進口【營養生活】營養生活維他命C1000(90錠/瓶)
+        .card__price
+          span.f24.g.sale $750
+          span &nbsp;/&nbsp;
+          span.original.f20 $900
 
+      else if index == 3
+        img(src="./styles/images/0b-03.jpg", alt="大樹藥局").card__img
+        .card__text 【IMMU BOOST 博世特】益木發泡錠-加州葡萄(10錠/罐)
+        .card__price 
+          span.f24.g.sale $320
+          span &nbsp;/&nbsp;
+          span.original.f20 $360
+
+      else if index == 4
+        img(src="./styles/images/0b-04.jpg", alt="大樹藥局").card__img
+        .card__text 【IMMU BOOST 博世特】益木發泡錠-加州葡萄(10錠/罐)
+        .card__price 
+          span.f24.g.sale $320
+          span &nbsp;/&nbsp;
+          span.original.f20 $360
+
+      else 
+        .card__text alert
+
+      .card__cart.b
+        .icon-cart.f24.mr12
+        span.f18 加入購物車
+
+
+//- .card__pad
+//-   .card.replenish
+    
+//-     img(src="./styles/images/0b-03.jpg", alt="大樹藥局").card__img
+
+//-     .card__text 【IMMU BOOST 博世特】益木發泡錠-加州葡萄(10錠/罐)
+//-     .card__price 
+//-       span.f24.g.sale $320
+//-       span &nbsp;/&nbsp;
+//-       span.original.f20 $360
+
+//-     .card__cart.b
+//-       .icon-cart.f24.mr12
+//-       span.f18 加入購物車

@@ -5,47 +5,51 @@ block content
   include ./include/nav.pug
   
   .footGray
-    .index_landing(style="background-image: url('./styles/images/0a-bgc.jpg')")
-      img(src="./styles/images/0a-15.png", alt="大樹連鎖藥局").man-f
-      img(src="./styles/images/0a-14.png", alt="大樹連鎖藥局").man-m
+    .breadcrumb
+      ul.container.nostyle
+        li.title
+          span.icon-catogory.f24.mr20
+          span.f28 商品品類
+        li 首頁
+        h2.icon-right 商品品類
+        h3.icon-right 保健食品
+
+    .subdivision.pt56.pb56
+      .container
+        .subdivision__land.mb48
+          img(src="./styles/images/0a-04b.jpg", alt="大樹連鎖藥局").mr80
+          .text.lh20
+            .f24.b.wide10 保健食品
+            .f16 大樹藥局提供全年齡層所需之營養保健商品選購；嬰幼兒鈣粉、益生菌、乳鐵蛋白…；孕媽咪葉酸、DHA、孕婦鈣…；成人綜合維他命、B群(善存、克補、合利他命)…；銀髮族鈣片、葉黃素、葡萄糖胺關節保養(維骨力)、娘家滴雞精、娘家益生菌、胎盤粉…。
 
 
-      a(href="cart.html").love
-        span.icon-love
-        .inner
-          .main 我的最愛
-          div 一年內購物紀錄查詢
+        .subdivision__list.f20.b
+          a(href="catalog.html") 嬰幼兒保健
+          a(href="catalog.html") 機能性食品
+          a(href="catalog.html") 調節血糖功能
+          a(href="catalog.html") 癌症輔療產品
+          a(href="catalog.html") 維他命
 
-      a(href="cart.html").strict
-        span.icon-strict
-        .inner
-          .main 大樹嚴選
-          div 新品推薦、熱門好物
+          a(href="catalog.html") 免疫調節作用
+          a(href="catalog.html") 失眠類
+          a(href="catalog.html") 美容保養類
+          a(href="catalog.html") 孕婦保健
+          a(href="catalog.html") 眼睛保健類
 
-      .plus-1
-      .plus-2
-      .plus-3
-      .plus-4
+          a(href="catalog.html") 男性保健
+          a(href="catalog.html") 健髮用品
+          a(href="catalog.html") 骨骼關節類
+          a(href="catalog.html") 心血管保健
+          a(href="catalog.html") 麩醯胺酸
 
-    form.index_search
+          a(href="catalog.html") 女性保健
+          a(href="catalog.html") 輕盈窈窕系列
+          a(href="catalog.html") 更年期保健
+          a(href="catalog.html") 調整腸胃功能
+          a(href="catalog.html") 肝臟保健
 
-      .searchbar.pt64.pb40
-        .dot
-        input(type="search", placeholder="商品搜尋(請輸入關鍵字)")
-        button(type="submit").search.icon-scan
-          span 搜尋
-        a(href="advanced.html").advanced.icon-scan2 進階搜尋
-
-      .tips.pb48
-        .multi 使用
-          .circle(data-inline="商品搜尋")
-            span 商品#[br]搜尋
-          | 搜尋商品，或點擊下方
-          .circle(data-inline="商品品類")
-            span 商品#[br]品類
-          | 尋找適合您的商品。
-
-        div 更多的大樹優質商品任您選購!
+          a(href="catalog.html") 神經系統
+          
 
 
     .division.container.pb80.pt56.b.f20
@@ -108,6 +112,11 @@ block content
         img(src="./styles/images/0a-13.jpg", alt="大樹連鎖藥局")
         .title 休閒
           span 食用品
+
+
+
+
+
 
 
 
