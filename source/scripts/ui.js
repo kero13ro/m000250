@@ -175,3 +175,10 @@ if (wW <= 1100) {
   });
 }
 
+// var svg = $("footer").find("svg path")
+// console.log(svg);
+$(function () {
+  console.log("as");
+  
+  TweenMax.to("#svg2", 3, { morphSVG: "#svg1", ease: Elastic.easeOut.config(1, 0.75), })
+})
