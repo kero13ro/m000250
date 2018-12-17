@@ -1,0 +1,137 @@
+
+
+.user-menu
+  background-color: $green
+
+.user-menu 
+  .container
+    +f
+    height: 60px
+
+  a
+    width: 280px
+    height: 100%
+    color: #fff
+    +fc
+    border-right: 1px solid #fff
+    position: relative
+  a:first-child
+    border-left: 1px solid #fff
+
+  a.active,
+  a:hover
+    background-color: #06880a
+    &:before
+      content: ""
+      position: absolute
+      +size(20px)
+      background-color: #06880a
+      transform: rotate(45deg)
+      bottom: -8px
+      
+
+.user-main
+  margin-bottom: 100px
+
+  .icon-docs
+    +padding(null 30px)
+    +margin(null auto)
+    &:before
+      color: #fff
+      font-size: 24px
+      margin-right: 10px
+
+  .icon-right
+    line-height: 3
+    &:before
+      margin-right: 10px
+
+
+
+.tab-nav
+  +fc
+  a
+    +margin(null 10px)
+    +size(110px, 50px)
+    background-color: #f0f0f0
+    color: $green
+    +fc
+    border-radius: 99px
+  a.active
+    background-color: $green
+    color: #fff
+
+
+
+.btn-container
+  +fc
+
+.tab-content
+
+  
+
+table.plain 
+  a:not(.btn)
+    color: $green
+    &:hover
+      text-decoration: underline
+
+  td:nth-child(4)
+    font-weight: bold
+  td:last-child
+    max-width: 150px
+
+  tbody tr
+    +hoverBgc(#f3f3f3)
+
+  .btn
+    +padding(null 16px)
+    
+  .btn:first-child
+    margin-right: 20px
+
+  .order-inquire
+    border: 1px solid $green
+    color: $green
+    background-color: #fff
+    +hoverBgc($green)
+    +hoverText(#fff)
+
+  .order-cancel
+    background-color: #09a395
+    color: #fff
+    +hoverBgc(#0bbfad)
+
+  .order-return
+    +hoverBgc($greenL)
+
+
+.tab-pane#user-tab-1 ~ .tab-pane
+  display: none
+
+.tab-content.return
+
+  table.plain 
+    td:last-child
+      max-width: 80px
+
+
+.plain.detail
+
+  td:first-child
+    max-width: 560px
+    width: 30vw
+
+  .info
+    white-space: normal
+    text-align: left
+    +f(flex-start, center)
+    padding-left: 45px
+    img
+      margin-right: 40px
+
+    .text
+      +f
+      flex-direction: column
+      max-width: 300px
+      

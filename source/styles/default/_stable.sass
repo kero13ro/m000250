@@ -327,26 +327,30 @@ $space: (m: margin, p: padding)
 
 
 .plain
+  white-space: nowrap
   width: 100%
+  border: 1px solid #09a30d
 
-  table
+  td,
+  th
+    height: 60px
     text-align: center
-    white-space: nowrap
-    width: 100%
 
-  tr
-    border-bottom: 1px solid #E5E5E5
-    &:first-child
-      background-color: rgb(202, 153, 97)
-      color: white
-    &:last-child
-      border-bottom: 1px solid rgb(202, 153, 97)
-    &:nth-child(odd):not(:first-child)
-      background-color: #F6F6F6
+  thead,
+  tfoot
+    tr
+      background-color: #efefef
+      border-bottom: 1px solid #09a30d
+    
+    // &:last-child
+    //   border-bottom: 1px solid rgb(202, 153, 97)
+    // &:nth-child(odd):not(:first-child)
+    //   background-color: #F6F6F6
 
-    a
-      color: #B47832
-      text-decoration: underline
+  // a
+  //   color: #09a30d
+    // text-decoration: underline
+
 
   +max(991)
     font-size: 15px

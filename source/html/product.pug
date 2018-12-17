@@ -4,5 +4,150 @@ extends ./include/layout.pug
 block content
   include ./include/nav.pug
   
-  #product
-  
+  .breadcrumb  
+    ul.container.nostyle
+      li.title
+        span.icon-catogory.f24.mr20
+        span.f28 商品品類
+      li 首頁
+      h2.icon-right 商品品類
+      h3.icon-right 保健食品
+      h4.icon-right 維他命
+      h5.icon-right 【BioJoy百喬】法國天然綜合B群
+
+  .container
+    .product
+
+      .info-top.mb64
+      
+        .slick-container
+          .slick-show
+            img(src="./styles/images/0c-01.jpg", alt="大樹連鎖藥局")
+            img(src="./styles/images/0c-02.jpg", alt="大樹連鎖藥局")
+            img(src="./styles/images/0c-03.jpg", alt="大樹連鎖藥局")
+            img(src="./styles/images/0c-03.jpg", alt="大樹連鎖藥局")
+            img(src="./styles/images/0c-03.jpg", alt="大樹連鎖藥局")
+          .slick-nav
+            img(src="./styles/images/0c-01.jpg", alt="大樹連鎖藥局")
+            img(src="./styles/images/0c-02.jpg", alt="大樹連鎖藥局")
+            img(src="./styles/images/0c-03.jpg", alt="大樹連鎖藥局")
+            img(src="./styles/images/0c-03.jpg", alt="大樹連鎖藥局")
+            img(src="./styles/images/0c-03.jpg", alt="大樹連鎖藥局")
+
+
+
+        .summary
+          .summary__title.f28.b.mb16 【BioJoy百喬】法國天然綜合B群
+          .summary__sub.f16 商品編號：P0000100004654   /   原始貨號：142722 
+          ul.summary__list.nostyle.lh20.mb32
+            li ● &nbsp;原料嚴選法國百年歷史大廠Lallemand公司榮譽出品
+            li ● &nbsp;足量添加天然B群500毫克，達人體一日所需的B群含量
+            li ● &nbsp;天然來源、非合成、無異味，食用好安心！
+            li ● &nbsp;含胺基酸、礦物質及其它微量元素等營養物質
+            li ● &nbsp;提供您完整的營養補給，幫助增強體力！
+            li ● &nbsp;讓您時時刻刻思緒清晰，Always do your 「B」est！
+
+          .summary__tag.f18
+            .tag 優惠方案
+          .summary__price 
+            span 原價： 
+            span.price-origin $680
+            span   /  會員價  
+            span.price-discount $375
+
+          .summary__note.mb32.lh20.b.g 贈品：百喬-奇異籽或3分鐘手打優格粉試吃包*1(隨機出貨) #[br] 滿件折扣：滿5件8折優惠
+          .summary__btn
+
+                
+            label.summary__select
+              select 
+                option(value="1") 1
+                option(value="2") 2
+              .wrap
+                span 數量：
+                span.icon-down-thin
+              
+            .summary__add 
+              img(src="./styles/images/check.png", alt="大樹連鎖藥局")
+              span 加入採購清單
+
+          
+
+      .recommand
+        .outer
+          .f18.b 其他人也瀏覽了...
+          .inner
+            a(href="product.html") 
+              img(src="./styles/images/0b-01.jpg", alt="大樹連鎖藥局")
+            a(href="product.html") 
+              img(src="./styles/images/0b-02.jpg", alt="大樹連鎖藥局")
+            a(href="product.html") 
+              img(src="./styles/images/0b-04.jpg", alt="大樹連鎖藥局")
+            a(href="product.html") 
+              img(src="./styles/images/0b-03.jpg", alt="大樹連鎖藥局")
+
+      .info-bottom
+        .tab__nav.f20.pb64.b
+          .tab.active.icon-product1 產品說明
+          .tab.icon-product2 購物說明
+          .tab.icon-product3 運送說明
+
+        .tab__content
+          .tab__pane.active(data-tab-id="#tab-1")
+            .editor
+              div.f32 產品說明
+
+              table.f16
+                tr
+                  th 主成分：
+                  td 天然酵母抽出物（LalminR B-complex vitamins天然酵母高B群；維生素B1、維生素B2、維生素B6、維生素B12、菸鹼酸、葉酸、泛酸、生物素）……………….250毫克／錠（原廠建議用量：每日500毫克）、紅景天抽出物。
+                tr
+                  th 副成分：
+                  td 麥芽糊精、微結晶纖維素、硬脂酸鎂
+                tr
+                  th 內容量：
+                  td 0.4公克/錠，60錠/瓶
+                tr
+                  th 食用方式：
+                  td 一次2錠，每日1次；建議搭配開水食用
+                tr
+                  th 推薦：
+                  td 孩童、青少年、一般成人及銀髮族皆可食用
+                tr
+                  th 注意事項：
+                  td 請置於兒童無法取得之處。重大疾病及服藥中者，請先徵詢醫師後再食用。本品內含天然維生素Ｂ群，經吸收代謝，尿液如呈現黃色為正常現象，請安心食用。依據衛生署規定，本品因添加維生素，須標示『多食無益』。本產品不含人工香料和防腐劑，如有斑點或色差，係屬自然現象，請安心食用。
+                tr
+                  th 保存方式：
+                  td 請置於室溫乾燥陰涼處，避免置於日光直射、曝曬、高溫、潮濕之處
+                tr
+                  th 保存期限：
+                  td 3年
+                tr
+                  th 產地：
+                  td 台灣
+                tr
+                  th 生產公司：
+                  td 百喬生醫股份有限公司
+                tr
+                  th 服務電話：
+                  td 0800-882-886
+                tr
+                  th 公司地址：
+                  td 台中市北區忠明路424號3樓之3
+                tr
+                  th 商品效期：
+                  td 商品效期至少距有效日期前365日
+                tr
+                  th 產品責任險字號：
+                  td 1308-05AKP0000162
+                tr
+                  th 食品業者登錄字號：
+                  td B-153158850-00000-4
+
+              img(src="./styles/images/0c-04.jpg", alt="大樹連鎖藥局")
+
+
+          .tab__pane(data-tab-id="#tab-2")
+          .tab__pane(data-tab-id="#tab-3")
+
+        

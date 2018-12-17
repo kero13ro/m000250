@@ -1,5 +1,7 @@
 
 
+
+
 var $window = $(window);
 var wW = $(window).width();
 var wH = $(window).height();
@@ -10,12 +12,16 @@ var $cover = $("#fixed-cover");
 //loading動畫
 
 var main = $("main");
+
+
+
 // $("document").ready(function () {
 //   TweenLite.to(main, 0.5, { autoAlpha: 1 });
 // });
 
 $.when($.ready).then(function () {
   TweenLite.to(main, 0.5 ,{  autoAlpha: 1});
+  TweenMax.to("#svg2", 3, { morphSVG: "#svg1", ease: Elastic.easeOut.config(1, 0.75), })
 
 });
 
@@ -175,10 +181,47 @@ if (wW <= 1100) {
   });
 }
 
-// var svg = $("footer").find("svg path")
-// console.log(svg);
+
+
+$(function () {  
+  // TweenMax.to("#svg2", 3, { morphSVG: "#svg1", ease: Elastic.easeOut.config(1, 0.75), })
+});
+
+
+$(".slick-show").slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  // fade: true,
+  asNavFor: ".slick-nav"
+});
+
+$(".slick-nav").slick({
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  asNavFor: ".slick-show",
+  dots: false,
+  arrows: false
+  // centerMode: true,
+  // focusOnSelect: true
+});
+
+
 $(function () {
-  console.log("as");
+  $("[data-user-tab]").click(function () {
+    
+    var $this = $(this);
+
+    if (!$this.hasClass("active")) {
+      $this.siblings("a").removeClass("active");
+      $this.addClass("active");
+    }
+
+    var dataTab = $this.attr("data-user-tab");
+    var target = $("#" + dataTab);
+
+    target.siblings(".tab-pane").hide();
+    target.fadeIn();
+  })
   
-  TweenMax.to("#svg2", 3, { morphSVG: "#svg1", ease: Elastic.easeOut.config(1, 0.75), })
-})
+});

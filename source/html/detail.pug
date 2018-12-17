@@ -1,0 +1,117 @@
+
+extends ./include/layout.pug
+
+block content
+  include ./include/nav.pug
+  
+  .breadcrumb  
+    ul.container.nostyle
+      li.title
+        span.icon-user2.f24.mr20
+        span.f28 會員中心
+      li 首頁
+      h2.icon-right 會員中心
+      h3.icon-right 訂單紀錄
+
+  .user-menu.mb72
+    .container.f18
+      a.active(href="order.html") 訂單紀錄
+      a(href="return.html") 退貨進度
+      a(href="profile.html") 會員帳號資料
+      a(href="contact.html") 常用聯絡資訊
+      a(href="bonus.html") 紅利點數查詢
+
+  .user-main.container
+    .f32.b.tc.mb40 訂單明細 - 32145789
+
+    .btn-container.mb32
+      a.btn.lg.icon-docs 複製訂單至購物車
+
+
+    .tab-content.mb64
+    
+      .icon-right.b.f18 訂單概要
+      .tab-pane.mb32
+        table.plain
+          thead
+            tr
+              th 訂單日期
+              th 訂單編號 / 商品明細
+              th 訂單金額
+              th 訂單狀態
+              th 付款方式
+              th 付款狀態
+              th 取貨方式
+              th 
+          tbody
+            tr
+              td 2018-03-16
+              td 
+                a(href="detail.html") 32145789 / 明細 
+              td $5,480
+              td 
+                .red 處理中
+              td 信用卡
+              td 已付款
+              td 店取-仁武仁雄
+              td 
+                a.btn.sm.order-cancel 取消訂單
+                a.btn.sm.order-inquire 訂單詢問
+
+      .icon-right.b.f18 訂單明細
+      .tab-pane
+        table.plain.detail
+          thead
+            tr
+              th 商品名稱
+              th 原始貨號
+              th 售價
+              th 會員價
+              th 數量
+          tbody
+            tr
+              td  
+                a(href="product.html").info
+                  img(src="./styles/images/1a-01.jpg", alt="大樹連鎖藥局")
+                  .text.lh20
+                    .b 【娘家】 益生菌（2g/包，60包/盒)
+                    .gift.red.f15 《限量贈品》：【娘家】滴雞精試飲包 x1 盒
+              td 133909
+              td $2,200
+              td $2,200
+              td 1
+            tr
+              td  
+                a(href="product.html").info
+                  img(src="./styles/images/1a-02.jpg", alt="大樹連鎖藥局")
+                  .text.lh20
+                    .b 【歐典生機】養生雪晶耳冰糖植物性膠原飲 180ml*8入(禮盒)
+              td 142583
+              td $360
+              td $280
+              td 5
+            tr
+              td  
+                a(href="product.html").info
+                  img(src="./styles/images/1a-03.jpg", alt="大樹連鎖藥局")
+                  .text.lh20
+                    .b 【BioJoy百喬】奇亞酵素輕纖飲_Chia奇亞籽蔬果酵素５合１（12包/盒）
+
+              td 142719
+              td $829
+              td $488
+              td 1
+          tfoot
+            tr 
+              td(colspan="1") 訂單金額 
+                span.g NT$5,480
+                | +運費 NT$0
+              
+              td(colspan="4") 訂單總金額
+                span.g NT$5,480
+
+
+    a(href="order.html").btn 返回列表
+
+
+

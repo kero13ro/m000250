@@ -93,7 +93,9 @@
   .icon-right::before
     margin: 0 12px
     
-    
+  .icon-user2
+    font-size: 42px
+    padding-bottom: 5px
     
 
   +max(768)
@@ -104,14 +106,17 @@
   
   +max(480)
 
-    .icon-love 
-      +size(38px)
+    .title [class^="icon-"]
+      +size(36px)
     .title
       margin-right: 0
       padding-right: 5px
       &::after,
       [class^="icon-"] + span
         display: none
+
+    .icon-user2
+      font-size: 32px
 
 .footGray
   background-color: #f0f0f0
@@ -127,9 +132,7 @@ footer
 
   position: relative
   svg 
-    position: absolute
-    top: 0
-    // width: 1920px
+    +position(absolute, 0 null null 0)
     height: 100%
   
   &,a

@@ -7,8 +7,10 @@
   display: none
   opacity: 0
 
+//product.html
+[class^="icon-"]:before, [class*=" icon-"]:before
+  width: auto
 
-  
 main
   opacity: 0
   // transition: opacity 0.3s
@@ -27,7 +29,8 @@ $defaultcolor: rgb(22, 24, 23) !default
 
 .g
   color: $green
-
+.red
+  color: $red
 .b
   font-weight: bold
   
@@ -40,12 +43,21 @@ $defaultcolor: rgb(22, 24, 23) !default
   color: white
   +fc
   display: inline-flex
-  border-radius: 999px
+  border-radius: 99px
   font-size: 18px
+
+  &.sm
+    height: 40px
+    font-size: 16px
+
+  &.lg
+    height: 60px
 
   +max(500)
     font-size: 16px
     height: 45px
+
+
 
 .sq
   border-radius: 10px

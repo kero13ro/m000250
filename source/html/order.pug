@@ -1,0 +1,215 @@
+
+extends ./include/layout.pug
+
+block content
+  include ./include/nav.pug
+  
+  .breadcrumb  
+    ul.container.nostyle
+      li.title
+        span.icon-user2.f24.mr20
+        span.f28 會員中心
+      li 首頁
+      h2.icon-right 會員中心
+      h3.icon-right 訂單紀錄
+
+  .user-menu.mb72
+    .container.f18
+      a.active(href="order.html") 訂單紀錄
+      a(href="return.html") 退貨進度
+      a(href="profile.html") 會員帳號資料
+      a(href="contact.html") 常用聯絡資訊
+      a(href="bonus.html") 紅利點數查詢
+
+  .user-main.container
+    .f32.b.tc.mb40 訂單紀錄
+
+    .tab-nav.f18.mb40
+      a(data-user-tab="user-tab-1").active 未結案
+      a(data-user-tab="user-tab-2") 全紀錄
+
+    .tab-content
+      .tab-pane(id="user-tab-1")
+        table.plain
+          thead
+            tr
+              th 訂單日期
+              th 訂單編號 / 商品明細
+              th 訂單金額
+              th 訂單狀態
+              th 付款方式
+              th 付款狀態
+              th 取貨方式
+              th 
+          tbody
+            tr
+              td 2018-03-16
+              td 
+                a(href="detail.html") 32145789 / 明細 
+              td $5,480
+              td 
+                .red 處理中
+              td 信用卡
+              td 已付款
+              td 店取-仁武仁雄
+              td 
+                a.btn.sm.order-cancel 取消訂單
+                a.btn.sm.order-inquire 訂單詢問
+            tr
+              td 2018-03-12
+              td
+                a(href="detail.html") 64482115 / 明細 
+              td $4,500
+              td 已出貨
+              td 虛擬帳號ATM
+              td 已付款
+              td 店取-北屯軍功
+              td 
+                a.btn.sm.order-return 申請退貨
+                a.btn.sm.order-inquire 訂單詢問
+
+
+      .tab-pane(id="user-tab-2")
+        table.plain
+          thead
+            tr
+              th 訂單日期
+              th 訂單編號 / 商品明細
+              th 訂單金額
+              th 訂單狀態
+              th 付款方式
+              th 付款狀態
+              th 取貨方式
+              th 
+          tbody
+            tr
+              td 2018-03-16
+              td 
+                a(href="detail.html") 32145789 / 明細 
+              td $5,480
+              td 
+                .red 處理中
+              td 信用卡
+              td 已付款
+              td 店取-仁武仁雄
+              td 
+                a.btn.sm.order-cancel 取消訂單
+                a.btn.sm.order-inquire 訂單詢問
+            tr
+              td 2018-03-12
+              td
+                a(href="detail.html") 64482115 / 明細
+              td $4,500
+              td 
+                .red 待處理
+              td 虛擬帳號ATM
+              td 已付款
+              td 店取-北屯軍功
+              td 
+                a.btn.sm.order-return 申請退貨
+                a.btn.sm.order-inquire 訂單詢問
+            tr
+              td 2017-05-25
+              td
+                a(href="detail.html") 45871245 / 明細
+              td $3,800
+              td 已出貨
+              td 刷卡
+              td 已付款
+              td 宅配
+              td 
+            tr
+              td 2017-01-18
+              td
+                a(href="detail.html") 78965412 / 明細
+              td $1,200
+              td 已提貨
+              td 現金
+              td 已付款
+              td 店取-南屯向上店
+              td 
+            tr
+              td 2016-11-30
+              td
+                a(href="detail.html") 65478521 / 明細
+              td $1,200
+              td 
+                .red 已取消
+              td 現金
+              td 
+                .red 未付款
+              td 店取-南屯向上店
+              td
+            tr
+              td 2016-05-14
+              td
+                a(href="detail.html") 19547236 / 明細
+              td $4,500
+              td 已提貨
+              td 刷卡
+              td 已付款
+              td 宅配
+              td 
+            tr
+              td 2016-03-18
+              td
+                a(href="detail.html") 87452365 / 明細
+              td $63,500
+              td 已提貨
+              td 刷卡
+              td 已付款
+              td 宅配
+              td 
+                
+            tr
+              td 2016-02-26
+              td
+                a(href="detail.html") 56984521 / 明細
+              td $1,800
+              td 已提貨
+              td 現金
+              td 已付款
+              td 店取-南屯向上店
+              td 
+
+            tr
+              td 2016-02-24
+              td
+                a(href="detail.html") 45681235 / 明細
+              td $600
+              td 已提貨
+              td 刷卡
+              td 已付款
+              td 宅配
+              td 
+                
+            tr
+              td 2016-01-15
+              td
+                a(href="detail.html") 98753215 / 明細 
+              td $1,750
+              td 已提貨
+              td 刷卡
+              td 已付款
+              td 宅配
+              td 
+
+        .pages.pt56
+          a(href="#").icon-page-1
+          a(href="#").icon-page-2
+          a(href="#").active 1
+          a(href="#") 2
+          a(href="#") 3 
+          a(href="#") 4
+          a(href="#") 5
+          a(href="#").icon-page-3
+          a(href="#").icon-page-4
+
+
+
+
+
+
+
+
+

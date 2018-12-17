@@ -1,0 +1,246 @@
+
+.product
+  position: relative
+  margin-top: 55px
+  padding-right: 300px
+
+
+.recommand
+  +position(absolute, 0 50px null null )
+  .inner
+    +fcl
+  .f18
+    margin-bottom: 24px
+  a
+    max-width: 190px
+    border: 1px solid #ccc
+    margin-bottom: 12px
+
++max(1365)
+  .product
+    padding-right: 0
+
+  .recommand
+    position: static
+    +padding(20px)
+    +margin(null null 50px null )
+    +fcl
+    background-color: #eee
+
+    .outer
+      display: inline-flex
+      justify-content: flex-start
+      align-items: flex-start
+      flex-direction: column
+    .inner
+      flex-direction: row
+    .f18
+      +margin(null null 10px null)
+    a
+      +margin(null 12px 0 null)
+
+
+
+.info-top
+  +f
+
+.slick-container
+  +fcl
+  
+  margin-right: 60px
+
+  .slick-show
+    +size(540px)
+    margin-bottom: 30px
+    border: 1px solid #ccc
+
+  .slick-nav
+    width: 540px
+    height: 120px
+    
+    img
+      +size(120px)
+      border: 1px solid #ccc
+      +margin(null 18px null null )
+
+    img.slick-current
+      border-color: $green
+
+.summary
+  width: 100%
+
+.summary__title
+  text-indent: -15px
+
+.summary__sub
+  color: #969696  
+  padding-bottom: 28px
+  margin-bottom: 28px
+  border-bottom: 1px solid #ccc
+
+.summary__list
+
+.summary__tag
+  border-bottom: 1px solid #ccc
+  padding-top: 40px
+  margin-bottom: 40px
+  position: relative
+  .tag
+    +position(absolute, 0 null null null )
+    background-image: url("./images/0c-bgc.svg")
+    background-repeat: no-repeat
+    color: #fff
+    +size(110px, 75px)
+    +fc
+    padding-bottom: 15px
+    
+.summary__price
+
+
+
+
+.price-origin
+  font-size: 36px
+  color: #969696
+  font-family: "Roboto"
+  text-decoration: line-through
+.price-origin + span
+  +margin(null 10px)
+
+
+.price-discount
+  font-size: 50px
+  color: $green
+  font-family: "Roboto"
+
+.summary__btn
+  +f
+  height: 70px
+  max-width: 440px
+
+.summary__select,
+.summary__add
+  flex: 1 1 50%
+  height: 100%
+  background-color: $green
+  color: #fff
+  border-radius: 10px
+  font-size: 20px
+  // word-spacing: nowrap
+  white-space: nowrap
+
+.summary__select
+  margin-right: 12px
+  
+  position: relative  
+  overflow: hidden
+  +padding(null 25px)
+
+  .wrap
+    position: relative
+    +fc(flex-start)
+    +size(100%)
+    pointer-events: none
+
+  select
+    background-color: transparent
+    border-width: 0px
+    color: #fff
+    +size(100%)
+
+    padding-left: 50%
+    text-align: center !important
+    +position(absolute, 0 null null 0)
+
+    option
+      color: $green
+
+
+    +trans
+    &::-ms-expand
+      display: none
+    &:hover
+      background-color: $greenL
+      option
+        background-color: #fff
+    // &:focus
+    // &::placeholder
+
+
+  [class*="icon"]:before
+    color: #fff
+    +position(absolute, 50% 0 null null )
+    transform: translateY(-50%)
+    pointer-events: none
+
+
+
+.summary__add 
+  +fc
+  cursor: pointer
+  img
+    margin-right: 15px
+  
+
+
+
+.tab__nav
+  +f
+  border-bottom: 1px solid #dbdbdb
+
+  .tab
+    background-color: #dbdbdb
+    +size(180px, 60px)
+    +fc
+    margin-right: 40px
+    border-radius: 99px
+    position: relative
+
+
+    &:before
+      margin-right: 10px
+      font-size: 25px
+
+
+    &:after
+      content: ""
+      display: block
+      position: absolute
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 26px 20px 0 10px
+      border-color: #dbdbdb transparent transparent transparent
+      bottom: -26px
+
+    &.active
+      background-color: $green
+      color: #fff
+      &:before
+        color: #FFF
+      &:after
+        border-top-color: $green
+
+.tab__content
+  margin-bottom: 110px
+
+.editor
+  .f32
+    +margin(40px null)
+
+  table
+    margin-bottom: 20px
+    tr
+      border-top: 1px solid #dbdbdb
+    th, 
+    td
+      +padding(20px null)
+
+    th
+      width: 150px
+      font-weight: normal
+      color: $green
+  
+  img
+    width: 100%
+    
