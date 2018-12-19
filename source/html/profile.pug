@@ -1,0 +1,102 @@
+
+extends ./include/layout.pug
+
+block content
+  include ./include/nav.pug
+  
+  .breadcrumb  
+    ul.container.nostyle
+      li.title
+        span.icon-user2.f24.mr20
+        span.f28 會員中心
+      li 首頁
+      h2.icon-right 會員中心
+      h3.icon-right 會員帳號資料
+
+  .user-menu.mb72
+    .toggle-nav
+    .toggle-cover.f18
+      a(href="order.html") 訂單紀錄
+      a(href="return.html") 退貨進度
+      a.active(href="profile.html") 會員帳號資料
+      a(href="contact.html") 常用聯絡資訊
+      a(href="bonus.html") 紅利點數查詢
+
+  .user-main.container.profile
+    .f32.b.tc.mb40 會員帳號資料
+
+    .tab-nav.f18.mb40
+      a(data-user-tab="user-tab-1").btn.active 基本資訊
+      a(data-user-tab="user-tab-2").btn 密碼管理
+
+    .tab-content.return
+      .tab-pane(id="user-tab-1")
+        table.column.mb56(data-abbr="type4")
+          tbody
+            tr
+              th 會員編號：
+              td ABC123456789
+            tr
+              th 姓名：
+              td 陳曉瑩
+            tr
+              th 身分證字號：
+              td G123456***
+            tr
+              th 電話：
+              td
+                input(type="text" placeholder="04-21542154")
+            tr
+              th 手機：
+              td
+                input(type="text" placeholder="0951-215-478") 
+            tr
+              th 通訊地址：
+              td
+                .row
+                  label
+                    span 郵遞區號
+                    input(type="text" placeholder="112")
+                  label
+                    span 縣市
+                    select
+                      option(value="台北市") 台北市
+                  label
+                    span 鄉鎮區
+                    select
+                      option(value="北投區") 北投區
+                input(type="text" placeholder="富貴一路3號")
+
+            tr
+              th 電子郵件：
+              td
+                input(type="mail" placeholder="Hank123@gmail.com")
+
+        .btn-container
+          .btn.lg 儲存
+          
+      .tab-pane(id="user-tab-2").pt24
+        form(action="")
+          table.column.mb56.column-sm(data-abbr="type4")
+            tbody
+              tr
+                th 請輸入舊密碼：
+                td 
+                  input(type="mail")
+              tr
+                th 請輸入新密碼：
+                td 
+                  input(type="mail")
+              tr
+                th 請再次輸入新密碼：
+                td 
+                  input(type="mail")
+
+          .btn-container
+            button(type="submit").btn.lg 確定修改
+
+                
+
+
+
+

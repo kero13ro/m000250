@@ -1,34 +1,106 @@
 
 
 .user-menu
-  background-color: $green
 
 .user-menu 
-  .container
-    +f
-    height: 60px
+  background-color: $green
+  
+  position: relative
 
-  a
-    width: 280px
-    height: 100%
-    color: #fff
-    +fc
-    border-right: 1px solid #fff
-    position: relative
-  a:first-child
-    border-left: 1px solid #fff
+  +min(768)
 
-  a.active,
-  a:hover
-    background-color: #06880a
-    &:before
+    .toggle-cover
+      +fc
+      text-align: center
+      max-width: 1440px
+      +margin(null auto)
+      +padding(null 20px)
+    a
+      color: #fff
+      // width: 280px
+      width: 100%
+
+      +padding(18px)
+      border-right: 1px solid #fff
+      display: inline-block
+      transform: perspective(1px)
+
+    a:first-child
+      border-left: 1px solid #fff
+    a:after
       content: ""
-      position: absolute
-      +size(20px)
-      background-color: #06880a
-      transform: rotate(45deg)
-      bottom: -8px
+      display: block
+      z-index: -1
+      +position(absolute, 0 0 0 0)
+      transform: scaleY(0)
+      transform-origin: 50% 0
+      background-color: $greenXL
+      transition: transform 0.3s
+      transition-timing-function: ease-out
+
+    a:hover
+      &:after
+        transform: scaleY(1)
+        transition: transform 0.3s
+
+    a.active
+      &:after
+        transform: scaleY(1)
+        
+      &:before
+        content: ""
+        position: absolute
+        +size(20px)
+        background-color: #06880a
+        transform: translateX(-50%) rotate(45deg) 
+        bottom: -8px
+        left: 50%
+    
+
+  +max(767)
+    .toggle-nav
+      +margin(null auto)
+      width: 80%
+      border-right: 1px solid #fff
+      border-left: 1px solid #fff
+      height: 60px
+      position: relative
+      +fc
       
+      &:before
+        font-weight: bold
+        content: "目錄"
+        display: block
+        color: #fff
+
+
+    .toggle-cover
+      z-index: 6
+      +position(absolute, 60px null null 10%)
+      width: 80%
+      display: none
+
+    a
+      +size(100%, 50px)
+      color: #fff
+      background-color: rgba($greenXL, 0.9)
+      +fc
+      
+      border-top: 1px solid rgba(#fff,0.3)
+
+    a.active
+      background-color: #016d00
+
+  +max(450)
+    .toggle-nav
+      height: 50px
+
+    .toggle-cover 
+      top: 50px
+      a
+        font-size: 15px
+
+    
 
 .user-main
   margin-bottom: 100px
@@ -50,27 +122,36 @@
 
 .tab-nav
   +fc
-  a
+  .btn
     +margin(null 10px)
-    +size(110px, 50px)
-    background-color: #f0f0f0
-    color: $green
+    +padding(null 35px)
+    height: 50px
     +fc
     border-radius: 99px
-  a.active
-    background-color: $green
-    color: #fff
+
+  .btn:not(.active)
+    background-color: #f0f0f0
+    color: $green
+    +hoverBgc($green)
+    +hoverText(#fff)
+
 
 
 
 .btn-container
   +fc
 
+  .btn
+    +hoverBgc($greenL)
+
+
 .tab-content
 
   
 
 table.plain 
+  min-width: 700px
+
   a:not(.btn)
     color: $green
     &:hover
@@ -78,10 +159,16 @@ table.plain
 
   td:nth-child(4)
     font-weight: bold
+
+  
+    
   td:last-child
     max-width: 150px
+    
 
   tbody tr
+    &:not(:last-child)
+      border-bottom: 1px solid #cdcdcd
     +hoverBgc(#f3f3f3)
 
   .btn
@@ -106,8 +193,25 @@ table.plain
     +hoverBgc($greenL)
 
 
+  +max(1200)
+  
+    td:last-child
+      max-width: 90px
+
+    .btn-twin
+      +fcl
+      +padding(12px null)
+      .btn:first-child
+        +margin(null 0 8px null)
+      .btn
+        +padding(null 8px)
+        font-size: 14px
+
+
+
 .tab-pane#user-tab-1 ~ .tab-pane
   display: none
+
 
 .tab-content.return
 
@@ -120,13 +224,16 @@ table.plain
 
   td:first-child
     max-width: 560px
-    width: 30vw
+    +min(1600)
+      width: 30vw
 
   .info
     white-space: normal
     text-align: left
     +f(flex-start, center)
+    flex: 0 0 auto
     padding-left: 45px
+    
     img
       margin-right: 40px
 
@@ -134,4 +241,26 @@ table.plain
       +f
       flex-direction: column
       max-width: 300px
-      
+    
+  tfoot 
+    td
+      +padding(null 35px)
+      font-weight: bold
+      font-family: "Roboto"
+
+    td:first-child
+      text-align: left
+      span 
+        +margin(null 3px)
+    td:last-child
+      text-align: right
+
+.icon-arr-left
+  +padding(null 26px)
+    
+  // +hoverBgc($greenL)
+  &:before
+    margin-right: 10px
+    font-size: 22px
+
+  

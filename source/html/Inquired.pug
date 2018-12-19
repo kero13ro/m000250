@@ -1,0 +1,33 @@
+
+extends ./include/layout.pug
+
+block content
+  include ./include/nav.pug
+  
+  .breadcrumb  
+    ul.container.nostyle
+      li.title
+        span.icon-user2.f24.mr20
+        span.f28 會員中心
+      li 首頁
+      h2.icon-right 會員中心
+      h3.icon-right 訂單詢問
+
+  .user-menu.mb80
+    .toggle-nav
+    .toggle-cover.f18
+      a.active(href="order.html") 訂單紀錄
+      a(href="return.html") 退貨進度
+      a(href="profile.html") 會員帳號資料
+      a(href="contact.html") 常用聯絡資訊
+      a(href="bonus.html") 紅利點數查詢
+
+  .user-main.container.tc
+
+    .icon-mail.g.mb32
+
+    .f28.b.mb8.wide10 信件已成功送出
+    .f16.mb56.lh20 親愛的客戶您好，您的訂單詢問已成功送出 #[br] 我們將盡速與您聯繫，謝謝您的支持。
+
+    .btn-container
+      a(href="order.html").btn.lg 返回訂單

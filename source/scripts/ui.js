@@ -183,6 +183,8 @@ if (wW <= 1100) {
 
 
 
+
+
 $(function () {  
   // TweenMax.to("#svg2", 3, { morphSVG: "#svg1", ease: Elastic.easeOut.config(1, 0.75), })
 });
@@ -224,4 +226,110 @@ $(function () {
     target.fadeIn();
   })
   
-});
+
+
+  if (wW < 768 ) {
+    $(".user-menu .toggle-nav").click(function() {
+      var target = $(this).next(".toggle-cover");
+      target.stop(true, false, true).slideToggle(400);
+
+      $cover.addClass("show").click(function() {
+        target.stop(true, false, true).slideUp(200);
+        $cover.off().removeClass("show");
+      });
+    });
+  }
+
+
+  //表格部分內文過長，RWD 插入斷行
+  if (document.querySelector("[data-abbr='type1']") !== null && wW < 900) {
+
+    $(" [data-abbr] td:nth-child(1)").each(function () {
+      var str = $(this).text();
+      var output = str.substr(0, 5) + "<br/>" + str.substr(5);
+      $(this).html(output);
+    });
+
+    
+    $(" [data-abbr] th:nth-child(2), \
+        [data-abbr] td:nth-child(2) ").each(function () {      
+      var str = $(this).text();
+      var index = str.indexOf("/");
+      var output = str.slice(0, index -1) + "<br>" + str.slice(index+1);      
+      $(this).html(output);
+    });
+
+    $(" [data-abbr] td:nth-child(5)").each(function () {      
+      var str = $(this).text();
+      var output;
+      if (str.length >= 7) {
+        output = str.substr(0, 4) + "<br/>" + str.substr(4);
+      } 
+      $(this).html(output);
+    });
+
+    $(" [data-abbr] td:nth-child(7)").each(function () {      
+      var str = $(this).text();
+      var index = str.indexOf("-");
+      if (index !== -1) {
+        var output = str.slice(0, index) + "<br>" + str.slice(index+1);      
+        $(this).html(output);
+      }
+    });
+  }
+
+
+  if (document.querySelector("[data-abbr='type2']") !== null && wW < 900) {
+
+    $("[data-abbr] td:nth-child(1) \
+      ,[data-abbr] td:nth-child(2) ").each(function () {
+      var str = $(this).text();
+      $(this).html(str.substr(0, 5) + "<br/>" + str.substr(5));
+    });
+
+    
+    $(" [data-abbr] th:nth-child(3), \
+        [data-abbr] td:nth-child(3) ").each(function () {      
+      var str = $(this).html();
+      var index = str.indexOf("/");
+      $(this).html(str.slice(0, index - 1) + "<br>" + str.slice(index + 1));
+    });
+  }
+
+  if (document.querySelector("[data-abbr='type3']") !== null && wW < 900) {
+    $("[data-abbr] td:nth-child(2)").each(function () {
+      var str = $(this).html();
+      var index = str.indexOf("(");
+      if (index !== -1) {
+        $(this).html(str.slice(0, index - 1) + "<br>" + str.slice(index));
+      }
+    });
+
+  }
+
+
+  if (document.querySelector("[data-abbr='type4']") !== null && wW < 360) {
+    $("table.column th").each(function() {
+      var str = $(this).text();
+      if (str.length >= 7) {
+        $(this).html(str.substr(0, 4) + "<br/>" + str.substr(4));
+      } else if (str.length >= 5) {
+        $(this).html(str.substr(0, 2) + "<br/>" + str.substr(2));
+      }
+    });
+  }
+
+
+
+  var fqAns = $(".faq-main").find("li");
+  fqAns.click(function () {
+    $(this).siblings(".active").removeClass("active");
+    $(this).siblings("li").find(".ans").slideUp();
+
+    $(this).addClass("active");
+    $(this).find(".ans").slideDown();
+  
+    
+  });
+
+});// $(function ) end

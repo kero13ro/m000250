@@ -1,0 +1,50 @@
+
+extends ./include/layout.pug
+
+block content
+  include ./include/nav.pug
+  
+  .breadcrumb  
+    ul.container.nostyle
+      li.title
+        span.icon-service.f24.mr20
+        span.f28 服務中心
+      li 首頁
+      h2.icon-right 服務中心
+      h3.icon-right 活動訊息
+
+  .user-menu.mb64
+    .toggle-nav
+    .toggle-cover.f18
+      a.active(href="news.html") 活動訊息
+      a(href="faqs.html") 常見問題
+      a(href="send.html") 聯絡我們
+
+
+  .user-main.container
+    .f32.b.tc.mb40 活動訊息
+    .editor-news
+      img(src="./styles/images/2a-1.jpg", alt="大樹連鎖藥局")
+      img(src="./styles/images/2a-2.jpg", alt="大樹連鎖藥局")
+      img(src="./styles/images/2a-3.jpg", alt="大樹連鎖藥局")
+      img(src="./styles/images/2a-4.jpg", alt="大樹連鎖藥局")
+      img(src="./styles/images/2a-5.jpg", alt="大樹連鎖藥局")
+
+    .pages.pt56
+      a(href="#").icon-page-1
+      a(href="#").icon-page-2
+      a(href="#").active 1
+      a(href="#") 2
+      a(href="#") 3 
+      a(href="#") 4
+      a(href="#") 5
+      a(href="#").icon-page-3
+      a(href="#").icon-page-4
+
+
+
+
+
+
+
+

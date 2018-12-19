@@ -14,7 +14,8 @@ block content
       h3.icon-right 退貨進度
 
   .user-menu.mb72
-    .container.f18
+    .toggle-nav
+    .toggle-cover.f18
       a(href="order.html") 訂單紀錄
       a.active(href="return.html") 退貨進度
       a(href="profile.html") 會員帳號資料
@@ -25,135 +26,134 @@ block content
     .f32.b.tc.mb40 退貨紀錄
 
     .tab-nav.f18.mb40
-      a(data-user-tab="user-tab-1").active 未結案
-      a(data-user-tab="user-tab-2") 全紀錄
+      a(data-user-tab="user-tab-1").btn.active 未結案
+      a(data-user-tab="user-tab-2").btn 全紀錄
 
     .tab-content.return
       .tab-pane(id="user-tab-1")
-        table.plain
-          thead
-            tr
-              th 訂單日期
-              th 退貨日期
-              th 訂單編號 / 商品明細
-              th 訂單金額
-              th 退貨狀態
-              th 
+        .scrollbarX
+          table.plain(data-abbr="type2")
+            thead
+              tr
+                th 訂單日期
+                th 退貨日期
+                th 訂單編號 / 商品明細
+                th 訂單金額
+                th 退貨狀態
+                th 
 
-          tbody
-            tr
-              td 2018-03-12
-              td 2018-03-15
-              td 
-                a(href="detail.html") 32145789 / 明細 
-              td $5,480
-              td 
-                .red 待處理
-              td 
-                a.btn.sm.order-inquire 訂單詢問
-            tr
-              td 2018-03-10
-              td 2018-03-13
-              td
-                a(href="detail.html") 64482115 / 明細
-              td $4,500
-              td 
-                .red 處理中
-              td 
-                a.btn.sm.order-inquire 訂單詢問
-            tr
-              td 2015-03-18
-              td 2015-03-18
-              td
-                a(href="detail.html") 78965412 / 明細
-              td $1,200
-              td 
-                .red 退貨失敗
-              td 
-                a.btn.sm.order-inquire 訂單詢問
+            tbody
+              tr
+                td 2018-03-12
+                td 2018-03-15
+                td 
+                  a(href="detail.html") 32145789 / 明細 
+                td $5,480
+                td: .red 待處理
+                td: .btn-twin
+                  a.btn.sm.order-inquire 訂單詢問
+              tr
+                td 2018-03-10
+                td 2018-03-13
+                td
+                  a(href="detail.html") 64482115 / 明細
+                td $4,500
+                td: .red 處理中
+                td: .btn-twin
+                  a.btn.sm.order-inquire 訂單詢問
+              tr
+                td 2015-03-18
+                td 2015-03-18
+                td
+                  a(href="detail.html") 78965412 / 明細
+                td $1,200
+                td: .red 退貨失敗
+                td: .btn-twin
+                  a.btn.sm.order-inquire 訂單詢問
 
 
       .tab-pane(id="user-tab-2")
-        table.plain
-          thead
-            tr
-              th 訂單日期
-              th 退貨日期
-              th 訂單編號 / 商品明細
-              th 訂單金額
-              th 退貨狀態
-              th 
-          tbody
-            tr
-              td 2018-03-12
-              td 2018-03-15
-              td: a(href="detail.html") 32145789 / 明細 
-              td $650
-              td: .red 待處理
-              td: a.btn.sm.order-inquire 訂單詢問
-            tr
-              td 2018-03-10
-              td 2018-03-13
-              td: a(href="detail.html") 64482115 / 明細
-              td $4,500
-              td: .red 處理中
-              td: a.btn.sm.order-inquire 訂單詢問
-            tr
-              td 2016-08-25
-              td 2016-08-26
-              td: a(href="detail.html") 45871245 / 明細
-              td $3,800
-              td 退貨成功
-              td
-            tr
-              td 2015-03-18
-              td 2015-03-18
-              td: a(href="detail.html") 78965412 / 明細
-              td $1,200
-              td: .red 退貨失敗
-              td: a.btn.sm.order-inquire 訂單詢問
-            tr
-              td 2014-09-30
-              td 2014-10-01
-              td: a(href="detail.html") 65478521 / 明細
-              td $1,200
-              td 退貨成功
-              td
-            tr
-              td 2014-08-14
-              td 2014-08-16
-              td: a(href="detail.html") 19547236 / 明細
-              td $4,500
-              td 退貨成功
-              td
-            tr
-              td 2014-05-18
-              td 2014-05-20
-              td: a(href="detail.html") 87452365 / 明細
-              td $63,500
-              td 退貨成功
-              td
-            tr
-              td 2013-12-26
-              td 2013-12-29
-              td: a(href="detail.html") 56984521 / 明細
-              td $1,800
-              td 退貨成功
-              td
-            tr
-              td 2012-02-24
-              td 2012-02-25
-              td: a(href="detail.html") 45681235 / 明細
-              td $600
-              td 退貨成功
-              td
-            tr
-              td 2012-01-15
-              td 2012-01-15
-              td: a(href="detail.html") 98753215 / 明細
-              td $1,750
-              td 退貨成功
-              td
+        .scrollbarX
+          table.plain(data-abbr="type2")
+            thead
+              tr
+                th 訂單日期
+                th 退貨日期
+                th 訂單編號 / 商品明細
+                th 訂單金額
+                th 退貨狀態
+                th 
+            tbody
+              tr
+                td 2018-03-12
+                td 2018-03-15
+                td: a(href="detail.html") 32145789 / 明細 
+                td $650
+                td: .red 待處理
+                td: a.btn.sm.order-inquire 訂單詢問
+              tr
+                td 2018-03-10
+                td 2018-03-13
+                td: a(href="detail.html") 64482115 / 明細
+                td $4,500
+                td: .red 處理中
+                td: a.btn.sm.order-inquire 訂單詢問
+              tr
+                td 2016-08-25
+                td 2016-08-26
+                td: a(href="detail.html") 45871245 / 明細
+                td $3,800
+                td 退貨成功
+                td
+              tr
+                td 2015-03-18
+                td 2015-03-18
+                td: a(href="detail.html") 78965412 / 明細
+                td $1,200
+                td: .red 退貨失敗
+                td: a.btn.sm.order-inquire 訂單詢問
+              tr
+                td 2014-09-30
+                td 2014-10-01
+                td: a(href="detail.html") 65478521 / 明細
+                td $1,200
+                td 退貨成功
+                td
+              tr
+                td 2014-08-14
+                td 2014-08-16
+                td: a(href="detail.html") 19547236 / 明細
+                td $4,500
+                td 退貨成功
+                td
+              tr
+                td 2014-05-18
+                td 2014-05-20
+                td: a(href="detail.html") 87452365 / 明細
+                td $63,500
+                td 退貨成功
+                td
+              tr
+                td 2013-12-26
+                td 2013-12-29
+                td: a(href="detail.html") 56984521 / 明細
+                td $1,800
+                td 退貨成功
+                td
+              tr
+                td 2012-02-24
+                td 2012-02-25
+                td: a(href="detail.html") 45681235 / 明細
+                td $600
+                td 退貨成功
+                td
+              tr
+                td 2012-01-15
+                td 2012-01-15
+                td: a(href="detail.html") 98753215 / 明細
+                td $1,750
+                td 退貨成功
+                td
 
 
         .pages.pt56

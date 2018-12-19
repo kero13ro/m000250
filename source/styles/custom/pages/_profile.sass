@@ -1,0 +1,212 @@
+
+
+.user-main
+
+  .btn.lg
+    width: 150px
+
+  .icon-mail
+    font-size: 55px
+    font-weight: bold
+    border-radius: 50%
+    border: 5px solid #eee
+    +size(120px)
+    padding-bottom: 3px
+    +fc
+    +margin(null auto)
+    
+
+table.column
+  max-width: 800px
+  width: 100%
+  border: 1px solid #09a30d
+  +margin(null auto)
+
+  tr
+    +hoverBgc(#f3f3f3)
+    &:not(:last-child)
+      border-bottom: 1px solid #cdcdcd
+
+  td,
+  th
+    height: 60px
+    text-align: left
+    +padding(18px)
+    font-weight: bold
+
+  th
+    background-color: #f0f0f0
+    white-space: nowrap
+    width: 140px
+
+  &.column-sm
+    max-width: 540px
+
+  +max(991)
+    font-size: 15px
+
+
+  select,
+  input,
+  textarea
+    +size(100%, 40px)
+    background-color: #e6f5e7
+    +padding(null 20px)
+    border: 1px solid $green
+    border-radius: 10px
+    // line-height: 40px
+    +trans
+    font-weight: bold
+    &::placeholder
+      color: #999
+      // font-weight: bold
+    &:focus
+      border-color: #028900
+
+  textarea
+    height: auto
+    +padding(12px null )
+  select
+    background: url(./images/tri-arrow.png) center right 15px no-repeat, #e6f5e7
+    width: 135px
+    +trans
+
+    &::-ms-expand
+      display: none
+  
+  .row
+    justify-content: flex-start
+    margin-bottom: 20px
+    input
+      max-width: 68px
+    //   flex: 0 0 68px
+
+    label
+      margin-right: 15px
+      +fc
+      display: inline-flex
+    span
+      margin-right: 10px
+      white-space: nowrap
+
+  +max(991)
+    select
+      width: 100px
+      background-size: 10px
+      background-position: center right 10px
+
+  +max(700)
+    th
+      +padding(15px 12px)
+      font-size: 14px
+      width: auto
+    td
+      +padding(15px 12px)
+      font-size: 14px
+
+    input,
+    select
+      +padding(null 6px)
+
+    .row
+      margin-bottom: 0
+      flex-wrap: wrap
+      span
+        width: 60px
+
+      label
+        margin-bottom: 10px
+
+  +max(510)
+    .row
+      select,
+      input
+        width: calc(100% - 60px)
+        max-width: calc(100% - 60px)
+
+      label
+        margin-right: 0
+        width: 100%
+    
+
+
+.container-w800
+  max-width: 800px
+  +margin(null auto)
+  
+  // table.column
+  //   margin-bottom: 20px
+
+  .btn-container-edit
+    text-align: right
+    
+    .btn
+      width: 80px
+      background-color: #fff
+      color: $green
+      border: 1px solid $green
+      +hoverText(#fff)
+      +hoverBgc($green)
+
+    .btn:last-child
+      margin-left: 20px
+
+
+.user-main.bonus
+
+  .info
+    +f
+    .block
+      white-space: nowrap
+    .g
+      font-size: 24px
+      font-family: roboto
+      +margin(null 5px)
+    .pipe
+      color: #aaa
+      +margin(null 12px)
+      position: relative
+      bottom: 2px
+
+    +max(900)
+      flex-wrap: wrap
+      .block:nth-child(2)        
+        margin-right: calc(100% - 500px)
+        
+        .pipe
+          display: none
+
+    +max(450)
+      .block
+        margin-right: 0
+        width: 100%
+      .g
+        font-size: 20px
+      .pipe
+        display: none
+    
+
+
+  table.plain
+    font-weight: bold
+    th,
+    td
+      &:nth-child(1)
+        .robo
+          font-size: 20px
+          +max(450)
+            font-size: 16px
+
+      &:nth-child(2)
+        text-align: left
+        width: 30%
+        a
+          +margin(null 5px)
+
+      +min(1600)
+        &:nth-child(1)
+          width: 330px
+        &:nth-child(2)
+          width: 30%
+
+      

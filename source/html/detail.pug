@@ -14,7 +14,8 @@ block content
       h3.icon-right 訂單紀錄
 
   .user-menu.mb72
-    .container.f18
+    .toggle-nav
+    .toggle-cover.f18
       a.active(href="order.html") 訂單紀錄
       a(href="return.html") 退貨進度
       a(href="profile.html") 會員帳號資料
@@ -32,31 +33,33 @@ block content
     
       .icon-right.b.f18 訂單概要
       .tab-pane.mb32
-        table.plain
-          thead
-            tr
-              th 訂單日期
-              th 訂單編號 / 商品明細
-              th 訂單金額
-              th 訂單狀態
-              th 付款方式
-              th 付款狀態
-              th 取貨方式
-              th 
-          tbody
-            tr
-              td 2018-03-16
-              td 
-                a(href="detail.html") 32145789 / 明細 
-              td $5,480
-              td 
-                .red 處理中
-              td 信用卡
-              td 已付款
-              td 店取-仁武仁雄
-              td 
-                a.btn.sm.order-cancel 取消訂單
-                a.btn.sm.order-inquire 訂單詢問
+        .scrollbarX
+          table.plain(data-abbr="type1")
+            thead
+              tr
+                th 訂單日期
+                th 訂單編號 / 商品明細
+                th 訂單金額
+                th 訂單狀態
+                th 付款方式
+                th 付款狀態
+                th 取貨方式
+                th 
+            tbody
+              tr
+                td 2018-03-16
+                td 
+                  a(href="detail.html") 32145789 / 明細 
+                td $5,480
+                td 
+                  .red 處理中
+                td 信用卡
+                td 已付款
+                td 店取-仁武仁雄
+                td 
+                  .btn-twin
+                    a.btn.sm.order-cancel 取消訂單
+                    a.btn.sm.order-inquire 訂單詢問
 
       .icon-right.b.f18 訂單明細
       .tab-pane
@@ -103,15 +106,18 @@ block content
               td 1
           tfoot
             tr 
-              td(colspan="1") 訂單金額 
-                span.g NT$5,480
-                | +運費 NT$0
+              td(colspan="1") 
+                div 訂單金額 
+                  span.g NT$5,480
+                  |  + 運費 NT$0
               
-              td(colspan="4") 訂單總金額
-                span.g NT$5,480
+              td(colspan="4") 
+                div 
+                  span.mr8 訂單總金額
+                  span.f24.g NT$2,280
 
-
-    a(href="order.html").btn 返回列表
+    .btn-container
+      a(href="order.html").btn.icon-arr-left.lg 返回列表
 
 
 

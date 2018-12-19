@@ -1,0 +1,76 @@
+
+
+
+.editor-news
+  img
+    margin-bottom: 40px
+    border-radius: 15px
+    box-shadow: 0 40px 30px -30px rgba(black, 0.2) 
+
+
+.container.faq
+  +f
+  margin-bottom: 100px
+
+.faq-menu
+  flex: 1 1 250px
+  margin-right: 55px
+
+.faq-main
+  flex: 1 1 1100px
+
+
+.faq-menu
+  li
+    border-top: 1px solid #cccccc
+    &:last-child
+      border-bottom: 1px solid #cccccc
+
+    span
+      display: inline-block
+      +padding(14px null)
+      transform: translateY(1px)
+      
+
+
+  li.active
+    color: $green
+    span
+      border-bottom: 2px solid $green
+
+.faq-main
+  li
+    color: #444
+    border-top: 1px solid #cccccc
+    &:last-child
+      border-bottom: 1px solid #cccccc
+
+  .g
+    font-size: 20px
+    margin-right: 5px
+
+  .que
+    +padding(25px 20px 25px 30px)
+    cursor: pointer
+    font-weight: bold
+    transition: padding 0.3s
+    .icon-down
+      font-size: 18px
+      float: right
+      transition: transform 0.3s
+
+  .ans
+    line-height: 2
+    display: none
+    text-indent: -25px
+    +padding(25px 80px 25px 55px)
+
+  .active
+    .que
+      +padding(10px null)
+      transition: padding 0.3s
+      background-color: #e6f5e7
+      color: $green
+    .icon-down
+      transition: transform 0.3s
+      transform: rotate(180deg)

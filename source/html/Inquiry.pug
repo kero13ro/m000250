@@ -1,0 +1,61 @@
+
+extends ./include/layout.pug
+
+block content
+  include ./include/nav.pug
+  
+  .breadcrumb  
+    ul.container.nostyle
+      li.title
+        span.icon-user2.f24.mr20
+        span.f28 會員中心
+      li 首頁
+      h2.icon-right 會員中心
+      h3.icon-right 訂單詢問
+
+  .user-menu.mb64
+    .toggle-nav
+    .toggle-cover.f18
+      a.active(href="order.html") 訂單紀錄
+      a(href="return.html") 退貨進度
+      a(href="profile.html") 會員帳號資料
+      a(href="contact.html") 常用聯絡資訊
+      a(href="bonus.html") 紅利點數查詢
+
+  .user-main.container
+    .f32.b.tc.mb40 訂單詢問
+
+    .container-w800.container-w800
+
+      .f20.b.mb24.robo 訂單編號：
+        span.g 32145789
+
+      table.column.mb56
+        tbody
+          tr
+            th 姓名：
+            td 
+              input(type="text" placeholder="陳曉瑩")
+          tr
+            th 電話：
+            td
+              input(type="tel" placeholder="04-21542154")
+          tr
+            th 手機：
+            td
+              input(type="tel" placeholder="0951-215-478") 
+          tr
+            th 電子郵件：
+            td
+              input(type="mail" placeholder="Hank123@gmail.com") 
+          tr
+            th 留言：
+            td
+              textarea( cols="30", rows="5", placeholder="請寫下您的問題...")
+
+      .btn-container
+        a(href="inquired.html").btn.lg.mr20 確定送出
+        a(href="order.html").btn.lg.second 取消
+
+
+

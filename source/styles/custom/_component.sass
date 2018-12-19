@@ -78,14 +78,9 @@
       +position(absolute, 10px 0 null null )
 
     [class^="icon-"]
-      background-color: $green
-      border-radius: 50%
-      +size(50px)
-      +fc
-      padding-top: 3px
       &:before
-        color: #ffffff
-        width: auto
+        font-size: 50px
+
 
     [class^="icon-"] + span 
       font-weight: bold
@@ -101,22 +96,23 @@
   +max(768)
     ul
       +padding(12px null)
-    .title [class^="icon-"]
-      +size(45px)
+
+    .title [class^="icon-"]:before
+      font-size: 45px
   
   +max(480)
 
-    .title [class^="icon-"]
-      +size(36px)
     .title
       margin-right: 0
       padding-right: 5px
+
       &::after,
       [class^="icon-"] + span
         display: none
+        
+      [class^="icon-"]:before
+        font-size: 35px
 
-    .icon-user2
-      font-size: 32px
 
 .footGray
   background-color: #f0f0f0
@@ -124,16 +120,19 @@
 .footGray + footer
   background-color: #f0f0f0
   
+
+
 footer
-  // margin-top: -60px
-  // background: center / cover no-repeat
   padding-top: 60px
   +fcl(flex-end)
 
   position: relative
+
   svg 
-    +position(absolute, 0 null null 0)
+    +position(absolute, null 0 0 null)
     height: 100%
+
+
   
   &,a
     color: #fff

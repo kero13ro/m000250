@@ -1,0 +1,70 @@
+
+extends ./include/layout.pug
+
+block content
+  include ./include/nav.pug
+  
+  .breadcrumb  
+    ul.container.nostyle
+      li.title
+        span.icon-user2.f24.mr20
+        span.f28 會員中心
+      li 首頁
+      h2.icon-right 會員中心
+      h3.icon-right 常用聯絡資訊
+
+  .user-menu.mb72
+    .toggle-nav
+    .toggle-cover.f18
+      a(href="order.html") 訂單紀錄
+      a(href="return.html") 退貨進度
+      a(href="profile.html") 會員帳號資料
+      a.active(href="contact.html") 常用聯絡資訊
+      a(href="bonus.html") 紅利點數查詢
+
+  .user-main.container.profile
+    .f32.b.tc.mb40 常用聯絡資訊
+
+    .container-w800
+
+      table.column.mb20
+        tbody
+          tr
+            th 姓名：
+            td 陳曉瑩
+          tr
+            th 聯絡電話：
+            td 0951-215-478
+          tr
+            th 通訊地址：
+            td 112 台北市 北投區 富貴一路3號
+  
+      .btn-container-edit.mb40
+        .btn.sm 編輯        
+        .btn.sm 刪除
+
+      table.column.mb20
+        tbody
+          tr
+            th 姓名：
+            td 方大同
+          tr
+            th 聯絡電話：
+            td 0951-215-478
+          tr
+            th 通訊地址：
+            td 112 台北市 北投區 富貴一路3號
+  
+      .btn-container-edit.mb56
+        .btn.sm 編輯        
+        .btn.sm 刪除
+
+      .btn-container
+        a(href="contact-add.html").btn.lg 新增聯絡人
+        
+
+
+
+
+
+

@@ -1,0 +1,104 @@
+
+extends ./include/layout.pug
+
+block content
+  include ./include/nav.pug
+  
+  .breadcrumb  
+    ul.container.nostyle
+      li.title
+        span.icon-user2.f24.mr20
+        span.f28 會員中心
+      li 首頁
+      h2.icon-right 會員中心
+      h3.icon-right 紅利點數查詢
+
+    
+  .user-menu.mb72
+    .toggle-nav
+    .toggle-cover.f18
+      a(href="order.html") 訂單紀錄
+      a(href="return.html") 退貨進度
+      a(href="profile.html") 會員帳號資料
+      a(href="contact.html") 常用聯絡資訊
+      a.active(href="bonus.html") 紅利點數查詢
+
+  .user-main.bonus.container
+    .f32.b.tc.mb40 紅利點數查詢
+
+    .tab-nav.f18.mb32
+      a(data-user-tab="user-tab-1").btn.active 點數統計
+      a(data-user-tab="user-tab-2").btn 使用說明
+
+    .tab-content
+      .tab-pane(id="user-tab-1")
+
+        p.b 以下為您尚未到期的紅利點數。
+        .b.info.lh20.f16.mb24 
+          .block 總共累積紅利：
+            span.g 1300
+            | 點  
+            span.pipe |
+
+          .block 已使用紅利：
+            span.g 500
+            | 點  
+            span.pipe |
+
+          .block 紅利餘額總計：
+            span.g 800
+            | 點  
+            span.pipe |
+
+          .block 有效可用餘額：
+            span.g 800
+            | 點
+
+        .scrollbarX
+          table.plain(data-abbr="type3")
+              thead
+                tr
+                  th 紅利計算
+                  th 紅利兌換/使用紀錄
+                  th 產生日期
+                  th 失效日期
+                  th 使用日期
+              tbody
+                tr
+                  td 
+                    .robo -500
+                  td 使用紅利 ( 訂單編號：
+                    a(href="product.html") A123456789 
+                    | ) 
+                  td -
+                  td -
+                  td 2018-05-08
+                tr
+                  td 
+                    .robo.g +150
+                  td 訂單回利回饋 ( 訂單編號：
+                    a(href="product.html") A123456789 
+                    | )
+                  td 2018-05-01
+                  td 2019-05-01
+                  td -
+                tr
+                  td 
+                    .robo.g +150
+                  td 生日禮金
+                  td 2018-04-12
+                  td 2016-04-12
+                  td -
+                tr
+                  td 
+                    .robo.g +1000
+                  td 加入會員，首次購物 
+                  td 2018-03-05
+                  td 2019-03-05
+                  td -
+
+        .f16.red.mt16 ※ 門市消費的紅利點數，需一段作業時間才會顯示在清單上，請稍後片刻再重新整理頁面。
+
+      .tab-pane(id="user-tab-2")
+        ol.nostyle
+          li 紅利點數使用說明事項...

@@ -1,0 +1,31 @@
+
+extends ./include/layout.pug
+
+block content
+  include ./include/nav.pug
+  
+  .breadcrumb  
+    ul.container.nostyle
+      li.title
+        span.icon-service.f24.mr20
+        span.f28 服務中心
+      li 首頁
+      h2.icon-right 服務中心
+      h3.icon-right 常見問題
+
+  .user-menu.mb64
+    .toggle-nav
+    .toggle-cover.f18
+      a(href="news.html") 活動訊息
+      a(href="faqs.html") 常見問題
+      a.active(href="send.html") 聯絡我們
+
+
+  .user-main.container
+    .f32.b.tc.mb40 常見問題
+    
+
+
+
+
+
