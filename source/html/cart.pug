@@ -4,5 +4,190 @@ extends ./include/layout.pug
 block content
   include ./include/nav.pug
   
-  #cart
-  
+  .breadcrumb  
+    ul.container.nostyle
+      li.title
+        span.icon-cart.f24.mr20
+        span.f28 我的購物車
+      li 首頁
+      h2.icon-right 我的購物車
+      h3.icon-right 購物清單
+
+  ul.cart-process.mb72.nostyle
+    li.active #[.num 1] 購物清單
+    li #[.num 2] 填寫資料
+    li #[.num 3] 完成訂單
+
+  .cart-main.container
+
+    .f32.b.tc.mb40 購物清單
+
+    table.plain.cart
+      thead
+        tr
+          th 商品名稱
+          th
+          th 原始貨號
+          th 售價
+          th 會員價
+          th 數量
+          th
+      tbody
+        tr
+          td  
+            img(src="./styles/images/1a-01.jpg", alt="大樹連鎖藥局").pic
+          td
+            a(href="product.html").info.lh20
+              .b 【娘家】 益生菌（2g/包，60包/盒)
+          td: div 133909
+          td: div $2,200
+          td: div $2,200
+          td: div 
+            select 
+              option 1
+          td: div
+            .delete
+        tr
+          td  
+            img(src="./styles/images/1a-02.jpg", alt="大樹連鎖藥局").pic
+          td
+            a(href="product.html").info.lh20
+              .b 【歐典生機】養生雪晶耳冰糖植物性膠原飲 180ml*8入(禮盒)
+          td: div 142583
+          td: div $360
+          td: div $280
+          td: div 
+            select 
+              option 5
+          td: div
+            .delete
+        tr
+          td  
+            img(src="./styles/images/1a-03.jpg", alt="大樹連鎖藥局").pic
+          td
+            a(href="product.html").info.lh20
+              .b 【BioJoy百喬】奇亞酵素輕纖飲_Chia奇亞籽蔬果酵素５合１（12包/盒）
+
+          td: div 142719
+          td: div $829
+          td: div $488
+          td: div 
+            select 
+              option 2
+          td: div
+            .delete
+          
+      tfoot
+        tr 
+          td(colspan="2") 
+            | 本次消費共獲得紅利
+            span.g 100
+            | 點，目前累計
+            span.g 5000
+            | 點 
+          
+          td(colspan="5") 
+            span.g.mr8 NT$5,480
+            span (尚未包含折扣與運費)
+            
+
+    p.mt16.mb56.g 累積紅利點數因包含門市消費與線上消費積點，故會有合併時間差，最新累積紅利點數查詢可洽客服專線(0800-288-233)為您服務。
+
+    div.tmp-block.mb56.f20 (行銷方案規則尚須討論，帶定案後更新)
+
+    .block
+      span.title 紅利折抵
+      div.wrapper 線上購物可積點，紅利使用限門市。
+    .block
+      span.title 選擇付款方式
+      div.wrapper 
+        .radio-container.mb16  
+          .radio_unit 
+            input(type="radio", name="payType" id="creditCard")
+            label(for="creditCard") 信用卡付款(VISA、Master)
+          .radio_unit 
+            input(type="radio", name="payType" id="ATM")
+            label(for="ATM") 虛擬帳號ATM
+          .radio_unit 
+            input(type="radio", name="payType" id="cashOnDelivery")
+            label(for="cashOnDelivery") 貨到付款
+
+        label.check_unit
+          input(type="checkbox") 
+          .box
+          span 我已仔細閱讀並明瞭「
+            a(href="#").g 網站使用條款
+            | 」、「
+            a(href="#").g 隱私權保護政策
+            | 」等所載內容及其意義，茲同意該等條款規定，並願遵守網站現今、嗣後規範的各種規定。
+
+    .block
+      span.title 選擇取貨方式
+      div.wrapper
+        .radio-container  
+          .radio_unit 
+            input(type="radio", name="pickUp" id="homeDelivery")
+            label(for="homeDelivery") 宅配到府
+          .radio_unit 
+            input(type="radio", name="pickUp" id="storeDelivery")
+            label(for="storeDelivery") 指定門市
+
+            
+    .block
+      span.title 運費計算（宅配）
+
+      div.wrapper
+      
+        .row.mb32
+          span 選擇運送區域：
+          label.mr16
+            span.mr16 縣市
+            select
+              option(value="台北市") 台北市
+          label
+            span.mr16 鄉鎮區
+            select
+              option(value="北投區") 北投區
+
+        table.plain.price
+
+          thead
+            tr
+              th 品項
+              th 單價
+              th 數量
+              th 總價
+          tbody
+            tr
+              td 台灣本島 / 宅配到府 / ATM轉帳
+              td 80
+              td 1
+              td 80
+            tr
+              td 查閱
+                a(href="#").g 運費說明
+              td(colspan="3") 運費金額
+                span.g.f24.ml16.robo $280
+
+
+    .block
+      span 付款總金額
+      div.wrapper
+        .row-multi
+          .line
+            span 商品金額
+            span.boto NT$5480
+          .line
+            span 紅利折抵
+            span.boto - NT$200
+          .line
+            span 運費
+            span.boto + NT$280
+          .line
+            span 付款總金額
+            span.boto.g.f24 NT$280
+            
+
+        .btn-container
+          a(href="index.html").btn.lg.mr20 繼續購物
+          a(href="info.html").btn.lg.second 進行結帳

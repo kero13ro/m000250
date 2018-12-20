@@ -48,11 +48,9 @@ block content
             tbody
               tr
                 td 2018-03-16
-                td 
-                  a(href="detail.html") 32145789 / 明細 
+                td 32145789
                 td $5,480
-                td 
-                  .red 處理中
+                td: .red 待處理
                 td 信用卡
                 td 已付款
                 td 店取-仁武仁雄
@@ -63,58 +61,60 @@ block content
 
       .icon-right.b.f18 訂單明細
       .tab-pane
-        table.plain.detail
-          thead
-            tr
-              th 商品名稱
-              th 原始貨號
-              th 售價
-              th 會員價
-              th 數量
-          tbody
-            tr
-              td  
-                a(href="product.html").info
-                  img(src="./styles/images/1a-01.jpg", alt="大樹連鎖藥局")
-                  .text.lh20
+        .scrollbarX
+          table.plain.detail
+            thead
+              tr
+                th 商品名稱
+                th
+                th 原始貨號
+                th 售價
+                th 會員價
+                th 數量
+            tbody
+              tr
+                td  
+                  img(src="./styles/images/1a-01.jpg", alt="大樹連鎖藥局").pic
+                td
+                  a(href="product.html").info.lh20
                     .b 【娘家】 益生菌（2g/包，60包/盒)
                     .gift.red.f15 《限量贈品》：【娘家】滴雞精試飲包 x1 盒
-              td 133909
-              td $2,200
-              td $2,200
-              td 1
-            tr
-              td  
-                a(href="product.html").info
-                  img(src="./styles/images/1a-02.jpg", alt="大樹連鎖藥局")
-                  .text.lh20
+                td: div 133909
+                td: div $2,200
+                td: div $2,200
+                td: div 1
+              tr
+                td  
+                  img(src="./styles/images/1a-02.jpg", alt="大樹連鎖藥局").pic
+                td
+                  a(href="product.html").info.lh20
                     .b 【歐典生機】養生雪晶耳冰糖植物性膠原飲 180ml*8入(禮盒)
-              td 142583
-              td $360
-              td $280
-              td 5
-            tr
-              td  
-                a(href="product.html").info
-                  img(src="./styles/images/1a-03.jpg", alt="大樹連鎖藥局")
-                  .text.lh20
+                td: div 142583
+                td: div $360
+                td: div $280
+                td: div 5
+              tr
+                td  
+                  img(src="./styles/images/1a-03.jpg", alt="大樹連鎖藥局").pic
+                td
+                  a(href="product.html").info.lh20
                     .b 【BioJoy百喬】奇亞酵素輕纖飲_Chia奇亞籽蔬果酵素５合１（12包/盒）
 
-              td 142719
-              td $829
-              td $488
-              td 1
-          tfoot
-            tr 
-              td(colspan="1") 
-                div 訂單金額 
+                td: div 142719
+                td: div $829
+                td: div $488
+                td: div 2
+            tfoot
+              tr 
+                td(colspan="2") 
+                  span 訂單金額 
                   span.g NT$5,480
-                  |  + 運費 NT$0
-              
-              td(colspan="4") 
-                div 
+                  span + 運費 NT$0
+                
+                td(colspan="4") 
+                  div 
                   span.mr8 訂單總金額
-                  span.f24.g NT$2,280
+                  span.g NT$2,280
 
     .btn-container
       a(href="order.html").btn.icon-arr-left.lg 返回列表

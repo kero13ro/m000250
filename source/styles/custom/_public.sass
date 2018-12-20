@@ -64,6 +64,9 @@ $defaultcolor: rgb(22, 24, 23) !default
 
   &.second
     background-color: #646464
+    &:hover
+      background-color: #555 !important
+
   +max(500)
     font-size: 16px
     height: 45px
@@ -213,56 +216,56 @@ $defaultcolor: rgb(22, 24, 23) !default
 //     font-size: 1rem
 
 
-// .check_unit
-//   cursor: pointer
-//   +f(null, center, row)
-//   position: relative
+.check_unit
+  cursor: pointer
+  +f(null, center, row)
+  position: relative
 
-//   input
-//     display: none
+  input
+    display: none
 
-//   .box 
-//     display: inline-block
-//     +size(18px)
-//     background: $white
-//     border: 1px solid $brown
-//     margin-right: 15px
-//     border-radius: 3px
-//     flex-shrink: 0
-//     box-shadow: none
+  .box 
+    display: inline-block
+    +size(16px)
+    background: #e6f5e7
+    border: 1px solid $green
+    margin-right: 12px
+    border-radius: 3px
+    flex-shrink: 0
+    box-shadow: none
     
-//     &:after 
-//       content: ""
-//       position: absolute
-//       +size(0, 3px)
-//       background: $brown-dark
-//       transform: translate(6px, 11px) rotate(-50deg)
-//       transform-origin: left
-//       transition: all 50ms
-//       transition-delay: 0ms
-//       border-radius: 20% 60% 60% 20%
+    &:after 
+      content: ""
+      position: absolute
+      +size(0, 3px)
+      background: $green
+      transform: translate(6px, 11px) rotate(-50deg)
+      transform-origin: left
+      transition: all 50ms
+      transition-delay: 0ms
+      border-radius: 20% 60% 60% 20%
     
-//     &:before 
-//       content: ""
-//       position: absolute
-//       +size(0, 3px)
-//       background: $brown-dark
+    &:before 
+      content: ""
+      position: absolute
+      +size(0, 3px)
+      background: $green
         
-//       transform: translate(4px, 4px) rotate(75deg)
-//       transform-origin: left
-//       transition: all 50ms
-//       transition-delay: 50ms
-//       border-radius: 60% 
+      transform: translate(4px, 4px) rotate(75deg)
+      transform-origin: left
+      transition: all 50ms
+      transition-delay: 50ms
+      border-radius: 60% 
       
   
-//   input:checked 
-//     & + .box 
-//       &:before 
-//         width: 8px
-//         transition-delay: 0ms
-//       &:after 
-//         width: 18px
-//         transition-delay: 50ms
+  input:checked 
+    & + .box 
+      &:before 
+        width: 8px
+        transition-delay: 0ms
+      &:after 
+        width: 18px
+        transition-delay: 50ms
 
 
 

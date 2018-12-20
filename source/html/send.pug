@@ -11,7 +11,7 @@ block content
         span.f28 服務中心
       li 首頁
       h2.icon-right 服務中心
-      h3.icon-right 常見問題
+      h3.icon-right 聯絡我們
 
   .user-menu.mb64
     .toggle-nav
@@ -21,9 +21,39 @@ block content
       a.active(href="send.html") 聯絡我們
 
 
-  .user-main.container
-    .f32.b.tc.mb40 常見問題
-    
+  form.user-main.send.container
+
+    .f32.b.tc.pb40.mb40 聯絡我們
+
+    p.f16.tc.pb40.mb48.lh20 感謝您對大樹的支持與愛護，歡迎您提出意見讓我們可以有機會提供給您更好的服務。 #[br] 請留下正確的聯絡方式，我們將會盡快回復您。
+
+    .line-container.mb56
+      
+        .line
+          span #[span.star *]姓名：
+          input(type="text" placeholder="陳曉瑩")
+        .line
+          span #[span.star *]電話：
+          input(type="tel" placeholder="04-21542154")
+        .line
+          span #[span.star *]電子郵件：
+          input(type="mail" placeholder="Hank123@gmail.com") 
+        .line
+          span #[span.star *]意見類別
+          select
+            option(value="") 
+        .line
+          span #[span.star *]主題
+          select
+            option(value="") 
+        .line
+          span #[span.star *]內容：
+          textarea( cols="30", rows="5", placeholder="請寫下您的問題...")
+    .g-recaptcha(data-sitekey="6LfQeoMUAAAAAOktn9YIwQ5smXEg3bwq_CeseQd1").pb48.mb64
+
+    .btn-container
+      a(href="sent.html").btn.lg.mr20 確定送出
+      a(href="order.html").btn.lg.second 取消
 
 
 

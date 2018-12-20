@@ -1,0 +1,164 @@
+
+  
+  
+.cart-process
+  background-color: $green
+  height: 80px
+  color: #fff
+  +fc
+
+  li
+    +margin(null 35px)
+    .num
+      +size(32px)
+      border: 3px solid #ffffff
+      border-radius: 50%
+      +fc
+      display: inline-flex
+      margin-right: 12px
+      font-family: roboto
+      padding-top: 1px
+  li.active
+    .num
+      background-color: #fff
+      color: $green
+
+  +max(450)
+    li
+      +margin(null 15px)
+      .num
+        margin-right: 8px
+
+    
+
+
+.plain.cart
+
+  select
+    +size(100%, 50px)
+    background-color: #e6f5e7
+    +padding(null 20px)
+    border: 1px solid $green
+    border-radius: 10px
+    +trans
+    font-weight: bold
+
+    color: #028900
+    // &:focus
+      
+    background: url(./images/tri-arrow.png) center right 15px no-repeat, #e6f5e7
+    +trans
+    &::-ms-expand
+      display: none
+
+  .delete
+    +size(33px)
+    background-color: #646464
+    border-radius: 50%
+    position: relative
+
+    &:after,
+    &:before
+      content: ""
+      display: block
+      +size(16px, 2px)
+      background-color: #fff
+      position: absolute
+      top: 50%
+      right: 50%
+      transform: translate(50%) rotate(45deg)
+    &:after
+      transform: translate(50%) rotate(135deg)
+    
+
+.cart-main
+
+  .block
+    border-top: 1px solid #ccc
+    +padding(55px null)
+    font-weight: bold
+    +f
+
+    > span 
+      
+      flex: 1 0 190px
+      font-size: 20px
+      color: $green
+      white-space: nowrap
+      line-height: 60px
+
+  .wrapper
+    align-self: center
+    width: 100% 
+
+  .radio-container  
+    vertical-align: top
+
+    width: 100%
+    border: 1px solid #09a30d
+
+    .radio_unit
+      width: 100%
+      height: 60px
+      border-top: 1px solid #dee2e6
+      +padding(null 35px)
+
+    label
+      justify-content: flex-start
+      &:before
+        margin-right: 20px
+        +size(20px)
+
+    input:checked + label:before
+      box-shadow: inset 0 0 0 3px #f4f4f4
+
+  .check_unit
+    .g
+      +margin(null 3px)
+      +hoverText($greenL)
+
+
+  .row
+    height: 60px
+    justify-content: flex-start
+
+
+  input,
+  textarea,
+  select
+    +size(100%, 40px)
+    background-color: #e6f5e7
+    +padding(null 20px)
+    border: 1px solid $green
+    border-radius: 10px
+    +trans
+    font-weight: bold
+
+    &::placeholder
+      color: #999
+    &:focus
+      border-color: #028900
+
+  textarea
+    height: auto
+    +padding(12px null )
+
+  select
+    background: url(./images/tri-arrow.png) center right 15px no-repeat, #e6f5e7
+    width: 135px
+    +trans
+
+    &::-ms-expand
+      display: none
+  
+  
+.plain.price
+  td,
+  th
+    +padding(null 40px)
+    text-align: right
+    &:first-child
+      text-align: left
+    &:nth-child(n+2)
+      width: 130px
+    

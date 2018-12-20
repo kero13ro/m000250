@@ -21,7 +21,8 @@ var main = $("main");
 
 $.when($.ready).then(function () {
   TweenLite.to(main, 0.5 ,{  autoAlpha: 1});
-  TweenMax.to("#svg2", 3, { morphSVG: "#svg1", ease: Elastic.easeOut.config(1, 0.75), })
+  TweenMax.to("#svg2", 3, { morphSVG: "#svg1", ease: Elastic.easeOut.config(1, 1), })
+  // TweenMax.to("#svg2", 1, { morphSVG: "#svg1"})
 
 });
 
@@ -231,7 +232,7 @@ $(function () {
   if (wW < 768 ) {
     $(".user-menu .toggle-nav").click(function() {
       var target = $(this).next(".toggle-cover");
-      target.stop(true, false, true).slideToggle(400);
+      target.stop(true, false, true).slideToggle(200);
 
       $cover.addClass("show").click(function() {
         target.stop(true, false, true).slideUp(200);

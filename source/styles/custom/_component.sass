@@ -85,20 +85,32 @@
     [class^="icon-"] + span 
       font-weight: bold
 
+    .icon-cart
+      +size(50px)
+      border-radius: 50%
+      background-color: $green
+      +fc
+      &:before
+        font-size: 25px
+        color: #fff
+
+
   .icon-right::before
     margin: 0 12px
-    
-  .icon-user2
-    font-size: 42px
-    padding-bottom: 5px
-    
+  
 
   +max(768)
     ul
       +padding(12px null)
 
-    .title [class^="icon-"]:before
-      font-size: 45px
+    .title 
+      [class^="icon-"]:before
+        font-size: 45px
+
+      .icon-cart
+        +size(45px)
+        &:before
+          font-size: 20px
   
   +max(480)
 
@@ -112,6 +124,11 @@
         
       [class^="icon-"]:before
         font-size: 35px
+
+      .icon-cart
+        +size(35px)
+        &:before
+          font-size: 16px
 
 
 .footGray

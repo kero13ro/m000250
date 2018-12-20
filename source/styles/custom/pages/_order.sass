@@ -1,7 +1,5 @@
 
 
-.user-menu
-
 .user-menu 
   background-color: $green
   
@@ -219,29 +217,38 @@ table.plain
     td:last-child
       max-width: 80px
 
-
+.plain.cart,
 .plain.detail
 
-  td:first-child
-    max-width: 560px
-    +min(1600)
-      width: 30vw
+  tbody
+    .pic
+      +padding(24px 10px 24px 20px)
 
-  .info
-    white-space: normal
-    text-align: left
-    +f(flex-start, center)
-    flex: 0 0 auto
-    padding-left: 45px
-    
-    img
-      margin-right: 40px
-
-    .text
-      +f
-      flex-direction: column
+    .info
+      display: block
+      white-space: normal
+      text-align: left
       max-width: 300px
     
+    td > div
+      +padding(null 40px)
+
+    td:nth-child(4)
+      text-decoration: line-through
+
+    td:nth-child(n+3)
+      font-family: roboto
+      font-size: 18px
+      color: #646464
+
+
+    td:nth-child(n+5)
+      color: $green
+      font-weight: bold
+
+    // .pad-right
+    //   padding-right: 30px
+
   tfoot 
     td
       +padding(null 35px)
@@ -254,13 +261,43 @@ table.plain
         +margin(null 3px)
     td:last-child
       text-align: right
+      .g
+        font-size: 22px
 
 .icon-arr-left
   +padding(null 26px)
     
-  // +hoverBgc($greenL)
   &:before
     margin-right: 10px
     font-size: 22px
 
+  
+.plain.detail
+  +max(1200)
+    
+
+    tbody
+      .pic
+        +padding(15px 10px)
+        width: 120px
+
+      td > div
+        +padding(null 20px)
+
+      // .pad-right
+      //   padding-right: 0px
+
+      td:nth-child(n+3)
+        font-size: 16px
+
+    tfoot
+      td:last-child .g
+        font-size: 20px
+
+.tmp-block
+  border: 1px dashed #ff0000
+  height: 230px
+  border-radius: 20px
+  +fc
+  color: #ff0000
   
