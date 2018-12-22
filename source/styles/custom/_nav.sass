@@ -28,28 +28,32 @@ $icon: $green !default
     +size(100%)
 
   .nav__cover
-    justify-content: flex-end
+    // justify-content: flex-end
+    // justify-content: flex-start //IE
 
 
   .nav__cover 
+    .scan
+      margin-left: auto
+
     
     [class*="icon"]
       font-size: 1.4rem
       margin-right: 12px
 
-    > a
+    .nav__external ~ *
       position: relative
       height: 50px
       +padding(null 24px )
       +fc
       color: #777
 
-    > a:not(.nav__cart):before
-      content: ""
-      display: block
-      +position(absolute, 16px 0 null null )
-      height: 20px
-      border-right: 1px solid #ccc
+      &:not(:last-child):before
+        content: ""
+        display: block
+        +position(absolute, 16px 0 null null )
+        height: 20px
+        border-right: 1px solid #ccc
 
   .nav__external
     +fc
@@ -285,6 +289,8 @@ $icon: $green !default
     [class*="icon"]
       margin-right: 22px
       font-size: 33px
+      &:before
+        color: #fff
       
         
     .nav__external
@@ -332,3 +338,177 @@ $icon: $green !default
         color: #fff
 
         
+
+
+#dashboard
+  +position(fixed, 0 -560px null null )
+  +size(560px, 100vh)
+  z-index: 10
+  background-color: #fff
+  box-shadow: 0 5px 5px rgba(black,0.1)
+  +fcl
+  transition: right 1s
+  &.expend
+    transition: right 1s
+    right: 0
+
+  
+  > *
+    +padding(null 30px)
+
+  .title
+    +size(100%, 120px)
+    background-color: rgb(239, 239, 239)
+    +fc(space-between)
+
+  .content
+    margin-bottom: auto
+    +padding(30px 15px 30px 30px)
+    width: 100%
+    
+  .scrollbarY
+    max-height: calc(100vh - 245px)
+
+  .mCS-dark-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+    background-color: #999
+    width: 6px
+    border-radius: 3px
+
+  .icon-cart:before
+    margin-right: 10px
+    font-size: 24px
+
+  .icon-right
+    +size(60px)
+    font-size: 35px
+    background-color: #fff
+    border-radius: 50%
+    +fc
+    cursor: pointer
+    transition: box-shadow 0.3s
+    &:hover
+      transition: box-shadow 0.3s
+      box-shadow: 0 3px 6px rgba(black,0.1)
+
+  .block
+    border-bottom: 1px solid #ccc
+    +fc
+    +padding(20px null)
+    line-height: 1.8
+    color: #555
+    &:first-child
+      padding-top: 0
+
+
+    span
+      font-family: roboto
+      +margin(null 2px)
+
+    img
+      margin-right: 25px
+
+    .text
+      margin-right: auto
+      
+  .delete
+    +size(25px)
+    // cursor: pointer
+    +margin(null 10px null 30px)
+    
+    &:after,
+    &:before
+      +size(12px, 2px)
+
+  .foot
+    +size(100%, 65px)
+    background-color: $green
+    color: #fff
+    +fc(space-between)
+
+  .price-total 
+    font-family: roboto
+    font-weight: bold
+
+  .price-total + span 
+    margin-left: 10px
+    font-size: 15px
+    white-space: nowrap
+
+
+  .btn
+    background-color: #fff
+    color: $green
+    +padding(null 22px)
+    font-weight: bold
+    
+
+
+#dashboard
+  +max(768)
+    right: -450px
+    width: 100%
+    max-width: 450px
+
+    > *
+      +padding(null 30px)
+
+    .title
+      height: 65px
+
+    .icon-right
+      +size(35px)
+      font-size: 22px
+
+    .content
+      +padding(20px 20px 20px 20px)
+
+    .scrollbarY
+      max-height: calc(100vh - 170px)
+
+    .block
+      font-size: 15px
+      +padding(15px null)
+      img
+        width: 100px
+        margin-right: 15px
+
+    .delete
+      +margin(null null null 15px)
+
+  +max(420)
+
+    .block
+      font-size: 14px
+      img
+        max-width: 20vw
+        margin-right: 10px
+
+
+    .delete
+      align-self: flex-start
+      +size(18px)
+      +margin(5px 0px null 10px)
+      background-color: #bbb
+      &:after,
+      &:before
+        +size(8px, 1px)
+        
+    .foot
+      height: 80px
+      
+    .price-total
+      text-align: right
+      display: block
+
+    .price-total + span 
+      font-size: 13px
+      display: block
+
+    .btn
+      +padding(null 16px)
+      font-size: 15px
+
+  +max(350)
+    .block
+      font-size: 12px
+

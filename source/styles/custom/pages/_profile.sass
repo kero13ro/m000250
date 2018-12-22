@@ -2,8 +2,8 @@
 
 .user-main
 
-  .btn.lg
-    min-width: 150px
+  // .btn.lg
+  //   min-width: 150px
     
 
   .icon-mail
@@ -52,8 +52,17 @@ table.column
     font-size: 15px
 
 
+  &.lg
+    max-width: 100%
+    td,
+    th
+      +padding(null 35px)
+    th
+      background-color: transparent
+
+
   select,
-  input,
+  input:not([type="radio"]),
   textarea
     +size(100%, 40px)
     background-color: #e6f5e7

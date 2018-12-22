@@ -3,7 +3,8 @@ extends ./include/layout.pug
 
 block content
   include ./include/nav.pug
-  
+
+
   .footGray
     .index_landing(style="background-image: url('./styles/images/0a-bgc.jpg')")
       img(src="./styles/images/0a-15.png", alt="大樹連鎖藥局").man-f
@@ -28,6 +29,7 @@ block content
       .plus-4
 
     form.index_search
+      #catalog-anchor
 
       .searchbar.pt64.pb40
         .dot

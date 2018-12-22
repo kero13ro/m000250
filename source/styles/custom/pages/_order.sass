@@ -147,27 +147,15 @@
 
   
 
-table.plain 
+table.plain.user
   min-width: 700px
-
-  a:not(.btn)
-    color: $green
-    &:hover
-      text-decoration: underline
 
   td:nth-child(4)
     font-weight: bold
-
-  
     
   td:last-child
     max-width: 150px
-    
 
-  tbody tr
-    &:not(:last-child)
-      border-bottom: 1px solid #cdcdcd
-    +hoverBgc(#f3f3f3)
 
   .btn
     +padding(null 16px)
@@ -217,52 +205,56 @@ table.plain
     td:last-child
       max-width: 80px
 
-.plain.cart,
-.plain.detail
+.plain.cart
+
+  .pic
+    +padding(24px 10px 24px 20px)
+
+  .info
+    display: block
+    white-space: normal
+    text-align: left
+    max-width: 300px
 
   tbody
-    .pic
-      +padding(24px 10px 24px 20px)
 
-    .info
-      display: block
-      white-space: normal
-      text-align: left
-      max-width: 300px
-    
-    td > div
-      +padding(null 40px)
+    +min(1441)
+      td > div
+        +padding(null 40px)
 
-    td:nth-child(4)
-      text-decoration: line-through
+  .n
+    font-family: roboto
+    font-size: 18px
+    color: #646464
 
-    td:nth-child(n+3)
-      font-family: roboto
-      font-size: 18px
-      color: #646464
+  .n.cross
+    text-decoration: line-through
+
+  .n.g
+    color: $green
+    font-weight: bold
+
+  .total
+    font-size: 22px
+    font-family: roboto
+    color: $green
+    font-weight: bold
+    margin-right: 8px
 
 
-    td:nth-child(n+5)
-      color: $green
-      font-weight: bold
+  .left
+    text-align: left
 
-    // .pad-right
-    //   padding-right: 30px
+  .right
+    text-align: right
 
   tfoot 
     td
       +padding(null 35px)
       font-weight: bold
-      font-family: "Roboto"
 
-    td:first-child
-      text-align: left
-      span 
-        +margin(null 3px)
-    td:last-child
-      text-align: right
-      .g
-        font-size: 22px
+    span 
+      +margin(null 3px)
 
 .icon-arr-left
   +padding(null 26px)
@@ -271,28 +263,7 @@ table.plain
     margin-right: 10px
     font-size: 22px
 
-  
-.plain.detail
-  +max(1200)
-    
 
-    tbody
-      .pic
-        +padding(15px 10px)
-        width: 120px
-
-      td > div
-        +padding(null 20px)
-
-      // .pad-right
-      //   padding-right: 0px
-
-      td:nth-child(n+3)
-        font-size: 16px
-
-    tfoot
-      td:last-child .g
-        font-size: 20px
 
 .tmp-block
   border: 1px dashed #ff0000

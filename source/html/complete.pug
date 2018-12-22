@@ -1,0 +1,151 @@
+
+extends ./include/layout.pug
+
+block content
+  include ./include/nav.pug
+  
+  .breadcrumb  
+    ul.container.nostyle
+      li.title
+        span.icon-cart.f24.mr20
+        span.f28 我的購物車
+      li 首頁
+      h2.icon-right 我的購物車
+      h3.icon-right 完成訂單
+
+  ul.cart-process.mb72.nostyle
+    li.fill #[.num 1] 
+      a(href="cart.html") 購物清單
+    li.fill #[.num 2] 
+      a(href="info.html") 填寫資料
+    li.fill #[.num 3] 
+      a(href="complete.html") 完成訂單
+
+  .cart-main.container
+
+    .f32.b.tc.mb40 完成訂單
+
+    .block.lh22.text-type
+      .wrapper
+        p 非常感謝您的訂購，我們已經收到您的訂單，稍後您將會收到一封由系統自動寄出的訂單收執聯信件副本，我們將會盡快安排並處理您的訂單，謝謝。
+        p 如果您選擇 ATM 付款，請於繳款期限內，選擇任何一部銀行或郵局的「 ATM 自動提款機」或「網路 ATM 」轉帳，進行轉帳就能輕鬆完成付款！
+        p 如果您選擇貨到付款，在司機送達前會先用電話和您確認後，確定您在家中才會將貨品送達府上，如果送貨員一直打不通您的電話，貨品很有可能會直接被退回，因此請您必務記得將電話開機，或交代家人代為收信，謝謝！
+
+
+    .block.complete
+      .line.mt12.mb12.spread
+        span.mr-auto 訂單編號：
+          span.g.robo 150528141000
+        span 訂購時間：2018-08-01 14:50 付款狀態：未付款
+
+
+      .scrollbarX
+        table.plain.cart
+          thead
+            tr
+              th 商品名稱
+              th
+              th 原始貨號
+              th 售價
+              th 會員價
+              th 數量
+          tbody
+            tr
+              td  
+                img(src="./styles/images/1a-01.jpg", alt="大樹連鎖藥局").pic
+              td
+                a(href="product.html").info.lh20
+                  .b 【娘家】 益生菌（2g/包，60包/盒)
+                  .gift.red.f15 《限量贈品》：【娘家】滴雞精試飲包 x1 盒
+              td: div(data-title="原始貨號：").n 133909
+              td: div(data-title="售價：").n.cross $2,200
+              td: div(data-title="會員價：").n.g $2,200
+              td: div(data-title="數量：").n.g 1
+            tr
+              td  
+                img(src="./styles/images/1a-02.jpg", alt="大樹連鎖藥局").pic
+              td
+                a(href="product.html").info.lh20
+                  .b 【歐典生機】養生雪晶耳冰糖植物性膠原飲 180ml*8入(禮盒)
+              td: div(data-title="原始貨號：").n 142583
+              td: div(data-title="售價：").n.cross $360
+              td: div(data-title="會員價：").n.g $280
+              td: div(data-title="數量：").n.g 5
+            tr
+              td  
+                img(src="./styles/images/1a-03.jpg", alt="大樹連鎖藥局").pic
+              td
+                a(href="product.html").info.lh20
+                  .b 【BioJoy百喬】奇亞酵素輕纖飲_Chia奇亞籽蔬果酵素５合１（12包/盒）
+
+              td: div(data-title="原始貨號：").n 142719
+              td: div(data-title="售價：").n.cross $829
+              td: div(data-title="會員價：").n.g $488
+              td: div(data-title="數量：").n.g 2
+
+        .list-container.complete.mt56
+          .list
+            span 商品金額
+            span.robo NT$5480
+          .list
+            span 紅利折抵
+            span.robo - NT$200
+          .list
+            span 商品金額
+            span 運費
+            span.robo + NT$280
+          .list
+            span 付款總金額
+            span.robo.f24 NT$280
+
+    .block.flex.text-type
+      span.title ATM 匯款資訊
+      .wrapper
+        p.lh22 轉帳銀行：第一銀行 007 #[br]轉帳帳號：74512132156415165（僅供本次交易使用）#[br]轉帳期限：2018-02-10 18:00
+
+    .block.flex.text-type
+      span.title 訂購人資訊
+      .wrapper
+        p.lh22 姓名：林○○ 先生 #[br]手機號碼：0900-000000 #[br]聯絡地址：406 台中市北屯區東山路一段 147 巷 49 號 #[br]付款方式：ATM 轉帳
+
+
+    .block.flex.text-type
+      span.title 收件人資訊
+      .wrapper
+        p.lh22 姓名：林○○ 先生 #[br]手機號碼：0900-000000 #[br]收貨地址：406 台中市北屯區東山路一段 147 巷 49 號 #[br]E-mail：info@e-creative.tw #[br]收貨時段：不指定 #[br]備註： 
+
+    .block.flex.text-type
+      span.title 發票開立明細
+      .wrapper
+        p.lh22 三聯式紙本發票 / 統一編號 24252151（英創達）
+
+
+
+    .block.center.mb56
+      
+      a(href="order.html").btn.lg.mr32 訂單查詢
+      a(href="index.html").btn.lg 返回首頁
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        

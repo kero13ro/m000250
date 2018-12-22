@@ -61,6 +61,7 @@ $defaultcolor: rgb(22, 24, 23) !default
 
   &.lg
     height: 60px
+    +padding(null 45px)
 
   &.second
     background-color: #646464
@@ -124,9 +125,9 @@ $defaultcolor: rgb(22, 24, 23) !default
 
 
 .radio_unit
-  // height: 45px
+  
   white-space: nowrap
-
+  
   input
     position: absolute
     opacity: 0
@@ -135,11 +136,12 @@ $defaultcolor: rgb(22, 24, 23) !default
   label
     cursor: pointer
     +size(100%)
-    +fc
+    +fc(flex-start)
     &:before
+      margin-right: 18px
       content: ""
       display: block
-      // +size(22px)
+      +size(20px)
       background-color: #fff
       border-radius: 50%
       border: 1px solid $green
@@ -148,7 +150,7 @@ $defaultcolor: rgb(22, 24, 23) !default
 
   input:checked + label:before
     background-color: $green
-    // box-shadow: inset 0 0 0 3px #f4f4f4
+    box-shadow: inset 0 0 0 3px #f4f4f4
 
   input:disabled + label:before
     box-shadow: inset 0 0 0 4px #f4f4f4

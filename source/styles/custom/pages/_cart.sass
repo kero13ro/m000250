@@ -6,6 +6,8 @@
   height: 80px
   color: #fff
   +fc
+  a
+    color: #fff
 
   li
     +margin(null 35px)
@@ -18,99 +20,238 @@
       margin-right: 12px
       font-family: roboto
       padding-top: 1px
-  li.active
+  li.fill
     .num
       background-color: #fff
       color: $green
 
-  +max(450)
+  +max(600)
     li
       +margin(null 15px)
       .num
         margin-right: 8px
 
-    
+  +max(420)
+    height: 60px
+    li
+      +margin(null 10px)
+      font-size: 14px
+
+      .num
+        border: 1px solid #ffffff
+        +size(20px)
+        font-size: 12px
+        margin-right: 2px
 
 
+
+
+.delete
+  background-color: #646464
+  border-radius: 50%
+  position: relative
+  flex-shrink: 0
+  +size(31px)
+  cursor: pointer
+  +hoverBgc(#111)
+
+  &:after,
+  &:before
+    +size(16px, 2px)
+    content: ""
+    display: block
+    background-color: #fff
+    position: absolute
+    top: calc(50% - 1px) 
+    right: 50%
+    transform: translate(50%) rotate(45deg)
+  &:after
+    transform: translate(50%) rotate(135deg)
+
+  
 .plain.cart
 
-  select
-    +size(100%, 50px)
-    background-color: #e6f5e7
-    +padding(null 20px)
-    border: 1px solid $green
-    border-radius: 10px
-    +trans
-    font-weight: bold
+  +max(1200)
+    
+    td
+      padding: 0 10px
+    .n
+      font-size: 16px
 
-    color: #028900
-    // &:focus
+    .delete
+      +size(20px)
+      +margin(null 15px)
+
+      &:after,
+      &:before
+        +size(10px, 1px)
+
+    .lg
+      +size(80px, 40px)
+      background-size: 14px
+      font-weight: normal
+  
+  +max(767)
+    thead 
+      display: none
+    tr
+      display: block
+      +padding(15px null)
+      position: relative
+
+    .pic
+      +position(absolute, null null null 40px)
+      padding: 0
+
+    tbody td
+      padding-left: 200px
+
+    td
+      display: block
+      height: auto
+      text-align: left
+      +padding(null 15px null)
+      max-width: 100% 
+      > div
+        padding: 0
+    .n.g
+      +padding(6px null null null)
+
+    .left
+      text-align: right
+
+    .info
+      +padding(null 30px 10px -5px)
+      text-indent: -7px
+
+    .lg
+      +size(70px, 30px)
+      border-radius: 5px
+      margin-left: -5px
+
+
+    [data-title]:before
+      font-size: 14px
+      content: attr(data-title)
+      display: inline-block
+      width: 80px
+
+    .delete
+      +position(absolute, 20px 0 null null )
+      background-color: #aaa
       
-    background: url(./images/tri-arrow.png) center right 15px no-repeat, #e6f5e7
-    +trans
-    &::-ms-expand
+
+  +max(480)
+    tr
+
+      +padding(12px null)
+    tbody td
+      padding-left: 115px
+    tfoot td
+      +padding(null 15px)
+
+    .pic
+      width: 90px
+      left: 10px
+
+    .info
+      font-size: 14px
+      padding-right: 20px
+
+    .n
+      font-size: 14px
+    .n.g
+      +padding(0px null null null)
+
+    .lg
+      margin-top: 5px
+      background: url(./images/tri-arrow.png) center right 10px no-repeat, #e6f5e7
+      background-size: 10px
+      
+    .break
+      display: block
+      margin: 0
+    
+    .hide
       display: none
 
-  .delete
-    +size(33px)
-    background-color: #646464
-    border-radius: 50%
-    position: relative
-
-    &:after,
-    &:before
-      content: ""
-      display: block
-      +size(16px, 2px)
-      background-color: #fff
-      position: absolute
-      top: 50%
-      right: 50%
-      transform: translate(50%) rotate(45deg)
-    &:after
-      transform: translate(50%) rotate(135deg)
+    .delete
+      top: 16px
+      right: -5px
+      +size(16px)
+      &:after,&:before
+        +size(8px, 1px)
+  +max(350)
     
+    .info
+      font-size: 13px
+      padding-right: 18px
+
+    .n
+      font-size: 12px
+
+    [data-title]:before
+      font-size: 12px
+
+
+
 
 .cart-main
 
   .block
-    border-top: 1px solid #ccc
+    border-top: 1px solid $green
     +padding(55px null)
     font-weight: bold
-    +f
 
-    > span 
+    &.flex
+      +f
+
+    &.complete
+      padding-top: 0px
+
+    &.center
+      +fc
+
+      .btn
+        +hoverBgc($greenL)
+
+    &.text-type
+      .title
+        line-height: 32px
+        
+      p
+        color: #777
+        margin-bottom: 0.3rem
+
+        
+    .line.spread
       
+      .mr-auto
+        margin-right: auto
+
+
+    &.border-none
+      border-top: 0px solid $green
+
+    .title
       flex: 1 0 190px
       font-size: 20px
       color: $green
       white-space: nowrap
       line-height: 60px
+      
+    .check_unit
+      font-size: 16px
+      line-height: normal
+      color: #000
+
+
+
 
   .wrapper
     align-self: center
     width: 100% 
 
-  .radio-container  
-    vertical-align: top
-
-    width: 100%
-    border: 1px solid #09a30d
-
-    .radio_unit
-      width: 100%
-      height: 60px
-      border-top: 1px solid #dee2e6
-      +padding(null 35px)
-
-    label
-      justify-content: flex-start
-      &:before
-        margin-right: 20px
-        +size(20px)
-
-    input:checked + label:before
-      box-shadow: inset 0 0 0 3px #f4f4f4
 
   .check_unit
     .g
@@ -150,7 +291,12 @@
 
     &::-ms-expand
       display: none
-  
+
+  select.lg
+    +min(1201)
+      color: $green
+      background: url(./images/tri-g.svg) center right -1px no-repeat, #e6f5e7
+      +size(100px, 50px)
   
 .plain.price
   td,
@@ -161,4 +307,90 @@
       text-align: left
     &:nth-child(n+2)
       width: 130px
+
+  +max(1100)  
+    th
+      display: none
+    tr,
+    td
+      display: block
+      height: auto
+      line-height: 0
+      padding: 0
+      max-width: 100%
+      width: 100%
+      > span
+        +padding(null 15px)
+        display: inline-block
     
+    td:before
+      content: attr(data-title)
+      display: inline-block
+      text-align: center
+      width: 120px
+      height: 35px
+      line-height: 35px
+      background-color: rgb(239, 239, 239)
+      
+
+.wrapper.multi
+  +f
+  justify-content: space-between
+
+  +max(1100)
+    flex-direction: column
+    align-items: flex-end
+    .btn-container
+      margin-top: 50px
+
+
+
+
+.list-container
+  .list
+    width: 400px
+    line-height: 60px
+    border-bottom: 1px solid #ccc
+  .list:first-child
+    border-top: 1px solid #ccc
+
+  .robo
+    float: right
+    color: #777
+  .f24
+    color: $green
+    font-weight: bold
+
+.list-container.complete
+  float: right
+
+
+.gender
+  +fc
+  .radio_unit
+    width: 100px
+    label:before
+      margin-right: 10px
+
+    &:nth-last-child(2)
+      +margin(null 35px)
+    &:last-child
+      margin-right: 80px
+
+.line
+  height: 60px
+  +fc(flex-start)
+  select
+    width: 200px
+
+.radio-inline
+  +fc(flex-start)
+  .radio_unit
+    margin-right: 22px
+    label:before
+      margin-top: 3px
+      margin-right: 10px
+
+
+
+  

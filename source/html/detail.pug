@@ -7,7 +7,7 @@ block content
   .breadcrumb  
     ul.container.nostyle
       li.title
-        span.icon-user2.f24.mr20
+        span.icon-user3.f24.mr20
         span.f28 會員中心
       li 首頁
       h2.icon-right 會員中心
@@ -34,7 +34,7 @@ block content
       .icon-right.b.f18 訂單概要
       .tab-pane.mb32
         .scrollbarX
-          table.plain(data-abbr="type1")
+          table.plain(data-abbr="type1").user
             thead
               tr
                 th 訂單日期
@@ -61,8 +61,9 @@ block content
 
       .icon-right.b.f18 訂單明細
       .tab-pane
+      
         .scrollbarX
-          table.plain.detail
+          table.plain.cart
             thead
               tr
                 th 商品名稱
@@ -79,20 +80,20 @@ block content
                   a(href="product.html").info.lh20
                     .b 【娘家】 益生菌（2g/包，60包/盒)
                     .gift.red.f15 《限量贈品》：【娘家】滴雞精試飲包 x1 盒
-                td: div 133909
-                td: div $2,200
-                td: div $2,200
-                td: div 1
+                td: div(data-title="原始貨號：").n 133909
+                td: div(data-title="售價：").n.cross $2,200
+                td: div(data-title="會員價：").n.g $2,200
+                td: div(data-title="數量：").n.g 1
               tr
                 td  
                   img(src="./styles/images/1a-02.jpg", alt="大樹連鎖藥局").pic
                 td
                   a(href="product.html").info.lh20
                     .b 【歐典生機】養生雪晶耳冰糖植物性膠原飲 180ml*8入(禮盒)
-                td: div 142583
-                td: div $360
-                td: div $280
-                td: div 5
+                td: div(data-title="原始貨號：").n 142583
+                td: div(data-title="售價：").n.cross $360
+                td: div(data-title="會員價：").n.g $280
+                td: div(data-title="數量：").n.g 5
               tr
                 td  
                   img(src="./styles/images/1a-03.jpg", alt="大樹連鎖藥局").pic
@@ -100,21 +101,22 @@ block content
                   a(href="product.html").info.lh20
                     .b 【BioJoy百喬】奇亞酵素輕纖飲_Chia奇亞籽蔬果酵素５合１（12包/盒）
 
-                td: div 142719
-                td: div $829
-                td: div $488
-                td: div 2
+                td: div(data-title="原始貨號：").n 142719
+                td: div(data-title="售價：").n.cross $829
+                td: div(data-title="會員價：").n.g $488
+                td: div(data-title="數量：").n.g 2
             tfoot
               tr 
                 td(colspan="2") 
-                  span 訂單金額 
-                  span.g NT$5,480
-                  span + 運費 NT$0
+                  div.left
+                    span 訂單金額 
+                    span.n.g NT$5,480
+                    span + 運費 NT$0
                 
                 td(colspan="4") 
-                  div 
-                  span.mr8 訂單總金額
-                  span.g NT$2,280
+                  div.right
+                    span.mr8 訂單總金額
+                    span.total NT$2,280
 
     .btn-container
       a(href="order.html").btn.icon-arr-left.lg 返回列表

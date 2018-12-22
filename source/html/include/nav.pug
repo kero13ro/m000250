@@ -20,7 +20,8 @@
       .main 大樹嚴選
       div 新品推薦、熱門好物
 
-  a(href="cart.html").moblie.nav__cart
+  //- a(href="cart.html").moblie.nav__cart
+  a.moblie.nav__cart
     span.icon-cart
     .text 我的購物車(
       span.cart__num 3
@@ -43,7 +44,8 @@
       span.icon-scan
       span 商品搜尋
 
-    a.catogory
+    //- a.catogory
+    a(href="index.html#catalog-anchor") 
       span.icon-catogory
       span 商品品類
 
@@ -56,4 +58,61 @@
       span 服務中心
         
         
+
+
+#dashboard
+  .title
+    .icon-cart.f18.g 採購清單 (#[span.cart_num.robo 3])
+    .icon-right
+
+  .content
+    .scrollbarY.mCustomScrollbar(data-mcs-theme="dark-thick")
+      .block
+        img(src="./styles/images/1a-01.jpg", alt="大樹連鎖藥局")
+        .text
+          .g 【娘家】 益生菌（2g/包，60包/盒)
+          div #[span.price-per $2,200]  /  數量：#[span.nul 1]
+        .delete
+    
+      .block
+        img(src="./styles/images/1a-02.jpg", alt="大樹連鎖藥局")
+        .text
+          .g 【歐典生機】養生雪晶耳冰糖植物性膠原飲
+          div #[span.price-per $280]  /  數量：#[span.nul 5]
+        .delete
+    
+      .block
+        img(src="./styles/images/1a-03.jpg", alt="大樹連鎖藥局")
+        .text
+          .g 【BioJoy百喬】奇亞酵素輕纖飲_Chia奇亞籽蔬果酵素５合１（12包/盒）
+          div #[span.price-per $488]  /  數量：#[span.nul 2]
+        .delete
+    
+      .block
+        img(src="./styles/images/1a-01.jpg", alt="大樹連鎖藥局")
+        .text
+          .g 【娘家】 益生菌（2g/包，60包/盒)
+          div #[span.price-per $2,200]  /  數量：#[span.nul 1]
+        .delete
+    
+      .block
+        img(src="./styles/images/1a-02.jpg", alt="大樹連鎖藥局")
+        .text
+          .g 【歐典生機】養生雪晶耳冰糖植物性膠原飲
+          div #[span.price-per $280]  /  數量：#[span.nul 5]
+        .delete
+    
+      .block
+        img(src="./styles/images/1a-03.jpg", alt="大樹連鎖藥局")
+        .text
+          .g 【BioJoy百喬】奇亞酵素輕纖飲_Chia奇亞籽蔬果酵素５合１（12包/盒）
+          div #[span.price-per $488]  /  數量：#[span.nul 2]
+        .delete
+
+  .foot
+    a(href="cart.html").btn.sm.bttn-jelly 開啟購物車
+    div
+      span.price-total.f24 $5,480
+      span (折扣後金額，不含運費)
+
 

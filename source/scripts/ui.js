@@ -15,6 +15,11 @@ var main = $("main");
 
 
 
+
+// $("#customScrollbar").mCustomScrollbar({
+//   theme: "dark"
+// });
+
 // $("document").ready(function () {
 //   TweenLite.to(main, 0.5, { autoAlpha: 1 });
 // });
@@ -82,8 +87,10 @@ if (  wW > 768) {
     .append(fixedBarItems2);
   $(".fixedInner .nav__logo h1").remove();
 
-}
+} else {
+  $(".cart__num").insertAfter("#nav .icon-cart");
 
+}
 
 
 
@@ -168,19 +175,22 @@ if (wW <= 768) {
 // function doneResizing() {
 
 // }
-      
+
+
+// catalog mobile dropdwon
 if (wW <= 1100) {
   $(".icon-double-right").click(function () {
 
     var dropdwon = $(this).next(".dropdwon");
     dropdwon.fadeToggle();
 
-    $cover.show().click(function() {
+    $cover.addClass("show").click(function () {
       dropdwon.fadeOut();
-      $cover.off().hide();
+      $cover.off().removeClass("show");
     });
   });
-}
+} 
+
 
 
 
@@ -330,7 +340,26 @@ $(function () {
     $(this).addClass("active");
     $(this).find(".ans").slideDown();
   
-    
+  });
+
+
+
+  //index right dashboard
+  $(".nav__cart").click(()=>{
+    $("#dashboard").addClass("expend");
+
+    $("#dashboard .icon-right").click(() => {
+      $("#dashboard").removeClass("expend");
+      $cover.off().removeClass("show");
+    });
+
+    $cover.addClass("show").click(function () {
+      $("#dashboard").removeClass("expend");
+      $cover.off().removeClass("show");
+    });
+
+
+
   });
 
 });// $(function ) end

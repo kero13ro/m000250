@@ -1,0 +1,178 @@
+
+extends ./include/layout.pug
+
+block content
+  include ./include/nav.pug
+  
+  .breadcrumb  
+    ul.container.nostyle
+      li.title
+        span.icon-cart.f24.mr20
+        span.f28 我的購物車
+      li 首頁
+      h2.icon-right 我的購物車
+      h3.icon-right 完成訂單
+
+  ul.cart-process.mb72.nostyle
+    li.fill #[.num 1] 
+      a(href="cart.html") 購物清單
+    li.fill #[.num 2] 
+      a(href="info.html") 填寫資料
+    li #[.num 3] 
+      a(href="complete.html") 完成訂單
+
+  .cart-main.container
+
+    .f32.b.tc.mb40 填寫資訊
+
+    .block.border-none.flex
+      span.title 訂購人資訊
+      div.wrapper 
+        table.column.lg
+          tbody
+            tr
+              th 姓名 #[span.star *]
+              td
+                .gender
+                  input(type="text" placeholder="陳曉瑩")
+
+                  .radio_unit
+                    input(type="radio", name="gender" id="male")
+                    label(for="male") 先生
+                  .radio_unit
+                    input(type="radio", name="gender" id="female")
+                    label(for="female") 小姐
+            tr
+              th 手機號碼 #[span.star *]
+              td
+                input(type="text" placeholder="0951-215-478") 
+            tr
+              th.pad 聯絡地址 #[span.star *]
+              td
+                .row
+                  label
+                    span 郵遞區號
+                    input(type="text" placeholder="112")
+                  label
+                    span 縣市
+                    select
+                      option(value="台北市") 台北市
+                  label
+                    span 鄉鎮區
+                    select
+                      option(value="北投區") 北投區
+                input(type="text" placeholder="富貴一路3號")
+
+        p.b.mt16 本欄位將自動帶入會員資訊，修改內容將自動存入會員資訊。
+
+    .block.flex
+      span.title 收件人資訊
+        label.check_unit
+          input(type="checkbox") 
+          .box
+          span 同訂購人
+
+
+
+      div.wrapper 
+        
+        label.line.mb20
+          span.mr16 載入聯絡人資訊
+          select
+            option(value="選擇聯絡人") 選擇聯絡人
+
+
+        table.column.lg
+          tbody
+            tr
+              th 姓名 #[span.star *]
+              td
+                .gender
+                  input(type="text" placeholder="陳曉瑩")
+
+                  .radio_unit
+                    input(type="radio", name="gender" id="male")
+                    label(for="male") 先生
+                  .radio_unit
+                    input(type="radio", name="gender" id="female")
+                    label(for="female") 小姐
+            tr
+              th 手機號碼 #[span.star *]
+              td
+                input(type="text" placeholder="0951-215-478") 
+            tr
+              th.pad 聯絡地址 #[span.star *]
+              td
+                .row
+                  label
+                    span 郵遞區號
+                    input(type="text" placeholder="112")
+                  label
+                    span 縣市
+                    select
+                      option(value="台北市") 台北市
+                  label
+                    span 鄉鎮區
+                    select
+                      option(value="北投區") 北投區
+                input(type="text" placeholder="富貴一路3號")
+
+            tr
+              th 電子郵件 #[span.star *]
+              td
+                input(type="mail" placeholder="") 
+            tr
+              th.pad 備註 #[span.star *]
+              td
+                textarea( cols="30", rows="5", placeholder="請寫下您的問題...")
+
+
+
+    .block.flex
+      span.title 選擇發票方式
+      .wrapper.radio-inline
+        .radio_unit
+          input(type="radio", name="invoice" id="invoice1")
+          label(for="invoice1") 電子發票
+        .radio_unit
+          input(type="radio", name="invoice" id="invoice2")
+          label(for="invoice2") 二聯式發票      
+        .radio_unit
+          input(type="radio", name="invoice" id="invoice3")
+          label(for="invoice3") 三聯式發票        
+        .radio_unit
+          input(type="radio", name="invoice" id="invoice4")
+          label(for="invoice4") 捐贈發票        
+
+
+
+
+
+    .block.center.mb56.flex
+      
+      a(href="cart.html").btn.lg.mr32 上一步
+      a(href="complete.html").btn.lg 進行付款
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        

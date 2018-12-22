@@ -235,6 +235,46 @@ $space: (m: margin, p: padding)
           #{$val_spc}-#{$val_dir}: #{$i*8*0.6}px
 
 
+/* ==========================================================================
+    animation mixin
+ ==========================================================================*/
+
+
+=trans
+  transition: color 0.3s ,opacity 0.3s , background-color 0.3s ease-in-out
+  &:hover
+    transition: color 0.3s ,opacity 0.3s , background-color 0.3s ease-in-out
+
+=hoverText($color)
+  +trans
+  &:hover
+    color: $color
+
+=hoverBgc($color)
+  +trans
+  &:hover
+    background-color: $color
+
+
+=trans2
+  transition: transform 0.3s ease-in-out
+  &:hover
+    transition: transform 0.3s ease-in-out
+
+=trans2-slow
+  transition: transform 0.6s ease-in-out
+  &:hover
+    transition: transform 0.6s ease-in-out
+
+
+=hover($type, $sec: 0.3s, $mode: ease-in-out)
+  transition: $type $sec $mode
+  &:hover
+    transition: $type $sec $mode
+
+
+
+
 =container
   +margin(0 auto)
   +padding(null 25px)
@@ -330,7 +370,10 @@ $space: (m: margin, p: padding)
   white-space: nowrap
   width: 100%
   border: 1px solid #09a30d
-
+  a:not(.btn)
+    color: #09a30d
+    &:hover
+      text-decoration: underline
   td,
   th
     height: 60px
@@ -340,17 +383,18 @@ $space: (m: margin, p: padding)
   tfoot
     tr
       background-color: #efefef
+  thead
+    tr
       border-bottom: 1px solid #09a30d
+  tfoot
+    tr
+      border-top: 1px solid #09a30d
+
+  tbody tr
+    +hoverBgc(#f3f3f3)
+    &:not(:last-child)
+      border-bottom: 1px solid #cdcdcd
     
-    // &:last-child
-    //   border-bottom: 1px solid rgb(202, 153, 97)
-    // &:nth-child(odd):not(:first-child)
-    //   background-color: #F6F6F6
-
-  // a
-  //   color: #09a30d
-    // text-decoration: underline
-
 
   +max(991)
     font-size: 15px
@@ -359,42 +403,6 @@ $space: (m: margin, p: padding)
 
 
 
-/* ==========================================================================
-    animation mixin
- ==========================================================================*/
-
-
-=trans
-  transition: color 0.3s ,opacity 0.3s , background-color 0.3s ease-in-out
-  &:hover
-    transition: color 0.3s ,opacity 0.3s , background-color 0.3s ease-in-out
-
-=hoverText($color)
-  +trans
-  &:hover
-    color: $color
-
-=hoverBgc($color)
-  +trans
-  &:hover
-    background-color: $color
-
-
-=trans2
-  transition: transform 0.3s ease-in-out
-  &:hover
-    transition: transform 0.3s ease-in-out
-
-=trans2-slow
-  transition: transform 0.6s ease-in-out
-  &:hover
-    transition: transform 0.6s ease-in-out
-
-
-=hover($type, $sec: 0.3s, $mode: ease-in-out)
-  transition: $type $sec $mode
-  &:hover
-    transition: $type $sec $mode
 
 /* ==========================================================================
     animation
