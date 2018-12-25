@@ -138,130 +138,145 @@
   background-color: #f0f0f0
   
 
+.tel
+  font-family: 'Roboto'
+
+
 
 footer
-  padding-top: 60px
-  +fcl(flex-end)
-
   position: relative
+  padding-top: 120px
+  +fcl(flex-end)
+  letter-spacing: 1px
+
+  .icon-up
+    +size(60px)
+    background-color: rgb(239, 239, 239)
+    color: $green
+    position: absolute
+    top: 30px
+    right: 35px
+    border: 1px solid $green
+    border-radius: 50%
+    +fc
+    font-size: 32px
 
   svg 
     +position(absolute, null 0 0 null)
-    height: 100%
 
-
-  
   &,a
     color: #fff
 
-  li
-    margin-bottom: 4px
-
-  .wrapper
-    +container
-    +fcl
-    z-index: 1
+  
 
   .copyright
+    +fc
     border-top: 1px solid rgba(#fff,0.3)
     width: 100%
-    +fcl
-
+    z-index: 1
     min-height: 60px
     +padding(15px)
-    span 
-      text-align: center
     .slash
-      display: none
+      +margin(null 10px)
 
-      
+
+  .wrapper
+    +f(space-around, flex-start)
+    margin-bottom: 20px
+    z-index: 1
+    
   address
     +fcl
     padding-right: 20px
-
-  .address__logo
-    margin-bottom: 20px
-
-  .sitemap
-    display: none
+    align-items: flex-start
+    li
+      padding-bottom: 8px
 
   .media
-    +f
-    [class*="icon"]
-      +size(50px)
-      font-size: 1.6rem
-      background-color: #fff
-      border-radius: 50%
-      color: $green
-      +fc
-      +margin(null 8px 16px)
+    +fcl
+    margin-left: 30px
 
-  .tel
-    font-family: 'Roboto', sans-serif
+  .icon-facebook,
+  .icon-line
+    +size(60px)
+    font-size: 30px
+    background-color: #fff
+    border-radius: 50%
+    color: $green
+    +fc
+    +margin(null 8px 16px)
 
 
-  +min(768)
-    padding-top: 80px
-    li
-      margin-bottom: 8px
-      
+  .sitemap
+    +f(center, flex-start)
+    flex-shrink: 0
+
+    .title
+      font-size: 20px
+      padding-bottom: 10px
+      margin-bottom: 12px
+      border-bottom: 1px solid rgba(#fff, 0.3)
+      font-weight: bold
+
+  .block:not(:last-child)
+    margin-right: 50px
+
+  .block.tri ul
+    padding-right: 20px
+    max-width: 420px
+    +f(space-between,center, row, wrap)
+
+    li:nth-child(3n+1)
+      width: 25%
+    li:nth-child(3n+2)
+      width: 35%
+    li:nth-child(3n+3)
+      width: 33%
+
+
+footer
+
+  +max(1365)
+    padding-top: 70px
+
+    .sitemap
+      display: none
+
     .wrapper
       +f(space-around, flex-start)
-      margin-bottom: 20px
-      
-    address
-      align-items: flex-start
-
-    .copyright
-      flex-direction: row
-      .slash
-        display: block
-        +margin(null 10px)
-
-    .media
       flex-direction: column
-      margin-left: 30px
-      [class*="icon"]
-        +size(60px)
-        font-size: 1.9rem
+      align-items: center
 
-  +min(1200)
-    padding-top: 120px
-    .sitemap
-      +fc
-      flex-shrink: 0
-      align-items: flex-start
-      .title
-        font-size: 20px
-        padding-bottom: 10px
-        margin-bottom: 12px
-        border-bottom: 1px solid rgba(#fff, 0.3)
-        font-weight: bold
-
-    .block:not(:last-child)
-      margin-right: 30px
-
-
-    .block.tri ul
-      max-width: 360px
-      +f(space-between,center, row, wrap)
-      li:nth-child(3n+1)
-        flex: 1 1 25%
-      li:nth-child(3n+2)
-        flex: 1 1 35%
-      li:nth-child(3n+3)
-        flex: 1 1 30%
-
-  +min(1600)
-    .block:not(:last-child)
-      margin-right: 50px
-    .block
-      ul
-        padding-right: 20px
-    .block.tri ul
-      max-width: 420px
     .media
-      margin-left: 0px
+      flex-direction: row
+      margin-left: 0
 
+    [class^="icon"]
+      margin-bottom: 0
+      +size(50px)
+      font-size: 25px
+
+    address
+      +padding(null 0 0px 20px)
+
+  +max(768)
+  
 
   
+    .icon-up  
+      top: -10px
+    .copyright
+      flex-direction: column
+      span
+        margin-bottom: 5px
+        text-align: center
+
+    .slash
+      display: none
+
+  +max(350)
+    address
+      +padding(null null null 0)
+    [class^="icon"]
+      +size(45px)
+      // font-size: 20px

@@ -8,11 +8,13 @@
 .recommand
   +position(absolute, 0 50px null null )
   .inner
-    +fcl
+    +fcl(flex-start)
   .f18
     margin-bottom: 24px
   a
     max-width: 190px
+    width: 100%
+    max-height: 190px
     border: 1px solid #ccc
     margin-bottom: 12px
 
@@ -32,12 +34,14 @@
       justify-content: flex-start
       align-items: flex-start
       flex-direction: column
+      
     .inner
       flex-direction: row
     .f18
       +margin(null null 10px null)
     a
       +margin(null 12px 0 null)
+      max-width: 120px
 
 
 
@@ -48,24 +52,26 @@
   +fcl
   
   margin-right: 60px
+  width: 49%
+  flex-shrink: 0
+  max-width: 540px
 
   .slick-show
-    +size(540px)
+    width: 100%
     margin-bottom: 30px
     border: 1px solid #ccc
 
   .slick-nav
-    width: 540px
-    height: 120px
+    width: 100%
     
     img
-      +size(120px)
       border: 1px solid #ccc
       +margin(null 18px null null )
+      &.slick-current
+        border-color: $green
 
-    img.slick-current
-      border-color: $green
 
+  
 .summary
   width: 100%
 
@@ -184,6 +190,62 @@
 
 
 
++max(1200)
+  .slick-container
+    margin-right: 40px
+    width: 37%
+    .slick-nav img
+      +margin(null 12px null null )
+
+  .summary__sub
+    padding-bottom: 18px
+    margin-bottom: 18px
+
+  // .summary__tag
+  //   padding-top: 35px
+  //   margin-bottom: 35px
+
+
+  .summary__select,
+  .summary__add
+    font-size: 18px
+  .summary__add img
+    width: 20px
+
+  .summary__btn
+    height: 55px
+
+  .price-origin
+    font-size: 24px
+  .price-discount
+    font-size: 36px
+
+
++max(767)
+  
+  .info-top
+    flex-direction: column
+    align-items: center
+
+
+
++max(1200)
+  .slick-container
+    +margin(null 0 30px null )
+    width: 60%
+    // .slick-nav img
+    //   +margin(null 12px null null )
+
+  // .summary__sub
+  //   padding-bottom: 18px
+  //   margin-bottom: 18px
+
+  // .summary__tag
+  //   padding-top: 35px
+  //   margin-bottom: 35px
+
+
+
 .tab__nav
   +f
   border-bottom: 1px solid #dbdbdb
@@ -244,3 +306,7 @@
   img
     width: 100%
     
+
++min(769)
+  .container.w90
+    width: 90%

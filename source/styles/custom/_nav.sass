@@ -4,9 +4,10 @@
 //   color: $green
 $icon: $green !default
 
-[class^="icon"]:before
-  width: auto
+[class^="icon"]
   color: $icon
+  &:before
+    width: auto
 
 
 +min(769)
@@ -512,3 +513,137 @@ $icon: $green !default
     .block
       font-size: 12px
 
+
+
+
+
+
+.wp
+  position: relative
+  
+.nav__search
+  +position(absolute, 50px 0 null null )
+  +padding(40px null )
+  width: 100%
+  background-color: #fff
+  z-index: 10
+  box-shadow: 0 0 20px rgba(black, 0.3)
+  // box-shadow: 0 0 10px rgba(black, 0.3)
+  display: none
+    
+  .container
+    +fc
+
+
+  .searchBar
+    height: 60px
+    width: 100%
+
+    background-color: rgb(239, 239, 239)
+    border-width: 0
+    border-top-left-radius: 999px
+    border-bottom-left-radius: 999px
+    color: #fff
+    +padding(null 25px)
+
+  .icon-scan
+    height: 60px
+    +padding(null 40px null 75px)
+    white-space: nowrap
+    background-color: $green
+    color: #fff
+    border-width: 0
+    color: #fff
+    border-top-right-radius: 999px
+    border-bottom-right-radius: 999px
+    &:before
+      margin-right: 12px
+      font-size: 24px
+
+  .icon-scan2
+    color: #fff
+    +padding(null 40px)
+    margin-right: 35px
+    &:before
+      font-size: 24px
+      margin-right: 12px
+
+  .search-close
+    +size(60px)
+    position: relative
+    +hoverBgc(#eee)
+    border-radius: 50%
+    flex-shrink: 0
+    
+    &:before,
+    &:after
+      content: ""
+      display: inline-block
+      +size(30px, 2px)
+      background-color: $green
+      +position(absolute, 50% null null 50%)
+      transform-origin: 50% 50% 
+      
+    &:before
+      transform: translateX(-50%) rotate(45deg)
+    &:after
+      transform: translateX(-50%) rotate(-45deg)
+
+
+.nav__search
+  +max(768)
+    +padding(30px null )
+    top: 65px
+    font-size: 16px
+    .icon-scan
+      +padding(null 30px)
+
+    .icon-scan2
+      color: #fff
+      +padding(null 30px)
+      margin-right: 5px
+
+  +max(600)
+    +padding(40px null null)
+    .searchBar
+      margin-bottom: 18px
+
+    .searchBar,
+    .icon-scan,
+    .icon-scan2
+      height: 50px
+      border-radius: 999px
+
+    .icon-scan,
+    .icon-scan2
+      width: calc(50% - 6px)
+      margin: 0
+
+    .icon-scan
+      margin-right: auto
+
+    .container
+      flex-wrap: wrap
+    
+    .search-close
+      +position(absolute, 0 0 null null )
+      +size(40px)
+
+      &:before,
+      &:after
+      
+        +size(20px, 2px)
+        background-color: rgba($green, 0.8)
+
+  +max(500)
+    top: 50px
+
+  +max(350)
+    .icon-scan,
+    .icon-scan2
+      &:before
+        font-size: 18px
+        margin-right: 8px
+
+    .searchBar
+      margin-bottom: 12px
