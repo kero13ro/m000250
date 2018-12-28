@@ -152,10 +152,12 @@ $defaultcolor: rgb(22, 24, 23) !default
     background-color: $green
     box-shadow: inset 0 0 0 3px #f4f4f4
 
-  input:disabled + label:before
-    box-shadow: inset 0 0 0 4px #f4f4f4
-    border-color: #b4b4b4
-    background-color: #b4b4b4
+  input:disabled + label
+    color: #999
+    cursor: default
+    &:before
+      box-shadow: inset 0 0 0 4px #f4f4f4
+      border-color: #ccc
 
 
 // .select_unit
@@ -229,45 +231,56 @@ $defaultcolor: rgb(22, 24, 23) !default
   .box 
     display: inline-block
     +size(16px)
-    background: #e6f5e7
-    border: 1px solid $green
-    margin-right: 12px
-    border-radius: 3px
+    background: #fff
+    border: 2px solid #959595
+    margin-right: 10px
+    border-radius: 5px
     flex-shrink: 0
     box-shadow: none
     
     &:after 
       content: ""
       position: absolute
-      +size(0, 3px)
-      background: $green
-      transform: translate(6px, 11px) rotate(-50deg)
+      +size(0, 2px)
+      background: #fff
+      transform: translate(5px, 8px) rotate(-45deg)
       transform-origin: left
       transition: all 50ms
       transition-delay: 0ms
-      border-radius: 20% 60% 60% 20%
+      // border-radius: 20% 60% 60% 20%
     
     &:before 
       content: ""
       position: absolute
-      +size(0, 3px)
-      background: $green
+      +size(0, 2px)
+      background: #fff
         
-      transform: translate(4px, 4px) rotate(75deg)
+      transform: translate(2px, 4px) rotate(45deg)
       transform-origin: left
       transition: all 50ms
       transition-delay: 50ms
-      border-radius: 60% 
-      
+      // border-radius: 60% 
   
   input:checked 
     & + .box 
+      background-color: $green
+      border-color: $green
       &:before 
-        width: 8px
+        width: 6px
         transition-delay: 0ms
       &:after 
-        width: 18px
+        width: 8px
         transition-delay: 50ms
+  
+  input:disabled 
+    & + .box 
+      background: #eee
+      border-color: #ccc
+    & ~ *
+      cursor: default
+      color: #999
+
+
 
 
 

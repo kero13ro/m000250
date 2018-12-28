@@ -522,7 +522,12 @@ $icon: $green !default
   position: relative
   
 .nav__search
-  +position(absolute, 50px 0 null null )
+  +position(fixed, 50px 0 null null )
+  transition: 0.3s top
+  &.fixedType
+    top: 70px
+    transition: 0.3s top
+
   +padding(40px null )
   width: 100%
   background-color: #fff
@@ -543,7 +548,7 @@ $icon: $green !default
     border-width: 0
     border-top-left-radius: 999px
     border-bottom-left-radius: 999px
-    color: #fff
+    
     +padding(null 25px)
 
   .icon-scan
@@ -553,7 +558,6 @@ $icon: $green !default
     background-color: $green
     color: #fff
     border-width: 0
-    color: #fff
     border-top-right-radius: 999px
     border-bottom-right-radius: 999px
     &:before
@@ -564,6 +568,7 @@ $icon: $green !default
     color: #fff
     +padding(null 40px)
     margin-right: 35px
+    flex-shrink: 0
     &:before
       font-size: 24px
       margin-right: 12px

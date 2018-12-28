@@ -137,10 +137,36 @@
     +fc
     background-color: $grayBgc
     cursor: pointer
-    +hoverBgc(#ddd)
-      
+    position: relative
+    transform: perspective(1px) translateZ(0)
+    +hoverText($green)
+    &:before
+      content: ""
+      position: absolute
+      z-index: -1
+      left: 0
+      right: 100%
+      bottom: 0
+      background: $green
+      height: 4px
+      -webkit-transition-property: right
+      transition-property: right
+      -webkit-transition-duration: 0.3s
+      transition-duration: 0.3s
+      -webkit-transition-timing-function: ease-out
+      transition-timing-function: ease-out
+  .card__cart:hover
+    &:before
+      right: 0
+
   .card__pad.push
     margin-bottom: 0
+
+
+  transition: 0.3s box-shadow
+  .card:hover
+    transition: 0.3s box-shadow
+    box-shadow: 0 5px 15px -3px rgba(black, 0.3)
 
 .disabled,
 .replenish

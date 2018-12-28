@@ -1,0 +1,137 @@
+
+.advanced
+  .icon-scan
+    border: 0
+    cursor: pointer
+    display: flex
+    +size(200px, 60px)
+    +margin(null auto)
+    border-radius: 15px
+    +hoverBgc($greenL)
+    &:before
+      margin-right: 10px
+      font-size: 22px
+
+
+.search__block
+  background-color: #efefef
+  +f
+  border-radius: 10px
+  font-weight: bold
+
+.search__title
+  +padding(null 22px)
+  width: 140px
+  flex-shrink: 0
+  +padding(18px null)
+
+.search__content
+  +f
+  flex-wrap: wrap
+  position: relative
+
+  .check_unit,
+  .radio_unit
+    margin-right: 18px   
+    +padding(18px null)
+    +hoverText($green)
+
+  .radio_unit
+    label:before
+      margin-right: 10px
+      +size(16px)
+      border: 2px solid #9b9b9b
+
+    input:checked + label:before
+      background-color: $green
+      border-color: $green
+
+    
+  .multi-border
+    pointer-events: none
+    position: absolute
+    +size(100%, 99%)
+    overflow: hidden
+    .border
+      position: absolute
+      content: ""
+      display: block
+      +size(calc(100% - 20px), 1px)
+      background-color: #ccc
+
+    @for $var from 1 through 6
+      .border:nth-child(#{$var})
+        top: #{$var*60}px
+
++max(767)
+  .search__title
+    +padding(null null 10px null )
+
+  .search__block
+    flex-direction: column
+
+  .multi-border
+    display: none
+
+  .search__content
+    +padding(null null 10px 22px )
+    font-size: 15px
+
+    .check_unit,
+    .radio_unit
+      margin-right: 12px   
+      +padding(10px null)
+
+    .radio_unit label:before,
+    .check_unit .box
+      margin-right: 6px
+
+  .advanced .icon-scan
+    +size(150px, 50px)
+    &:before
+      font-size: 20px
+
++max(350)
+  .search__title
+    +padding(null null 10px null )
+
+  .search__content
+    +padding(null null null 16px)
+    font-size: 14px
+
+    .check_unit,
+    .radio_unit
+      margin-right: 10px   
+
+  
+.result-bottom
+  position: relative
+  .icon-scan
+    
+    +size(200px, 60px)
+    +position(absolute, -15px null null 27px)
+    +hoverBgc($greenL)
+    
+    &:before
+      margin-right: 10px
+      font-size: 22px
+
+  +max(1200)
+    .icon-scan
+      position: static
+      display: flex
+      +margin(null auto)
+
+  +max(450)
+    .icon-scan
+      +size(150px, 50px)
+      &:before
+        font-size: 20px
+
+
+
+
+
+
+
+

@@ -1,4 +1,64 @@
 
+.editor
+  ul
+    line-height: 2
+  .f32
+    +margin(40px null)
+
+  table
+    margin-bottom: 20px
+    tr
+      border-top: 1px solid #dbdbdb
+    th, 
+    td
+      +padding(20px null)
+
+    th
+      width: 150px
+      font-weight: normal
+      color: $green
+  
+  img
+    width: 100%
+
+  +max(1200)
+    .f32
+      +margin(30px null)
+
+    table
+      th, 
+      td
+        +padding(16px null)
+
+  +max(767)
+    .f32
+      +margin(15px null)
+
+    table
+      th, 
+      td
+        +padding(14px null)
+
+      th
+        width: 140px
+
+  +max(380)
+    .f32
+      +margin(15px null)
+
+    table
+      th, 
+      td
+        +padding(12px null)
+
+      th
+        width: 90px
+    
+
++min(769)
+  .container.w90
+    width: 90%
+
 .product
   position: relative
   margin-top: 55px
@@ -8,15 +68,23 @@
 .recommand
   +position(absolute, 0 50px null null )
   .inner
-    +fcl(flex-start)
+    width: 190px
   .f18
     margin-bottom: 24px
   a
-    max-width: 190px
     width: 100%
-    max-height: 190px
     border: 1px solid #ccc
     margin-bottom: 12px
+
+  +min(1366)
+    &.sticky
+      .outer
+        position: fixed
+        top: 80px
+    &.bottom
+      bottom: 0
+      top: auto
+
 
 +max(1365)
   .product
@@ -26,22 +94,29 @@
     position: static
     +padding(20px)
     +margin(null null 50px null )
-    +fcl
     background-color: #eee
+    text-align: center
 
     .outer
-      display: inline-flex
-      justify-content: flex-start
-      align-items: flex-start
-      flex-direction: column
+      display: inline-block
+      text-align: left
+      width: 100%
+      max-width: 530px
       
     .inner
-      flex-direction: row
+      width: 100%
+      +fc
+
     .f18
-      +margin(null null 10px null)
+      +margin(null null 10px 6px)
     a
-      +margin(null 12px 0 null)
-      max-width: 120px
+      +margin(null 6px 0)
+
++max(450)
+  .recommand
+    +padding(12px 5px 16px)
+    a
+      +margin(null 4px null)
 
 
 
@@ -126,14 +201,15 @@
 
 .summary__select,
 .summary__add
-  flex: 1 1 50%
+  width: calc(50% - 6px)
   height: 100%
   background-color: $green
   color: #fff
   border-radius: 10px
   font-size: 20px
-  // word-spacing: nowrap
   white-space: nowrap
+  img
+    width: auto
 
 .summary__select
   margin-right: 12px
@@ -188,8 +264,6 @@
     margin-right: 15px
   
 
-
-
 +max(1200)
   .slick-container
     margin-right: 40px
@@ -201,17 +275,12 @@
     padding-bottom: 18px
     margin-bottom: 18px
 
-  // .summary__tag
-  //   padding-top: 35px
-  //   margin-bottom: 35px
-
-
   .summary__select,
   .summary__add
     font-size: 18px
   .summary__add img
     width: 20px
-
+    
   .summary__btn
     height: 55px
 
@@ -222,27 +291,50 @@
 
 
 +max(767)
-  
+  .product
+    margin-top: 30px
+
   .info-top
     flex-direction: column
     align-items: center
+    max-width: 500px
+    +margin(null auto)
 
-
-
-+max(1200)
   .slick-container
     +margin(null 0 30px null )
     width: 60%
-    // .slick-nav img
-    //   +margin(null 12px null null )
+    .slick-show
+      margin-bottom: 15px
 
-  // .summary__sub
-  //   padding-bottom: 18px
-  //   margin-bottom: 18px
+  .summary__list 
+    font-size: 15px
 
-  // .summary__tag
-  //   padding-top: 35px
-  //   margin-bottom: 35px
+  .summary__tag
+    margin-bottom: 20px
+    margin-top: -10px
+
+  .summary__btn
+    max-width: 400px
++max(400)
+  .slick-container
+    width: 80%
+
+  .summary__list 
+    font-size: 13px
+
+  .summary__note 
+    font-size: 14px
+
+  .summary__btn
+    height: 45px
+
+  .summary__select,
+  .summary__add
+    font-size: 14px
+
+  .summary__add img
+    width: 16px
+    margin-right: 5px
 
 
 
@@ -257,24 +349,23 @@
     margin-right: 40px
     border-radius: 99px
     position: relative
-
+    cursor: pointer
+    white-space: nowrap
 
     &:before
       margin-right: 10px
       font-size: 25px
 
-
     &:after
       content: ""
       display: block
-      position: absolute
-      width: 0
-      height: 0
+      +position(absolute, null null -26px null )
+      +size(0)
       border-style: solid
       border-width: 26px 20px 0 10px
       border-color: #dbdbdb transparent transparent transparent
-      bottom: -26px
 
+    &:hover,
     &.active
       background-color: $green
       color: #fff
@@ -286,27 +377,23 @@
 .tab__content
   margin-bottom: 110px
 
-.editor
-  .f32
-    +margin(40px null)
+.tab__nav
+  +max(767)
+    +margin(null -6px )
 
-  table
-    margin-bottom: 20px
-    tr
-      border-top: 1px solid #dbdbdb
-    th, 
-    td
-      +padding(20px null)
+    .tab
+      +size(140px, 45px)
+      +margin(null 6px )
+      border-radius: 15px
+      
+      &:after
+        +position(absolute, null null -12px null )
 
-    th
-      width: 150px
-      font-weight: normal
-      color: $green
-  
-  img
-    width: 100%
-    
+      &:before
+        margin-right: 6px
+        font-size: 18px
 
-+min(769)
-  .container.w90
-    width: 90%
+  +max(380)
+    .tab
+      &:before
+        display: none

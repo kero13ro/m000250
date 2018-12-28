@@ -49,18 +49,12 @@ $(".js-password").click(function () {
 
 
 $(".js-account").click(function () {
-
   alert_tl
     .set(".alert", { "display": "none" })
     .set("#alert-account", { "display": "flex" })
     .from("#alert-account", 0.3, {autoAlpha: 0 });
 });
 
-
-// $(" .icon-strict, \
-//     .icon-love").click(function (e) {
-//   e.preventDefault();
-// })
 
 
 
@@ -94,12 +88,21 @@ if (  wW > 768) {
 
 
 //scroll show fixedBar
-var landingHeight = $(".navPad").height();
-var fixedBar = $(".fixedBar");
-
-$window.on("scroll", function () {
-  $window.scrollTop() > landingHeight ? fixedBar.addClass("show") : fixedBar.removeClass("show");
-});
+if (wW > 768) {
+  var landingHeight = $(".navPad").height();
+  var fixedBar = $(".fixedBar");
+  var searchBar = $(".nav__search");
+  
+  $window.on("scroll", function () {
+    if ($window.scrollTop() > landingHeight) {
+      fixedBar.addClass("show");
+      searchBar.addClass("fixedType");
+    } else {
+      fixedBar.removeClass("show");
+      searchBar.removeClass("fixedType");
+    }
+  });
+}
 
 
 //nav 會以 append 變換結構，因此在 resize 過邊界時 reload 全部頁面
@@ -116,7 +119,7 @@ $window.resize(function () {
 
 function reload() {
   // $("main").css("opacity", "0");
-  location.reload()
+  location.reload();
 }
 
 
@@ -224,9 +227,17 @@ $(".slick-nav").slick({
   slidesToScroll: 1,
   asNavFor: ".slick-show",
   dots: false,
-  arrows: false
+  arrows: false,
   // centerMode: true,
   // focusOnSelect: true
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+      }
+    },
+  ]
 });
 
 
@@ -274,7 +285,7 @@ $(function () {
     
     $(" [data-abbr] th:nth-child(2), \
         [data-abbr] td:nth-child(2) ").each(function () {      
-      var str = $(this).text();
+      var str = $(this).html();
       var index = str.indexOf("/");
       var output = str.slice(0, index -1) + "<br>" + str.slice(index+1);      
       $(this).html(output);
@@ -402,6 +413,55 @@ $(function () {
   
   $(".wp").on('mousewheel', function () {
     $('html,body').stop();
+  });
+
+  
+  //product.html sticky recommand list
+  if (document.querySelector(".recommand") !== null) {
+    var $recommand = $(".recommand");
+    var recommandHeight = $recommand.height();
+    var recommandTop = $recommand.offset().top;
+    var recommandLeft = $recommand.offset().left;
+    var $recommand_clearLayer = $recommand.find(".outer");
+  
+    var productBottom = $(".product").offset().top + $(".product").height();
+    var winTop;
+  
+    $window.scroll(function () {
+  
+      winTop = $window.scrollTop();
+  
+      if (winTop + 70 < recommandTop) {//top not sticky
+        $recommand.removeClass("sticky");
+        $recommand_clearLayer.removeAttr("style");
+        
+      } else if ((winTop + recommandHeight) + 70 < productBottom) {//sticky type
+        $recommand.removeClass("bottom");
+        $recommand.addClass("sticky");
+        $recommand_clearLayer.css("left", recommandLeft + "px");
+  
+      } else { //bottom not sticky
+        $recommand.addClass("bottom");
+        $recommand.removeClass("sticky");
+        $recommand_clearLayer.removeAttr("style");
+      }
+    });
+  }
+
+  //advanced search next stage 
+  if (document.querySelector(".advanced") !== null) {
+    
+    $(" .radio_unit,\
+        .check_unit").each(function() {
+      $(this).change(function() {
+        $(this).parents(".search__block").next(".search__block").find(".check_unit input").removeAttr("disabled");
+      });
+    });
+  }
+
+  $(".card__cart").click(function (e) {
+    // e.stopPropagation();
+    e.preventDefault();
   });
 
 });// $(function ) end

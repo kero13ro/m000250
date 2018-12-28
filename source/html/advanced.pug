@@ -4,5 +4,253 @@ extends ./include/layout.pug
 block content
   include ./include/nav.pug
   
-  #advanced
   
+  .breadcrumb
+    ul.container.nostyle
+      li.title
+        span.icon-catogory.f24.mr20.plusCircle
+        span.f28 商品品類
+      li 首頁
+      h2.icon-right 商品品類
+      h3.icon-right 保健食品
+      h4.icon-right 進階搜尋
+
+  form(action="result.html").container.advanced
+  
+    .f32.b.mt48.mb48 進階搜尋
+
+    .search__block.mb32
+      .search__title 類型：
+      .search__content
+        .multi-border
+          .border
+          .border
+        .radio_unit
+          input(type="radio", name="search_type" id="search_type1")
+          label(for="search_type1") 保健
+        .radio_unit
+          input(type="radio", name="search_type" id="search_type2")
+          label(for="search_type2") 婦幼
+        .radio_unit
+          input(type="radio", name="search_type" id="search_type3")
+          label(for="search_type3") 醫療常備
+        .radio_unit
+          input(type="radio", name="search_type" id="search_type4")
+          label(for="search_type4") 居家照護
+        .radio_unit
+          input(type="radio", name="search_type" id="search_type5")
+          label(for="search_type5") 行動輔具
+        .radio_unit
+          input(type="radio", name="search_type" id="search_type6")
+          label(for="search_type6") 食品生活
+        .radio_unit
+          input(type="radio", name="search_type" id="search_type7")
+          label(for="search_type7") 奶粉尿布
+        .radio_unit
+          input(type="radio", name="search_type" id="search_type8")
+          label(for="search_type8") 美容保養
+
+    .search__block.mb32
+      .search__title 族群：
+      .search__content
+        label.check_unit
+          input(type="checkbox", name="userGroup" disabled)
+          .box
+          span 男性
+        label.check_unit
+          input(type="checkbox", name="userGroup" disabled)
+          .box
+          span 女性
+        label.check_unit
+          input(type="checkbox", name="userGroup" disabled)
+          .box
+          span 嬰幼兒
+        label.check_unit
+          input(type="checkbox", name="userGroup" disabled)
+          .box
+          span 銀髮族
+        label.check_unit
+          input(type="checkbox", name="userGroup" disabled)
+          .box
+          span 素食者
+
+    .search__block.mb32
+      .search__title 功能：
+      .search__content
+        .multi-border
+          .border
+          .border
+          .border
+          .border
+          .border
+          .border
+        label.check_unit
+          input(type="checkbox", name="feature" disabled)
+          .box
+          span 基礎營養
+        label.check_unit
+          input(type="checkbox", name="feature" disabled)
+          .box
+          span 骨質加強
+
+        label.check_unit
+          input(type="checkbox", name="feature" disabled)
+          .box
+          span 晶亮有神
+        label.check_unit
+          input(type="checkbox", name="feature" disabled)
+          .box
+          span 舒敏防護
+        label.check_unit
+          input(type="checkbox", name="feature" disabled)
+          .box
+          span 消化順暢
+        label.check_unit
+          input(type="checkbox", name="feature" disabled)
+          .box
+          span 體態管理
+        label.check_unit
+          input(type="checkbox", name="feature" disabled)
+          .box
+          span 雄風再現
+        label.check_unit
+          input(type="checkbox", name="feature" disabled)
+          .box
+          span 舒壓好眠
+        label.check_unit
+          input(type="checkbox", name="feature" disabled)
+          .box
+          span 防禦升級
+        label.check_unit
+          input(type="checkbox", name="feature" disabled)
+          .box
+          span 私密呵護
+        label.check_unit
+          input(type="checkbox", name="feature" disabled)
+          .box
+          span 孕養調理
+        label.check_unit
+          input(type="checkbox", name="feature" disabled)
+          .box
+          span 病期調養
+        label.check_unit
+          input(type="checkbox", name="feature" disabled)
+          .box
+          span 思緒靈活
+        label.check_unit
+          input(type="checkbox", name="feature" disabled)
+          .box
+          span 美肌美顏
+        label.check_unit
+          input(type="checkbox", name="feature" disabled)
+          .box
+          span 月事調理
+        label.check_unit
+          input(type="checkbox", name="feature" disabled)
+          .box
+          span 機能茶包/飲品
+        label.check_unit
+          input(type="checkbox", name="feature" disabled)
+          .box
+          span 即飲管灌
+        label.check_unit
+          input(type="checkbox", name="feature" disabled)
+          .box
+          span 三高循環
+        label.check_unit
+          input(type="checkbox", name="feature" disabled)
+          .box
+          span 忙碌疲勞
+
+    .search__block.mb64
+      .search__title 品牌：
+      .search__content
+        .multi-border
+          .border
+          .border
+          .border
+          .border
+          .border
+          .border
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 不限品牌
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 常春藤/竹善堂
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 優兒康/恩能康見
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 娘家/消費高手
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 康萃生/萊萃美
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 順天本草/易宏
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 善存/克補/挺立
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 營養生活
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 自然之寶
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 澳佳寶/威瑪舒培
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 船井/Taiwanyes
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 永信HAC/綠寶
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 優活原力/優必原力
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 三多/長庚生技
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 孕哺兒
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 白蘭氏/正官庄
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 桂格/完膳/丹沛
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 亞培/安素
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 雀巢飲沛/立攝適
+        label.check_unit
+          input(type="checkbox", name="brand" disabled)
+          .box
+          span 易珈生技/百喬生醫
+
+    button.btn.icon-scan.mb64.f20.wide10 開始搜尋

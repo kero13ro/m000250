@@ -52,10 +52,14 @@
   ul
     +padding(25px null)
     border-top: 1px dashed #ccc
-    +f(flex-start, center)
+    // +f(flex-start, center)
 
   ul > *
+    height: 50px
     +fc
+    display: inline-flex
+    // height: 100%
+    vertical-align: middle
     color: #999
     font-weight: bolder
     margin-bottom: 0
@@ -77,58 +81,71 @@
       border-right: 1px solid #ccc
       +position(absolute, 10px 0 null null )
 
-    [class^="icon-"]
-      &:before
-        font-size: 50px
+  // .icon-user3
+  .hadCircle
+    font-size: 50px
 
-
-    [class^="icon-"] + span 
-      font-weight: bold
-
-    .icon-cart
-      +size(50px)
-      border-radius: 50%
-      background-color: $green
-      +fc
-      &:before
-        font-size: 25px
-        color: #fff
+  // .icon-cart
+  .plusCircle
+    +size(50px)
+    border-radius: 50%
+    background-color: $green
+    +fc
+    font-size: 25px
+    color: #fff
 
 
   .icon-right::before
     margin: 0 12px
   
+  +max(850)  
+    ul > *:nth-child(6)
+      display: flex
+      justify-content: flex-start    
+      height: 40px
 
+      
   +max(768)
     ul
       +padding(12px null)
 
-    .title 
-      [class^="icon-"]:before
-        font-size: 45px
+    .hadCircle
+      font-size: 40px
 
-      .icon-cart
-        +size(45px)
-        &:before
-          font-size: 20px
+    .plusCircle
+      +size(40px)
+      font-size: 20px
   
-  +max(480)
+  +max(550)
 
     .title
       margin-right: 0
       padding-right: 5px
+      span
+        margin-right: 0
 
       &::after,
-      [class^="icon-"] + span
+      span.f28
         display: none
         
-      [class^="icon-"]:before
-        font-size: 35px
+    .hadCircle
+      font-size: 27px
 
-      .icon-cart
-        +size(35px)
-        &:before
-          font-size: 16px
+    .plusCircle
+      +size(27px)
+      font-size: 14px
+
+    .icon-right::before
+      +margin(null 6px)
+      font-size: 12px
+
+    ul > *
+      height: 30px
+      font-size: 15px
+  
+  +max(350)
+    ul > *
+      font-size: 14px
 
 
 .footGray
