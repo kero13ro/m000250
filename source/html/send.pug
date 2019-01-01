@@ -49,7 +49,8 @@ block content
         .line
           span #[span.star *]內容：
           textarea( cols="30", rows="5", placeholder="請寫下您的問題...")
-    .g-recaptcha(data-sitekey="6LfQeoMUAAAAAOktn9YIwQ5smXEg3bwq_CeseQd1").pb48.mb64
+    .recaptcha-container
+      .g-recaptcha(data-sitekey="6LfQeoMUAAAAAOktn9YIwQ5smXEg3bwq_CeseQd1").pb48.mb64
 
     .btn-container
       a(href="sent.html").btn.lg.mr20 確定送出

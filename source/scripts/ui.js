@@ -127,21 +127,60 @@ function reload() {
 
 
 if (wW <= 768) {
+  // var menuTL = new TimelineMax({  yoyo: true });
   var menuTL = new TimelineMax({ paused: true, reversed: true, yoyo: true });
   var menu__cover = $(".nav__cover");
+
+  var bgcBefore = $(".nav__bgc .before");
+  var bgcAfter = $(".nav__bgc .after");
+  var chars = new SplitText($(".nav__cover > a"), { type: "words,chars" }).chars;
+
+  var nav_external = $(".nav__external");
+
+  for (var i = 0; i < chars.length; i++) { (i % 2 === 0) ? chars[i].classList.add("s") : chars[i].classList.add("l") }
+  
+  var chars_s = $(".nav__cover .s");
+  var chars_l = $(".nav__cover .l");
+  var chars_odd = $(".nav__cover > a:nth-child(odd)");
+  var chars_even = $(".nav__cover > a:nth-child(even)");
+
+  // $.when($.ready).then(function () {
+  // })
+
+  menuTL
+    .set(menu__cover, { "visibility": "visible"})
+    .staggerFrom(bgcBefore, 1, { "width": "0%", ease: Power3.easeInOut, }, 0.08)
+    .staggerFrom(bgcAfter, 1, {"width": "0%", ease: Power3.easeInOut, }, 0.08, 0)
+    .addLabel("chars", "-=0.5")
+
+    .from(chars_s, 1, {autoAlpha: 0}, "chars")
+    .from(chars_l, 1, {autoAlpha: 0}, "chars")
+    .from(chars_s, 1, { "transform": "scale(1.5) rotateY(-180deg)", ease: Power1.easeIn }, "chars")
+    .from(chars_l, 1, { "transform": "scale(0.5) rotateY(180deg)", ease: Power1.easeIn }, "chars")
+    .from(chars_odd, 1, { x: 100, ease: Power1.easeInOut }, "chars")
+    .from(chars_even, 1, { x: -100, ease: Power1.easeInOut }, "chars")
+
+    .from(nav_external, 1, { x: 60, autoAlpha: 0, ease: Power1.easeInOut }, "chars")
+    
   // var cover_list = $(".nav__cover a");
   // var toggle = $(".nav__toggle");
   // var burger1 = toggle.find(".one");
   // var burger2 = toggle.find(".two");
   // var burger3 = toggle.find(".three");
 
-  menuTL
+  // menuTL
+  //   .staggerFrom(chars, 0.8, { autoAlpha: 0, x: 15, ease: Power1.easeInOut }, 0)
+    // .set(charsOdd, 0.6, { autoAlpha: 0, x: 15, ease: Power1.easeInOut }, 0.1)
     // .call(function() {
     //     $cover.removeClass("show");
     //     $cover.off();
     //   }, [], this, 0.001)
-      
-    .to(menu__cover, 0.2, { display: "flex", autoAlpha: 1 }, 0.2)
+    
+    // .to(menu__cover, 0.2, { display: "flex", autoAlpha: 1 }, 0.2)
+    // .staggerFrom(bgcBefore, 0.6, {"width": "0%", ease: Power3.easeInOut, }, 0.08)
+    // .staggerFrom(bgcAfter, 0.6, {"width": "0%", ease: Power3.easeInOut, }, 0.08, 0)
+    // .staggerFrom(chars, 0.6, { autoAlpha: 0, x: 15, scale: 0.9, ease: Power1.easeInOut }, 0)
+    // from(bgc1, 0.3, {"width": "50%"})
     
 
     // .staggerFrom(cover_list, 0.4, { autoAlpha: 0, x: 30, ease: Power2.easeOut }, 0.1, 0.3)
@@ -464,4 +503,9 @@ $(function () {
     e.preventDefault();
   });
 
+
+  
 });// $(function ) end
+
+// var rule = CSSRulePlugin.getRule('.icon-service:before'); //get the rule
+// TweenLite.to(rule, 3, { cssRule: { "color": "red" } });

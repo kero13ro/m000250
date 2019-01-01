@@ -268,52 +268,73 @@ $icon: $green !default
 
   .nav__cover
     +fcl
-    background-color: rgba($green, 0.9)
     +size(100%, 100vh )
     +position(fixed, 65px 0 null null)
     z-index: 11
-    max-width: 450px
-    display: none
     +padding(null 100px)
-    opacity: 0
+    visibility: hidden
 
-    a
-      color: #fff
+  .nav__bgc
+    position: absolute
+    +size(100%)
+    z-index: -1
 
-    > a
+    li
+      .before,
+      .after
+        content: ""
+        display: block
+        +size(100%, 34vh)
+        position: absolute
+
+      .before
+        background-color: #fff
+        left: 0
+      .after
+        background-color: $green
+        right: 0
       
-      +padding(15px 40px)
-      +fc
-      border-bottom: 1px solid rgba(#fff, 0.5)
-      font-size: 18px
+    li:nth-child(2) > div
+      top: 34%
+    li:nth-child(3) > div
+      top: 68%
+
+  .nav__cover a
+    color: #fff
+
+  .nav__external ~ a
+    +padding(20px 40px)
+    letter-spacing: 7px
+    font-size: 24px
 
     [class*="icon"]
+      display: none
+      
+  .nav__external
+    +fc
+    flex-wrap: wrap
+    margin-top: 70px
+    margin-bottom: 20px
+    order: 1
+    a:not([class*="icon"])
+      width: 100%
+      text-align: center
+      height: 30px
+
+    [class*="icon"]
+      +margin(10px 15px)
+      font-size: 30px
       margin-right: 22px
-      font-size: 33px
       &:before
         color: #fff
-      
-        
-    .nav__external
-      +fc
-      flex-wrap: wrap
-      margin-top: 30px
-      order: 1
-      a:not([class*="icon"])
-        width: 100%
-        text-align: center
-        height: 30px
-      [class*="icon"]
-        +margin(null 10px)
-        font-size: 30px
 
   +max(500)
     .nav__cover
       top: 50px
-      > a
-        +padding(12px 20px)
-        font-size: 16px
 
+    .nav__external ~ a
+      +padding(12px 20px)
+      font-size: 22px
 
     .navPad,
     .moblie
@@ -343,7 +364,7 @@ $icon: $green !default
 
 #dashboard
   +position(fixed, 0 -560px null null )
-  +size(560px, 100vh)
+  +size(560px, 100%)
   z-index: 10
   background-color: #fff
   box-shadow: 0 5px 5px rgba(black,0.1)

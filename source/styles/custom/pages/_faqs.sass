@@ -1,6 +1,4 @@
 
-
-
 .editor-news
   img
     margin-bottom: 40px
@@ -10,15 +8,15 @@
 
 .container.faq
   +f
-  margin-bottom: 100px
+  padding-bottom: 20px
 
 .faq-menu
-  flex: 1 1 250px
+  width: 250px
+  flex-shrink: 0
   margin-right: 55px
 
 .faq-main
-  flex: 1 1 1100px
-
+  width: 100%
 
 .faq-menu
   li
@@ -30,8 +28,6 @@
       display: inline-block
       +padding(14px null)
       transform: translateY(1px)
-      
-
 
   li.active
     color: $green
@@ -60,10 +56,10 @@
       transition: transform 0.3s
 
   .ans
+    +padding(25px 80px 25px 55px)
     line-height: 2
     display: none
     text-indent: -25px
-    +padding(25px 80px 25px 55px)
 
   .active
     .que
@@ -74,6 +70,49 @@
     .icon-down
       transition: transform 0.3s
       transform: rotate(180deg)
+
+
+
++max(767)
+
+  .container.faq
+    flex-direction: column
+
+  .faq-menu
+    +margin(null 0 30px null)
+    overflow-x: auto
+    width: 100%
+
+  .toggle-cover
+    +f
+    li
+      white-space: nowrap
+      margin-right: 10px
+      padding-right: 10px
+      border-top: 0px solid #000
+
+  .faq-main
+    width: 100%
+
+    .ans
+      +padding(15px 25px 15px null)
+      font-size: 15px
+      line-height: 1.8
+
++max(400)
+
+  .faq-main
+    .ans
+      +padding(10px 0px 10px 40px)
+      font-size: 14px
+
+    .que
+      font-size: 15px
+      +padding(10px 15px 10px 15px)
+
+
+
+
 
 
 .user-main.send
@@ -92,23 +131,23 @@
 .line-container
 
   .line 
-    +f
     margin-bottom: 20px
+    align-items: flex-start
     > span 
       width: 120px
       line-height: 50px
+      flex-shrink: 0
       font-weight: bold
       display: inline-block
-
 
   select,
   input,
   textarea
     +size(100%, 50px)
-    background-color: #e6f5e7
-    +padding(null 20px)
-    border: 1px solid $green
     border-radius: 10px
+    +padding(null 20px)
+    background-color: #e6f5e7
+    border: 1px solid $green
     +trans
     font-weight: bold
     &::placeholder
@@ -126,6 +165,33 @@
     &::-ms-expand
       display: none
 
+
+    
 .star
   color: $green
   margin-right: 4px
+
+.recaptcha-container
+  +margin(null -18px)
+
+.user-main.send
+  +max(400)
+    .f16.tc
+      font-size: 14.5px
+    .line 
+      margin-bottom: 12px
+      font-size: 15px
+      min-height: 40px
+      > span 
+        width: 100px
+        line-height: 40px
+
+    select,
+    input,
+    textarea
+      border-radius: 5px
+      +padding(null 12px)
+
+    select,
+    input
+      height: 40px
