@@ -131,10 +131,10 @@
 
 
     [data-title]:before
+      width: 120px
       font-size: 14px
       content: attr(data-title)
       display: inline-block
-      width: 80px
 
     .delete
       +position(absolute, 20px 0 null null )
@@ -181,7 +181,11 @@
       +size(16px)
       &:after,&:before
         +size(8px, 1px)
+
+
   +max(350)
+    [data-title]:before
+      width: 80px
     
     .info
       font-size: 13px
@@ -193,6 +197,9 @@
     [data-title]:before
       font-size: 12px
 
+    .right span
+      display: block
+
 
 
 
@@ -203,15 +210,24 @@
     +padding(55px null)
     font-weight: bold
 
+    .title
+      width: 190px
+      flex-shrink: 0
+      font-size: 20px
+      color: $green
+      white-space: nowrap
+      line-height: 60px
+      
+    .check_unit
+      font-size: 16px
+      line-height: normal
+      color: #000
+
     &.flex
       +f
 
-    &.complete
-      padding-top: 0px
-
     &.center
       +fc
-
       .btn
         +hoverBgc($greenL)
 
@@ -223,28 +239,19 @@
         color: #777
         margin-bottom: 0.3rem
 
-        
-    .line.spread
-      
-      .mr-auto
-        margin-right: auto
-
-
     &.border-none
       border-top: 0px solid $green
 
-    .title
-      flex: 1 0 190px
-      font-size: 20px
-      color: $green
-      white-space: nowrap
-      line-height: 60px
-      
-    .check_unit
-      font-size: 16px
-      line-height: normal
-      color: #000
+    &.complete
+      padding-top: 0px
 
+      .line.spread .mr-auto
+        margin-right: auto
+
+      +max(400)
+        .spread
+          flex-wrap: wrap
+          margin-bottom: 20px
 
 
 
@@ -258,11 +265,16 @@
       +margin(null 3px)
       +hoverText($greenL)
 
+  .check_unit.multi
+    align-items: flex-start
+    .box
+      margin-top: 5px
+
 
   .row
     height: 60px
     justify-content: flex-start
-
+    white-space: nowrap
 
   input,
   textarea,
@@ -292,12 +304,18 @@
     &::-ms-expand
       display: none
 
+    +hoverText($green)
+
   select.lg
     +min(1201)
+      
       color: $green
       background: url(./images/tri-g.svg) center right -1px no-repeat, #e6f5e7
       +size(100px, 50px)
   
+
+
+
 .plain.price
   td,
   th
@@ -311,25 +329,28 @@
   +max(1100)  
     th
       display: none
-    tr,
+
+    tr
+      position: relative
+      overflow: hidden
+      display: block
     td
       display: block
+      text-align: left
+      line-height: 38px
       height: auto
-      line-height: 0
-      padding: 0
-      max-width: 100%
-      width: 100%
-      > span
-        +padding(null 15px)
-        display: inline-block
+      +padding(0 0 0 140px)
+      a
+        +margin(null 3px)
+    
     
     td:before
-      content: attr(data-title)
-      display: inline-block
-      text-align: center
       width: 120px
-      height: 35px
-      line-height: 35px
+      line-height: 38px
+      content: attr(data-title)
+      +position(absolute, null null null 0)
+      display: block
+      text-align: center
       background-color: rgb(239, 239, 239)
       
 
@@ -347,8 +368,9 @@
 
 
 .list-container
+  width: 400px
   .list
-    width: 400px
+    width: 100%
     line-height: 60px
     border-bottom: 1px solid #ccc
   .list:first-child
@@ -374,11 +396,12 @@
 
     &:nth-last-child(2)
       +margin(null 35px)
+
     &:last-child
-      margin-right: 80px
+      +min(1366)
+        margin-right: 80px
 
 .line
-  // height: 60px
   min-height: 60px
   +fc(flex-start)
   select
@@ -393,5 +416,103 @@
       margin-right: 10px
 
 
-
+.tmp-block
+  padding: 20px
+  border: 1px dashed #ff0000
+  height: 230px
+  border-radius: 20px
+  +fc
+  color: #ff0000
   
+
+
+.cart-main
+
+  +max(767)
+    .row
+      flex-wrap: wrap
+      height: auto
+
+      .mr16 + label
+        margin-top: 12px
+
+
+    .block
+      +padding(20px null 35px null)
+
+    .block
+      .title
+        display: inline-block
+      
+    .block.flex:not(.center)
+      display: block
+
+    .wrapper.multi
+      align-items: center
+
+    .list-container
+      width: 100%
+
+  +max(400)
+    .row > span 
+      margin-bottom: 12px
+
+    .plain.price
+
+      td
+        padding-left: 90px
+        padding-right: 5px
+        &:before
+          width: 85px
+
+
+    .wrapper.multi
+
+      .btn-container
+        margin-top: 35px
+
+
+.row.xl-col        
+  +max(1023)
+    flex-wrap: wrap
+    height: auto
+    label
+      margin-bottom: 12px
+
+.info
+  +max(767)
+    .f32
+      margin-bottom: 0
+
+    .column.lg
+      th,td
+        +padding(null 22px)
+
+    .gender
+      flex-wrap: wrap
+      justify-content: flex-start
+
+      .radio_unit:nth-last-child(2)
+        margin: 0
+
+      input
+        margin-bottom: 12px
+
+
+  .radio-inline
+    flex-wrap: wrap
+    .radio_unit
+      margin-bottom: 8px
+
+
+  +max(400)
+    label
+      white-space: nowrap
+    .column.lg
+      th,td
+        +padding(null 10px )
+
+    .gender
+      label
+        +padding(5px null)
+

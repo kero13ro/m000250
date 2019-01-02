@@ -99,6 +99,8 @@
         font-size: 15px
 
     
+.user-main.cancel > img
+  max-width: 120px
 
 .user-main
   margin-bottom: 100px
@@ -234,6 +236,9 @@ table.plain.user
     color: $green
     font-weight: bold
 
+  .red
+    color: #c80000
+
   .total
     font-size: 22px
     font-family: roboto
@@ -265,10 +270,128 @@ table.plain.user
 
 
 
-.tmp-block
-  border: 1px dashed #ff0000
-  height: 230px
-  border-radius: 20px
-  +fc
-  color: #ff0000
-  
+.returning
+  table.plain.cart
+
+    th:first-child
+      +padding(null 15px)
+      
+      +min(1366)
+        min-width: 110px
+
+    .check_unit
+      justify-content: center
+      .box
+        margin: 0 0 0 15px
+        position: relative
+        transform: scale(1.1)
+        border: 1px solid $green
+        border-radius: 2px
+
+        &:before
+          right: 7px
+          transition: 0s
+        &:after,
+          right: 5px
+          transition: 0s
+
+        
+
+  .spe1
+    width: 100%
+
+    select
+      width: 100%
+      max-width: 300px
+
+  table.column
+    .row
+      height: auto
+
+    .radio-inline
+      height: 60px
+      flex-wrap: wrap
+
+  table.column.spe2
+    th
+      padding-left: 75px
+      padding-right: 0px
+
+    .row
+      margin-bottom: 0
+      label
+        width: 100%
+        justify-content: flex-start
+      input
+        max-width: 280px
+        width: 100%
+      select
+        max-width: 480px
+        width: 100%
+        margin-right: 30px
+          
+  .multi
+    .red
+      color: rgb(255, 74, 10)
+
+  .cancel
+    background-color: rgb(100, 100, 100)
+    +min(1366)
+      width: 160px
+
+  +max(767)
+    
+    table.plain.cart
+
+      tbody td:first-child
+        padding-top: 40px
+
+      .check_unit
+        +position(absolute, 0 null null 0)
+        background-color: #eee
+        +padding(10px null 10px 10px )
+        width: 100%
+        justify-content: flex-start
+
+      .hide
+        display: block
+        margin-left: 10px
+
+  +max(850)
+
+    table.column.spe2
+      th
+        padding-left: 40px
+
+      .row
+        flex-wrap: wrap
+        label
+          margin-right: 0
+        select
+          +margin(null 0 12px null )
+
+  +max(767)
+    .gender
+      flex-wrap: wrap
+      justify-content: flex-start
+
+      .radio_unit:nth-last-child(2)
+        margin: 0
+
+      input
+        margin-bottom: 12px
+    
+      label
+        +padding(5px null)
+
+
+    table.column .radio-inline
+      height: auto
+      label
+        +padding(5px null)
+
+  +max(400)
+    table.column.lg
+      th, 
+      td
+        +padding(null 12px)

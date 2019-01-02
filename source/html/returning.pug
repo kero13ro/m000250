@@ -1,0 +1,316 @@
+
+extends ./include/layout.pug
+
+block content
+  include ./include/nav.pug
+  
+  .breadcrumb  
+    ul.container.nostyle
+      li.title
+        span.icon-user3.f24.mr20.hadCircle
+        span.f28 會員中心
+      li 首頁
+      h2.icon-right 會員中心
+      h3.icon-right 訂單紀錄
+      h4.icon-right 申請退貨
+
+  .user-menu.mb72
+    .toggle-nav
+    .toggle-cover.f18
+      a.active(href="order.html") 訂單紀錄
+      a(href="return.html") 退貨進度
+      a(href="profile.html") 會員帳號資料
+      a(href="contact.html") 常用聯絡資訊
+      a(href="bonus.html") 紅利點數查詢
+
+  .cart-main.container.returning
+
+    .f32.b.tc.mb40 申請退貨
+
+    .f16.info.pt48.pb48(style="color: #777; border-top: 1px solid #0AA30E;") ※ 如您退訂的商品附有贈品，則贈品將一併退貨！
+
+    .scrollbarX.mb40
+      table.plain(data-abbr="type1").user
+        thead
+          tr
+            th 訂單日期
+            th 訂單編號
+            th 訂單金額
+            th 訂單狀態
+            th 付款方式
+            th 付款狀態
+            th 取貨方式
+
+        tbody
+          tr
+            td 2018-03-16
+            td 64482115
+            td NT$4,500
+            td 已出貨
+            td 信用卡
+            td 已付款
+            td 店取-北屯軍功
+
+
+    .scrollbarX
+      table.plain.cart
+        thead
+          tr
+            th 
+              label.check_unit
+                span 全部退貨
+                input(type="checkbox") 
+                .box
+
+            th 商品名稱
+            th
+            th 原始貨號
+            th 售價
+            th 會員價
+            th 數量
+        tbody
+          tr
+            td  
+              label.check_unit
+                input(type="checkbox") 
+                .box
+                span.hide 取消訂單
+
+            td
+              img(src="./styles/images/1a-01.jpg", alt="大樹連鎖藥局").pic
+            td
+              a(href="product.html").info.lh20
+                .b 【娘家】 益生菌（2g/包，60包/盒)
+                .gift.red.f15 《限量贈品》：【娘家】滴雞精試飲包 x1 盒
+            td: div(data-title="原始貨號：").n 133909
+            td: div(data-title="售價：").n.cross $2,200
+            td: div(data-title="會員價：").n.g $2,200
+            td: div(data-title="數量：").n.g
+              select.lg
+                option 1
+              
+          tr
+            td
+              label.check_unit
+                input(type="checkbox") 
+                .box
+                span.hide 取消訂單
+            td  
+              img(src="./styles/images/1a-02.jpg", alt="大樹連鎖藥局").pic
+            td
+              a(href="product.html").info.lh20
+                .b 【歐典生機】養生雪晶耳冰糖植物性膠原飲 180ml*8入(禮盒)
+            td: div(data-title="原始貨號：").n 142583
+            td: div(data-title="售價：").n.cross $360
+            td: div(data-title="會員價：").n.g $280
+            td: div(data-title="數量：").n.g 
+              select.lg 
+                option 5
+              
+          tr
+            td
+              label.check_unit
+                input(type="checkbox") 
+                .box
+                span.hide 取消訂單
+            td  
+              img(src="./styles/images/1a-03.jpg", alt="大樹連鎖藥局").pic
+            td
+              a(href="product.html").info.lh20
+                .b 【BioJoy百喬】奇亞酵素輕纖飲_Chia奇亞籽蔬果酵素５合１（12包/盒）
+
+            td: div(data-title="原始貨號：").n 142719
+            td: div(data-title="售價：").n.cross $829
+            td: div(data-title="會員價：").n.g $488
+            td: div(data-title="數量：").n.g 
+              select.lg 
+                option 2
+              
+            
+        tfoot
+          tr 
+            td(colspan="3") 
+              .left
+                | 訂單金額
+                span.n.g NT$5,480
+                span.break &nbsp;	- &nbsp; 退貨金額
+                  span.n.red NT$2,200
+                  
+                span.break &nbsp;+&nbsp;	 運費 NT$0
+            
+            td(colspan="4") 
+              .right
+                span 訂單總金額
+                span.total NT$2,280
+
+    .block.flex.border-none.mt8
+      span.title 退貨原因
+
+      div.wrapper 
+
+        table.column.lg
+          tbody
+            tr
+              th 退貨原因 #[span.star *]
+              td
+                label.spe1
+                  select
+                    option(value="") 請選擇
+            tr
+              th.pad 備註
+              td
+                textarea( cols="30", rows="5", placeholder="請寫下您的問題...")
+
+    .block.flex
+      span.title 退款資訊
+      div.wrapper 
+        table.column.mb16.lg.spe2
+          tr
+            td(colspan="2")
+              .radio_unit 
+                input(type="radio", name="payType" id="creditCard")
+                label(for="creditCard") 信用卡付款(VISA、Master)
+          tr
+            td(colspan="2")
+              .radio_unit 
+                input(type="radio", name="payType" id="ATM")
+                label(for="ATM") 銀行帳號ATM
+
+          tr
+            th 銀行名稱 #[span.star *]
+            td
+              .row
+                label
+                  select
+                    option(value="") 大樹商業銀行
+                label
+                  span 分行 #[span.star *]
+                  input(type="text" placeholder="北台中")
+
+          tr
+            th 銀行帳號 #[span.star *]
+            td
+              input(type="number" placeholder="74512132156415165") 
+          tr
+            th 戶名 #[span.star *]
+            td
+              input(type="text" placeholder="林○○") 
+          tr
+            th 備註
+            td
+              input(type="text") 
+
+        label.check_unit.multi
+          input(type="checkbox") 
+          .box
+          span 我已仔細閱讀並明瞭「
+            a(href="#").g 網站使用條款
+            | 」、「
+            a(href="#").g 隱私權保護政策
+            | 」等所載內容及其意義，茲同意該等條款規定，並願遵守網站現今、嗣後規範的各種規定。
+
+
+    .block.flex
+      span.title 聯絡人資訊
+
+      div.wrapper 
+        label.line.mb20
+          span.mr16 載入聯絡人資訊
+          select
+            option(value="選擇聯絡人") 選擇聯絡人
+
+
+        table.column.lg
+          tbody
+            tr
+              th 姓名 #[span.star *]
+              td
+                .gender
+                  input(type="text" placeholder="陳曉瑩")
+
+                  .radio_unit
+                    input(type="radio", name="gender" id="male")
+                    label(for="male") 先生
+                  .radio_unit
+                    input(type="radio", name="gender" id="female")
+                    label(for="female") 小姐
+            tr
+              th 手機號碼 #[span.star *]
+              td
+                input(type="text" placeholder="0951-215-478") 
+            tr
+              th.pad 聯絡地址 #[span.star *]
+              td
+                .row.xl-col
+                  label
+                    span 郵遞區號
+                    input(type="text" placeholder="112")
+                  label
+                    span 縣市
+                    select
+                      option(value="台北市") 台北市
+                  label
+                    span 鄉鎮區
+                    select
+                      option(value="北投區") 北投區
+                input(type="text" placeholder="富貴一路3號")
+
+            tr
+              th 電子郵件 #[span.star *]
+              td
+                input(type="mail" placeholder="info@e-creative.tw") 
+
+            tr
+              th 收貨時段 #[span.star *]
+              td
+                .wrapper.radio-inline
+                  .radio_unit
+                    input(type="radio", name="invoice" id="invoice1")
+                    label(for="invoice1") 不指定
+                  .radio_unit
+                    input(type="radio", name="invoice" id="invoice2")
+                    label(for="invoice2") 上午      
+                  .radio_unit
+                    input(type="radio", name="invoice" id="invoice3")
+                    label(for="invoice3") 下午        
+                  .radio_unit
+                    input(type="radio", name="invoice" id="invoice4")
+                    label(for="invoice4") 晚間     
+
+            tr
+              th.pad 備註
+              td
+                textarea( cols="30", rows="5", placeholder="請寫下您的問題...")
+
+
+    .block.lh20.text-type.f16
+      .wrapper
+        p ※ 若已收到商品，請務必將所有訂單商品、配件、贈品及包裝盒完整置入原外裝箱中。
+        p ※ 請留意退貨完成後，則該優惠活動將無法同時享有（例折價券，會員首購等...）
+        p ※ 若您有任何疑問，可先參考網頁上「服務中心 – 常見問題」，如需聯絡客服，請上班時間撥打專線：0800-288-233
+        p 客服時間：週一至週五， 9:00～12:00/ 13:00~17:00 (周末及國定假日暫未提供服務)
+
+
+
+    .block.mb48.flex
+      span.title 訂單總金額
+      
+      div.wrapper.multi
+        .list-container
+          .list
+            span 原訂單金額
+            span.robo NT$5480
+          .list
+            span 退款金額
+            span.robo.red NT$2,200
+          .list
+            span 運費
+            span.robo NT$0
+          .list
+            span 實際金額
+            span.robo.f24 NT$2,280
+            
+
+        .btn-container
+          a(href="order.html").btn.lg.mr32.cancel 取消
+          a(href="returned.html").btn.lg 確定退貨

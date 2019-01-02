@@ -1,0 +1,31 @@
+doctype html
+html(lang='zh-TW')
+  head
+    include include/head.pug
+
+  body
+    main.wp
+    
+      #login(style="background-image: url('./styles/images/login-bgc.jpg')")
+        .modal.sm.quest
+          .modal__head.pt48.pb40
+            img(src="./styles/images/p-title.png", alt="大樹連鎖藥局").pt4
+
+          .modal__content.lh18
+            .f20.b.mb24 請輸入驗證碼 #[br]驗證碼將於
+              span.g 3分鐘
+              | 後失效
+            input(type="text" placeholder="").mb20.wide5.sq
+
+            .block.alert.sq.mb20.f18#alert-password
+              .icon-alert 驗證碼錯誤，請重新輸入
+
+            .block.b.mb40
+              //- a.btn.sq.js-password 送出驗證碼
+              a(href="alter-forget.html").btn.sq 送出驗證碼
+
+            .icon-quest.f16 沒收到認證碼? 
+              a(href="verify-forget.html").b 重新寄發或變更發送方式
+
+
+    include include/defaultJs.pug  

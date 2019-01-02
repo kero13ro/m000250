@@ -1,4 +1,16 @@
 
+  
+.lity-image img
+  width: 80vw
+  max-width: 1000px
+  max-height: 100% !important
+  +max(500)
+    width: 95vw
+
+.lity-container
+  overflow-y: auto
+
+
 #fixed-cover
   z-index: 5
   +size(100%, 100vh)
@@ -72,6 +84,9 @@ $defaultcolor: rgb(22, 24, 23) !default
     font-size: 16px
     height: 45px
 
+    &.lg
+      height: 55px
+      +padding(null 35px)
 
 
 .sq

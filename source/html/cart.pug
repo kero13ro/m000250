@@ -98,9 +98,9 @@ block content
               span(style="color: #646464") (尚未包含折扣與運費)
             
 
-    p.mt16.mb56.g 累積紅利點數因包含門市消費與線上消費積點，故會有合併時間差，最新累積紅利點數查詢可洽客服專線(0800-288-233)為您服務。
+    p.mt16.mb56.g.f16 累積紅利點數因包含門市消費與線上消費積點，故會有合併時間差，最新累積紅利點數查詢可洽客服專線(0800-288-233)為您服務。
 
-    div.tmp-block.mb56.f20 (行銷方案規則尚須討論，帶定案後更新)
+    .tmp-block.mb56.f20 (行銷方案規則尚須討論，帶定案後更新)
 
     .block.flex
       span.title 紅利折抵
@@ -127,7 +127,7 @@ block content
                 label(for="cashOnDelivery") 貨到付款
 
 
-        label.check_unit
+        label.check_unit.multi
           input(type="checkbox") 
           .box
           span 我已仔細閱讀並明瞭「
@@ -168,29 +168,32 @@ block content
             select
               option(value="北投區") 北投區
 
-        table.plain.price
+        .scrollbarX
+          table.plain.price
 
-          thead
-            tr
-              th 品項
-              th 單價
-              th 數量
-              th 總價
-          tbody
-            tr
-              td(data-title="品項") 
-                span 台灣本島 / 宅配到府 / ATM轉帳
-              td(data-title="單價") 
-                span 80
-              td(data-title="數量") 
-                span 1
-              td(data-title="總價") 
-                span 80
-            tr
-              td 查閱
-                a(href="#").g 運費說明
-              td(colspan="3") 運費金額
-                span.g.f24.ml16.robo $280
+            thead
+              tr
+                th 品項
+                th 單價
+                th 數量
+                th 總價
+            tbody
+              tr
+                td(data-title="品項") 
+                  span 台灣本島 / 宅配到府 / ATM轉帳
+                td(data-title="單價") 
+                  span 80
+                td(data-title="數量") 
+                  span 1
+                td(data-title="總價") 
+                  span 80
+              tr
+                td(data-title="計算規則") 查閱
+                  a(href="styles/images/3a-1.jpg" data-lity data-lity-desc="Photo of a flower").g 運費說明
+                  
+
+                td(colspan="3", data-title="運費總計") 運費金額
+                  span.g.f24.ml16.robo $280
 
 
     .block.mb48.flex

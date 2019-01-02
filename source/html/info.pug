@@ -21,7 +21,7 @@ block content
     li #[.num 3] 
       a(href="complete.html") 完成訂單
 
-  .cart-main.container
+  .cart-main.container.info
 
     .f32.b.tc.mb40 填寫資訊
 
@@ -49,7 +49,7 @@ block content
             tr
               th.pad 聯絡地址 #[span.star *]
               td
-                .row
+                .row.xl-col
                   label
                     span 郵遞區號
                     input(type="text" placeholder="112")
@@ -72,10 +72,7 @@ block content
           .box
           span 同訂購人
 
-
-
       div.wrapper 
-        
         label.line.mb20
           span.mr16 載入聯絡人資訊
           select
@@ -103,7 +100,7 @@ block content
             tr
               th.pad 聯絡地址 #[span.star *]
               td
-                .row
+                .row.xl-col
                   label
                     span 郵遞區號
                     input(type="text" placeholder="112")
