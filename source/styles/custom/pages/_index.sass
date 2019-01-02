@@ -25,6 +25,29 @@
     &:before
       width: auto
       margin-right: 0.2em
+  a
+    &:hover 
+      [class*="icon"]
+        &:before
+          animation: hrv 1s
+  
+  @keyframes hrv
+    16.65%
+      transform: translateY(6px)
+    33.3%
+      transform: translateY(-5px)
+    49.95%
+      transform: translateY(4px)
+    66.6%
+      transform: translateY(-2px)
+    83.25%
+      transform: translateY(1px)
+    100%
+      transform: translateY(0)
+
+  @keyframes push
+    50%
+      transform: scale(0.5)
 
   .main
     font-size: 40px
