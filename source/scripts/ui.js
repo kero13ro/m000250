@@ -1,39 +1,84 @@
 
-
-
-
 var $window = $(window);
 var wW = $(window).width();
 var wH = $(window).height();
-var esc = $.Event("keydown", { keyCode: 27 });
+// var esc = $.Event("keydown", { keyCode: 27 });
 
 var $cover = $("#fixed-cover");
 
-//loading動畫
-
+if (wW > 768) {
+  $(".mCustomScrollbar_index").mCustomScrollbar({
+    theme: "dark-thick"
+  });
+}
+  
+  
 var main = $("main");
 
-
-
-
-// $("#customScrollbar").mCustomScrollbar({
-//   theme: "dark"
-// });
-
-// $("document").ready(function () {
-//   TweenLite.to(main, 0.5, { autoAlpha: 1 });
-// });
-
 $.when($.ready).then(function () {
-  TweenLite.to(main, 0.5 ,{  autoAlpha: 1});
-  TweenMax.to("#svg2", 3, { morphSVG: "#svg1", ease: Elastic.easeOut.config(1, 1), })
-  // TweenMax.to("#svg2", 1, { morphSVG: "#svg1"})
+  var mainTL = new TimelineLite()
+    .to(main, 0.6, { autoAlpha: 1, ease: Power0.easeNone});
 });
 
-// $.ready.then(function () {
-//   // $("main").css("opacity","1");
-//   TweenLite.to($("main"), 0.3, { "opacity": 1 })
-// });
+
+
+if (wW > 768 && document.querySelector(".index_landing") !== null) {
+  var manL = $(".index_landing .man-f");
+  var manR = $(".index_landing .man-m");
+  var plus1 = $(".index_landing .plus-1");
+  var plus2 = $(".index_landing .plus-2");
+  var plus3 = $(".index_landing .plus-3");
+  var plus4 = $(".index_landing .plus-4");
+
+  var love = $(".index_landing .love");
+  var strict = $(".index_landing .strict");
+
+
+  var indexTL = new TimelineMax()
+    .from(manL, 1, { x: "+=40", autoAlpha: 0 }, 0.5)
+    .from(manR, 1, { x: "-=40", autoAlpha: 0 }, 0.6)
+    .from([plus1, plus2, plus3, plus4], 1, { autoAlpha: 0 }, 0.5)
+    .from(love, 0.6, { y: "-=20", autoAlpha: 0}, 0.5)
+    .from(strict, 0.6, { y: "-=20", autoAlpha: 0}, 0.5);
+
+  var landingBgc = $(".index_landing");
+}
+
+
+
+if (document.querySelector(".index_landing") !== null) {
+
+  var itemBlocks = $(".division .block");
+  var controller_index = new ScrollMagic.Controller();
+  var scrollTL_index = new TimelineLite()
+    .staggerFrom(itemBlocks, 0.8, {autoAlpha: 0, y: 10}, 0.1)
+  
+  var index_item_scroll = new ScrollMagic.Scene({
+    triggerElement: ".division",
+    triggerHook: 0.9,
+    reverse: false
+  }).setTween(scrollTL_index)
+    .addTo(controller_index);
+}
+
+
+if (document.querySelector("footer") !== null) {
+  var controller_footer = new ScrollMagic.Controller();
+  var scrollTL = new TimelineLite()
+    .to("#svg2", 2.6, { morphSVG: "#svg1", ease: Elastic.easeOut.config(1, 1), });
+  
+  var s2_scroll = new ScrollMagic.Scene({
+    triggerElement: "footer",
+    triggerHook: 0.9,
+    reverse: false
+  })
+    .setTween(scrollTL)
+    .addTo(controller_footer);
+}
+
+
+
+
 
 
 
@@ -82,7 +127,6 @@ if (  wW > 768) {
 
 } else {
   $(".cart__num").insertAfter("#nav .icon-cart");
-
 }
 
 
@@ -106,20 +150,16 @@ if (wW > 768) {
 
 
 //nav 會以 append 變換結構，因此在 resize 過邊界時 reload 全部頁面
-var beforeWidth = $(window).width();
-
 $window.resize(function () {
-  if (beforeWidth > 768 ) {
+  if (wW > 768 ) {
     ($window.width() <= 768) ? reload() : "";
   } else {
     ($window.width() > 768) ? reload() : "" ;
   }  
 });
 
-
 function reload() {
-  
-  // TweenLite.to($("main"), 5, { autoAlpha: 0});
+  TweenLite.set($("main"), { autoAlpha: 0});
   location.reload();
 }
 
@@ -127,7 +167,7 @@ function reload() {
 
 
 
-if (wW <= 768) {
+if (wW <= 768 && document.querySelector("#nav") !== null)  {
 
   var menuTL = new TimelineMax({ paused: true, reversed: true, yoyo: true });
   var menu__cover = $(".nav__cover");
@@ -146,27 +186,32 @@ if (wW <= 768) {
   var burger1 = toggle.find(".one");
   var burger2 = toggle.find(".two");
   var burger3 = toggle.find(".three");
+  var menu__logo = menu__cover.find(".menu__logo");
 
   menuTL
-    .set(menu__cover, { "visibility": "visible"})
-    .staggerFrom(bgcBefore, 0.8, { "width": "0%", ease: Power3.easeInOut, }, 0.08)
-    .staggerFrom(bgcAfter, 0.8, {"width": "0%", ease: Power3.easeInOut, }, 0.08, 0)
+    .set(menu__cover, { visibility: "visible" })
+    .staggerFrom(bgcBefore, 0.8, { width: "0%", ease: Power3.easeInOut }, 0.08)
+    .staggerFrom(bgcAfter, 0.8, { width: "0%", ease: Power3.easeInOut }, 0.08, 0)
     .addLabel("chars", "-=0.6")
 
-    .from(chars_s, 1, {autoAlpha: 0}, "chars")
-    .from(chars_l, 1, {autoAlpha: 0}, "chars")
-    .from(chars_s, 1, { "transform": "scale(1.5) rotateY(-180deg)"}, "chars")
-    .from(chars_l, 1, { "transform": "scale(0.5) rotateY(180deg)"}, "chars")
-    .from(chars_odd, 1, { x: 80, ease: Power1.easeInOut }, "chars")
-    .from(chars_even, 1, { x: -80, ease: Power1.easeInOut }, "chars")
+    .from(chars_s, 1, { autoAlpha: 0 }, "chars")
+    .from(chars_l, 1, { autoAlpha: 0 }, "chars")
+    .from(chars_s, 1, { transform: "scale(1.5) rotateY(-180deg)" }, "chars")
+    .from(chars_l, 1, { transform: "scale(0.5) rotateY(180deg)" }, "chars")
 
-    .from(nav_external, 1, { x: 60, autoAlpha: 0, ease: Power1.easeInOut }, "chars")
+    .from(chars_odd, 1, { x: 60, ease: Power1.easeInOut }, "chars")
+    .from(chars_even, 1, { x: -60, ease: Power1.easeInOut }, "chars")
+
+    .from(menu__logo, 1, { x: 60, autoAlpha: 0, ease: Power1.easeInOut }, "chars+=0.3")
+    .from(nav_external, 1, { x: 60, autoAlpha: 0, ease: Power1.easeInOut }, "chars+=0.2")
+
+    .to([burger1, burger2, burger3], 0.3, { backgroundColor: "#fff" }, 0)
     .to(burger3, 0.3, { y: -6 }, 0)
     .to(burger1, 0.3, { y: 6 }, 0)
     .to([burger1, burger2], 0.8, { rotation: 235, ease: Power2.easeInOut }, 0.3)
     .to([burger1, burger2], 0.2, { rotation: "-=10", ease: Power3.easeOut }, 1.2)
     .to(burger3, 0.8, { rotation: 325, ease: Power2.easeInOut }, 0.3)
-    .to(burger3, 0.2, { rotation: "-=10", ease: Power3.easeOut }, 1.2)
+    .to(burger3, 0.2, { rotation: "-=10", ease: Power3.easeOut }, 1.2);
 
   
   $(".nav__toggle").click(function () {
@@ -175,37 +220,6 @@ if (wW <= 768) {
 }
 
 
-
-
-// if (wW <= 500) {
-//   $(".nav__main").hover(function () {
-    
-//     var inner = $(this).find(".inner .main");
-
-//     var other = $(".inner .main").not(inner);
-
-//     // var tiptool = TimelineMax({pause: true});
-//     // tiptool.to(inner, 0.3, { "display": "block", autoAlpha: 1});
-
-//     TweenLite.to(other, 0.3, { "display": "none", autoAlpha: 0 });
-//     TweenLite.to(inner, 0.3, { "display": "block", autoAlpha: 1 });
-    
-//   });
-// }
-
-
-
-
-// var resizeId;
-
-// $(window).resize(function () {
-//   clearTimeout(resizeId);
-//   resizeId = setTimeout(doneResizing, 1);
-// });
-
-// function doneResizing() {
-
-// }
 
 
 // catalog mobile dropdwon
@@ -225,18 +239,10 @@ if (wW <= 1100) {
 
 
 
-
-
-$(function () {  
-  // TweenMax.to("#svg2", 3, { morphSVG: "#svg1", ease: Elastic.easeOut.config(1, 0.75), })
-});
-
-
 $(".slick-show").slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: false,
-  // fade: true,
   asNavFor: ".slick-nav"
 });
 
@@ -246,8 +252,6 @@ $(".slick-nav").slick({
   asNavFor: ".slick-show",
   dots: false,
   arrows: false,
-  // centerMode: true,
-  // focusOnSelect: true
   responsive: [
     {
       breakpoint: 1200,
@@ -483,8 +487,16 @@ $(function () {
   });
 
 
-  
-});// $(function ) end
+  var return_all = document.getElementById("return-all");
+  var return_child = $("table.plain tbody .check_unit input");
 
-// var rule = CSSRulePlugin.getRule('.icon-service:before'); //get the rule
-// TweenLite.to(rule, 3, { cssRule: { "color": "red" } });
+  $(return_all).change(function() {
+
+    if (return_all.checked == true) {
+      return_child.prop("checked", this.checked).prop("disabled", "true");
+    } else {
+      return_child.prop("checked", false).prop("disabled", false);
+    }
+  });
+
+});// $(function ) end

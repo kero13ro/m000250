@@ -7,43 +7,48 @@ html(lang='zh-TW')
     main.wp
     
       #login(style="background-image: url('./styles/images/login-bgc.jpg')")
-        .modal
-          .modal__head.pt48.pb40
-            img(src="./styles/images/p-title.png", alt="大樹連鎖藥局").pt4
+        .scrollbarY
+          
+          .modal
+            h1.sr-only 大樹連鎖藥局 - 會員購系統
+            h2.sr-only 帳號登入
 
-          .modal__content.lh18
-            .f20.g.b.mb4 使用「大樹智慧藥局專屬帳號」登入
-            .f16.mb20 身分證字號、手機、電子郵件，請擇一登入。 #[br]無法登入或新會員註冊請撥客服專線(0800-288-23，週一~週五 9~12、13~17)或下載「大樹健康APP」進行線上會員申請。
-            
-            input(type="text" placeholder="請輸入帳號").mb20.wide5.sq
-            input(type="password" placeholder="請輸入密碼").mb20.wide5.sq
-            .block.alert.sq.mb20.f18#alert-account
-              .icon-alert 查無帳號，請重新輸入
-            .block.alert.sq.mb20.f18#alert-password
-              .icon-alert 密碼錯誤，請重新輸入
+            .modal__head.pt48.pb40
+              img(src="./styles/images/p-title.png", alt="大樹連鎖藥局").pt4
 
-            .block.b
-              //- a(href="index.html").btn.sq.mr32 確定登入
-              a.btn.sq.mr32 確定登入
-              a(href="verify-forget.html").btn.sq.gray 忘記密碼?
-              .tmp-test
-                div (檢測用)
-                a(href="index.html") 成功登入
-                | &nbsp;/&nbsp;
-                a(href="verify.html") 帳號尚未驗證
-                | &nbsp;/&nbsp;  
-                a.js-account 帳號錯誤
-                | &nbsp;/&nbsp;  
-                a.js-password 密碼錯誤
-            
+            .modal__content.lh18
+              .f20.g.b.mb4 使用「大樹智慧藥局專屬帳號」登入
+              .f16.mb20 身分證字號、手機、電子郵件，請擇一登入。 #[br]無法登入或新會員註冊請撥客服專線(0800-288-23，週一~週五 9~12、13~17)或下載「大樹健康APP」進行線上會員申請。
+              
+              input(type="text" placeholder="請輸入帳號").mb20.wide5.sq
+              input(type="password" placeholder="請輸入密碼").mb20.wide5.sq
+              .block.alert.sq.mb20.f18#alert-account
+                .icon-alert 查無帳號，請重新輸入
+              .block.alert.sq.mb20.f18#alert-password
+                .icon-alert 密碼錯誤，請重新輸入
 
-          .modal__footer.pt40.pb40
-            a(href="#") 
-              img(src="./styles/images/login-01.png", alt="大樹連鎖藥局")
-            .block.mr32.ml32
-              .f20.b.lh20 下載「大樹健康APP」 
-              .f16 健康生活一把罩
-            a(href="#") 
-              img(src="./styles/images/login-02.png", alt="大樹連鎖藥局")
+              .block.b
+                //- a(href="index.html").btn.sq.mr32 確定登入
+                a.btn.sq.mr32 確定登入
+                a(href="verify-forget.html").btn.sq.gray 忘記密碼?
+                .tmp-test
+                  div (檢測用)
+                  a(href="index.html") 成功登入
+                  | &nbsp;/&nbsp;
+                  a(href="verify.html") 帳號尚未驗證
+                  | &nbsp;/&nbsp;  
+                  a.js-account 帳號錯誤
+                  | &nbsp;/&nbsp;  
+                  a.js-password 密碼錯誤
+              
+
+            .modal__footer.pt40.pb40
+              a(href="#") 
+                img(src="./styles/images/login-01.png", alt="大樹連鎖藥局")
+              .block.mr32.ml32
+                .f20.b.lh20 下載「大樹健康APP」 
+                .f16 健康生活一把罩
+              a(href="#") 
+                img(src="./styles/images/login-02.png", alt="大樹連鎖藥局")
 
     include include/defaultJs.pug  

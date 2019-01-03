@@ -97,6 +97,7 @@
 
   .icon-right::before
     margin: 0 12px
+    color: $green
   
   +max(850)  
     ul > *:nth-child(6)
@@ -183,6 +184,15 @@ footer
 
   &,a
     color: #fff
+    transition: 0.3s text-shadow
+
+
+
+  .sitemap,
+  address
+    a:hover
+      transition: 0.3s text-shadow
+      text-shadow: 0 0 10px rgb(12, 102, 13) , 0 0 20px #fff
 
   
 

@@ -15,13 +15,14 @@ block content
       li 首頁
       h2.icon-right 商品專區
       h3.icon-right 商品搜尋
-      h4.icon-right 進階搜尋
 
 
   form(action="").pt56.pb56
 
     .container
-      h3.pb32.f28 進階搜尋
+      h3.pb32.f28 關鍵字搜尋
+        span.search-result.f16 / &nbsp;	&nbsp;	15 項搜尋結果，關於「維生素」.
+
 
     .cards.container.mb24
       +card(1)
@@ -47,9 +48,8 @@ block content
       .card__pad.push
       .card__pad.push
 
-    .result-bottom.container
+    .container
 
-      a(href="advanced.html").btn.icon-scan.mb64.f20.wide10 重新搜尋
       .pages.pb32
         a(href="#").icon-page-1
         a(href="#").icon-page-2

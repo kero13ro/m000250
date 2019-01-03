@@ -271,6 +271,9 @@ table.plain.user
 
 
 .returning
+  .hide
+    display: none
+
   table.plain.cart
 
     th:first-child
@@ -395,3 +398,11 @@ table.plain.user
       th, 
       td
         +padding(null 12px)
+
+
+.return-detail
+  .text-type > .wrapper
+    max-width: 835px
+
+  .list-container .red
+    color: #c80000

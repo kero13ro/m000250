@@ -1,10 +1,15 @@
 
 #login
   +size(100%, 100vh)
-  +padding(30px null)
   +fc
   background: center / cover
-  
+  overflow-y: auto
+  .scrollbarY 
+    +padding(30px null)
+    max-height: 100%
+    position: relative
+    
+
 
 .modal
   background-color: #fff
@@ -12,7 +17,13 @@
   max-width: 580px
   border-radius: 10px
   box-shadow: 0 0 15px #999
-  overflow: hidden
+  flex-shrink: 0
+
+  
+
+
+
+
 
 
 
@@ -102,6 +113,9 @@
       
 
 +max(500)
+
+  // #login
+  //   align-items: flex-start
 
   .modal__content
     +padding(15px 35px 20px)

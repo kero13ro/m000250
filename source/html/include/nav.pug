@@ -5,7 +5,7 @@
 #nav
 
   a(href="index.html").nav__logo
-    h1.sr-only 大樹會員購系統
+    h1.sr-only 大樹連鎖藥局 - 會員購系統
     img(src="./styles/images/p-title.png", alt="大樹藥局")
 
   a(href="favorite.html").moblie.nav__favorite
@@ -34,6 +34,8 @@
     .three
 
   .nav__cover
+    .menu__logo 
+      img(src="./styles/images/p-title-white.png", alt="大樹藥局")
     ul.nav__bgc.nostyle
       li
         .before
@@ -46,8 +48,8 @@
         .after
 
     .nav__external
-      a(href="#", title="大樹健康藥局官方網站")  大樹健康藥局官方網站
-      a(href="#", title="大樹健康購物網")  大樹健康購物網
+      a(href="http://www.greattree.com.tw/", target="_blank", title="大樹健康藥局官方網站")  大樹健康藥局官方網站
+      a(href="https://shop.greattree.com.tw/greattree/", target="_blank", title="大樹健康購物網")  大樹健康購物網
       a(href="https://www.facebook.com/www.greattree.com.tw", target="_blank").icon-facebook
       a(href="https://line.me/R/ti/p/%40greattree?fbclid=IwAR2YBIcJE5aHFnmw1QM9kyZvfYQkTdEq1uZgTz98WxoCDq8e6_vvLDo8ZVA",  target="_blank").icon-line
 
@@ -68,7 +70,7 @@
       span.icon-service
       span 服務中心
         
-form(action="result.htm").nav__search
+form(action="result.html").nav__search
   .container
     input(type="text", placeholder="產品關鍵字搜尋...").searchBar
     button(type="submit").icon-scan.mr20.f20 搜尋
@@ -84,45 +86,46 @@ form(action="result.htm").nav__search
     .icon-right
 
   .content
-    .scrollbarY.mCustomScrollbar(data-mcs-theme="dark-thick")
-      a(href="product.html").block
+    //- .scrollbarY.mCustomScrollbar(data-mcs-theme="dark-thick")
+    .scrollbarY.mCustomScrollbar_index
+      .block
         img(src="./styles/images/1a-01.jpg", alt="大樹連鎖藥局")
-        .text
+        a(href="product.html").text
           .g 【娘家】 益生菌（2g/包，60包/盒)
           div #[span.price-per $2,200]  /  數量：#[span.nul 1]
         .delete
     
-      a(href="product.html").block
+      .block
         img(src="./styles/images/1a-02.jpg", alt="大樹連鎖藥局")
-        .text
+        a(href="product.html").text
           .g 【歐典生機】養生雪晶耳冰糖植物性膠原飲
           div #[span.price-per $280]  /  數量：#[span.nul 5]
         .delete
     
-      a(href="product.html").block
+      .block
         img(src="./styles/images/1a-03.jpg", alt="大樹連鎖藥局")
-        .text
+        a(href="product.html").text
           .g 【BioJoy百喬】奇亞酵素輕纖飲_Chia奇亞籽蔬果酵素５合１（12包/盒）
           div #[span.price-per $488]  /  數量：#[span.nul 2]
         .delete
     
-      a(href="product.html").block
+      .block
         img(src="./styles/images/1a-01.jpg", alt="大樹連鎖藥局")
-        .text
+        a(href="product.html").text
           .g 【娘家】 益生菌（2g/包，60包/盒)
           div #[span.price-per $2,200]  /  數量：#[span.nul 1]
         .delete
     
-      a(href="product.html").block
+      .block
         img(src="./styles/images/1a-02.jpg", alt="大樹連鎖藥局")
-        .text
+        a(href="product.html").text
           .g 【歐典生機】養生雪晶耳冰糖植物性膠原飲
           div #[span.price-per $280]  /  數量：#[span.nul 5]
         .delete
     
-      a(href="product.html").block
+      .block
         img(src="./styles/images/1a-03.jpg", alt="大樹連鎖藥局")
-        .text
+        a(href="product.html").text
           .g 【BioJoy百喬】奇亞酵素輕纖飲_Chia奇亞籽蔬果酵素５合１（12包/盒）
           div #[span.price-per $488]  /  數量：#[span.nul 2]
         .delete

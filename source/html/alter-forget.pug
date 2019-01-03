@@ -7,16 +7,21 @@ html(lang='zh-TW')
     main.wp
     
       #login(style="background-image: url('./styles/images/login-bgc.jpg')")
-        .modal.sm
-          .modal__head.pt48.pb40
-            img(src="./styles/images/p-title.png", alt="大樹連鎖藥局").pt4
-
-          .modal__content.lh18
-            .f20.g.b.mb24 已通過驗證，請修改密碼
+        .scrollbarY
+          .modal.sm
+          
+            h1.sr-only 大樹連鎖藥局 - 會員購系統
+            h2.sr-only 帳號登入
             
-            input(type="text" placeholder="請輸入密碼").mb20.wide5.sq
-            input(type="password" placeholder="再次輸入密碼").mb20.wide5.sq
-            .block.b
-              a(href="altered-in-forget.html").btn.sq 確定送出
+            .modal__head.pt48.pb40
+              img(src="./styles/images/p-title.png", alt="大樹連鎖藥局").pt4
+
+            .modal__content.lh18
+              .f20.g.b.mb24 已通過驗證，請修改密碼
+              
+              input(type="text" placeholder="請輸入密碼").mb20.wide5.sq
+              input(type="password" placeholder="再次輸入密碼").mb20.wide5.sq
+              .block.b
+                a(href="altered-in-forget.html").btn.sq 確定送出
 
     include include/defaultJs.pug  

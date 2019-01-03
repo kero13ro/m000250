@@ -22,14 +22,14 @@ block content
       a(href="contact.html") 常用聯絡資訊
       a(href="bonus.html") 紅利點數查詢
 
-  .user-main.container
+  .container
     .f32.b.tc.mb40 訂單明細 - 32145789
 
     .btn-container.mb32
       a.btn.lg.icon-docs 複製訂單至購物車
 
 
-    .tab-content.mb64
+    .tab-content
     
       .icon-right.b.f18 訂單概要
       .tab-pane.mb32
@@ -56,112 +56,127 @@ block content
       .icon-right.b.f18 訂單明細
       .tab-pane
       
-        .scrollbarX
-          table.plain.cart
-            thead
-              tr
-                th 商品名稱
-                th
-                th 原始貨號
-                th 售價
-                th 會員價
-                th 數量
-                th 商品狀態
-            tbody
-              tr
-                td  
-                  img(src="./styles/images/1a-01.jpg", alt="大樹連鎖藥局").pic
-                td
-                  a(href="product.html").info.lh20
-                    .b 【娘家】 益生菌（2g/包，60包/盒)
-                    .gift.red.f15 《限量贈品》：【娘家】滴雞精試飲包 x1 盒
-                td: div(data-title="原始貨號：").n 133909
-                td: div(data-title="售價：").n.cross $2,200
-                td: div(data-title="會員價：").n.g $2,200
-                td: div(data-title="數量：").n.g 1
-                td: div(data-title="商品狀態：").red 退貨處理中
-              tr
-                td  
-                  img(src="./styles/images/1a-02.jpg", alt="大樹連鎖藥局").pic
-                td
-                  a(href="product.html").info.lh20
-                    .b 【歐典生機】養生雪晶耳冰糖植物性膠原飲 180ml*8入(禮盒)
-                td: div(data-title="原始貨號：").n 142583
-                td: div(data-title="售價：").n.cross $360
-                td: div(data-title="會員價：").n.g $280
-                td: div(data-title="數量：").n.g 5
-                td: div(data-title="商品狀態：") 已送達
-              tr
-                td  
-                  img(src="./styles/images/1a-03.jpg", alt="大樹連鎖藥局").pic
-                td
-                  a(href="product.html").info.lh20
-                    .b 【BioJoy百喬】奇亞酵素輕纖飲_Chia奇亞籽蔬果酵素５合１（12包/盒）
+        table.plain.cart
+          thead
+            tr
+              th 商品名稱
+              th
+              th 原始貨號
+              th 售價
+              th 會員價
+              th 數量
+              th 商品狀態
+          tbody
+            tr
+              td  
+                img(src="./styles/images/1a-01.jpg", alt="大樹連鎖藥局").pic
+              td
+                a(href="product.html").info.lh20
+                  .b 【娘家】 益生菌（2g/包，60包/盒)
+                  .gift.red.f15 《限量贈品》：【娘家】滴雞精試飲包 x1 盒
+              td: div(data-title="原始貨號：").n 133909
+              td: div(data-title="售價：").n.cross $2,200
+              td: div(data-title="會員價：").n.g $2,200
+              td: div(data-title="數量：").n.g 1
+              td: div(data-title="商品狀態：").red.n 退貨處理中
+            tr
+              td  
+                img(src="./styles/images/1a-02.jpg", alt="大樹連鎖藥局").pic
+              td
+                a(href="product.html").info.lh20
+                  .b 【歐典生機】養生雪晶耳冰糖植物性膠原飲 180ml*8入(禮盒)
+              td: div(data-title="原始貨號：").n 142583
+              td: div(data-title="售價：").n.cross $360
+              td: div(data-title="會員價：").n.g $280
+              td: div(data-title="數量：").n.g 5
+              td: div(data-title="商品狀態：").n 已送達
+            tr
+              td  
+                img(src="./styles/images/1a-03.jpg", alt="大樹連鎖藥局").pic
+              td
+                a(href="product.html").info.lh20
+                  .b 【BioJoy百喬】奇亞酵素輕纖飲_Chia奇亞籽蔬果酵素５合１（12包/盒）
 
-                td: div(data-title="原始貨號：").n 142719
-                td: div(data-title="售價：").n.cross $829
-                td: div(data-title="會員價：").n.g $488
-                td: div(data-title="數量：").n.g 2
-                td: div(data-title="商品狀態：") 已送達
-            //- tfoot
-            //-   tr 
-            //-     td(colspan="2") 
-            //-       div.left
-            //-         span 訂單金額 
-            //-         span.n.g NT$5,480
-            //-         span + 運費 NT$0
-                
-            //-     td(colspan="4") 
-            //-       div.right
-            //-         span.mr8 訂單總金額
-            //-         span.total NT$2,280
-    
-            tfoot
-              tr 
-                td(colspan="3") 
-                  .left
-                    | 訂單金額
-                    span.n.g NT$5,480
-                    span.break &nbsp;	- &nbsp; 退貨金額
-                      span.n.red NT$2,200
-                      
-                    span.break &nbsp;+&nbsp;	 運費 NT$0
-                
-                td(colspan="4") 
-                  .right
-                    span 訂單總金額
-                    span.total NT$2,280
-
-
-
-  .cart-main.container
+              td: div(data-title="原始貨號：").n 142719
+              td: div(data-title="售價：").n.cross $829
+              td: div(data-title="會員價：").n.g $488
+              td: div(data-title="數量：").n.g 2
+              td: div(data-title="商品狀態：").n 已送達
   
-    .block.flex.text-type
-      span.title ATM 匯款資訊
+          tfoot
+            tr 
+              td(colspan="3") 
+                .left
+                  | 訂單金額
+                  span.n.g NT$5,480
+                  span.break &nbsp;	- &nbsp; 退貨金額
+                    span.n.red NT$2,200
+                    
+                  span.break &nbsp;+&nbsp;	 運費 NT$0
+              
+              td(colspan="4") 
+                .right
+                  span 訂單總金額
+                  span.total NT$2,280
+
+
+
+  .cart-main.container.return-detail
+  
+    .block.flex.text-type.border-none
+      span.title 退貨資訊
       .wrapper
-        p.lh22.f16 轉帳銀行：第一銀行 007 #[br]轉帳帳號：74512132156415165（僅供本次交易使用）#[br]轉帳期限：2018-02-10 18:00
+        p.lh22.f16 退貨日期：2018-03-15  14:30#[br]退貨原因：商品重覆購買#[br]備註：
 
     .block.flex.text-type
-      span.title 訂購人資訊
+      span.title 退款資訊
       .wrapper
-        p.lh22.f16 姓名：林○○ 先生 #[br]手機號碼：0900-000000 #[br]聯絡地址：406 台中市北屯區東山路一段 147 巷 49 號 #[br]付款方式：ATM 轉帳
+        p.lh22.f16 退款方式：銀行帳號ATM
+          br
+          | 銀行名稱：大樹商業銀行 ( 北台中分行207 )
+          br
+          | 銀行帳號：74512132156415165
+          br
+          | 戶名：林柴哥
+          br
+          | 備註：
 
 
     .block.flex.text-type
-      span.title 收件人資訊
+      span.title 聯絡人資訊
       .wrapper
         p.lh22.f16 姓名：林○○ 先生 #[br]手機號碼：0900-000000 #[br]收貨地址：406 台中市北屯區東山路一段 147 巷 49 號 #[br]E-mail：info@e-creative.tw #[br]收貨時段：不指定 #[br]備註： 
 
     .block.flex.text-type
-      span.title 發票開立明細
+
       .wrapper
-        p.lh22.f16 三聯式紙本發票 / 統一編號 24252151（英創達）
+        p.lh22.f16 ※ 若您有任何疑問，可先參考網頁上「服務中心 – 常見問題」，如需聯絡客服，請上班時間撥打專線：
+          a(href="tel:0800-288-233").g 0800-288-233
+          | 客服時間：週一至週五， 9:00～12:00/ 13:00~17:00 (周末及國定假日暫未提供服務)
 
 
 
-    .block.center.mb56
+    .block.mb48.flex
+      span.title 訂單總金額
       
-      a(href="order.html").btn.lg.mr32 訂單查詢
-      a(href="index.html").btn.lg 返回首頁
+      div.wrapper.multi
+        .list-container
+          .list
+            span 原訂單金額
+            span.robo NT$5480
+          .list
+            span 退款金額
+            span.robo.red NT$2200
+          .list
+            span 運費
+            span.robo NT$0
+          .list
+            span 實際金額
+            span.robo.f24 NT$2280
+            
+
+        .btn-container
+          a(href="return.html").btn.lg.icon-arr-left 返回列表
+          
 
 

@@ -10,14 +10,15 @@ $icon: $green !default
     width: auto
     
 
-#nav
-  a
++min(769)
+  #nav a
     +hoverText($green)
 
 
 
 +min(769)
-
+  .menu__logo
+    display: none
 
   .grayBar,
   .fixedBar
@@ -34,15 +35,12 @@ $icon: $green !default
     +f(flex-start, center)
     +size(100%)
 
-  .nav__cover
+  .nav__cover 
     // justify-content: flex-end
     // justify-content: flex-start //IE
 
-
-  .nav__cover 
     .scan
       margin-left: auto
-
     
     [class*="icon"]
       font-size: 1.4rem
@@ -214,7 +212,10 @@ $icon: $green !default
 
 +max(768)
 
+
   .nav__toggle
+    z-index: 12
+
     .one, .two, .three
       +size(20px, 2px)
       background-color: $green
@@ -273,12 +274,21 @@ $icon: $green !default
       display: none
 
   .nav__cover
-    +fcl
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding-bottom: 70px
+
     +size(100%, 100vh )
-    +position(fixed, 65px 0 null null)
+    +position(fixed, 0 0 null null)
     z-index: 11
-    +padding(null 100px)
+    +padding(null 30px)
     visibility: hidden
+
+  .menu__logo
+    +position(absolute, 30px null null 20px)
+    max-width: 45vw
 
   .nav__bgc
     +position(absolute, 0 0 0 0 )
@@ -309,37 +319,38 @@ $icon: $green !default
     color: #fff
 
   .nav__external ~ a
-    +padding(20px 40px)
+    +padding(20px 40px 20px 50px)
     letter-spacing: 7px
     font-size: 24px
 
     [class*="icon"]
       display: none
       
+
   .nav__external
-    +fc
-    flex-wrap: wrap
-    margin-top: 70px
-    margin-bottom: 20px
+    +position(absolute, null 0 0 null)
+    +padding(null 20px)
+    +margin(null null 20px null )
     order: 1
+    text-align: right
+
     a:not([class*="icon"])
-      width: 100%
-      text-align: center
+      display: block
       height: 30px
 
     [class*="icon"]
       +margin(10px 15px)
       font-size: 30px
-      margin-right: 22px
-      &:before
-        color: #fff
+      margin-left: 22px
+
+
 
   +max(500)
-    .nav__cover
-      top: 50px
+    // .nav__cover
+    //   top: 50px
 
     .nav__external ~ a
-      +padding(12px 20px)
+      +padding(12px 20px 12px 40px)
       font-size: 22px
 
     .navPad,
@@ -376,13 +387,16 @@ $icon: $green !default
   box-shadow: 0 5px 5px rgba(black,0.1)
   +fcl
   transition: right 0.8s ease-in-out
-  a
+  a.text
     white-space: normal
     
 
   &.expend
     transition: right 0.8s ease-in-out
     right: 0
+    .foot
+      right: 0
+      transition: right 0.8s ease-in-out
 
   
   > *
@@ -454,9 +468,13 @@ $icon: $green !default
 
   .foot
     +size(100%, 65px)
-    +position(absolute, null null 0 null )
+    // +position(absolute, null null 0 null )
+    transition: right 0.8s ease-in-out
+    +position(fixed, null -560px 0 null )
+    width: 560px
 
-    // flex-shrink: 0
+      
+    
     background-color: $green
     color: #fff
     +fc(space-between)
@@ -497,9 +515,7 @@ $icon: $green !default
 
     .content
       +padding(20px 20px 20px 20px)
-
-    .scrollbarY
-      max-height: calc(100vh - 170px)
+      height: calc(100% - 135px)
 
     .block
       font-size: 15px
@@ -510,6 +526,12 @@ $icon: $green !default
 
     .delete
       +margin(null null null 15px)
+
+    .foot
+      // width: 450px
+      width: 100%
+      max-width: 450px
+      right: -450px
 
   +max(420)
 
@@ -547,7 +569,9 @@ $icon: $green !default
   +max(350)
     .block
       font-size: 12px
-
+    // .foot
+    //   position: fixed
+    //   bottom: 0
 
 
 
@@ -595,11 +619,14 @@ $icon: $green !default
     border-width: 0
     border-top-right-radius: 999px
     border-bottom-right-radius: 999px
+    cursor: pointer
+    +hoverBgc($greenL)
     &:before
       margin-right: 12px
       font-size: 24px
 
   .icon-scan2
+    +hoverBgc($greenL)
     color: #fff
     +padding(null 40px)
     margin-right: 35px
@@ -687,3 +714,8 @@ $icon: $green !default
 
     .searchBar
       margin-bottom: 12px
+
+
+.search-result
+  color: #999
+  margin-left: 30px

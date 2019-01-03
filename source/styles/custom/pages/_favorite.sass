@@ -156,9 +156,10 @@
       -webkit-transition-timing-function: ease-out
       transition-timing-function: ease-out
   
-  .card:not(.disabled):not(.replenish):hover
-    &:before
-      right: 0
+  .card:not(.disabled):not(.replenish)
+    .card__cart:hover
+      &:before
+        right: 0
 
   .card__pad.push
     margin-bottom: 0

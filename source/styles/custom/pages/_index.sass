@@ -25,29 +25,7 @@
     &:before
       width: auto
       margin-right: 0.2em
-  a
-    &:hover 
-      [class*="icon"]
-        &:before
-          animation: hrv 1s
-  
-  @keyframes hrv
-    16.65%
-      transform: translateY(6px)
-    33.3%
-      transform: translateY(-5px)
-    49.95%
-      transform: translateY(4px)
-    66.6%
-      transform: translateY(-2px)
-    83.25%
-      transform: translateY(1px)
-    100%
-      transform: translateY(0)
 
-  @keyframes push
-    50%
-      transform: scale(0.5)
 
   .main
     font-size: 40px
@@ -79,6 +57,7 @@
       +size(30px, 10px)
       +position(absolute, null 49% 120px null )
       background-color: rgb(56, 175, 59)
+      // background-color: red
     
   .plus-2
     &:before, &:after
@@ -135,6 +114,42 @@
       font-size: 18px
       & + div 
         font-size: 15px
+
+
+
++min(769)
+
+
+  #nav .grayInner .moblie,
+  .index_landing a
+    transition: 0.3s box-shadow , 0.3s transform
+
+  #nav .grayInner .moblie,
+  .index_landing a
+    &:hover 
+      transition: 0.3s box-shadow , 0.3s transform
+      transform: translateY(1.5px)
+      [class*="icon"]:before
+        animation: hrv 1s
+
+  .index_landing a
+    &:hover 
+      box-shadow: 0 0px 20px rgba(white, 0.3)
+    
+  @keyframes hrv
+    16.65%
+      transform: translateY(4px)
+    33.3%
+      transform: translateY(-3px)
+    49.95%
+      transform: translateY(3px)
+    66.6%
+      transform: translateY(-1.5px)
+    83.25%
+      transform: translateY(0.5px)
+    100%
+      transform: translateY(0)
+
 
 
 //=======================================================
@@ -262,6 +277,7 @@
       font-size: 15px
       +padding(null 5px)
       font-weight: normal
+      -webkit-appearance: none
       width: 60%
     
     .search, .advanced
