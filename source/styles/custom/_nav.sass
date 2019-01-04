@@ -1,4 +1,18 @@
 
++min(769)
+  .logo_animation ~ #nav
+    .nav__logo
+      &:before
+        content: ""
+        display: block
+        +position(absolute, 0 0 null null )
+        background: linear-gradient(to right, rgba(240,240,240,0) 0%,rgba(240,240,240,1) 49%,rgba(240,240,240,1) 100%)
+        +size(200%, 100%)
+        transition: 4s right
+
+      &.show:before
+        right: -200%
+
 
 // [class*="icon"]:before
 //   color: $green
@@ -81,6 +95,9 @@ $icon: $green !default
     margin-right: auto
     padding-right: 20px
     max-width: 35vw
+    position: relative
+    overflow: hidden
+
 
   .nav__favorite,
   .nav__strict 

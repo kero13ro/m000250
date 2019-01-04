@@ -33,15 +33,22 @@ if (wW > 768 && document.querySelector(".index_landing") !== null) {
   var love = $(".index_landing .love");
   var strict = $(".index_landing .strict");
 
+  var nav__logo = $(".nav__logo");
 
   var indexTL = new TimelineMax()
-    .from(manL, 1, { x: "+=40", autoAlpha: 0 }, 0.5)
+    .call(function () {
+      nav__logo.addClass("show")
+    })
+    .from(manL, 1, { x: "+=40", autoAlpha: 0 }, 0.3)
     .from(manR, 1, { x: "-=40", autoAlpha: 0 }, 0.6)
     .from([plus1, plus2, plus3, plus4], 1, { autoAlpha: 0 }, 0.5)
-    .from(love, 0.6, { y: "-=20", autoAlpha: 0}, 0.5)
-    .from(strict, 0.6, { y: "-=20", autoAlpha: 0}, 0.5);
+    .from(love, 1, {  autoAlpha: 0, }, 0.5)
+    .from(strict, 1, {  autoAlpha: 0, }, 0.5);
+
+    
 
   var landingBgc = $(".index_landing");
+
 }
 
 
@@ -59,6 +66,19 @@ if (document.querySelector(".index_landing") !== null) {
     reverse: false
   }).setTween(scrollTL_index)
     .addTo(controller_index);
+
+  // var blueCir = $(".tips .multi .circle:first-child");
+  // var orangeCir = $(".tips .multi .circle:last-child");
+  // var searchbar = $(".index_search .searchbar");
+
+  // var divisionTitle = $(".division .title");
+  
+  // var searchbar_TL = new TimelineMax();
+  // blueCir.one('mouseover', function () {
+  //   searchbar_TL
+  //     .to(searchbar, 0.3, { transform: "scale(1.02)" })
+  //     .to(searchbar, 0.3, { transform: "scale(1)" });
+  // });  
 }
 
 

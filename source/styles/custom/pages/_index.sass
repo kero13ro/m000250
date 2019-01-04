@@ -258,19 +258,21 @@
       +margin(null 6px)
 
   +max(767)
-
+    
     +padding(null 20px)
     .dot
       display: none
 
     .searchbar
+      max-width: 400px
+      +margin(null auto)
       flex-wrap: wrap
       justify-content: flex-end
       
     .dot ~ *
       +padding(0px 10px)
       font-size: 16px
-      height: 45px
+      height: 55px
       
 
     input[type="search"] 
@@ -285,7 +287,8 @@
       margin-right: 0
 
     .advanced
-      margin-top: 10px
+      margin-top: 15px
+      width: 100%
 
     .tips
       font-size: 15px
