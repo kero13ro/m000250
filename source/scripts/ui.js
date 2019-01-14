@@ -22,9 +22,9 @@ $.when($.ready).then(function () {
 
 
 
-if (wW > 768 && document.querySelector(".index_landing") !== null) {
-  var manL = $(".index_landing .man-f");
-  var manR = $(".index_landing .man-m");
+if (document.querySelector(".index_landing") !== null) {
+  var manR = $(".index_landing .man-f");
+  var manL = $(".index_landing .man-m");
   var plus1 = $(".index_landing .plus-1");
   var plus2 = $(".index_landing .plus-2");
   var plus3 = $(".index_landing .plus-3");
@@ -35,19 +35,42 @@ if (wW > 768 && document.querySelector(".index_landing") !== null) {
 
   var nav__logo = $(".nav__logo");
 
+  var love_main = love.find(".main");
+  var strict_main = strict.find(".main");
+  var love_title = new SplitText(love_main, { type: "words,chars" }).chars;
+  var strict_title = new SplitText(strict_main, { type: "words,chars" }).chars;
+
+
+
+  var move_way_m = wW >= 768 ? "-=150" : "-=80";
+  var move_way_f = wW >= 768 ? "+=150" : "-=80";
+  // var move_way_f = "+=150";
+  // if (wW >= 768) {
+  //   var move_way_m = "-=150";
+  //   var move_way_f = "+=150";
+  // } else {
+  //   var move_way_m = "-=80";
+  //   var move_way_f = "-=80";
+  // }
+  
   var indexTL = new TimelineMax()
-    .call(function () {
-      nav__logo.addClass("show")
+    .call(function() {
+      nav__logo.addClass("show");
     })
-    .from(manL, 1, { x: "+=40", autoAlpha: 0 }, 0.3)
-    .from(manR, 1, { x: "-=40", autoAlpha: 0 }, 0.6)
-    .from([plus1, plus2, plus3, plus4], 1, { autoAlpha: 0 }, 0.5)
-    .from(love, 1, {  autoAlpha: 0, }, 0.5)
-    .from(strict, 1, {  autoAlpha: 0, }, 0.5);
+    .from(manL, 1, { x: move_way_m, autoAlpha: 0 }, 0.3)
+    .from(manR, 1, { x: move_way_f, autoAlpha: 0 }, 0.6)
+    .staggerFrom([plus1, plus2, plus3, plus4], 1, { autoAlpha: 0, y: "100", scale: 0, transformOrigin: "50% 50%" }, 0.2, 0.5)
 
-    
+    .addLabel("love_main", 0.5)
+    .from(love, 1, { autoAlpha: 0 }, "love_main+=0.1")
+    .staggerFrom(love_title, 0.8, { autoAlpha: 0, y: 10 }, 0.2, "love_main+=0.1")
+    .from($(love).find(".main +div"), 0.5, { autoAlpha: 0 }, "love_main+=0.9")
 
-  var landingBgc = $(".index_landing");
+    .addLabel("strict_main", 0.7)
+    .from(strict, 1, { autoAlpha: 0 }, "strict_main+=0.1")
+    .staggerFrom(strict_title, 0.8, { autoAlpha: 0, y: 10 }, 0.2, "strict_main+=0.1")
+    .from($(strict).find(".main +div"), 0.5, { autoAlpha: 0 }, "love_main+=0.9");
+
 
 }
 

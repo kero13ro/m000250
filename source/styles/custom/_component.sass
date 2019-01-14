@@ -209,6 +209,7 @@ footer
 
   .wrapper
     +f(space-around, flex-start)
+    // max-width: 800px
     margin-bottom: 20px
     z-index: 1
     
@@ -220,8 +221,11 @@ footer
       padding-bottom: 8px
 
   .media
-    +fcl
-    margin-left: 30px
+    +f(flex-end)
+
+    // +fcl
+    // margin-left: 30px
+    margin-top: 30px
 
   .icon-facebook,
   .icon-line
@@ -233,41 +237,51 @@ footer
     +fc
     +margin(null 8px 16px)
 
-
   .sitemap
-    +f(center, flex-start)
-    flex-shrink: 0
+    font-size: 20px
+    font-weight: bold
+    a:not(:last-child)
+      +padding(null 15px null)
+      margin-right: 15px
+      border-right: 1px solid rgba(#fff, 0.5)
 
-    .title
-      font-size: 20px
-      padding-bottom: 10px
-      margin-bottom: 12px
-      border-bottom: 1px solid rgba(#fff, 0.3)
-      font-weight: bold
 
-  .block:not(:last-child)
-    margin-right: 50px
+  // .sitemap
+  //   +f(center, flex-start)
+  //   flex-shrink: 0
 
-  .block.tri ul
-    padding-right: 20px
-    max-width: 420px
-    +f(space-between,center, row, wrap)
+  //   .title
+  //     font-size: 20px
+  //     padding-bottom: 10px
+  //     margin-bottom: 12px
+  //     border-bottom: 1px solid rgba(#fff, 0.3)
+  //     font-weight: bold
 
-    li:nth-child(3n+1)
-      width: 25%
-    li:nth-child(3n+2)
-      width: 35%
-    li:nth-child(3n+3)
-      width: 33%
+  // .block:not(:last-child)
+  //   margin-right: 50px
+
+  // .block.tri ul
+  //   padding-right: 20px
+  //   max-width: 420px
+  //   +f(space-between,center, row, wrap)
+
+  //   li:nth-child(3n+1)
+  //     width: 25%
+  //   li:nth-child(3n+2)
+  //     width: 35%
+  //   li:nth-child(3n+3)
+  //     width: 33%
 
 
 footer
 
-  +max(1365)
+  +max(768)
     padding-top: 70px
 
     .sitemap
-      display: none
+      font-size: 16px
+      margin-top: 10px
+      
 
     .wrapper
       +f(space-around, flex-start)
@@ -275,13 +289,14 @@ footer
       align-items: center
 
     .media
-      flex-direction: row
-      margin-left: 0
+      justify-content: center
+      margin-top: 20px
+      
 
     [class^="icon"]
       margin-bottom: 0
-      +size(50px)
-      font-size: 25px
+      +size(43px)
+      font-size: 22px
 
     address
       +padding(null 0 0px 20px)
@@ -304,6 +319,12 @@ footer
   +max(350)
     address
       +padding(null null null 0)
-    [class^="icon"]
-      +size(45px)
+
+    .sitemap
+      a:not(:last-child)
+        +padding(null 10px null)
+        margin-right: 10px
+
+    // [class^="icon"]
+    //   +size(45px)
       // font-size: 20px
