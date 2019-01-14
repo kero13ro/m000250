@@ -294,7 +294,7 @@ $(".slick-nav").slick({
   slidesToScroll: 1,
   asNavFor: ".slick-show",
   dots: false,
-  arrows: false,
+  arrows: true,
   responsive: [
     {
       breakpoint: 1200,
@@ -516,14 +516,13 @@ $(function () {
   //advanced search next stage 
   if (document.querySelector(".advanced") !== null) {
     
-    $(" .radio_unit,\
-        .check_unit").each(function() {
-      $(this).change(function() {
-        $(this).parents(".search__block").next(".search__block").find(".check_unit input").removeAttr("disabled");
-      });
+    $(" .radio_unit").change(function() {
+      $(".check_unit input").removeAttr("disabled");
     });
+
   }
 
+  
   $(".card__cart").click(function (e) {
     // e.stopPropagation();
     e.preventDefault();
@@ -541,5 +540,16 @@ $(function () {
       return_child.prop("checked", false).prop("disabled", false);
     }
   });
+  
+  
+  
+  // var delivery_type = document.getElementById("js-delivery");  
+  // if (delivery_type !== null) {
+    
+  //   delivery_type.change(function() {
+
+  //   });
+  // }
+
 
 });// $(function ) end

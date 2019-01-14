@@ -99,8 +99,17 @@
         font-size: 15px
 
     
-.user-main.cancel > img
-  max-width: 120px
+.user-main.cancel
+
+  > img
+    max-width: 120px
+  +max(350)
+    > img
+      max-width: 90px
+    .f16.lh20
+      font-size: 14px
+      margin-bottom: 25px
+
 
 .user-main
   margin-bottom: 100px
@@ -182,10 +191,8 @@ table.plain.user
 
 
   +max(1200)
-  
-    td:last-child
-      max-width: 90px
 
+    
     .btn-twin
       +fcl
       +padding(12px null)
@@ -194,7 +201,58 @@ table.plain.user
       .btn
         +padding(null 8px)
         font-size: 14px
+    
+    td:last-child
+      max-width: 90px
 
+
+
+
+table.plain.user.column-sm
+  +max(767)
+    
+    position: relative
+    box-shadow: 0 0 10px rgba(0,0,0,.2)
+    min-width: 0
+
+    &, thead, tbody, th, td, tr
+      display: block
+    
+    thead
+      float: left
+    
+    tbody
+      overflow-x: auto
+      overflow-y: hidden
+      position: relative
+      +f
+    
+    tr
+      flex: 1 0 auto
+      vertical-align: top
+      border: 0px
+    
+    th
+      +padding(5px 12px)
+      border-bottom: 1px solid #e5e5e5
+      // height: auto
+      // min-width: 45px
+      &:last-child
+        height: 100px
+    
+    td
+      +padding(5px 12px)
+      min-width: 120px
+      // height: auto
+      // min-width: 45px
+      &:not(:last-child)
+        border-bottom: 1px solid #e5e5e5
+      &:last-child
+        height: 100px
+        max-width: 100%
+  
+      .btn-twin
+        padding: 0
 
 
 .tab-pane#user-tab-1 ~ .tab-pane

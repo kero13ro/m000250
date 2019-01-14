@@ -137,14 +137,36 @@
     border: 1px solid #ccc
 
   .slick-nav
-    width: 100%
+    width: 90%
     
     img
       border: 1px solid #ccc
-      +margin(null 18px null null )
+      +margin(null 9px null )
       &.slick-current
         border-color: $green
 
+
+    .slick-prev, .slick-next
+      width: 40px
+      &:before
+        color: #ccc
+        font-size: 40px
+
+    .slick-prev
+      left: -45px
+    .slick-next
+      right: -45px
+
+    +max(768)
+      .slick-prev, .slick-next
+        width: 25px
+        &:before
+          font-size: 25px
+
+      .slick-prev
+        left: -25px
+      .slick-next
+        right: -25px
 
   
 .summary
@@ -269,7 +291,7 @@
     margin-right: 40px
     width: 37%
     .slick-nav img
-      +margin(null 12px null null )
+      +margin(null 8px null )
 
   .summary__sub
     padding-bottom: 18px
@@ -318,6 +340,9 @@
 +max(400)
   .slick-container
     width: 80%
+
+    .slick-nav img
+      +margin(null 6px null )
 
   .summary__list 
     font-size: 13px
