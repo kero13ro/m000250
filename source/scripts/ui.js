@@ -37,21 +37,18 @@ if (document.querySelector(".index_landing") !== null) {
 
   var love_main = love.find(".main");
   var strict_main = strict.find(".main");
+
+  var love_icon = love.find(".icon-love");
+  var strict_icon = strict.find(".icon-strict");
+  
   var love_title = new SplitText(love_main, { type: "words,chars" }).chars;
   var strict_title = new SplitText(strict_main, { type: "words,chars" }).chars;
 
 
 
-  var move_way_m = wW >= 768 ? "-=150" : "-=80";
-  var move_way_f = wW >= 768 ? "+=150" : "-=80";
-  // var move_way_f = "+=150";
-  // if (wW >= 768) {
-  //   var move_way_m = "-=150";
-  //   var move_way_f = "+=150";
-  // } else {
-  //   var move_way_m = "-=80";
-  //   var move_way_f = "-=80";
-  // }
+  var move_way_m = wW >= 768 ? "-=250" : "-=80";
+  var move_way_f = wW >= 768 ? "+=200" : "-=80";
+
   
   var indexTL = new TimelineMax()
     .call(function() {
@@ -64,15 +61,24 @@ if (document.querySelector(".index_landing") !== null) {
     .addLabel("love_main", 0.5)
     .from(love, 1, { autoAlpha: 0 }, "love_main+=0.1")
     .staggerFrom(love_title, 0.8, { autoAlpha: 0, y: 10 }, 0.2, "love_main+=0.1")
-    .from($(love).find(".main +div"), 0.5, { autoAlpha: 0 }, "love_main+=0.9")
+    .from($(love_main).next("div"), 0.5, { autoAlpha: 0 }, "love_main+=0.9")
 
-    .addLabel("strict_main", 0.7)
+    .to(love_icon, 0.3, { scale: 1.1, transformOrigin: "50% 50%" }, "love_main+=1.1")
+    .to(love_icon, 0.3, { scale: 1, transformOrigin: "50% 50%" }, "love_main+=1.4")
+    
+    // .to($(love_main).parent(".inner"), 0.03, { ease: Power0.easeNone, autoAlpha: 0 }, "love_main+=2")
+    // .to($(love_main).parent(".inner"), 0.05, { ease: Power0.easeNone, autoAlpha: 1 }, "love_main+=2.05")
+    
+    .addLabel("strict_main", 1)
     .from(strict, 1, { autoAlpha: 0 }, "strict_main+=0.1")
     .staggerFrom(strict_title, 0.8, { autoAlpha: 0, y: 10 }, 0.2, "strict_main+=0.1")
-    .from($(strict).find(".main +div"), 0.5, { autoAlpha: 0 }, "love_main+=0.9");
-
+    .from($(strict_main).next("div"), 0.5, { autoAlpha: 0 }, "strict_main+=0.9")
+    
+    .to(strict_icon, 0.3, { scale: 1.1, transformOrigin: "50% 50%" }, "strict_main+=1.1")
+    .to(strict_icon, 0.3, { scale: 1, transformOrigin: "50% 50%" }, "strict_main+=1.4");
 
 }
+
 
 
 
@@ -397,6 +403,15 @@ $(function () {
     $("[data-abbr] td:nth-child(2)").each(function () {
       var str = $(this).html();
       var index = str.indexOf("(");
+      if (index !== -1) {
+        $(this).html(str.slice(0, index - 1) + "<br>" + str.slice(index));
+      }
+    });
+
+
+    $("[data-abbr] th:nth-child(2)").each(function () {
+      var str = $(this).html();
+      var index = str.indexOf("/");
       if (index !== -1) {
         $(this).html(str.slice(0, index - 1) + "<br>" + str.slice(index));
       }

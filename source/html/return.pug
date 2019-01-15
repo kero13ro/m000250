@@ -32,7 +32,7 @@ block content
     .tab-content.return
       .tab-pane(id="user-tab-1")
         .scrollbarX
-          table.plain(data-abbr="type2").user.column-sm
+          table.plain(data-abbr="type2").user.column-sm.s4
             thead
               tr
                 th 訂單日期
@@ -75,7 +75,7 @@ block content
 
       .tab-pane(id="user-tab-2")
         .scrollbarX
-          table.plain(data-abbr="type2").user.column-sm
+          table.plain(data-abbr="type2").user.column-sm.s4
             thead
               tr
                 th 訂單日期
@@ -91,14 +91,18 @@ block content
                 td: a(href="detail-return.html") 32145789 / 明細 
                 td $650
                 td: .red 待處理
-                td: a.btn.sm.order-inquire 訂單詢問
+                td: .btn-twin
+                  a(href="inquiry.html").btn.sm.order-inquire 訂單詢問
+                
               tr
                 td 2018-03-10
                 td 2018-03-13
                 td: a(href="detail-return.html") 64482115 / 明細
                 td $4,500
                 td: .red 處理中
-                td: a.btn.sm.order-inquire 訂單詢問
+                td: .btn-twin
+                  a(href="inquiry.html").btn.sm.order-inquire 訂單詢問
+                
               tr
                 td 2016-08-25
                 td 2016-08-26
@@ -112,7 +116,10 @@ block content
                 td: a(href="detail-return.html") 78965412 / 明細
                 td $1,200
                 td: .red 退貨失敗
-                td: a.btn.sm.order-inquire 訂單詢問
+                
+                td: .btn-twin
+                  a(href="inquiry.html").btn.sm.order-inquire 訂單詢問
+                
               tr
                 td 2014-09-30
                 td 2014-10-01
