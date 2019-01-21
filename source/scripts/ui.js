@@ -618,6 +618,16 @@ $(function () {
       });
     }
   }
+  if (document.querySelector(".accordion") !== null) {
+
+    $(".accordion").find(".title").click(function () {
+      $(this).parent("li").siblings("li").children(".title")
+        .removeClass("show")
+        .next(".content").slideUp(300);
+
+      $(this).toggleClass("show").next(".content").slideToggle(300);
+    });
+  }
 
 
 
