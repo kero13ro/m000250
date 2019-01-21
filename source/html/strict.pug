@@ -20,64 +20,63 @@ block content
   form(action="").pt56.pb56
     h3.pb56.f32.tc 新品推薦、熱門好物
 
-    //- .favorite_filter.f20.b.container
-    //-   a(href="catalog.html") 嬰幼兒保健
-    //-   a(href="catalog.html") 機能性食品
-    //-   a(href="catalog.html") 調節血糖功能
-    //-   a(href="catalog.html") 癌症輔療產品
-    //-   a(href="catalog.html") 維他命
-
-    //-   a(href="catalog.html") 免疫調節作用
-    //-   a(href="catalog.html") 失眠類
-    //-   a(href="catalog.html") 美容保養類
-    //-   a(href="catalog.html") 孕婦保健
-    //-   a(href="catalog.html") 眼睛保健類
-
-    //-   a(href="catalog.html") 男性保健
-    //-   a(href="catalog.html") 健髮用品
-    //-   a(href="catalog.html") 骨骼關節類
-    //-   a(href="catalog.html") 心血管保健
-    //-   a(href="catalog.html") 麩醯胺酸
-
-    //-   a(href="catalog.html") 女性保健
-    //-   a(href="catalog.html") 輕盈窈窕系列
-    //-   a(href="catalog.html") 更年期保健
-    //-   a(href="catalog.html") 調整腸胃功能
-    //-   a(href="catalog.html") 肝臟保健
-
-    //-   a(href="catalog.html") 神經系統
-    
+    .favorite_filter.f16
+      .toggle 
+        .bar
+      a 口服OTC藥
+      a 外用OTC藥
+      a 醫材用品
+      a 保健食品
+      a 奶粉
+      a 紙尿褲
+      a 營養飲品
+      a 嬰幼兒食品
+      a 健康照護
+      a 婦嬰用品
+      
 
 
     .cards.container
-      +card(1)
-      +card(2)
-      +card(3)
-      +card(4)
-      +card(2)
-      
-      +card(2)
-      +card(4)
-      +card(1)
-      +card(3)
-      +card(1)
-      
-      +card(1)
-      +card(3)
-      +card(4)
-      +card(2)
-      +card(4)
-      
-      +card(2)
-      +card(4)
-      +card(1)
-      +card(3)
-      +card(1)
 
-      .card__pad.push
-      .card__pad.push
-      .card__pad.push
-      .card__pad.push
+      .filter_droup
+        .filter_title.f28.b.mb40 
+          span 口服OTC藥
+
+        +card(1)
+        +card(2)
+        +card(3)
+        +card(4)
+        +card(2)
+        +card(2)
+        +card(4)
+      
+      .filter_droup
+        .filter_title.f28.b.mb40 
+          span 外用OTC藥
+        +card(1)
+        +card(3)
+        +card(1)
+        
+        +card(1)
+        +card(3)
+        +card(4)
+        +card(2)
+        +card(4)
+
+        //- .card__pad.push
+        //- .card__pad.push
+        //- .card__pad.push
+        //- .card__pad.push
+      .filter_droup
+        .filter_title.f28.b.mb40 
+          span 營養飲品
+
+        +card(2)
+        +card(4)
+        +card(1)
+        +card(3)
+        +card(1)
+
 
 
     .pages.pb32

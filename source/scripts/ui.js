@@ -81,7 +81,6 @@ if (document.querySelector(".index_landing") !== null) {
 
 
 
-
 if (document.querySelector(".index_landing") !== null) {
 
   var itemBlocks = $(".division .block");
@@ -108,6 +107,38 @@ if (document.querySelector(".index_landing") !== null) {
   //     .to(searchbar, 0.3, { transform: "scale(1.02)" })
   //     .to(searchbar, 0.3, { transform: "scale(1)" });
   // });  
+
+  var pointer = $(".pointer")
+  var tl = new TimelineMax()
+  
+  if (wW == 768) {
+    
+    tl.set(pointer, { "right": "70%", "bottom": "28%" })
+      .to(pointer, 0.3, { autoAlpha: 1 }, 1)
+      .to(pointer, 0.2, { y: 10 })
+      .to(pointer, 0.2, { y: 0 })
+      .to(pointer, 0.2, { autoAlpha: 0 }, "+=0.4")
+      
+      .set(pointer, { "right": "10%"})
+      .to(pointer, 0.3, { autoAlpha: 1 })
+      .to(pointer, 0.2, { y: 10 })
+      .to(pointer, 0.2, { y: 0 })
+      .to(pointer, 0.2, { autoAlpha: 0 }, "+=0.4")
+      
+    } else if (wW < 768) {
+      tl.set(pointer, { "right": "40%", "bottom": "65%" })
+        .to(pointer, 0.3, { autoAlpha: 1 }, 1)
+        .to(pointer, 0.2, { y: 10 })
+        .to(pointer, 0.2, { y: 0 })
+        .to(pointer, 0.2, { autoAlpha: 0 }, "+=0.4")
+        
+        .set(pointer, { "bottom": "20%"})
+        .to(pointer, 0.3, { autoAlpha: 1 })
+        .to(pointer, 0.2, { y: 10 })
+        .to(pointer, 0.2, { y: 0 })
+        .to(pointer, 0.2, { autoAlpha: 0 }, "+=0.4")
+
+  }
 }
 
 
@@ -565,6 +596,29 @@ $(function () {
 
   //   });
   // }
+
+
+  if (document.querySelector(".favorite_filter") !== null) {
+
+    var menu = $(".favorite_filter");
+    
+    if (wW > 768 ) {
+      menu.find(".toggle").hover(function() {
+        menu.addClass("show");
+      });
+      menu.mouseleave(function() {
+        menu.removeClass("show");
+      });    
+    } else {
+      menu.find(".toggle").click(function() {
+        menu.toggleClass("show");
+      });
+      menu.mouseleave(function() {
+        menu.removeClass("show");
+      });
+    }
+  }
+
 
 
 });// $(function ) end
