@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>大樹醫藥-會員購系統</title>
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta property="og:title" content="">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <link rel="icon" type="image/x-icon" href="./styles/images/logo-small.png">
+    <link type="text/css" href="./styles/style.css" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+  </head>
+  <body>
+    <main class="wp">
+      <div id="fixed-cover"></div>
+      <div class="navPad"></div>
+      <div id="nav"><a class="nav__logo" href="index.html">
+          <h1 class="sr-only">大樹連鎖藥局 - 會員購系統</h1><img src="./styles/images/p-title.png" alt="大樹藥局"></a><a class="moblie nav__favorite" href="favorite.html"><span class="icon-love"></span>
+          <div class="inner">
+            <div class="main">我的最愛</div>
+            <div>一年內購物紀錄查詢</div>
+          </div></a><a class="moblie nav__strict" href="strict.html"><span class="icon-strict"></span>
+          <div class="inner">
+            <div class="main">大樹嚴選</div>
+            <div>新品推薦、熱門好物</div>
+          </div></a><a class="moblie nav__cart"><span class="icon-cart"></span>
+          <div class="text">我的購物車(<span class="cart__num">3</span>)</div></a>
+        <div class="nav__toggle">
+          <div class="one"></div>
+          <div class="two"></div>
+          <div class="three"></div>
+        </div>
+        <div class="nav__cover">
+          <div class="menu__logo"> <img src="./styles/images/p-title-white.png" alt="大樹藥局"></div>
+          <ul class="nav__bgc nostyle">
+            <li>
+              <div class="before"></div>
+              <div class="after"></div>
+            </li>
+            <li>
+              <div class="before"></div>
+              <div class="after"></div>
+            </li>
+            <li>
+              <div class="before"></div>
+              <div class="after"></div>
+            </li>
+          </ul>
+          <div class="nav__external"><a href="http://www.greattree.com.tw/" target="_blank" title="大樹健康藥局官方網站"> 大樹健康藥局官方網站</a><a href="https://shop.greattree.com.tw/greattree/" target="_blank" title="大樹健康購物網"> 大樹健康購物網</a><a class="icon-facebook" href="https://www.facebook.com/www.greattree.com.tw" target="_blank"></a><a class="icon-line" href="https://line.me/R/ti/p/%40greattree?fbclid=IwAR2YBIcJE5aHFnmw1QM9kyZvfYQkTdEq1uZgTz98WxoCDq8e6_vvLDo8ZVA" target="_blank"></a></div><a class="scan"><span class="icon-scan"></span><span>商品搜尋</span></a><a href="index.html#catalog-anchor"> <span class="icon-catogory"></span><span>商品品類</span></a><a class="user" href="order.html"><span class="icon-user3"></span><span>會員中心</span></a><a class="news" href="news.html"><span class="icon-service"></span><span>服務中心</span></a>
+        </div>
+      </div>
+      <form class="nav__search" action="result.html">
+        <div class="container">
+          <input class="searchBar" type="text" placeholder="產品關鍵字搜尋...">
+          <button class="icon-scan mr20 f20" type="submit">搜尋</button><a class="icon-scan2 btn lg f20" href="advanced.html">進階搜尋</a>
+          <div class="search-close"></div>
+        </div>
+      </form>
+      <div id="dashboard">
+        <div class="title">
+          <div class="icon-cart f18 g">採購清單 (<span class="cart_num robo">3</span>)</div>
+          <div class="icon-right"></div>
+        </div>
+        <div class="content">
+          <div class="scrollbarY mCustomScrollbar_index">
+            <div class="block"><img src="./styles/images/1a-01.jpg" alt="大樹連鎖藥局"><a class="text" href="product.html">
+                <div class="g">【娘家】 益生菌（2g/包，60包/盒)</div>
+                <div><span class="price-per">$2,200</span>  /  數量：<span class="nul">1</span></div></a>
+              <div class="delete"></div>
+            </div>
+            <div class="block"><img src="./styles/images/1a-02.jpg" alt="大樹連鎖藥局"><a class="text" href="product.html">
+                <div class="g">【歐典生機】養生雪晶耳冰糖植物性膠原飲</div>
+                <div><span class="price-per">$280</span>  /  數量：<span class="nul">5</span></div></a>
+              <div class="delete"></div>
+            </div>
+            <div class="block"><img src="./styles/images/1a-03.jpg" alt="大樹連鎖藥局"><a class="text" href="product.html">
+                <div class="g">【BioJoy百喬】奇亞酵素輕纖飲_Chia奇亞籽蔬果酵素５合１（12包/盒）</div>
+                <div><span class="price-per">$488</span>  /  數量：<span class="nul">2</span></div></a>
+              <div class="delete"></div>
+            </div>
+            <div class="block"><img src="./styles/images/1a-01.jpg" alt="大樹連鎖藥局"><a class="text" href="product.html">
+                <div class="g">【娘家】 益生菌（2g/包，60包/盒)</div>
+                <div><span class="price-per">$2,200</span>  /  數量：<span class="nul">1</span></div></a>
+              <div class="delete"></div>
+            </div>
+            <div class="block"><img src="./styles/images/1a-02.jpg" alt="大樹連鎖藥局"><a class="text" href="product.html">
+                <div class="g">【歐典生機】養生雪晶耳冰糖植物性膠原飲</div>
+                <div><span class="price-per">$280</span>  /  數量：<span class="nul">5</span></div></a>
+              <div class="delete"></div>
+            </div>
+            <div class="block"><img src="./styles/images/1a-03.jpg" alt="大樹連鎖藥局"><a class="text" href="product.html">
+                <div class="g">【BioJoy百喬】奇亞酵素輕纖飲_Chia奇亞籽蔬果酵素５合１（12包/盒）</div>
+                <div><span class="price-per">$488</span>  /  數量：<span class="nul">2</span></div></a>
+              <div class="delete"></div>
+            </div>
+          </div>
+        </div>
+        <div class="foot"><a class="btn sm bttn-jelly" href="cart.html">開啟購物車</a>
+          <div><span class="price-total f24">$5,480</span><span>(折扣後金額，不含運費)</span></div>
+        </div>
+      </div>
+      <div class="breadcrumb"> 
+        <ul class="container nostyle">
+          <li class="title"><span class="icon-user3 f24 mr20 hadCircle hadCircle"></span><span class="f28">會員中心</span></li>
+          <li>首頁</li>
+          <h2 class="icon-right">會員中心</h2>
+          <h3 class="icon-right">訂單紀錄</h3>
+        </ul>
+      </div>
+      <div class="user-menu mb72">
+        <div class="toggle-nav"></div>
+        <div class="toggle-cover f18"><a class="active" href="order.html">訂單紀錄</a><a href="return.html">退貨進度</a><a href="profile.html">會員帳號資料</a><a href="contact.html">常用聯絡資訊</a><a href="bonus.html">紅利點數查詢</a></div>
+      </div>
+      <div class="user-main container">
+        <div class="f32 b tc mb40">訂單紀錄</div>
+        <div class="tab-nav f18 mb40"><a class="btn active" data-user-tab="user-tab-1">未結案</a><a class="btn" data-user-tab="user-tab-2">全紀錄</a></div>
+        <div class="tab-content">
+          <div class="tab-pane" id="user-tab-1">
+            <div class="scrollbarX">
+              <table class="plain user" data-abbr="type1">
+                <thead>
+                  <tr>
+                    <th>訂單日期</th>
+                    <th>訂單編號 / 商品明細</th>
+                    <th>訂單金額</th>
+                    <th>訂單狀態</th>
+                    <th>付款方式</th>
+                    <th>付款狀態</th>
+                    <th>取貨方式</th>
+                    <th> </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2018-03-16</td>
+                    <td> <a href="detail.html">32145789 / 明細 </a></td>
+                    <td>$5,480</td>
+                    <td> 
+                      <div class="red">處理中</div>
+                    </td>
+                    <td>信用卡</td>
+                    <td>已付款</td>
+                    <td>店取-仁武仁雄</td>
+                    <td> 
+                      <div class="btn-twin"><a class="btn sm order-cancel" href="cancel.html">取消訂單</a><a class="btn sm order-inquire" href="inquiry.html">訂單詢問</a></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2018-03-12</td>
+                    <td><a href="detail.html">64482115 / 明細 </a></td>
+                    <td>$4,500</td>
+                    <td>已出貨</td>
+                    <td>虛擬帳號ATM</td>
+                    <td>已付款</td>
+                    <td>店取-北屯軍功</td>
+                    <td> 
+                      <div class="btn-twin"><a class="btn sm order-return" href="returning.html">申請退貨</a><a class="btn sm order-inquire" href="inquiry.html">訂單詢問</a></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="tab-pane" id="user-tab-2">
+            <div class="scrollbarX">
+              <table class="plain user" data-abbr="type1">
+                <thead>
+                  <tr>
+                    <th>訂單日期</th>
+                    <th>訂單編號 / 商品明細</th>
+                    <th>訂單金額</th>
+                    <th>訂單狀態</th>
+                    <th>付款方式</th>
+                    <th>付款狀態</th>
+                    <th>取貨方式</th>
+                    <th> </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2018-03-16</td>
+                    <td> <a href="detail.html">32145789 / 明細 </a></td>
+                    <td>$5,480</td>
+                    <td> 
+                      <div class="red">處理中</div>
+                    </td>
+                    <td>信用卡</td>
+                    <td>已付款</td>
+                    <td>店取-仁武仁雄</td>
+                    <td> 
+                      <div class="btn-twin"><a class="btn sm order-cancel">取消訂單</a><a class="btn sm order-inquire" href="inquiry.html">訂單詢問</a></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2018-03-12</td>
+                    <td><a href="detail.html">64482115 / 明細</a></td>
+                    <td>$4,500</td>
+                    <td> 
+                      <div class="red">待處理</div>
+                    </td>
+                    <td>虛擬帳號ATM</td>
+                    <td>已付款</td>
+                    <td>店取-北屯軍功</td>
+                    <td> 
+                      <div class="btn-twin"><a class="btn sm order-return">申請退貨</a><a class="btn sm order-inquire" href="inquiry.html">訂單詢問</a></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2017-05-25</td>
+                    <td><a href="detail.html">45871245 / 明細</a></td>
+                    <td>$3,800</td>
+                    <td>已出貨</td>
+                    <td>刷卡</td>
+                    <td>已付款</td>
+                    <td>宅配</td>
+                    <td> </td>
+                  </tr>
+                  <tr>
+                    <td>2017-01-18</td>
+                    <td><a href="detail.html">78965412 / 明細</a></td>
+                    <td>$1,200</td>
+                    <td>已提貨</td>
+                    <td>現金</td>
+                    <td>已付款</td>
+                    <td>店取-南屯向上店</td>
+                    <td> </td>
+                  </tr>
+                  <tr>
+                    <td>2016-11-30</td>
+                    <td><a href="detail.html">65478521 / 明細</a></td>
+                    <td>$1,200</td>
+                    <td> 
+                      <div class="red">已取消</div>
+                    </td>
+                    <td>現金</td>
+                    <td> 
+                      <div class="red">未付款</div>
+                    </td>
+                    <td>店取-南屯向上店</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>2016-05-14</td>
+                    <td><a href="detail.html">19547236 / 明細</a></td>
+                    <td>$4,500</td>
+                    <td>已提貨</td>
+                    <td>刷卡</td>
+                    <td>已付款</td>
+                    <td>宅配</td>
+                    <td> </td>
+                  </tr>
+                  <tr>
+                    <td>2016-03-18</td>
+                    <td><a href="detail.html">87452365 / 明細</a></td>
+                    <td>$63,500</td>
+                    <td>已提貨</td>
+                    <td>刷卡</td>
+                    <td>已付款</td>
+                    <td>宅配</td>
+                    <td> </td>
+                  </tr>
+                  <tr>
+                    <td>2016-02-26</td>
+                    <td><a href="detail.html">56984521 / 明細</a></td>
+                    <td>$1,800</td>
+                    <td>已提貨</td>
+                    <td>現金</td>
+                    <td>已付款</td>
+                    <td>店取-南屯向上店</td>
+                    <td> </td>
+                  </tr>
+                  <tr>
+                    <td>2016-02-24</td>
+                    <td><a href="detail.html">45681235 / 明細</a></td>
+                    <td>$600</td>
+                    <td>已提貨</td>
+                    <td>刷卡</td>
+                    <td>已付款</td>
+                    <td>宅配</td>
+                    <td> </td>
+                  </tr>
+                  <tr>
+                    <td>2016-01-15</td>
+                    <td><a href="detail.html">98753215 / 明細 </a></td>
+                    <td>$1,750</td>
+                    <td>已提貨</td>
+                    <td>刷卡</td>
+                    <td>已付款</td>
+                    <td>宅配</td>
+                    <td> </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="pages pt56"><a class="icon-page-1" href="#"></a><a class="icon-page-2" href="#"></a><a class="active" href="#">1</a><a href="#">2</a><a href="#">3 </a><a href="#">4</a><a href="#">5</a><a class="icon-page-3" href="#"></a><a class="icon-page-4" href="#"></a></div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <svg width="100%" height="100%" viewBox="0 0 1921 445" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;" preserveAspectRatio="xMidYMid slice">
+          <path id="svg2" d="M2,63C471.056,65.087 549.546,168.869 976,170C1402.45,171.131 1558.92,68.582 1921,63L1921,445L0,445L0,63" style="fill:rgb(43, 171, 74)"></path>
+        </svg>
+        <path id="svg1" d="M2,63C471.056,65.087 549.546,-1.131 976,0C1402.45,1.131 1558.92,68.582 1921,63L1921,445L0,445L0,63"></path><a class="icon-up go-top"></a>
+        <div class="wrapper container">
+          <address><a class="address__logo mb20" href="index.html"><img src="./styles/images/p-title-white.png" alt="大樹連鎖藥局"></a>
+            <ul class="address__content nostyle f15">
+              <li>客服電話，週一~週五 9:00~12:00, 13:00~17:00</li>
+              <li> <a class="tel f24 mb8" href="tel:03-4554585">03-4554585#257 </a></li>
+              <li> <a class="addr" href="https://goo.gl/maps/P4nDXt3eZUs" target="_blank">320 台灣桃園市中壢區成章四街143號</a></li>
+              <li> <a class="addr" href="https://goo.gl/maps/kPFv3DVMwhz" target="_blank">320 台灣桃園市中壢區高邊路1號</a></li>
+              <li> <a href="mailto:gtservice@greattree.com.tw ">gtservice@greattree.com.tw </a></li>
+            </ul>
+          </address>
+          <div class="sitemap">
+            <div class="block tri">
+              <div class="title">產品專區</div>
+              <ul class="nostyle f15">
+                <li><a>醫材用品</a></li>
+                <li><a>營養飲品&副食品</a></li>
+                <li><a>醫學美容保養品</a></li>
+                <li><a>保健食品</a></li>
+                <li><a>嬰幼兒副食品</a></li>
+                <li><a>居家生活用品</a></li>
+                <li><a>奶粉</a></li>
+                <li><a>健康照護</a></li>
+                <li><a>休閒食用品</a></li>
+                <li><a>紙尿褲</a></li>
+                <li><a>婦嬰用品</a></li>
+                <li class="pad"></li>
+                <li class="pad"></li>
+              </ul>
+            </div>
+            <div class="block">
+              <div class="title">會員中心</div>
+              <ul class="nostyle f15">
+                <li><a href="favorite.html">購買過商品</a></li>
+                <li><a href="order.html">訂單紀錄</a></li>
+                <li><a href="profile.html">會員資料管理</a></li>
+                <li><a href="contact.html">常用聯絡資訊</a></li>
+                <li><a href="bonus.html">紅利點數查詢</a></li>
+              </ul>
+            </div>
+            <div class="block">
+              <div class="title">服務中心</div>
+              <ul class="nostyle f15">
+                <li><a href="news.html">活動資訊</a></li>
+                <li><a href="faqs.html">常見問題Q&A</a></li>
+                <li><a href="send.html">聯絡我們</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="media"><a class="icon-facebook" href="https://www.facebook.com/greattreemall/" target="_blank"></a><a class="icon-line" href="https://line.me/R/ti/p/@gtmall"></a></div>
+        </div>
+        <div class="copyright f15"><span>Copyright © 2016 大樹連鎖藥局. All Rights Reserved.</span><span class="slash">/</span><a href="https://ecreative.tw/" target="_blank">Designed by MINMAX 網頁設計</a></div>
+      </footer>
+    </main>
+    <script src="./scripts/plugins/vendor.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./scripts/ui.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
