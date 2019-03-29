@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>大樹醫藥-會員購系統</title>
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta property="og:title" content="">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <link rel="icon" type="image/x-icon" href="./styles/images/logo-small.png">
+    <link type="text/css" href="./styles/style.css" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+  </head>
+  <body>
+    <main class="wp">
+      <div id="fixed-cover"></div>
+      <div class="navPad"></div>
+      <div id="nav"><a class="nav__logo" href="index.html">
+          <h1 class="sr-only">大樹連鎖藥局 - 會員購系統</h1><img src="./styles/images/p-title.png" alt="大樹藥局"></a><a class="moblie nav__favorite" href="favorite.html"><span class="icon-love"></span>
+          <div class="inner">
+            <div class="main">我的最愛</div>
+            <div>一年內購物紀錄查詢</div>
+          </div></a><a class="moblie nav__strict" href="strict.html"><span class="icon-strict"></span>
+          <div class="inner">
+            <div class="main">大樹嚴選</div>
+            <div>新品推薦、熱門好物</div>
+          </div></a><a class="moblie nav__cart"><span class="icon-cart"></span>
+          <div class="text">我的購物車(<span class="cart__num">3</span>)</div></a>
+        <div class="nav__toggle">
+          <div class="one"></div>
+          <div class="two"></div>
+          <div class="three"></div>
+        </div>
+        <div class="nav__cover">
+          <div class="menu__logo"> <img src="./styles/images/p-title-white.png" alt="大樹藥局"></div>
+          <ul class="nav__bgc nostyle">
+            <li>
+              <div class="before"></div>
+              <div class="after"></div>
+            </li>
+            <li>
+              <div class="before"></div>
+              <div class="after"></div>
+            </li>
+            <li>
+              <div class="before"></div>
+              <div class="after"></div>
+            </li>
+          </ul>
+          <div class="nav__external"><a href="http://www.greattree.com.tw/" target="_blank" title="大樹健康藥局官方網站"> 大樹健康藥局官方網站</a><a href="https://shop.greattree.com.tw/greattree/" target="_blank" title="大樹健康購物網"> 大樹健康購物網</a><a class="icon-facebook" href="https://www.facebook.com/www.greattree.com.tw" target="_blank"></a><a class="icon-line" href="https://line.me/R/ti/p/%40greattree?fbclid=IwAR2YBIcJE5aHFnmw1QM9kyZvfYQkTdEq1uZgTz98WxoCDq8e6_vvLDo8ZVA" target="_blank"></a></div><a class="scan"><span class="icon-scan"></span><span>商品搜尋</span></a><a href="index.html#catalog-anchor"> <span class="icon-catogory"></span><span>商品品類</span></a><a class="user" href="order.html"><span class="icon-user3"></span><span>會員中心</span></a><a class="news" href="news.html"><span class="icon-service"></span><span>服務中心</span></a>
+        </div>
+      </div>
+      <form class="nav__search" action="result.html">
+        <div class="container">
+          <input class="searchBar" type="text" placeholder="產品關鍵字搜尋...">
+          <button class="icon-scan mr20 f20" type="submit">搜尋</button><a class="icon-scan2 btn lg f20" href="advanced.html">進階搜尋</a>
+          <div class="search-close"></div>
+        </div>
+      </form>
+      <div id="dashboard">
+        <div class="title">
+          <div class="icon-cart f18 g">採購清單 (<span class="cart_num robo">3</span>)</div>
+          <div class="icon-right"></div>
+        </div>
+        <div class="content">
+          <div class="scrollbarY mCustomScrollbar_index">
+            <div class="block"><img src="./styles/images/1a-01.jpg" alt="大樹連鎖藥局"><a class="text" href="product.html">
+                <div class="g">【娘家】 益生菌（2g/包，60包/盒)</div>
+                <div><span class="price-per">$2,200</span>  /  數量：<span class="nul">1</span></div></a>
+              <div class="delete"></div>
+            </div>
+            <div class="block"><img src="./styles/images/1a-02.jpg" alt="大樹連鎖藥局"><a class="text" href="product.html">
+                <div class="g">【歐典生機】養生雪晶耳冰糖植物性膠原飲</div>
+                <div><span class="price-per">$280</span>  /  數量：<span class="nul">5</span></div></a>
+              <div class="delete"></div>
+            </div>
+            <div class="block"><img src="./styles/images/1a-03.jpg" alt="大樹連鎖藥局"><a class="text" href="product.html">
+                <div class="g">【BioJoy百喬】奇亞酵素輕纖飲_Chia奇亞籽蔬果酵素５合１（12包/盒）</div>
+                <div><span class="price-per">$488</span>  /  數量：<span class="nul">2</span></div></a>
+              <div class="delete"></div>
+            </div>
+            <div class="block"><img src="./styles/images/1a-01.jpg" alt="大樹連鎖藥局"><a class="text" href="product.html">
+                <div class="g">【娘家】 益生菌（2g/包，60包/盒)</div>
+                <div><span class="price-per">$2,200</span>  /  數量：<span class="nul">1</span></div></a>
+              <div class="delete"></div>
+            </div>
+            <div class="block"><img src="./styles/images/1a-02.jpg" alt="大樹連鎖藥局"><a class="text" href="product.html">
+                <div class="g">【歐典生機】養生雪晶耳冰糖植物性膠原飲</div>
+                <div><span class="price-per">$280</span>  /  數量：<span class="nul">5</span></div></a>
+              <div class="delete"></div>
+            </div>
+            <div class="block"><img src="./styles/images/1a-03.jpg" alt="大樹連鎖藥局"><a class="text" href="product.html">
+                <div class="g">【BioJoy百喬】奇亞酵素輕纖飲_Chia奇亞籽蔬果酵素５合１（12包/盒）</div>
+                <div><span class="price-per">$488</span>  /  數量：<span class="nul">2</span></div></a>
+              <div class="delete"></div>
+            </div>
+          </div>
+        </div>
+        <div class="foot"><a class="btn sm bttn-jelly" href="cart.html">開啟購物車</a>
+          <div><span class="price-total f24">$5,480</span><span>(折扣後金額，不含運費)</span></div>
+        </div>
+      </div>
+      <div class="breadcrumb"> 
+        <ul class="container nostyle">
+          <li class="title"><span class="icon-catogory f24 mr20 plusCircle"></span><span class="f28">商品品類</span></li>
+          <li>首頁</li>
+          <h2 class="icon-right">商品品類</h2>
+          <h3 class="icon-right">保健食品</h3>
+          <h4 class="icon-right">維他命</h4>
+          <h5 class="icon-right">【BioJoy百喬】法國天然綜合B群</h5>
+        </ul>
+      </div>
+      <div class="container w90">
+        <div class="product">
+          <div class="info-top mb64">
+            <div class="slick-container">
+              <div class="slick-show"><img src="./styles/images/0c-01.jpg" alt="大樹連鎖藥局"><img src="./styles/images/0c-02.jpg" alt="大樹連鎖藥局"><img src="./styles/images/0c-03.jpg" alt="大樹連鎖藥局"><img src="./styles/images/0c-01.jpg" alt="大樹連鎖藥局"><img src="./styles/images/0c-01.jpg" alt="大樹連鎖藥局"></div>
+              <div class="slick-nav"><img src="./styles/images/0c-01.jpg" alt="大樹連鎖藥局"><img src="./styles/images/0c-02.jpg" alt="大樹連鎖藥局"><img src="./styles/images/0c-03.jpg" alt="大樹連鎖藥局"><img src="./styles/images/0c-01.jpg" alt="大樹連鎖藥局"><img src="./styles/images/0c-01.jpg" alt="大樹連鎖藥局"></div>
+            </div>
+            <div class="summary editor">
+              <div class="summary__title f28 b mb16">【BioJoy百喬】法國天然綜合B群</div>
+              <div class="summary__sub f16">商品編號：P0000100004654   /   原始貨號：142722 </div>
+              <ul class="summary__list nostyle mb32">
+                <li>● &nbsp;原料嚴選法國百年歷史大廠Lallemand公司榮譽出品</li>
+                <li>● &nbsp;足量添加天然B群500毫克，達人體一日所需的B群含量</li>
+                <li>● &nbsp;天然來源、非合成、無異味，食用好安心！</li>
+                <li>● &nbsp;含胺基酸、礦物質及其它微量元素等營養物質</li>
+                <li>● &nbsp;提供您完整的營養補給，幫助增強體力！</li>
+                <li>● &nbsp;讓您時時刻刻思緒清晰，Always do your 「B」est！</li>
+              </ul>
+              <div class="summary__tag f18">
+                <div class="tag">優惠方案</div>
+              </div>
+              <div class="summary__price"> <span>原價： </span><span class="price-origin">$680</span><span>  /  會員價  </span><span class="price-discount">$375</span></div>
+              <div class="summary__note mb32 lh20 b g">贈品：百喬-奇異籽或3分鐘手打優格粉試吃包*1(隨機出貨) <br> 滿件折扣：滿5件8折優惠</div>
+              <div class="summary__btn">
+                <label class="summary__select">
+                  <select> 
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                  </select>
+                  <div class="wrap"><span>數量：</span><span class="icon-down-thin"></span></div>
+                </label>
+                <div class="summary__add"> <img src="./styles/images/check.png" alt="大樹連鎖藥局"><span>加入採購清單</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="recommand">
+            <div class="outer">
+              <div class="f18 b">其他人也瀏覽了...</div>
+              <div class="inner"><a href="product.html"> <img src="./styles/images/0b-01.jpg" alt="大樹連鎖藥局"></a><a href="product.html"> <img src="./styles/images/0b-02.jpg" alt="大樹連鎖藥局"></a><a href="product.html"> <img src="./styles/images/0b-04.jpg" alt="大樹連鎖藥局"></a><a href="product.html"> <img src="./styles/images/0b-03.jpg" alt="大樹連鎖藥局"></a></div>
+            </div>
+          </div>
+          <div class="info-bottom">
+            <div class="tab__nav f20 pb64 b">
+              <div class="tab active icon-product1">產品說明</div>
+              <div class="tab icon-product2">購物說明</div>
+              <div class="tab icon-product3">運送說明</div>
+            </div>
+            <div class="tab__content">
+              <div class="tab__pane active" data-tab-id="#tab-1">
+                <div class="editor">
+                  <div class="f32">產品說明</div>
+                  <table class="f16">
+                    <tr>
+                      <th>主成分：</th>
+                      <td>天然酵母抽出物（LalminR B-complex vitamins天然酵母高B群；維生素B1、維生素B2、維生素B6、維生素B12、菸鹼酸、葉酸、泛酸、生物素）……………….250毫克／錠（原廠建議用量：每日500毫克）、紅景天抽出物。</td>
+                    </tr>
+                    <tr>
+                      <th>副成分：</th>
+                      <td>麥芽糊精、微結晶纖維素、硬脂酸鎂</td>
+                    </tr>
+                    <tr>
+                      <th>內容量：</th>
+                      <td>0.4公克/錠，60錠/瓶</td>
+                    </tr>
+                    <tr>
+                      <th>食用方式：</th>
+                      <td>一次2錠，每日1次；建議搭配開水食用</td>
+                    </tr>
+                    <tr>
+                      <th>推薦：</th>
+                      <td>孩童、青少年、一般成人及銀髮族皆可食用</td>
+                    </tr>
+                    <tr>
+                      <th>注意事項：</th>
+                      <td>請置於兒童無法取得之處。重大疾病及服藥中者，請先徵詢醫師後再食用。本品內含天然維生素Ｂ群，經吸收代謝，尿液如呈現黃色為正常現象，請安心食用。依據衛生署規定，本品因添加維生素，須標示『多食無益』。本產品不含人工香料和防腐劑，如有斑點或色差，係屬自然現象，請安心食用。</td>
+                    </tr>
+                    <tr>
+                      <th>保存方式：</th>
+                      <td>請置於室溫乾燥陰涼處，避免置於日光直射、曝曬、高溫、潮濕之處</td>
+                    </tr>
+                    <tr>
+                      <th>保存期限：</th>
+                      <td>3年</td>
+                    </tr>
+                    <tr>
+                      <th>產地：</th>
+                      <td>台灣</td>
+                    </tr>
+                    <tr>
+                      <th>生產公司：</th>
+                      <td>百喬生醫股份有限公司</td>
+                    </tr>
+                    <tr>
+                      <th>服務電話：</th>
+                      <td>0800-882-886</td>
+                    </tr>
+                    <tr>
+                      <th>公司地址：</th>
+                      <td>台中市北區忠明路424號3樓之3</td>
+                    </tr>
+                    <tr>
+                      <th>商品效期：</th>
+                      <td>商品效期至少距有效日期前365日</td>
+                    </tr>
+                    <tr>
+                      <th>產品責任險字號：</th>
+                      <td>1308-05AKP0000162</td>
+                    </tr>
+                    <tr>
+                      <th>食品業者登錄字號：</th>
+                      <td>B-153158850-00000-4</td>
+                    </tr>
+                  </table><img src="./styles/images/0c-04.jpg" alt="大樹連鎖藥局">
+                </div>
+              </div>
+              <div class="tab__pane" data-tab-id="#tab-2"></div>
+              <div class="tab__pane" data-tab-id="#tab-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <svg width="100%" height="100%" viewBox="0 0 1921 445" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;" preserveAspectRatio="xMidYMid slice">
+          <path id="svg2" d="M2,63C471.056,65.087 549.546,168.869 976,170C1402.45,171.131 1558.92,68.582 1921,63L1921,445L0,445L0,63" style="fill:rgb(43, 171, 74)"></path>
+        </svg>
+        <path id="svg1" d="M2,63C471.056,65.087 549.546,-1.131 976,0C1402.45,1.131 1558.92,68.582 1921,63L1921,445L0,445L0,63"></path><a class="icon-up go-top"></a>
+        <div class="wrapper container">
+          <address><a class="address__logo mb20" href="index.html"><img src="./styles/images/p-title-white.png" alt="大樹連鎖藥局"></a>
+            <ul class="address__content nostyle f15">
+              <li>客服電話，週一~週五 9:00~12:00, 13:00~17:00</li>
+              <li> <a class="tel f24 mb8" href="tel:03-4554585">03-4554585#257 </a></li>
+              <li> <a class="addr" href="https://goo.gl/maps/P4nDXt3eZUs" target="_blank">320 台灣桃園市中壢區成章四街143號</a></li>
+              <li> <a class="addr" href="https://goo.gl/maps/kPFv3DVMwhz" target="_blank">320 台灣桃園市中壢區高邊路1號</a></li>
+              <li> <a href="mailto:gtservice@greattree.com.tw ">gtservice@greattree.com.tw </a></li>
+            </ul>
+          </address>
+          <div class="sitemap">
+            <div class="block tri">
+              <div class="title">產品專區</div>
+              <ul class="nostyle f15">
+                <li><a>醫材用品</a></li>
+                <li><a>營養飲品&副食品</a></li>
+                <li><a>醫學美容保養品</a></li>
+                <li><a>保健食品</a></li>
+                <li><a>嬰幼兒副食品</a></li>
+                <li><a>居家生活用品</a></li>
+                <li><a>奶粉</a></li>
+                <li><a>健康照護</a></li>
+                <li><a>休閒食用品</a></li>
+                <li><a>紙尿褲</a></li>
+                <li><a>婦嬰用品</a></li>
+                <li class="pad"></li>
+                <li class="pad"></li>
+              </ul>
+            </div>
+            <div class="block">
+              <div class="title">會員中心</div>
+              <ul class="nostyle f15">
+                <li><a href="favorite.html">購買過商品</a></li>
+                <li><a href="order.html">訂單紀錄</a></li>
+                <li><a href="profile.html">會員資料管理</a></li>
+                <li><a href="contact.html">常用聯絡資訊</a></li>
+                <li><a href="bonus.html">紅利點數查詢</a></li>
+              </ul>
+            </div>
+            <div class="block">
+              <div class="title">服務中心</div>
+              <ul class="nostyle f15">
+                <li><a href="news.html">活動資訊</a></li>
+                <li><a href="faqs.html">常見問題Q&A</a></li>
+                <li><a href="send.html">聯絡我們</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="media"><a class="icon-facebook" href="https://www.facebook.com/greattreemall/" target="_blank"></a><a class="icon-line" href="https://line.me/R/ti/p/@gtmall"></a></div>
+        </div>
+        <div class="copyright f15"><span>Copyright © 2016 大樹連鎖藥局. All Rights Reserved.</span><span class="slash">/</span><a href="https://ecreative.tw/" target="_blank">Designed by MINMAX 網頁設計</a></div>
+      </footer>
+    </main>
+    <script src="./scripts/plugins/vendor.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./scripts/ui.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
