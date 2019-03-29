@@ -34,7 +34,7 @@ block content
       .icon-right.b.f18 訂單概要
       .tab-pane.mb32
         .scrollbarX
-          table.plain(data-abbr="type1").user
+          table.plain.user.column-sm.s1
             thead
               tr
                 th 訂單日期
@@ -51,7 +51,8 @@ block content
                 td $5,480
                 td: .red 待處理
                 td 
-                  a.btn.sm.order-inquire 訂單詢問
+                  //- a.btn.sm.order-inquire 訂單詢問
+                  a(href="inquiry.html").btn.sm.order-inquire 訂單詢問
 
       .icon-right.b.f18 訂單明細
       .tab-pane

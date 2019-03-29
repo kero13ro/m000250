@@ -213,26 +213,87 @@ table.column
     
 
 
-  table.plain
-    font-weight: bold
-    th,
-    td
-      &:nth-child(1)
-        .robo
-          font-size: 20px
-          +max(450)
-            font-size: 16px
+  // table.plain
+  //   font-weight: bold
+  //   th,
+  //   td
+  //     &:nth-child(1)
+  //       .robo
+  //         font-size: 20px
+  //         +max(450)
+  //           font-size: 16px
 
-      &:nth-child(2)
-        text-align: left
-        width: 30%
-        a
-          +margin(null 5px)
+  //     &:nth-child(2)
+  //       text-align: left
+  //       width: 30%
+  //       a
+  //         +margin(null 5px)
 
-      +min(1600)
-        &:nth-child(1)
-          width: 330px
-        &:nth-child(2)
-          width: 30%
+  //     +min(1600)
+  //       &:nth-child(1)
+  //         width: 330px
+  //       &:nth-child(2)
+  //         width: 30%
 
       
+
+.accordion
+  border: 1px solid $green
+  +min(500)
+    box-shadow: 0 3px 10px rgba(black, 0.3)
+
+  .title
+    +padding(null 20px)
+    font-size: 18px
+    background-color: #f7f7f7
+    // background-color: #f0f0f0
+    +fc
+    font-weight: bold
+    cursor: pointer
+    +hoverText($greenXL)
+
+  li:not(:first-child) .title
+    border-top: 1px solid $green
+
+  .icon-right
+    color: #777
+    margin-left: auto
+    &::before
+      transition: 0.3s transform
+
+  .content
+    font-size: 16px
+    
+    font-weight: bold
+    border-top: 1px solid #ccc
+    .line
+      min-height: 0px
+      height: 45px
+      color: #111
+      +hoverText($green)
+    span 
+      +padding(null 15px)
+    span:first-child
+      background-color: #f8f8f8
+      width: 200px
+      height: 100%
+      +fc(flex-end)
+
+    display: none
+  
+  .title.show
+    .icon-right:before
+      transition: 0.3s transform
+      transform-origin: 50%
+      transform: rotate(90deg)
+
+  +max(500)
+    .title
+      font-size: 15px
+      +padding(null 12px)
+    .content
+      font-size: 14px
+      span:first-child
+        width: 100px
+        flex-shrink: 0
+        justify-content: center

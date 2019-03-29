@@ -10,14 +10,16 @@
     // +size(380px, 185px)
     +padding(38px 54px)
     +margin(null 15.6vw 4.2vw )
-    background-color: #fff
+    background: linear-gradient(to right, rgba(190,190,190,1) 0%,rgba(255,253,254,1) 40%,rgba(255,253,254,1) 60%,rgba(190,190,190,1) 100%)
+
     color: $green
     border-radius: 999px
     +fc
     flex-shrink: 0
     font-weight: bold
-    box-shadow: 0 5px 5px rgba(black,0.1)
+    box-shadow: 0 10px 6px rgba(black,0.2)
     z-index: 1
+
 
   [class*="icon"]
     flex-shrink: 0
@@ -35,6 +37,7 @@
   [class^="man"]
     position: absolute
     bottom: 0
+    z-index: 5
 
   .man-m
     left: 45%
@@ -46,37 +49,33 @@
     transform: translateX(50%)
 
   [class^="plus"]
-    &:before,&:after
-      content: ""
-      display: block
-    &:after
+    >div
       transform: rotate(90deg)
+      +size(30px, 10px)
 
   .plus-1
-    &:before, &:after
-      +size(30px, 10px)
-      +position(absolute, null 49% 120px null )
+    +size(30px, 10px)
+    +position(absolute, null 49% 120px null )
+    &, >div
       background-color: rgb(56, 175, 59)
-      // background-color: red
-    
+      
   .plus-2
-    &:before, &:after
-      +size(30px, 10px)
-      +position(absolute, null 38% 130px null )
+    +size(30px, 10px)
+    +position(absolute, null 38% 130px null )
+    &, >div
       background-color: #51c34d
 
   .plus-3
-    &:before, &:after
-      +size(30px, 10px)
-      +position(absolute, null 65% 60px null )
+    +size(30px, 10px)
+    +position(absolute, null 65% 60px null )
+    &, >div
       background-color: #62b664
 
   .plus-4
-    &:before, &:after
-      +size(30px, 10px)
-      +position(absolute, null 60% 190px null )
+    +size(30px, 10px)
+    +position(absolute, null 60% 190px null )
+    &, >div
       background-color: #62b664
-      background-color: 
 
 
 
@@ -97,15 +96,52 @@
         font-size: 16px
 
   +max(991)
-    [class^="man"]
-      display: none
+    height: 60vw
+    
     a
-      +margin(null 3vw 40px)
+      // +margin(null 3vw 40px)
+      +margin(null 12vw 8vw )
+      +padding(20px 30px)
+
+    
+    .man-m
+      width: 25vw
+    
+    .man-f
+      width: 20vw
+      right: 41%
+    
+  
+  
+  +min(769)
+    .pointer
+      display: none
+  +max(768)
+
+    .pointer
+      width: 30px
+      +position(absolute, null 0 null null )
+      z-index: 3
+      opacity: 0
+
 
   +max(767)
+
+
     +f(flex-end, center, column)
     a
-      +padding(15px 25px)
+      +padding(15px 25px 80px)
+      margin-bottom: 30px
+      position: relative
+      border-radius: 60px
+
+      overflow: hidden
+    .love
+      border-bottom-right-radius: 0
+
+    .strict
+      border-bottom-left-radius: 0
+
 
     [class*="icon"]
       font-size: 2.5rem
@@ -115,6 +151,23 @@
       & + div 
         font-size: 15px
 
+    .man-m
+      // width: 36vw
+      width: auto
+      height: 82px
+
+      left: auto
+      right: -5%
+      transform: translateX(0%)
+
+    .man-f
+      // width: 30vw
+      width: auto
+      height: 82px
+      left: 0
+      // right: -5%
+      transform: translateX(0%)
+      
 
 
 +min(769)
@@ -127,14 +180,14 @@
   #nav .grayInner .moblie,
   .index_landing a
     &:hover 
-      transition: 0.3s box-shadow , 0.3s transform
-      transform: translateY(1.5px)
+      transition: 0.3s box-shadow
+      
       [class*="icon"]:before
         animation: hrv 1s
 
-  .index_landing a
-    &:hover 
-      box-shadow: 0 0px 20px rgba(white, 0.3)
+  .index_landing a:hover 
+    box-shadow: 0 0px 6px rgba(black,0.2)
+    
     
   @keyframes hrv
     16.65%
@@ -463,3 +516,4 @@
   position: absolute
   +size(1px)
   top: -70px
+

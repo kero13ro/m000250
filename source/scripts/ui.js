@@ -22,9 +22,9 @@ $.when($.ready).then(function () {
 
 
 
-if (wW > 768 && document.querySelector(".index_landing") !== null) {
-  var manL = $(".index_landing .man-f");
-  var manR = $(".index_landing .man-m");
+if (document.querySelector(".index_landing") !== null) {
+  var manR = $(".index_landing .man-f");
+  var manL = $(".index_landing .man-m");
   var plus1 = $(".index_landing .plus-1");
   var plus2 = $(".index_landing .plus-2");
   var plus3 = $(".index_landing .plus-3");
@@ -35,19 +35,47 @@ if (wW > 768 && document.querySelector(".index_landing") !== null) {
 
   var nav__logo = $(".nav__logo");
 
+  var love_main = love.find(".main");
+  var strict_main = strict.find(".main");
+
+  var love_icon = love.find(".icon-love");
+  var strict_icon = strict.find(".icon-strict");
+  
+  var love_title = new SplitText(love_main, { type: "words,chars" }).chars;
+  var strict_title = new SplitText(strict_main, { type: "words,chars" }).chars;
+
+
+
+  var move_way_m = wW >= 768 ? "-=250" : "-=80";
+  var move_way_f = wW >= 768 ? "+=200" : "-=80";
+
+  
   var indexTL = new TimelineMax()
-    .call(function () {
-      nav__logo.addClass("show")
+    .call(function() {
+      nav__logo.addClass("show");
     })
-    .from(manL, 1, { x: "+=40", autoAlpha: 0 }, 0.3)
-    .from(manR, 1, { x: "-=40", autoAlpha: 0 }, 0.6)
-    .from([plus1, plus2, plus3, plus4], 1, { autoAlpha: 0 }, 0.5)
-    .from(love, 1, {  autoAlpha: 0, }, 0.5)
-    .from(strict, 1, {  autoAlpha: 0, }, 0.5);
+    .from(manL, 1, { x: move_way_m, autoAlpha: 0 }, 0.3)
+    .from(manR, 1, { x: move_way_f, autoAlpha: 0 }, 0.6)
+    .staggerFrom([plus1, plus2, plus3, plus4], 1, { autoAlpha: 0, y: "100", scale: 0, transformOrigin: "50% 50%" }, 0.2, 0.5)
 
+    .addLabel("love_main", 0.5)
+    .from(love, 1, { autoAlpha: 0 }, "love_main+=0.1")
+    .staggerFrom(love_title, 0.8, { autoAlpha: 0, y: 10 }, 0.2, "love_main+=0.1")
+    .from($(love_main).next("div"), 0.5, { autoAlpha: 0 }, "love_main+=0.9")
+
+    .to(love_icon, 0.3, { scale: 1.1, transformOrigin: "50% 50%" }, "love_main+=1.1")
+    .to(love_icon, 0.3, { scale: 1, transformOrigin: "50% 50%" }, "love_main+=1.4")
     
-
-  var landingBgc = $(".index_landing");
+    // .to($(love_main).parent(".inner"), 0.03, { ease: Power0.easeNone, autoAlpha: 0 }, "love_main+=2")
+    // .to($(love_main).parent(".inner"), 0.05, { ease: Power0.easeNone, autoAlpha: 1 }, "love_main+=2.05")
+    
+    .addLabel("strict_main", 1)
+    .from(strict, 1, { autoAlpha: 0 }, "strict_main+=0.1")
+    .staggerFrom(strict_title, 0.8, { autoAlpha: 0, y: 10 }, 0.2, "strict_main+=0.1")
+    .from($(strict_main).next("div"), 0.5, { autoAlpha: 0 }, "strict_main+=0.9")
+    
+    .to(strict_icon, 0.3, { scale: 1.1, transformOrigin: "50% 50%" }, "strict_main+=1.1")
+    .to(strict_icon, 0.3, { scale: 1, transformOrigin: "50% 50%" }, "strict_main+=1.4");
 
 }
 
@@ -79,6 +107,38 @@ if (document.querySelector(".index_landing") !== null) {
   //     .to(searchbar, 0.3, { transform: "scale(1.02)" })
   //     .to(searchbar, 0.3, { transform: "scale(1)" });
   // });  
+
+  var pointer = $(".pointer")
+  var tl = new TimelineMax()
+  
+  if (wW == 768) {
+    
+    tl.set(pointer, { "right": "70%", "bottom": "28%" })
+      .to(pointer, 0.3, { autoAlpha: 1 }, 1)
+      .to(pointer, 0.2, { y: 10 })
+      .to(pointer, 0.2, { y: 0 })
+      .to(pointer, 0.2, { autoAlpha: 0 }, "+=0.4")
+      
+      .set(pointer, { "right": "10%"})
+      .to(pointer, 0.3, { autoAlpha: 1 })
+      .to(pointer, 0.2, { y: 10 })
+      .to(pointer, 0.2, { y: 0 })
+      .to(pointer, 0.2, { autoAlpha: 0 }, "+=0.4")
+      
+    } else if (wW < 768) {
+      tl.set(pointer, { "right": "40%", "bottom": "65%" })
+        .to(pointer, 0.3, { autoAlpha: 1 }, 1)
+        .to(pointer, 0.2, { y: 10 })
+        .to(pointer, 0.2, { y: 0 })
+        .to(pointer, 0.2, { autoAlpha: 0 }, "+=0.4")
+        
+        .set(pointer, { "bottom": "20%"})
+        .to(pointer, 0.3, { autoAlpha: 1 })
+        .to(pointer, 0.2, { y: 10 })
+        .to(pointer, 0.2, { y: 0 })
+        .to(pointer, 0.2, { autoAlpha: 0 }, "+=0.4")
+
+  }
 }
 
 
@@ -271,7 +331,7 @@ $(".slick-nav").slick({
   slidesToScroll: 1,
   asNavFor: ".slick-show",
   dots: false,
-  arrows: false,
+  arrows: true,
   responsive: [
     {
       breakpoint: 1200,
@@ -374,6 +434,15 @@ $(function () {
     $("[data-abbr] td:nth-child(2)").each(function () {
       var str = $(this).html();
       var index = str.indexOf("(");
+      if (index !== -1) {
+        $(this).html(str.slice(0, index - 1) + "<br>" + str.slice(index));
+      }
+    });
+
+
+    $("[data-abbr] th:nth-child(2)").each(function () {
+      var str = $(this).html();
+      var index = str.indexOf("/");
       if (index !== -1) {
         $(this).html(str.slice(0, index - 1) + "<br>" + str.slice(index));
       }
@@ -493,14 +562,13 @@ $(function () {
   //advanced search next stage 
   if (document.querySelector(".advanced") !== null) {
     
-    $(" .radio_unit,\
-        .check_unit").each(function() {
-      $(this).change(function() {
-        $(this).parents(".search__block").next(".search__block").find(".check_unit input").removeAttr("disabled");
-      });
+    $(" .radio_unit").change(function() {
+      $(".check_unit input").removeAttr("disabled");
     });
+
   }
 
+  
   $(".card__cart").click(function (e) {
     // e.stopPropagation();
     e.preventDefault();
@@ -518,5 +586,49 @@ $(function () {
       return_child.prop("checked", false).prop("disabled", false);
     }
   });
+  
+  
+  
+  // var delivery_type = document.getElementById("js-delivery");  
+  // if (delivery_type !== null) {
+    
+  //   delivery_type.change(function() {
+
+  //   });
+  // }
+
+
+  if (document.querySelector(".favorite_filter") !== null) {
+
+    var menu = $(".favorite_filter");
+    
+    if (wW > 768 ) {
+      menu.find(".toggle").hover(function() {
+        menu.addClass("show");
+      });
+      menu.mouseleave(function() {
+        menu.removeClass("show");
+      });    
+    } else {
+      menu.find(".toggle").click(function() {
+        menu.toggleClass("show");
+      });
+      menu.mouseleave(function() {
+        menu.removeClass("show");
+      });
+    }
+  }
+  if (document.querySelector(".accordion") !== null) {
+
+    $(".accordion").find(".title").click(function () {
+      $(this).parent("li").siblings("li").children(".title")
+        .removeClass("show")
+        .next(".content").slideUp(300);
+
+      $(this).toggleClass("show").next(".content").slideToggle(300);
+    });
+  }
+
+
 
 });// $(function ) end
